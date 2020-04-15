@@ -58,7 +58,7 @@ See [BLT-Installation-Guide](docs/BLT-Install-Guide.pdf)
 
 ## License
 
-Provided under Cisco Sample Code License, for details see [LICENSE](./LICENSE.md)
+Provided under Cisco Sample Code License, for details see [LICENSE](./LICENSE)
 
 ## Code of Conduct
 
