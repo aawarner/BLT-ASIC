@@ -9,26 +9,19 @@ Customers who are upgrading software often find that they are now required to us
 Upon completing the upgrade they realize that they do not have a Cisco Smart License in their Cisco
 Smart account for the device they just upgraded. For customers who can take advantage of Device Led
 Conversion this may not be a problem. However, customers who can not take advantage of Device Led Conversion 
-(as is the case with many customers) will need to open a case with Cisco Global Licensing Operations. When opening a
+(as is the case with many customers) will need to open a case with Cisco Global Licensing Operations (GLO). When opening a
 case the customer will be required to provide the sales order numbers for the devices being upgraded. Often the 
 only information the customer has is the serial number of the device. Sales orders are often not maintained by the customer 
 but are required when trying to prove the level of entitlement.
 
-Furthermore, once the entitlement is fixed by the Global Licensing Operations team the customer is now
-faced with actually licensing the their devices. This number could be in the thousands of devices. The customer
-has already licensed the device previously and is now faced with exhausting countless man hours to do it again.
-Most customers find this unacceptable and are searching for a better way.
-
 ## Proposed Solution
 
-The proposed solution is twofold.
+The proposed solution is to leverage three techniques to gather entitlement information for creation of licensing cases
+with GLO.
 
-1) Provide a solution to ease the collection of entitlement information and submission to Cisco
-Global Licensing Operations for brownfield migrations to Cisco Smart Licensing.
-
-2) Provide a mechanism for customers with closed networks to license their network infrastructure
-devices without using device call-home to Cisco Smart Software Manager.
-
+1) Live scan of netework connected devices for serial number retrieval
+2) Search of serial number either inputed to a webpage or imported in the form of a .CSV
+3) Search of a sales order number inputed to a webpage
 
 ### Cisco Products Technologies/ Services
 
@@ -47,29 +40,21 @@ Our solution will leverage the following Cisco technologies
 
 ## Solution Components
 
-
-<!-- This does not need to be completed during the initial submission phase  
-
-Provide a brief overview of the components involved with this project. e.g Python /  -->
-
+Python\
+Cisco-UI Kit
 
 ## Usage
 
-<!-- This does not need to be completed during the initial submission phase  
-
-Provide a brief overview of how to use the solution  -->
-
-
+See [BLT-User-Guide](docs/BLT-Install-Guide.pdf)
 
 ## Installation
 
-How to install or setup the project for use.
+See [BLT-Installation-Guide](docs/BLT-Install-Guide.pdf)
 
 
 ## Documentation
 
-Pointer to reference documentation for this project.
-
+[Documentation](docs/)
 
 ## License
 
