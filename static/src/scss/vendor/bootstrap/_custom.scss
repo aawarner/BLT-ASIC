@@ -1,0 +1,11 @@
+// Bootstrap overrides
+//
+// Copy variables from `_variables.scss` to this file to override default values
+// without modifying source files.
+
+$enable-grid-classes: true !default;
+$small-font-size: 12px !default;
+$grid-columns: $cui-grid-columns !default;
+$grid-gutter-width: $cui-grid-gutters !default;
+$grid-breakpoints: $cui-grid-breakpoints !default;
+$container-max-widths: $cui-container-max-widths !default;

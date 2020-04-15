@@ -1,0 +1,249 @@
+//
+// Timeline
+//
+// Styleguide Components.Timeline
+//
+
+
+//
+// Vertical, left
+//
+// Markup:
+// <div class="timeline">
+//     <div class="timeline__item">
+//         <div class="timeline__icon">
+//             <span class="icon-circle"></span>
+//         </div>
+//         <div class="timeline__content">
+//             <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pulvinar accumsan leo, quis egestas quam luctus non. Aenean vulputate ullamcorper velit eu hendrerit</div>
+//         </div>
+//     </div>
+//     <div class="timeline__item">
+//         <div class="timeline__icon">
+//             <span class="icon-circle"></span>
+//         </div>
+//         <div class="timeline__content">
+//             <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pulvinar accumsan leo, quis egestas quam luctus non. Aenean vulputate ullamcorper velit eu hendrerit</div>
+//         </div>
+//     </div>
+//     <div class="timeline__item">
+//         <div class="timeline__icon">
+//             <span class="icon-circle"></span>
+//         </div>
+//         <div class="timeline__content">
+//             <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pulvinar accumsan leo, quis egestas quam luctus non. Aenean vulputate ullamcorper velit eu hendrerit</div>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 1
+//
+// Styleguide Components.Timeline.Vertical Left
+//
+
+
+//
+// Vertical, center
+//
+// At smaller breakpoints the centered timeline will revert to default (left justified)
+//
+// Markup:
+// <div class="timeline timeline--centered">
+//     <div class="timeline__item">
+//         <div class="timeline__icon">
+//             <img src="public/img/user-photo-thumb-1.png">
+//         </div>
+//         <div class="timeline__time">March 21, 2019</div>
+//         <div class="timeline__content">
+//             <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pulvinar accumsan leo, quis egestas quam luctus non. Aenean vulputate ullamcorper velit eu hendrerit</div>
+//         </div>
+//     </div>
+//     <div class="timeline__item">
+//         <div class="timeline__icon">
+//             <img src="public/img/user-photo-thumb-2.png">
+//         </div>
+//         <div class="timeline__time">Feb 14, 2019</div>
+//         <div class="timeline__content">
+//             <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pulvinar accumsan leo, quis egestas quam luctus non. Aenean vulputate ullamcorper velit eu hendrerit</div>
+//         </div>
+//     </div>
+//     <div class="timeline__item">
+//         <div class="timeline__icon">
+//             <img src="public/img/user-photo-thumb-3.png">
+//         </div>
+//         <div class="timeline__time">Jan 7, 2019</div>
+//         <div class="timeline__content">
+//             <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pulvinar accumsan leo, quis egestas quam luctus non. Aenean vulputate ullamcorper velit eu hendrerit</div>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 2
+//
+// Styleguide Components.Timeline.Vertical Center
+//
+
+
+//
+// Vertical, right
+//
+// Markup:
+// <div class="timeline timeline--right">
+//     <div class="timeline__item">
+//         <div class="timeline__icon">
+//             <button class="btn btn--circle btn--success btn--large">
+//                 <span class="icon-check"></span>
+//             </button>
+//         </div>
+//         <div class="timeline__time">March 21, 2019</div>
+//         <div class="timeline__content">
+//             <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pulvinar accumsan leo, quis egestas quam luctus non. Aenean vulputate ullamcorper velit eu hendrerit</div>
+//         </div>
+//     </div>
+//     <div class="timeline__item">
+//         <div class="timeline__icon">
+//             <button class="btn btn--circle btn--primary btn--large">
+//                 <span class="icon-star-empty"></span>
+//             </button>
+//         </div>
+//         <div class="timeline__time">Feb 14, 2019</div>
+//         <div class="timeline__content">
+//             <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pulvinar accumsan leo, quis egestas quam luctus non. Aenean vulputate ullamcorper velit eu hendrerit</div>
+//         </div>
+//     </div>
+//     <div class="timeline__item">
+//         <div class="timeline__icon">
+//             <button class="btn btn--circle btn--secondary btn--large">
+//                 <span class="icon-wifi"></span>
+//             </button>
+//         </div>
+//         <div class="timeline__time">Jan 7, 2019</div>
+//         <div class="timeline__content">
+//             <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pulvinar accumsan leo, quis egestas quam luctus non. Aenean vulputate ullamcorper velit eu hendrerit</div>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 3
+//
+// Styleguide Components.Timeline.Vertical Right
+//
+
+.timeline {
+    position: relative;
+
+    &:before {
+        @include pseudo-element;
+        background: var(--cui-timeline-line-color);
+        left: calc(calc(var(--cui-timeline-icon-size) * .5) - calc(var(--cui-timeline-line-width) * .5));
+        width: var(--cui-timeline-line-width);
+        z-index: -1;
+    }
+
+    .timeline__item {
+        position: relative;
+        display: inline-flex;
+        width: 100%;
+
+        + .timeline__item {
+            margin-top: var(--cui-spacing);
+        }
+
+        .timeline__time {
+            display: none; // Only displayed when centered
+            color: var(--cui-inactive-color);
+        }
+
+        .timeline__icon {
+            display: flex;
+            flex-shrink: 0;
+            justify-content: center;
+            width: var(--cui-timeline-icon-size);
+            height: var(--cui-timeline-icon-size);
+            margin-top: var(--cui-spacing);
+        }
+
+        .timeline__content {
+            display: block;
+            position: relative;
+            background-color: var(--cui-background-inactive);
+            border-radius: var(--cui-border-radius);
+            padding: var(--cui-timeline-padding);
+            margin-left: var(--cui-spacing);;
+
+            &:before {
+                @include hidden-element;
+                height: var(--cui-spacing);
+                width: var(--cui-spacing);
+                background-color: var(--cui-background-inactive);
+                transform: rotate(45deg);
+                top: var(--cui-spacing);
+                left: calc(var(--cui-spacing-half) * -1);
+                opacity: 1;
+            }
+        }
+
+        // Backwards Compatibility
+        // TODO Deprecated. Use your own timeline icon instead
+        .timeline__icon.timeline--danger:before,
+        .timeline__icon.timeline--info:before,
+        .timeline__icon.timeline--success:before,
+        .timeline__icon.timeline--warning:before {
+            @include pseudo-element;
+            @include icon-circle;
+            left: 17px;
+            top: 17px;
+        }
+        .timeline__icon.timeline--danger:before { color: var(--cui-theme-danger); }
+        .timeline__icon.timeline--info:before { color: var(--cui-theme-info); }
+        .timeline__icon.timeline--success:before { color: var(--cui-theme-success); }
+        .timeline__icon.timeline--warning:before { color: var(--cui-theme-warning); }
+    }
+
+    &.timeline--centered {
+        @include media-breakpoint-up(lg) {
+            &:before {
+                left: calc(50% - calc(var(--cui-timeline-line-width) * .5));
+                right: auto;
+            }
+            .timeline__content {
+                width: 45%;
+                margin: 0;
+            }
+            .timeline__item .timeline__icon {
+                order: 1;
+                margin-left: calc(5% - calc(var(--cui-timeline-icon-size) * .5));
+                margin-right: calc(5% - calc(var(--cui-timeline-icon-size) * .5));
+            }
+            .timeline__item:nth-child(even) {
+                flex-direction: row-reverse;
+            }
+            .timeline__item:nth-child(odd) .timeline__content::before {
+                left: calc(100% - var(--cui-spacing-half));
+            }
+            .timeline__time {
+                display: block;
+                position: relative;
+                left: 0;
+                order: 1;
+                margin-top: var(--cui-spacing);
+            }
+        }
+    }
+
+    &.timeline--right {
+        &:before {
+            left: auto;
+            right: calc(calc(var(--cui-timeline-icon-size) * .5) - calc(var(--cui-timeline-line-width) * .5));
+        }
+        .timeline__content {
+            margin-right: var(--cui-spacing);
+            &:before {
+                left: calc(100% - 10px);
+            }
+        }
+        .timeline__item .timeline__icon {
+            order: 1;
+        }
+    }
+}

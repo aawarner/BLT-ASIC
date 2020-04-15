@@ -1,0 +1,98 @@
+<link rel="stylesheet" href="{{ url_for('static',filename='css/cui-standard.min.css') }}">
+<html>
+
+<body class="cui">
+<br>
+<br>
+<br>
+<br>
+<header class="header">
+    <div class="container">
+        <div class="header-panels">
+            <div class="header-panel">
+                <a class="header__logo" href="http://www.cisco.com" target="_blank">
+                    <span class="icon-cisco"></span>
+                </a>
+                <div class="header__title">Brownfield Smart Licensing Conversion Tool</div>
+            </div>
+
+        </div>
+    </div>
+</header>
+<div align="center">
+    <h1>Welcome to the Brownfield Smart Licensing Conversion Tool</h1>
+    <h3>Login with your cisco.com credentials to get started.</h3>
+</div>
+
+<div class="absolute-center">
+    {% block body %}
+    {% if session['logged_in'] %}
+    <p>You're logged in already!</p>
+    {% else %}
+    <form action="/login" method="POST">
+        <div align="center">
+            <div class="col-md-10">
+                <div class="form-group base-margin-bottom">
+                    <div class="form-group__text">
+                        <input id="username" type="text" value="" name="username">
+                        <label for="username">CCO Username:</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <div class="form-group base-margin-bottom">
+                    <div class="form-group__text">
+                        <input id="password" type="password" value="" name="password">
+                        <label for="password">Password:</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <div class="form-group base-margin-bottom">
+                    <div class="form-group__text">
+                        <input id="SADomain" type="text" value="" name="SADomain">
+                        <label for="SADomain">Customer SA Domain:</label>
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn btn--primary">Submit</button>
+        </div>
+    </form>
+    {% endif %}
+    {% endblock %}
+    {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                {% for message in messages %}
+                <div class="col">
+                    <div class="alert alert--warning-alt">
+                        <div class="alert__icon icon-warning-outline"></div>
+                        <div class="alert__message">{{ message }}</div>
+                    </div>
+                </div>
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+</div>
+<footer class="footer footer--primary">
+    <div class="footer__links">
+        <ul class="list list--inline">
+            <li><a href="http://www.cisco.com/cisco/web/siteassets/contacts/index.html" target="_blank">Contacts</a>
+            </li>
+            <li><a href="https://secure.opinionlab.com/ccc01/o.asp?id=jBjOhqOJ" target="_blank">Feedback</a></li>
+            <li><a href="https://www.cisco.com/c/en/us/about/help.html" target="_blank">Help</a></li>
+            <li><a href="http://www.cisco.com/c/en/us/about/sitemap.html" target="_blank">Site Map</a></li>
+            <li><a href="https://www.cisco.com/c/en/us/about/legal/terms-conditions.html" target="_blank">Terms &
+                Conditions</a></li>
+            </li>
+            <li><a href="https://www.cisco.com/c/en/us/about/legal/privacy-full.html" target="_blank">Privacy
+                Statement</a></li>
+            <li><a href="https://www.cisco.com/c/en/us/about/legal/privacy-full.html#cookies" target="_blank">Cookie
+                Policy</a></li>
+            <li><a href="https://www.cisco.com/c/en/us/about/legal/trademarks.html" target="_blank">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,339 @@
+//
+// Dropdown
+//
+// A simple dropdown menu for any clickable element. Add the class `active` to the dropdown to toggle display of the dropdown menu.
+//
+// Styleguide Components.Dropdown
+//
+
+
+//
+// Structure
+//
+// Markup:
+// <div class="row">
+//     <div class="col-lg-6 col-xl-3" style="padding-bottom: 15em;">
+//         <div class="subheader">Basic Selected</div>
+//         <div class="dropdown active ignore">
+//             <div class="dropdown__menu">
+//                 <a>Menu Item One</a>
+//                 <a>Menu Item Two</a>
+//                 <a class="selected">Menu Item Selected</a>
+//             </div>
+//         </div>
+//     </div>
+//     <div class="col-lg-6 col-xl-3" style="padding-bottom: 15em;">
+//         <div class="subheader">With Dividers</div>
+//         <div class="dropdown active ignore">
+//             <div class="dropdown__menu">
+//                 <a>Menu Item One</a>
+//                 <a>Menu Item Two</a>
+//                 <div class="divider"></div>
+//                 <a>Menu Item Three</a>
+//                 <div class="divider"></div>
+//                 <a>Menu Item Four</a>
+//                 <a>Menu Item Five</a>
+//             </div>
+//         </div>
+//     </div>
+//     <div class="col-lg-6 col-xl-3" style="padding-bottom: 15em;">
+//         <div class="subheader">With Icons</div>
+//         <div class="dropdown active ignore">
+//             <div class="dropdown__menu">
+//                 <a>
+//                     <span class="icon-zoom-in"></span>
+//                     <span class="qtr-margin-left">Zoom In</span>
+//                 </a>
+//                 <a>
+//                     <span class="icon-zoom-in"></span>
+//                     <span class="qtr-margin-left">Zoom Out</span>
+//                 </a>
+//                 <div class="divider"></div>
+//                 <a>
+//                     <span class="icon-save"></span>
+//                     <span class="qtr-margin-left">Save Changes</span>
+//                 </a>
+//             </div>
+//         </div>
+//     </div>
+//     <div class="col-lg-6 col-xl-3" style="padding-bottom: 15em;">
+//         <div class="subheader">With Groups</div>
+//         <div class="dropdown active ignore">
+//             <div class="dropdown__menu">
+//                 <div class="dropdown__group">
+//                     <div class="dropdown__group-header">Social Media</div>
+//                     <a>
+//                         <span class="icon-social-facebook"></span>
+//                         <span class="qtr-margin-left">Facebook</span>
+//                     </a>
+//                     <a>
+//                         <span class="icon-social-linkedin"></span>
+//                         <span class="qtr-margin-left">Linked In</span>
+//                     </a>
+//                     <a>
+//                         <span class="icon-social-twitter"></span>
+//                         <span class="qtr-margin-left">Twitter</span>
+//                     </a>
+//                 </div>
+//                 <a>
+//                     <span class="icon-sign-out"></span>
+//                     <span class="qtr-margin-left">Log Out</span>
+//                 </a>
+//             </div>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 1
+//
+// Styleguide Components.Dropdown.Structure
+//
+
+
+//
+// Direction
+//
+// Markup:
+// <div class="row">
+//     <div class="col-lg-6 col-xl-4" style="padding-bottom: 10em;">
+//         <div class="subheader">Open Right (default)</div>
+//         <div class="dropdown">
+//             <button class="btn">To The Right</button>
+//             <div class="dropdown__menu">
+//                 <a>Menu Item One</a>
+//                 <a>Menu Item Two</a>
+//                 <a class="selected">Menu Item Selected</a>
+//             </div>
+//         </div>
+//     </div>
+//     <div class="col-lg-6 col-xl-4 text-center" style="padding-bottom: 10em;">
+//         <div class="subheader">Open Centered</div>
+//         <div class="dropdown dropdown--center">
+//             <button class="btn">Centered</button>
+//             <div class="dropdown__menu">
+//                 <a>Menu Item One</a>
+//                 <a>Menu Item Two</a>
+//                 <a class="selected">Menu Item Selected</a>
+//             </div>
+//         </div>
+//     </div>
+//     <div class="col-lg-6 col-xl-4 text-right" style="padding-bottom: 10em;">
+//         <div class="subheader">Open Left</div>
+//         <div class="dropdown dropdown--left">
+//             <button class="btn">To The Left</button>
+//             <div class="dropdown__menu">
+//                 <a>Menu Item One</a>
+//                 <a>Menu Item Two</a>
+//                 <a class="selected">Menu Item Selected</a>
+//             </div>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 2
+//
+// Styleguide Components.Dropdown.Direction
+//
+
+.dropdown {
+    display: inline-flex;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+
+    .dropdown__menu {
+        @include list-unstyled;
+
+        display: inline-flex;
+        flex-direction: column;
+        opacity: 0;
+        background: var(--cui-dropdown-background-color);
+        border: var(--cui-border);
+        border-top: var(--cui-accent-thickness) solid var(--cui-accent-color);
+        border-radius: var(--cui-border-radius);
+        color: var(--cui-font-color);
+        overflow: hidden auto;
+        position: absolute;
+        pointer-events: auto;
+        top: calc(100% + 5px);
+        height: 0;
+        width: auto;
+        min-width: var(--cui-dropdown-menu-min-width);
+        max-height: var(--cui-dropdown-max-height);
+        transition: opacity .2s;
+    	text-align: left;
+    	box-shadow: var(--cui-shadow-outset);
+        visibility: hidden;
+        user-select: none;
+        z-index: var(--cui-dropdown-zindex);
+
+        .dropdown__group {
+            border-bottom: var(--cui-border);
+        }
+
+        .divider,
+        .dropdown__divider {
+            height: 1px;
+            overflow: hidden;
+            background-color: var(--cui-border-color);
+        }
+
+        a, .dropdown__group-header {
+            height: var(--cui-dropdown-menu-item-height);
+            line-height: inherit;
+            display: inline-flex;
+            align-items: center;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-decoration: none;
+            white-space: nowrap;
+            padding: var(--cui-dropdown-menu-item-padding);
+        }
+
+        .dropdown__group-header {
+            font-size: var(--cui-font-size-xs);
+            font-weight: normal;
+            letter-spacing: .5px;
+            pointer-events: none;
+            cursor: default;
+            text-transform: uppercase;
+        }
+
+        a {
+            color: var(--cui-inactive-color);
+            &:hover {
+                color: var(--cui-active-color);
+            }
+
+            transition: color .5s,background-color .25s,box-shadow .5s;
+
+            .checkbox {
+                margin-right: calc(var(--cui-spacing) * .5);
+            }
+            &:hover, &:focus {
+                color: var(--cui-active-color);
+                background-color: var(--cui-background-hover);
+                text-decoration: none;
+            }
+            &.selected {
+                color: var(--cui-active-color);
+                background-color: var(--cui-background-active);
+
+                &:after {
+                    @include icon-check;
+                    color: var(--cui-dropdown-icon-selected);
+                    position: absolute;
+                    right: var(--cui-spacing-half);
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+
+    &.active {
+        > span[class^="icon-"] {
+            color: var(--cui-link-color);
+        }
+        .dropdown__menu {
+            opacity: 1;
+            visibility: visible;
+            height: auto;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            transition: opacity .4s;
+
+            a {
+                z-index: calc(var(--cui-dropdown-zindex) + 1);
+            }
+        }
+    }
+
+    &--tail {
+        .dropdown__menu:after {
+            content: '';
+            display: block;
+            width: calc(var(--cui-spacing) * .5);
+            height: calc(var(--cui-spacing) * .5);
+            margin: 0;
+            position: absolute;
+            transform: rotate(45deg);
+            left: calc(var(--cui-spacing) * .5);
+            right: auto;
+            top: calc(calc(var(--cui-spacing) * .25) * -1);
+            box-shadow: -1px -1px 0 0 var(--cui-border-color);
+            background: var(--cui-dropdown-background-color);
+        }
+    }
+    &--left {
+        .dropdown__menu {
+            right: 0;
+        }
+        .dropdown__menu:after {
+            left: auto;
+            right: calc(var(--cui-spacing) * .5);
+        }
+    }
+    &--center {
+        .dropdown__menu {
+            left: 50%;
+        }
+        .dropdown__menu:after {
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+    }
+    &.active.dropdown--center {
+        .dropdown__menu {
+            transform: translate(-50%, 0%);
+        }
+    }
+}
+
+// Dropdowns with form elements need to be max-width
+// otherwise it looks very bad
+.form-group.dropdown {
+    .dropdown__menu {
+        width: 100%;
+    }
+}
+.dropdown {
+    .form-group {
+        width: 100%;
+    }
+    .dropdown__menu {
+        width: 100%;
+    }
+}
+
+// Add chevron to link dropdowns
+.dropdown {
+    &.active {
+        > a {
+            &:after {
+                @include drawer-opened;
+            }
+        }
+    }
+    > a {
+        text-decoration: none;
+        &:after {
+            @include drawer-closed;
+            @include icon-chevron-down;
+
+            font-size: 50%;
+            display: inline-flex;
+            align-self: center;
+            margin-left: var(--cui-spacing-qtr);
+            color: inherit;
+            text-decoration: none;
+        }
+    }
+    > a {
+        &:hover, &:focus, &:active {
+            text-decoration: none;
+        }
+    }
+}

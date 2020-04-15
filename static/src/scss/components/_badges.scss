@@ -1,0 +1,259 @@
+//
+// Badge
+//
+// Styleguide Components.Badge
+//
+
+
+//
+// Structure
+//
+// Badges can be attached to icons or be standalone. Use a `badge-wrapper` class to attach a badge to an icon.
+//
+// Markup:
+// <div class="row">
+//     <div class="col-lg-2 col-md-4 col-6 base-margin-bottom">
+//         <div class="subheader base-padding-bottom">Standalone</div>
+//         <span class="badge">7</span>
+//     </div>
+//     <div class="col-lg-2 col-md-4 col-6 base-margin-bottom">
+//         <div class="subheader base-padding-bottom">Attached</div>
+//         <span class="badge-wrapper">
+//             <span class="icon-alert icon-size-32"></span>
+//             <span class="badge">7</span>
+//         </span>
+//     </div>
+// </div>
+//
+// Weight: 1
+//
+// Styleguide Components.Badge.Structure
+//
+
+
+//
+// Color
+//
+// Markup:
+// <div class="row">
+//     <div class="col-lg-2 col-md-4 col-6 base-margin-bottom">
+//         <div class="subheader base-padding-bottom">Primary</div>
+//         <span class="badge-wrapper">
+//             <span class="icon-alert icon-size-32"></span>
+//             <span class="badge badge--primary">1</span>
+//         </span>
+//     </div>
+//     <div class="col-lg-2 col-md-4 col-6 base-margin-bottom">
+//         <div class="subheader base-padding-bottom">Secondary</div>
+//         <span class="badge-wrapper">
+//             <span class="icon-alert icon-size-32"></span>
+//             <span class="badge badge--secondary">2</span>
+//         </span>
+//     </div>
+//     <div class="col-lg-2 col-md-4 col-6 base-margin-bottom">
+//         <div class="subheader base-padding-bottom">Tertiary</div>
+//         <span class="badge-wrapper">
+//             <span class="icon-alert icon-size-32"></span>
+//             <span class="badge badge--tertiary">3</span>
+//         </span>
+//     </div>
+//     <div class="col-lg-2 col-md-4 col-6 base-margin-bottom">
+//         <div class="subheader base-padding-bottom">Success</div>
+//         <span class="badge-wrapper">
+//             <span class="icon-alert icon-size-32"></span>
+//             <span class="badge badge--success">5</span>
+//         </span>
+//     </div>
+//     <div class="col-lg-2 col-md-4 col-6 base-margin-bottom">
+//         <div class="subheader base-padding-bottom">Info</div>
+//         <span class="badge-wrapper">
+//             <span class="icon-alert icon-size-32"></span>
+//             <span class="badge badge--info">8</span>
+//         </span>
+//     </div>
+//     <div class="col-lg-2 col-md-4 col-6 base-margin-bottom">
+//         <div class="subheader base-padding-bottom">Warning</div>
+//         <span class="badge-wrapper">
+//             <span class="icon-alert icon-size-32"></span>
+//             <span class="badge badge--warning">13</span>
+//         </span>
+//     </div>
+//     <div class="col-lg-2 col-md-4 col-6 base-margin-bottom">
+//         <div class="subheader base-padding-bottom">Warning Alt</div>
+//         <span class="badge-wrapper">
+//             <span class="icon-alert icon-size-32"></span>
+//             <span class="badge badge--warning-alt">21</span>
+//         </span>
+//     </div>
+//     <div class="col-lg-2 col-md-4 col-6 base-margin-bottom">
+//         <div class="subheader base-padding-bottom">Danger</div>
+//         <span class="badge-wrapper">
+//             <span class="icon-alert icon-size-32"></span>
+//             <span class="badge badge--danger">34</span>
+//         </span>
+//     </div>
+//     <div class="col-lg-2 col-md-4 col-6 base-margin-bottom">
+//         <div class="subheader base-padding-bottom">Dark</div>
+//         <span class="badge-wrapper">
+//             <span class="icon-alert icon-size-32"></span>
+//             <span class="badge badge--dark">55</span>
+//         </span>
+//     </div>
+//     <div class="col-lg-2 col-md-4 col-6 base-margin-bottom">
+//         <div class="subheader base-padding-bottom">Light</div>
+//         <span class="badge-wrapper">
+//             <span class="icon-alert icon-size-32"></span>
+//             <span class="badge badge--light">89</span>
+//         </span>
+//     </div>
+// </div>
+//
+// Weight: 2
+//
+// Styleguide Components.Badge.Color
+//
+
+
+//
+// Sizes
+//
+// Markup:
+// <div class="row">
+//     <div class="col-lg-2 col-md-4 col-6 base-margin-bottom">
+//         <div class="subheader base-padding-bottom">Dot</div>
+//         <span class="badge-wrapper">
+//             <span class="icon-alert icon-size-32"></span>
+//             <span class="badge badge--dot badge--danger"></span>
+//         </span>
+//     </div>
+//     <div class="col-lg-2 col-md-4 col-6 base-margin-bottom">
+//         <div class="subheader base-padding-bottom">Tiny</div>
+//         <span class="badge-wrapper">
+//             <span class="icon-alert icon-size-32"></span>
+//             <span class="badge badge--tiny">3</span>
+//         </span>
+//     </div>
+//     <div class="col-lg-2 col-md-4 col-6 base-margin-bottom">
+//         <div class="subheader base-padding-bottom">Small</div>
+//         <span class="badge-wrapper">
+//             <span class="icon-alert icon-size-32"></span>
+//             <span class="badge badge--small">3</span>
+//         </span>
+//     </div>
+//     <div class="col-lg-2 col-md-4 col-6 base-margin-bottom">
+//         <div class="subheader base-padding-bottom">Default</div>
+//         <span class="badge-wrapper">
+//             <span class="icon-alert icon-size-32"></span>
+//             <span class="badge">3</span>
+//         </span>
+//     </div>
+//     <div class="col-lg-2 col-md-4 col-6 base-margin-bottom">
+//         <div class="subheader base-padding-bottom">Large</div>
+//         <span class="badge-wrapper">
+//             <span class="icon-alert icon-size-32"></span>
+//             <span class="badge badge--large">3</span>
+//         </span>
+//     </div>
+// </div>
+//
+// Weight: 3
+//
+// Styleguide Components.Badge.Sizes
+//
+
+
+//
+// Overflow
+//
+// Markup:
+// <div class="row">
+//     <div class="col-lg-2 col-md-4 col-6 base-margin-bottom">
+//         <div class="subheader base-padding-bottom">Primary</div>
+//         <span class="badge-wrapper">
+//             <span class="icon-alert icon-size-32"></span>
+//             <span class="badge badge--danger">99+</span>
+//         </span>
+//     </div>
+//     <div class="col-lg-2 col-md-4 col-6 base-margin-bottom">
+//         <div class="subheader base-padding-bottom">Secondary</div>
+//         <span class="badge-wrapper">
+//             <span class="icon-alert icon-size-32"></span>
+//             <span class="badge badge--danger">10k</span>
+//         </span>
+//     </div>
+//     <div class="col-lg-2 col-md-4 col-6 base-margin-bottom">
+//         <div class="subheader base-padding-bottom">Tertiary</div>
+//         <span class="badge-wrapper">
+//             <span class="icon-alert icon-size-32"></span>
+//             <span class="badge badge--danger">99999999</span>
+//         </span>
+//     </div>
+// </div>
+//
+// Weight: 4
+//
+// Styleguide Components.Badge.Overflow
+//
+
+@mixin build-badge-style(
+    $bg: var(--cui-theme-primary),
+    $color: var(--cui-theme-primary-color)
+) {
+    background-color: $bg;
+    color: $color;
+}
+
+@mixin build-badge-size(
+    $size: var(--cui-badge-default-size),
+    $font-size: var(--cui-badge-default-font-size)
+) {
+    min-width: $size;
+    max-width: var(--cui-badge-max-width);
+    font-size: $font-size;
+    height: $size;
+    line-height: $size;
+}
+
+.badge-wrapper {
+    position: relative;
+    display: inline-block;
+
+    .badge {
+        position: absolute;
+        right: 10%;
+        top: 5%;
+        transform: translate(50%, -50%);
+    }
+}
+
+.badge {
+
+    @include text-ellipsis;
+
+    border-radius: var(--cui-badge-border-radius);
+    box-shadow: 0 0 0 var(--cui-badge-border-width) var(--cui-badge-border-color);
+    display: inline-block;
+    font-weight: var(--cui-badge-font-weight);
+    padding: var(--cui-badge-padding);
+    text-align: center;
+    vertical-align: middle;
+    width: auto;
+    z-index: 10;
+
+    @include build-badge-size();
+    @each $name, $value in $cui-badge-sizes {
+        &.badge--#{$name} {
+            @include build-badge-size($value...);
+        }
+    }
+
+    @include build-badge-style();
+    @each $name, $color in $cui-theme-colors {
+        &.badge--#{$name} {
+            @include build-badge-style(
+                $bg: var(--cui-theme-#{$name}),
+                $color: var(--cui-theme-#{$name}-color)
+            );
+        }
+    }
+}

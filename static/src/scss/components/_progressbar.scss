@@ -1,0 +1,202 @@
+//
+// Progressbar
+//
+// Styleguide Components.Progressbar
+//
+
+
+//
+// Structure
+//
+// Markup:
+// <div class="row dbl-padding-bottom">
+//     <div class="col-lg-6">
+//         <div class="subheader">Basic</div>
+//         <div class="progressbar" data-percentage="25">
+//             <div class="progressbar__fill"></div>
+//         </div>
+//     </div>
+//     <div class="col-lg-6">
+//         <div class="subheader">With Label</div>
+//         <div class="progressbar" data-percentage="50">
+//             <div class="progressbar__fill"></div>
+//             <div class="progressbar__label">50%</div>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 1
+//
+// Styleguide Components.Progressbar.Structure
+//
+
+
+//
+// Size
+//
+// Markup:
+// <div class="row dbl-padding-bottom">
+//     <div class="col-lg-4">
+//         <div class="subheader">Small</div>
+//         <div class="progressbar progressbar--small" data-percentage="50">
+//             <div class="progressbar__fill"></div>
+//             <div class="progressbar__label">50%</div>
+//         </div>
+//     </div>
+//     <div class="col-lg-4">
+//         <div class="subheader">Default</div>
+//         <div class="progressbar" data-percentage="75">
+//             <div class="progressbar__fill"></div>
+//             <div class="progressbar__label">75%</div>
+//         </div>
+//     </div>
+//     <div class="col-lg-4">
+//         <div class="subheader">Large</div>
+//         <div class="progressbar progressbar--large" data-percentage="25">
+//             <div class="progressbar__fill"></div>
+//             <div class="progressbar__label">25%</div>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 2
+//
+// Styleguide Components.Progressbar.Size
+//
+
+
+//
+// Color
+//
+// Markup:
+// <div class="row">
+//     <div class="col-md-3 base-margin-bottom">
+//         <div class="subheader">Primary</div>
+//         <div class="progressbar progressbar--primary" data-percentage="66">
+//             <div class="progressbar__fill"></div>
+//         </div>
+//     </div>
+//     <div class="col-md-3 base-margin-bottom">
+//         <div class="subheader">Secondary</div>
+//         <div class="progressbar progressbar--secondary" data-percentage="66">
+//             <div class="progressbar__fill"></div>
+//         </div>
+//     </div>
+//     <div class="col-md-3 base-margin-bottom">
+//         <div class="subheader">Tertiary</div>
+//         <div class="progressbar progressbar--tertiary" data-percentage="66">
+//             <div class="progressbar__fill"></div>
+//         </div>
+//     </div>
+//     <div class="col-md-3 base-margin-bottom">
+//         <div class="subheader">Success</div>
+//         <div class="progressbar progressbar--success" data-percentage="66">
+//             <div class="progressbar__fill"></div>
+//         </div>
+//     </div>
+//     <div class="col-md-3 base-margin-bottom">
+//         <div class="subheader">Info</div>
+//         <div class="progressbar progressbar--info" data-percentage="66">
+//             <div class="progressbar__fill"></div>
+//         </div>
+//     </div>
+//     <div class="col-md-3 base-margin-bottom">
+//         <div class="subheader">Warning Alt</div>
+//         <div class="progressbar progressbar--warning-alt" data-percentage="66">
+//             <div class="progressbar__fill"></div>
+//         </div>
+//     </div>
+//     <div class="col-md-3 base-margin-bottom">
+//         <div class="subheader">Warning</div>
+//         <div class="progressbar progressbar--warning" data-percentage="66">
+//             <div class="progressbar__fill"></div>
+//         </div>
+//     </div>
+//     <div class="col-md-3 base-margin-bottom">
+//         <div class="subheader">Danger</div>
+//         <div class="progressbar progressbar--danger" data-percentage="66">
+//             <div class="progressbar__fill"></div>
+//         </div>
+//     </div>
+//     <div class="col-md-3 base-margin-bottom">
+//         <div class="subheader">Dark</div>
+//         <div class="progressbar progressbar--dark" data-percentage="66">
+//             <div class="progressbar__fill"></div>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 3
+//
+// Styleguide Components.Progressbar.Color
+//
+
+@mixin build-progressbar-style(
+    $color: var(--cui-theme-primary)
+) {
+    .progressbar__fill {
+        background-color: $color;
+    }
+}
+
+@mixin build-progressbar-size(
+    $size: var(--cui-progressbar-default-size)
+) {
+    &:before,
+    .progressbar__fill {
+        height: $size;
+    }
+    .progressbar__label {
+        padding-top: $size;
+    }
+}
+
+.progressbar {
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 0;
+
+    &:before {
+        @include pseudo-element;
+        background: var(--cui-progressbar-background);
+        border-radius: var(--cui-progressbar-border-radius);
+    }
+
+    &__fill {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: var(--cui-progressbar-border-radius);
+        transition: width .25s linear;
+    }
+
+    @include build-progressbar-size();
+    @each $modifier in small, medium, large {
+        &.progressbar--#{$modifier} {
+            @include build-progressbar-size(
+                var(--cui-progressbar-#{$modifier}-size)
+            );
+        }
+    }
+
+    @include build-progressbar-style();
+    @each $name, $color in $cui-theme-colors {
+        &.progressbar--#{$name} {
+            @include build-progressbar-style(
+                $color: var(--cui-theme-#{$name})
+            );
+        }
+    }
+
+    $i: 0;
+    @for $i from 0 through 100 {
+        &[data-percentage="#{$i}"] {
+            .progressbar__fill {
+                width: #{$i}#{'%'};
+            }
+        }
+    }
+}

@@ -1,0 +1,209 @@
+//
+// Loader
+//
+// Use when the length of a task is unknown (indeterminate). For tasks which have a known duration use the <a href="section-components.html#components-progressbar">Progressbar</a> pattern.
+//
+// Styleguide Components.Loader
+//
+
+
+//
+// Spinner
+//
+// Markup:
+// <div class="row">
+//     <div class="col-md-2">
+//         <div class="subheader">Small</div>
+//         <div class="loader loader--small" aria-label="Loading, please wait...">
+//             <div class="wrapper">
+//                 <div class="wheel"></div>
+//             </div>
+//         </div>
+//     </div>
+//     <div class="col-md-3">
+//         <div class="subheader">Default</div>
+//         <div class="loader" aria-label="Loading, please wait...">
+//             <div class="wrapper">
+//                 <div class="wheel"></div>
+//             </div>
+//         </div>
+//     </div>
+//     <div class="col-md-2">
+//         <div class="subheader">Large</div>
+//         <div class="loader loader--large" aria-label="Loading, please wait...">
+//             <div class="wrapper">
+//                 <div class="wheel"></div>
+//             </div>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 1
+//
+// Styleguide Components.Loader.Spinner
+//
+
+
+//
+// Dots
+//
+// Markup:
+// <div class="row">
+//     <div class="col-md-2">
+//         <div class="subheader">Primary</div>
+//         <div class="loading-dots" aria-label="Loading, please wait...">
+//             <span></span>
+//             <span></span>
+//             <span></span>
+//         </div>
+//     </div>
+//     <div class="col-md-2">
+//         <div class="subheader">Secondary</div>
+//         <div class="loading-dots loading-dots--secondary" aria-label="Loading, please wait...">
+//             <span></span>
+//             <span></span>
+//             <span></span>
+//         </div>
+//     </div>
+//     <div class="col-md-2">
+//         <div class="subheader">Tertiary</div>
+//         <div class="loading-dots loading-dots--tertiary" aria-label="Loading, please wait...">
+//             <span></span>
+//             <span></span>
+//             <span></span>
+//         </div>
+//     </div>
+//     <div class="col-md-2">
+//         <div class="subheader">Success</div>
+//         <div class="loading-dots loading-dots--success" aria-label="Loading, please wait...">
+//             <span></span>
+//             <span></span>
+//             <span></span>
+//         </div>
+//     </div>
+//     <div class="col-md-2">
+//         <div class="subheader">Info</div>
+//         <div class="loading-dots loading-dots--info" aria-label="Loading, please wait...">
+//             <span></span>
+//             <span></span>
+//             <span></span>
+//         </div>
+//     </div>
+//     <div class="col-md-2">
+//         <div class="subheader">Warning</div>
+//         <div class="loading-dots loading-dots--warning" aria-label="Loading, please wait...">
+//             <span></span>
+//             <span></span>
+//             <span></span>
+//         </div>
+//     </div>
+//     <div class="col-md-2">
+//         <div class="subheader">Warning Alt</div>
+//         <div class="loading-dots loading-dots--warning-alt" aria-label="Loading, please wait...">
+//             <span></span>
+//             <span></span>
+//             <span></span>
+//         </div>
+//     </div>
+//     <div class="col-md-2">
+//         <div class="subheader">Danger</div>
+//         <div class="loading-dots loading-dots--danger" aria-label="Loading, please wait...">
+//             <span></span>
+//             <span></span>
+//             <span></span>
+//         </div>
+//     </div>
+//     <div class="col-md-2">
+//         <div class="subheader">Dark</div>
+//         <div class="loading-dots loading-dots--dark" aria-label="Loading, please wait...">
+//             <span></span>
+//             <span></span>
+//             <span></span>
+//         </div>
+//     </div>
+//     <div class="col-md-2">
+//         <div class="subheader">Light</div>
+//         <div class="loading-dots loading-dots--light" aria-label="Loading, please wait...">
+//             <span></span>
+//             <span></span>
+//             <span></span>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 2
+//
+// Styleguide Components.Loader.Dots
+//
+
+@mixin build-loader-size($size) {
+    .wrapper .wheel {
+        position: relative;
+        visibility: visible;
+        width: $size;
+        height: $size;
+        border-radius: 100%;
+        border: var(--cui-loader-border-thickness) solid var(--cui-loader-border-color);
+        border-left-color: var(--cui-loader-spinner-color);
+        animation: load var(--cui-loader-animation-speed) infinite linear;
+    }
+}
+@mixin build-dot-style($color: var(--cui-theme-primary)) {
+    > span {
+        background: $color;
+    }
+}
+
+.loading-spinner,
+.loader {
+
+    &:focus {
+        @include cui-focus-outline;
+    }
+
+    @each $name, $value in $cui-loader-sizes {
+        @if $name == "default" {
+            @include build-loader-size($value...);
+        } @else {
+            &.loader--#{$name} {
+                @include build-loader-size($value...);
+            }
+        }
+    }
+}
+
+.loading-dots {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+
+    &:focus {
+        @include cui-focus-outline;
+    }
+
+    > span {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        margin: 0 2px;
+        background: var(--cui-background-color);
+        border-radius: 50%;
+        animation: pulse 1.4s infinite both ease-in-out;
+
+        &:nth-child(1) {
+            animation-delay: -0.32s;
+        }
+        &:nth-child(2) {
+            animation-delay: -0.16s;
+        }
+    }
+
+    @include build-dot-style();
+    @each $name, $color in $cui-theme-colors {
+        &.loading-dots--#{$name} {
+            @include build-dot-style(
+                $color: var(--cui-theme-#{$name})
+            );
+        }
+    }
+}

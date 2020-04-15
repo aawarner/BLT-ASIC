@@ -1,0 +1,506 @@
+//
+// Text
+//
+// Styleguide Utilities.Text
+//
+
+
+//
+// Alignment
+//
+// Use these helpers to align your text. There are additional helper classes for aligning text at different breakpoints.
+//
+// Markup:
+// <table class="table table--lined table--compressed">
+//     <thead>
+//         <th>Class</th>
+//         <th>Example</th>
+//     </thead>
+//     <tbody>
+//         <tr>
+//             <td><code>text-left</code></td>
+//             <td><div class="text-left">Text Left Justified</div></td>
+//         </tr>
+//         <tr>
+//             <td><code>text-center</code></td>
+//             <td><div class="text-center">Text Centered</div></td>
+//         </tr>
+//         <tr>
+//             <td><code>text-right</code></td>
+//             <td><div class="text-right">Text Right Justified</div></td>
+//         </tr>
+//         <tr>
+//             <td><code>text-justified</code></td>
+//             <td><div class="text-justified">Text Fills Space Provided</div></td>
+//         </tr>
+//     </tbody>
+// </table>
+// <div class="row">
+//     <div class="col-xl-4 col-lg-6 base-margin-top">
+//         <div class="subheader">Left Aligned</div>
+//         <table class="table table--lined table--compressed">
+//             <thead>
+//                 <th>Class</th>
+//                 <th>Description</th>
+//             </thead>
+//             <tbody>
+//                 <tr>
+//                     <td><code>text-left-xs-down</code></td>
+//                     <td>Left 575px - 320px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-left-sm-down</code></td>
+//                     <td>Left 767px - 320px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-left-md-down</code></td>
+//                     <td>Left 991px - 320px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-left-lg-down</code></td>
+//                     <td>Left 1199px - 320px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-left-xl-down</code></td>
+//                     <td>Left 1439px - 320px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-left-2xl-down</code></td>
+//                     <td>Left 1599px - 320px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-left-3xl-down</code></td>
+//                     <td>Left 1839px - 320px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-left-4xl-down</code></td>
+//                     <td>Left 2099px - 320px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-left-5xl-down</code></td>
+//                     <td>Left 2560px - 320px</td>
+//                 </tr>
+//             </tbody>
+//         </table>
+//     </div>
+//     <div class="col-xl-4 col-lg-6 base-margin-top">
+//         <div class="subheader">Center Aligned</div>
+//         <table class="table table--lined table--compressed">
+//             <thead>
+//                 <th>Class</th>
+//                 <th>Description</th>
+//             </thead>
+//             <tbody>
+//                 <tr>
+//                     <td><code>text-center-xs-down</code></td>
+//                     <td>Centered 575px - 320px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-center-sm-down</code></td>
+//                     <td>Centered 767px - 320px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-center-md-down</code></td>
+//                     <td>Centered 991px - 320px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-center-lg-down</code></td>
+//                     <td>Centered 1199px - 320px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-center-xl-down</code></td>
+//                     <td>Centered 1439px - 320px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-center-2xl-down</code></td>
+//                     <td>Centered 1599px - 320px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-center-3xl-down</code></td>
+//                     <td>Centered 1839px - 320px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-center-4xl-down</code></td>
+//                     <td>Centered 2099px - 320px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-center-5xl-down</code></td>
+//                     <td>Centered 2560px - 320px</td>
+//                 </tr>
+//             </tbody>
+//         </table>
+//     </div>
+//     <div class="col-xl-4 col-lg-6 base-margin-top">
+//         <div class="subheader">Right Aligned</div>
+//         <table class="table table--lined table--compressed">
+//             <thead>
+//                 <th>Class</th>
+//                 <th>Description</th>
+//             </thead>
+//             <tbody>
+//                 <tr>
+//                     <td><code>text-right-xs-down</code></td>
+//                     <td>Right 575px - 320px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-right-sm-down</code></td>
+//                     <td>Right 767px - 320px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-right-md-down</code></td>
+//                     <td>Right 991px - 320px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-right-lg-down</code></td>
+//                     <td>Right 1199px - 320px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-right-xl-down</code></td>
+//                     <td>Right 1439px - 320px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-right-2xl-down</code></td>
+//                     <td>Right 1599px - 320px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-right-3xl-down</code></td>
+//                     <td>Right 1839px - 320px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-right-4xl-down</code></td>
+//                     <td>Right 2099px - 320px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-right-5xl-down</code></td>
+//                     <td>Right 2560px - 320px</td>
+//                 </tr>
+//             </tbody>
+//         </table>
+//     </div>
+// </div>
+//
+// Weight: 1
+//
+// Styleguide Utilities.Text.Alignment
+//
+
+.text-left { text-align: left !important; }
+.text-center { text-align: center !important; }
+.text-right { text-align: right !important; }
+.text-justify { text-align: justify !important; }
+
+$positions: left, center, right;
+@each $pos in $positions {
+    @each $name, $size in $grid-breakpoints {
+        .text-#{$pos}-#{$name}-down {
+            @include media-breakpoint-down($name) {
+                text-align: #{$pos} !important;
+            }
+        }
+    }
+}
+
+
+//
+// Color
+//
+// These helper classes apply to both text and icons.
+//
+// Markup:
+// <div class="row">
+//     <div class="col-lg-6 base-margin-top">
+//         <div class="subheader">Theme Colors</div>
+//         <table class="table table--lined table--compressed">
+//             <thead>
+//                 <th>Class</th>
+//                 <th>Example</th>
+//             </thead>
+//             <tbody>
+//                 <tr>
+//                     <td><code>text-default</code></td>
+//                     <td><span class="text-default">Default</span></td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-primary</code></td>
+//                     <td><span class="text-primary">Primary</span></td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-secondary</code></td>
+//                     <td><span class="text-secondary">Secondary</span></td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-tertiary</code></td>
+//                     <td><span class="text-tertiary">Tertiary</span></td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-success</code></td>
+//                     <td><span class="text-success">Success</span></td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-info</code></td>
+//                     <td><span class="text-info">Info</span></td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-warning-alt</code></td>
+//                     <td><span class="text-warning-alt">Warning Alt</span></td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-warning</code></td>
+//                     <td><span class="text-warning">Warning</span></td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-danger</code></td>
+//                     <td><span class="text-danger">Danger</span></td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-link</code></td>
+//                     <td><span class="text-link">Link</span></td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-muted</code></td>
+//                     <td><span class="text-muted">Muted</span></td>
+//                 </tr>
+//             </tbody>
+//         </table>
+//     </div>
+//     <div class="col-lg-6 base-margin-top">
+//         <div class="subheader">Grays</div>
+//         <table class="table table--lined table--compressed">
+//             <thead>
+//                 <th>Class</th>
+//                 <th>Example</th>
+//             </thead>
+//             <tbody>
+//                 <tr>
+//                     <td><code>text-white</code></td>
+//                     <td><span class="text-white">White</span></td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-gray-100</code></td>
+//                     <td><span class="text-gray-100">Gray 100</span></td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-gray-200</code></td>
+//                     <td><span class="text-gray-200">Gray 200</span></td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-gray-300</code></td>
+//                     <td><span class="text-gray-300">Gray 300</span></td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-gray-400</code></td>
+//                     <td><span class="text-gray-400">Gray 400</span></td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-gray-500</code></td>
+//                     <td><span class="text-gray-500">Gray 500</span></td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-gray-600</code></td>
+//                     <td><span class="text-gray-600">Gray 600</span></td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-gray-700</code></td>
+//                     <td><span class="text-gray-700">Gray 700</span></td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-gray-800</code></td>
+//                     <td><span class="text-gray-800">Gray 800</span></td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-gray-900</code></td>
+//                     <td><span class="text-gray-900">Gray 900</span></td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-black</code></td>
+//                     <td><span class="text-black">Black</span></td>
+//                 </tr>
+//             </tbody>
+//         </table>
+//     </div>
+// </div>
+//
+// Weight: 2
+//
+// Styleguide Utilities.Text.Color
+//
+
+@each $name, $color in $cui-theme-colors {
+    .text-#{$name} {
+        color: $color !important;
+    }
+}
+@each $name, $color in $cui-gray-colors {
+    .text-gray-#{$name} {
+        color: $color !important;
+    }
+}
+
+.text-black { color: var(--cui-color-black) !important; }
+.text-white { color: var(--cui-color-white) !important; }
+.text-link { color: var(--cui-link-color) !important; }
+.text-muted { color: var(--cui-inactive-color) !important; }
+
+
+//
+// Size
+//
+// Size helpers for your text. These classes apply to text only. Icons have their own specific size helpers.
+//
+// Markup:
+// <div class="row">
+//     <div class="col-md-6">
+//         <table class="table table--lined table--compressed">
+//             <thead>
+//                 <th>Class</th>
+//                 <th>Example</th>
+//             </thead>
+//             <tbody>
+//                 <tr>
+//                     <td><code>text-size-10</code></td>
+//                     <td><span class="text-size-10">Size 10</span></td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-size-12</code></td>
+//                     <td><span class="text-size-12">Size 12</span></td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-size-14</code></td>
+//                     <td><span class="text-size-14">Size 14</span></td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-size-16</code></td>
+//                     <td><span class="text-size-16">Size 16</span></td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-size-18</code></td>
+//                     <td><span class="text-size-18">Size 18</span></td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-size-20</code></td>
+//                     <td><span class="text-size-20">Size 20</span></td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-size-24</code></td>
+//                     <td><span class="text-size-24">Size 24</span></td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-size-28</code></td>
+//                     <td><span class="text-size-28">Size 28</span></td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-size-32</code></td>
+//                     <td><span class="text-size-32">Size 32</span></td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-size-36</code></td>
+//                     <td><span class="text-size-36">Size 36</span></td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-size-48</code></td>
+//                     <td><span class="text-size-48">Size 48</span></td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-size-64</code></td>
+//                     <td><span class="text-size-64">Size 64</span></td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-size-96</code></td>
+//                     <td><span class="text-size-96">Size 96</span></td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-size-128</code></td>
+//                     <td><span class="text-size-128">Size 128</span></td>
+//                 </tr>
+//             </tbody>
+//         </table>
+//     </div>
+// </div>
+//
+// Weight: 3
+//
+// Styleguide Utilities.Text.Size
+//
+
+@each $name, $size in $cui-common-sizes {
+    .text-#{$name} {
+        font-size: $size !important;
+    }
+}
+
+.text-xsmall { font-size: var(--cui-font-size-xs) !important; }
+.text-small { font-size: var(--cui-font-size-sm) !important; }
+.text-medium { font-size: var(--cui-font-size) !important; }
+.text-large { font-size: var(--cui-font-size-lg) !important; }
+
+
+//
+// Transform
+//
+// Transform your text with these helper classes.
+//
+// Markup:
+// <div class="row">
+//     <div class="col-md-6">
+//         <table class="table table--lined table--compressed">
+//             <thead>
+//                 <th>Class</th>
+//                 <th>Example</th>
+//             </thead>
+//             <tbody>
+//                 <tr>
+//                     <td><code>text-light</code></td>
+//                     <td><span class="text-light">Lighter Font Weight</span></td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-normal</code></td>
+//                     <td><span class="text-normal">Normal Font Weight</span></td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-bold</code></td>
+//                     <td><span class="text-bold">Bolded Font Weight</span></td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-lowercase</code></td>
+//                     <td><span class="text-lowercase">Lowercase Text</span></td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-uppercase</code></td>
+//                     <td><span class="text-uppercase">Uppercase Text</span></td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-capitalize</code></td>
+//                     <td><span class="text-capitalize">Capitalized Text</span></td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-italic</code></td>
+//                     <td><span class="text-italic">Italicsized Text</span></td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>text-monospace</code></td>
+//                     <td><span class="text-monospace">Monospaced Text</span></td>
+//                 </tr>
+//             </tbody>
+//         </table>
+//     </div>
+// </div>
+//
+// Weight: 4
+//
+// Styleguide Utilities.Text.Transform
+//
+
+.text-light { font-weight: lighter !important; }
+.text-normal { font-weight: normal !important; }
+.text-bold { font-weight: bold !important; }
+.text-nowrap { white-space: nowrap !important; }
+.text-lowercase { text-transform: lowercase !important; }
+.text-uppercase { text-transform: uppercase !important; }
+.text-capitalize { text-transform: capitalize !important; }
+.text-italic { font-style: italic !important; }
+.text-monospace { @include text-monospace; }
+
+.text-ellipsis { @include text-ellipsis; }
+.text-noellipsis { @include text-noellipsis; }
+.text-noselect { @include text-noselect; }
+.text-break { @include text-break; }

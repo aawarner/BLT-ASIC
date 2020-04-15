@@ -1,0 +1,473 @@
+//
+// Typography
+//
+// Styleguide Design.Typography
+//
+
+html {
+    height: 100%;
+    font-size: var(--cui-html-font-size);
+
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: var(--cui-spacing-qtr);
+    }
+    ::-webkit-scrollbar-track {
+        background: var(--cui-background-color);
+    }
+    ::-webkit-scrollbar-thumb {
+        background: var(--cui-background-selected);
+        border-radius: var(--cui-spacing-half);
+        border: 1px solid var(--cui-background-color);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--cui-background-hover);
+    }
+}
+
+@font-face {
+  font-family: 'CiscoSans';
+  font-style: normal;
+  font-weight: 100;
+  src: url('#{$cui-resource-path}/fonts/CiscoSans/CiscoSansTTThin.woff2') format('woff2'),
+       url('#{$cui-resource-path}/fonts/CiscoSans/CiscoSansTTThin.woff') format('woff');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+  font-family: 'CiscoSans';
+  font-style: oblique;
+  font-weight: 100;
+  src: url('#{$cui-resource-path}/fonts/CiscoSans/CiscoSansTTThinOblique.woff2') format('woff2'),
+       url('#{$cui-resource-path}/fonts/CiscoSans/CiscoSansTTThinOblique.woff') format('woff');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+  font-family: 'CiscoSans';
+  font-style: normal;
+  font-weight: 200;
+  src: url('#{$cui-resource-path}/fonts/CiscoSans/CiscoSansTTExtraLight.woff2') format('woff2'),
+       url('#{$cui-resource-path}/fonts/CiscoSans/CiscoSansTTExtraLight.woff') format('woff');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+  font-family: 'CiscoSans';
+  font-style: oblique;
+  font-weight: 200;
+  src: url('#{$cui-resource-path}/fonts/CiscoSans/CiscoSansTTExtraLightOblique.woff2') format('woff2'),
+       url('#{$cui-resource-path}/fonts/CiscoSans/CiscoSansTTExtraLightOblique.woff') format('woff');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+  font-family: 'CiscoSans';
+  font-style: normal;
+  font-weight: 300;
+  src: url('#{$cui-resource-path}/fonts/CiscoSans/CiscoSansTTLight.woff2') format('woff2'),
+       url('#{$cui-resource-path}/fonts/CiscoSans/CiscoSansTTLight.woff') format('woff');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+  font-family: 'CiscoSans';
+  font-style: oblique;
+  font-weight: 300;
+  src: url('#{$cui-resource-path}/fonts/CiscoSans/CiscoSansTTLightOblique.woff2') format('woff2'),
+       url('#{$cui-resource-path}/fonts/CiscoSans/CiscoSansTTLightOblique.woff') format('woff');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+  font-family: 'CiscoSans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('#{$cui-resource-path}/fonts/CiscoSans/CiscoSansTTRegular.woff2') format('woff2'),
+       url('#{$cui-resource-path}/fonts/CiscoSans/CiscoSansTTRegular.woff') format('woff');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+  font-family: 'CiscoSans';
+  font-style: oblique;
+  font-weight: 400;
+  src: url('#{$cui-resource-path}/fonts/CiscoSans/CiscoSansTTRegularOblique.woff2') format('woff2'),
+       url('#{$cui-resource-path}/fonts/CiscoSans/CiscoSansTTRegularOblique.woff') format('woff');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+  font-family: 'CiscoSans';
+  font-style: bold;
+  font-weight: 700;
+  src: url('#{$cui-resource-path}/fonts/CiscoSans/CiscoSansTTBold.woff2') format('woff2'),
+       url('#{$cui-resource-path}/fonts/CiscoSans/CiscoSansTTBold.woff') format('woff');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+  font-family: 'CiscoSans';
+  font-style: oblique;
+  font-weight: 700;
+  src: url('#{$cui-resource-path}/fonts/CiscoSans/CiscoSansTTBoldOblique.woff2') format('woff2'),
+       url('#{$cui-resource-path}/fonts/CiscoSans/CiscoSansTTBoldOblique.woff') format('woff');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+  font-family: 'CiscoSans';
+  font-style: normal;
+  font-weight: 900;
+  src: url('#{$cui-resource-path}/fonts/CiscoSans/CiscoSansTTHeavy.woff2') format('woff2'),
+       url('#{$cui-resource-path}/fonts/CiscoSans/CiscoSansTTHeavy.woff') format('woff');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+  font-family: 'CiscoSans';
+  font-style: oblique;
+  font-weight: 900;
+  src: url('#{$cui-resource-path}/fonts/CiscoSans/CiscoSansTTHeavyOblique.woff2') format('woff2'),
+       url('#{$cui-resource-path}/fonts/CiscoSans/CiscoSansTTHeavyOblique.woff') format('woff');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+body.cui {
+    color: var(--cui-font-color);
+    line-height: var(--cui-line-height);
+    position: relative;
+
+    font-family: var(--cui-font-stack);
+    font-weight: var(--cui-font-weight);
+    font-size: var(--cui-font-size);
+
+    min-width: var(--cui-min-page-width);
+    max-width: var(--cui-max-page-width);
+
+    height: auto;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    background-color: var(--cui-background-color);
+
+    direction: ltr;
+    text-align: left;
+
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    &.cui--wide {
+        .container {
+            max-width: var(--cui-max-page-width);
+        }
+    }
+}
+
+//
+// Headings
+//
+// Markup:
+// <div class="row">
+//     <div class="col-md-6">
+//         <div class="section">
+//             <h1>H1 Heading</h1>
+//             <p>Curabitur sit amet magna quam. Praesent in libero vel turpis pellentesque egestas sit amet vel nunc. Nunc lobortis dui neque, quis accumsan dolor. Aenean aliquet dignissim semper.</p>
+//         </div>
+//         <div class="section">
+//             <h2>H2 Heading</h2>
+//             <p>Curabitur sit amet magna quam. Praesent in libero vel turpis pellentesque egestas sit amet vel nunc. Nunc lobortis dui neque, quis accumsan dolor. Aenean aliquet dignissim semper.</p>
+//         </div>
+//         <div class="section">
+//             <h3>H3 Heading</h3>
+//             <p>Curabitur sit amet magna quam. Praesent in libero vel turpis pellentesque egestas sit amet vel nunc. Nunc lobortis dui neque, quis accumsan dolor. Aenean aliquet dignissim semper.</p>
+//         </div>
+//     </div>
+//     <div class="col-md-6">
+//         <div class="section">
+//             <h4>H4 Heading</h4>
+//             <p>Curabitur sit amet magna quam. Praesent in libero vel turpis pellentesque egestas sit amet vel nunc. Nunc lobortis dui neque, quis accumsan dolor. Aenean aliquet dignissim semper.</p>
+//         </div>
+//         <div class="section">
+//             <h5>H5 Heading</h5>
+//             <p>Curabitur sit amet magna quam. Praesent in libero vel turpis pellentesque egestas sit amet vel nunc. Nunc lobortis dui neque, quis accumsan dolor. Aenean aliquet dignissim semper.</p>
+//         </div>
+//         <div class="section">
+//             <h6>H6 Heading</h6>
+//             <p>Curabitur sit amet magna quam. Praesent in libero vel turpis pellentesque egestas sit amet vel nunc. Nunc lobortis dui neque, quis accumsan dolor. Aenean aliquet dignissim semper.</p>
+//         </div>
+//      </div>
+//  </div>
+//
+// Weight: 2
+//
+// Styleguide Design.Typography.Headings
+//
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    margin: 0 0 var(--cui-headings-margin) 0;
+    font-family: inherit;
+    line-height: var(--cui-headings-line-height);
+}
+
+@each $heading, $heading-size, $heading-weight in $cui-headings {
+    #{$heading}, .#{$heading} {
+        font-size: $heading-size;
+        font-weight: $heading-weight;
+    }
+}
+
+
+//
+// Display Headings
+//
+// Markup:
+// <h1 class="display-0">Display Heading 0</h1>
+// <h1 class="display-1">Display Heading 1</h1>
+// <h1 class="display-2">Display Heading 2</h1>
+// <h1 class="display-3">Display Heading 3</h1>
+// <h1 class="display-4">Display Heading 4</h1>
+//
+// Weight: 3
+//
+// Styleguide Design.Typography.DisplayHeadings
+//
+
+.display-0 { @include display-size-0; }
+.display-1 { @include display-size-1; }
+.display-2 { @include display-size-2; }
+.display-3 { @include display-size-3; }
+.display-4 { @include display-size-4; }
+
+@include media-breakpoint-down(xs) {
+    .display-0-xs { @include display-size-0; }
+    .display-1-xs { @include display-size-1; }
+    .display-2-xs { @include display-size-2; }
+    .display-3-xs { @include display-size-3; }
+    .display-4-xs { @include display-size-4; }
+}
+@include media-breakpoint-down(sm) {
+    .display-0-sm { @include display-size-0; }
+    .display-1-sm { @include display-size-1; }
+    .display-2-sm { @include display-size-2; }
+    .display-3-sm { @include display-size-3; }
+    .display-4-sm { @include display-size-4; }
+}
+@include media-breakpoint-down(md) {
+    .display-0-md { @include display-size-0; }
+    .display-1-md { @include display-size-1; }
+    .display-2-md { @include display-size-2; }
+    .display-3-md { @include display-size-3; }
+    .display-4-md { @include display-size-4; }
+}
+
+
+//
+// Subheadings
+//
+// Lighten up your heading text by adding class `subheading` to any heading element.
+//
+// Markup:
+// <h1>Regular Heading</h1>
+// <h2 class="subheading">Subheading</h2>
+// <div class="subheader">Subtitle</div>
+//
+// Weight: 4
+//
+// Styleguide Design.Typography.Subheadings
+//
+
+.subheading {
+    color: var(--cui-inactive-color);
+}
+.subheader {
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    margin: 0 0 var(--cui-spacing-half) 0;
+    font-weight: normal;
+    font-size: var(--cui-font-size-sm);
+
+    @include media-breakpoint-down(xs) {
+        font-size: var(--cui-font-size-xs) !important;
+    }
+
+    ~.subheader {
+        margin-top: var(--cui-spacing);
+    }
+}
+.subtitle {
+    font-size: var(--cui-font-size-lg);
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+
+//
+// Paragraphs
+//
+// Markup:
+// <p>The global font-size, line-height and regular margins between elements are set through variables, which can be customized. Paragraphs and other block elements stick to these values.</p>
+// <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.</p>
+//
+// Weight: 5
+//
+// Styleguide Design.Typography.Paragraphs
+//
+
+canvas, img, video {
+    max-width: 100%;
+    height: auto;
+    box-sizing: border-box;
+}
+
+fieldset {
+    padding: 0;
+    border: 0;
+
+    > *:last-child {
+        margin-bottom: 0;
+    }
+}
+
+p,
+dl,
+pre,
+address,
+fieldset,
+figure {
+    margin: 0 0 var(--cui-spacing) 0;
+}
+
+* + p,
+* + ul,
+* + ol,
+* + dl,
+* + pre,
+* + address,
+* + fieldset,
+* + figure {
+    margin-top: var(--cui-spacing-half);
+}
+
+ul, ol {
+    margin: 0;
+    padding-left: var(--cui-spacing);
+
+    &.list {
+        @include list-unstyled;
+    }
+    &.list--inline {
+        display: inline-flex;
+
+        li + li {
+            margin-left: var(--cui-spacing-half);
+        }
+    }
+    &.list--loose {
+        li + li {
+            margin-left: var(--cui-spacing);
+        }
+    }
+}
+
+.lead {
+    font-size: var(--cui-font-size-lg);
+    margin-top: var(--cui-spacing-half);
+}
+
+hr {
+    border-bottom: var(--cui-border);
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-color: var(--cui-border-color);
+    margin: var(--cui-spacing) 0;
+}
+
+img.img {
+    &--fluid {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}
+
+pre {
+    margin: 0;
+    white-space: pre-wrap;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+input,
+select,
+textarea,
+button {
+    color: var(--cui-font-color);
+    font-size: var(--cui-font-size);
+    font-family: var(--cui-font-stack);
+    font-weight: inherit;
+}
+
+iframe {
+  	width: 100%;
+  	height: 100%;
+  	border: var(--cui-border);
+  	margin: var(--cui-spacing-half) 0;
+  	display: inline-block;
+}
+
+.content {
+    flex: 1;
+    overflow: hidden;
+    min-height: 100vh;
+    -webkit-overflow-scrolling: touch; // Enable momentum scrolling on touch devices
+
+    &.content--alt {
+        background-color: var(--cui-background-alt);
+    }
+}
+
+.container,
+.container-fluid {
+    padding-right: var(--cui-spacing);
+    padding-left: var(--cui-spacing);
+
+    @include media-breakpoint-down(md) {
+        padding-right: var(--cui-spacing-half);
+        padding-left: var(--cui-spacing-half);
+    }
+}
+.container {
+    max-width: var(--cui-default-page-width);
+}
+.container-fluid {
+    max-width: var(--cui-max-page-width);
+}
+
+.section {
+    @include clearfix;
+    padding-left: 0;
+    padding-right: 0;
+
+    @include section-padding();
+
+    &.section--compressed {
+        @include section-padding(var(--cui-spacing-qtr));
+    }
+    &.section--loose {
+        @include section-padding(var(--cui-spacing-dbl));
+    }
+    + .section {
+        padding-top: 0;
+    }
+}
+
+
+//
+// Downloads
+//
+// Styleguide Downloads
+//
+
+//
+// Changelog
+//
+// Styleguide Changelog
+//

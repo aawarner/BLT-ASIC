@@ -1,0 +1,190 @@
+//
+// Accordion
+//
+// Add the class `active` to an accordion item to toggle display of the content.
+//
+// Styleguide Components.Accordion
+//
+
+
+//
+// Structure
+//
+// Markup:
+// <div class="row">
+//     <div class="col-lg-6">
+//         <div class="base-margin-bottom">
+//             <div class="subheader">Basic</div>
+//             <ul class="accordion">
+//                 <li class="active">
+//                     <a class="accordion__title" href="javascript:;">Item 1</a>
+//                     <div class="accordion__content">
+//                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus gravida posuere tellus, eu congue nunc.</p>
+//                     </div>
+//                 </li>
+//                 <li>
+//                     <a class="accordion__title" href="javascript:;">Item 2</a>
+//                     <div class="accordion__content">
+//                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus gravida posuere tellus, eu congue nunc.</p>
+//                     </div>
+//                 </li>
+//                 <li>
+//                     <a class="accordion__title" href="javascript:;">Item 3</a>
+//                     <div class="accordion__content">
+//                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus gravida posuere tellus, eu congue nunc.</p>
+//                     </div>
+//                 </li>
+//             </ul>
+//         </div>
+//     </div>
+//     <div class="col-lg-6">
+//         <div class="base-margin-bottom">
+//             <div class="subheader">With Toggles</div>
+//             <ul class="accordion">
+//                 <li>
+//                     <a class="accordion__title" href="javascript:;">
+//                         <span>Item 1</span>
+//                         <span class="accordion__toggle icon-chevron-down"></span>
+//                     </a>
+//                     <div class="accordion__content">
+//                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus gravida posuere tellus, eu congue nunc.</p>
+//                     </div>
+//                 </li>
+//                 <li>
+//                     <a class="accordion__title" href="javascript:;">
+//                         <span>Item 2</span>
+//                         <span class="accordion__toggle icon-chevron-down"></span>
+//                     </a>
+//                     <div class="accordion__content">
+//                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus gravida posuere tellus, eu congue nunc.</p>
+//                     </div>
+//                 </li>
+//                 <li>
+//                     <a class="accordion__title" href="javascript:;">
+//                         <span>Item 3</span>
+//                         <span class="accordion__toggle icon-chevron-down"></span>
+//                     </a>
+//                     <div class="accordion__content">
+//                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus gravida posuere tellus, eu congue nunc.</p>
+//                     </div>
+//                 </li>
+//             </ul>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 1
+//
+// Styleguide Components.Accordion.Structure
+//
+
+//
+// Bordered
+//
+// Markup:
+// <div class="row">
+//     <div class="col-lg-6">
+//         <div class="base-margin-bottom">
+//             <ul class="accordion accordion--bordered">
+//                 <li class="active">
+//                     <a class="accordion__title" href="javascript:;">
+//                         <span>Item 1</span>
+//                         <span class="accordion__toggle icon-chevron-down"></span>
+//                     </a>
+//                     <div class="accordion__content">
+//                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus gravida posuere tellus, eu congue nunc.</p>
+//                     </div>
+//                 </li>
+//                 <li>
+//                     <a class="accordion__title" href="javascript:;">
+//                         <span>Item 2</span>
+//                         <span class="accordion__toggle icon-chevron-down"></span>
+//                     </a>
+//                     <div class="accordion__content">
+//                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus gravida posuere tellus, eu congue nunc.</p>
+//                     </div>
+//                 </li>
+//                 <li>
+//                     <a class="accordion__title" href="javascript:;">
+//                         <span>Item 3</span>
+//                         <span class="accordion__toggle icon-chevron-down"></span>
+//                     </a>
+//                     <div class="accordion__content">
+//                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus gravida posuere tellus, eu congue nunc.</p>
+//                     </div>
+//                 </li>
+//             </ul>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 2
+//
+// Styleguide Components.Accordion.Bordered
+//
+
+.accordion {
+
+    @include list-unstyled;
+    padding: 0;
+
+    &.accordion--bordered {
+        .accordion__title {
+            border-bottom: var(--cui-border);
+        }
+    }
+
+    > li {
+        display: flex;
+        flex-direction: column;
+
+        > a {
+            text-decoration: none;
+        }
+
+        &.active {
+            .accordion__title {
+                color: var(--cui-active-color);
+
+                .accordion__toggle {
+                    @include drawer-opened;
+                }
+            }
+            .accordion__content {
+                max-height: 80em;
+                opacity: 1;
+                transition: visibility 0s ease, max-height 2s ease, opacity 2s ease;
+                transition-delay: 0s;
+                visibility: visible;
+            }
+        }
+        a.accordion__title {
+            display: inline-flex;
+            justify-content: space-between;
+            color: var(--cui-inactive-color);
+            padding: var(--cui-spacing-qtr) 0;
+
+            &:hover,
+            &:focus {
+                text-decoration: none;
+                color: var(--cui-active-color);
+            }
+            font-size: var(--cui-accordion-title-font-size);
+
+            .accordion__toggle {
+                align-self: center;
+                font-size: var(--cui-accordion-icon-font-size);
+                justify-content: flex-end;
+                @include drawer-closed;
+            }
+        }
+        .accordion__content {
+            max-height: 0;
+            margin-top: var(--cui-spacing-half);
+            opacity: 0;
+            overflow: hidden;
+            visibility: hidden;
+            transition: visibility 2s ease, max-height .5s ease, opacity 1s ease;
+        }
+    }
+}

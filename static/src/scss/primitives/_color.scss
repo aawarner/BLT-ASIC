@@ -1,0 +1,95 @@
+//
+// Palette
+//
+// Styleguide Design.Palette
+//
+
+//
+// Brand
+//
+// Markup:
+// <div id="brand-colors"></div>
+//
+// Weight: 1
+//
+// Styleguide Design.Palette.Brand
+//
+
+
+//
+// Theme
+//
+// Markup:
+// <div id="theme-colors"></div>
+//
+// Weight: 2
+//
+// Styleguide Design.Palette.Theme
+//
+
+
+//
+// Grayscale
+//
+// Markup:
+// <div id="gray-colors"></div>
+//
+// Weight: 3
+//
+// Styleguide Design.Palette.Grayscale
+//
+
+
+//
+// Status
+//
+// Markup:
+// <div id="status-colors"></div>
+//
+// Weight: 4
+//
+// Styleguide Design.Palette.Status
+//
+
+
+//
+// Misc
+//
+// Markup:
+// <div id="misc-colors"></div>
+//
+// Weight: 5
+//
+// Styleguide Design.Palette.Misc
+//
+
+.swatch {
+    color: var(--cui-font-color);
+    cursor: pointer;
+    display: inline-flex;
+    flex-direction: column;
+    margin: 0 var(--cui-spacing) var(--cui-spacing) 0;
+    justify-content: center;
+
+    &:hover, &:active, &:focus {
+        .swatch__color {
+            transform: scale(1.1);
+            z-index: 2;
+        }
+    }
+
+    .swatch__color {
+        border-radius: 50px;
+        padding: var(--cui-spacing-half);
+        width: 50px;
+        height: 100px;
+        transition: all 0.25s ease;
+        transform: scale(1);
+        z-index: 1;
+    }
+    .swatch__title {
+        font-weight: bold;
+        text-transform: capitalize;
+        margin-top: var(--cui-spacing-half);
+    }
+}

@@ -1,0 +1,322 @@
+//
+// Header
+//
+// Styleguide Layout.Header
+//
+
+//
+// Basic
+//
+// Markup:
+// <header class="header">
+//     <div class="container">
+//         <div class="header-panels">
+//             <div class="header-panel">
+//                 <a class="header__logo" href="http://www.cisco.com" target="_blank">
+//                     <span class="icon-cisco"></span>
+//                         </a>
+//                 <div class="header__title">Your App Title</div>
+//             </div>
+//             <div class="header-panel header-panel--right">
+//                 <a class="header-item">Link 1</a>
+//                 <a class="header-item">Link 2</a>
+//                 <a class="header-item">Link 3</a>
+//             </div>
+//         </div>
+//     </div>
+// </header>
+//
+// Weight: 1
+//
+// Styleguide Layout.Header.Basic
+//
+
+
+//
+// Tabs
+//
+// Markup:
+// <div class="subheader">Centered</div>
+// <header class="header">
+//     <div class="container">
+//         <div class="header-panels">
+//             <div class="header-panel">
+//                 <a class="header__logo" href="http://www.cisco.com" target="_blank">
+//                     <span class="icon-cisco"></span>
+//                 </a>
+//                 <div class="header__title">Your App Title</div>
+//             </div>
+//             <div class="header-panel header-panel--center">
+//                 <div class="header-item">
+//                     <ul id="tabsheader" class="tabs">
+//                         <li id="tabsheader-1" class="tab active">
+//                             <a tabindex="0">
+//                                 <div class="tab__heading">Tab 1</div>
+//                             </a>
+//                                 </li>
+//                         <li id="tabsheader-2" class="tab">
+//                             <a tabindex="0">
+//                                 <div class="tab__heading">Tab 2</div>
+//                             </a>
+//                         </li>
+//                         <li id="tabsheader-3" class="tab">
+//                             <a tabindex="0">
+//                                 <div class="tab__heading">Tab 3</div>
+//                             </a>
+//                         </li>
+//                     </ul>
+//                 </div>
+//             </div>
+//             <div class="header-panel header-panel--right">
+//                 <a class="header-item">
+//                     <span class="half-margin-right">Log Out</span>
+//                     <span class="icon-sign-out icon-size-20"></span>
+//                 </a>
+//             </div>
+//         </div>
+//     </div>
+// </header>
+// <div class="subheader base-padding-top">Right Aligned</div>
+// <header class="header">
+//     <div class="container">
+//         <div class="header-panels">
+//             <div class="header-panel">
+//                 <a class="header__logo" href="http://www.cisco.com" target="_blank">
+//                     <span class="icon-cisco"></span>
+//                 </a>
+//                 <div class="header__title">Your App Title</div>
+//             </div>
+//             <div class="header-panel header-panel--right">
+//                 <div class="header-item">
+//                     <ul id="tabsheader" class="tabs">
+//                         <li id="tabsheader-1" class="tab active">
+//                             <a tabindex="0">
+//                                 <div class="tab__heading">Tab 1</div>
+//                             </a>
+//                         </li>
+//                         <li id="tabsheader-2" class="tab">
+//                             <a tabindex="0">
+//                                 <div class="tab__heading">Tab 2</div>
+//                             </a>
+//                         </li>
+//                         <li id="tabsheader-3" class="tab">
+//                             <a tabindex="0">
+//                                 <div class="tab__heading">Tab 3</div>
+//                             </a>
+//                         </li>
+//                     </ul>
+//                 </div>
+//             </div>
+//         </div>
+//    </div>
+// </header>
+// <div class="subheader base-padding-top">Bordered</div>
+// <header class="header">
+//     <div class="container">
+//         <div class="header-panels">
+//             <div class="header-panel">
+//                 <a class="header__logo" href="http://www.cisco.com" target="_blank">
+//                     <span class="icon-cisco"></span>
+//                 </a>
+//                 <div class="header__title">Your App Title</div>
+//             </div>
+//             <div class="header-panel header-panel--right">
+//                 <div class="header-item">
+//                     <ul id="tabsheader" class="tabs tabs--bordered">
+//                         <li id="tabsheader-1" class="tab active">
+//                             <a tabindex="0">
+//                                 <div class="tab__heading">Tab 1</div>
+//                             </a>
+//                         </li>
+//                         <li id="tabsheader-2" class="tab">
+//                             <a tabindex="0">
+//                                 <div class="tab__heading">Tab 2</div>
+//                             </a>
+//                         </li>
+//                         <li id="tabsheader-3" class="tab">
+//                             <a tabindex="0">
+//                                 <div class="tab__heading">Tab 3</div>
+//                             </a>
+//                         </li>
+//                     </ul>
+//                 </div>
+//             </div>
+//         </div>
+//     </div>
+// </header>
+//
+// Weight: 2
+//
+// Styleguide Layout.Header.Tabs
+//
+
+
+//
+// Search
+//
+// Markup:
+// <header class="header">
+//     <div class="container">
+//         <div class="header-panels">
+//             <div class="header-panel">
+//                 <a class="header__logo" href="http://www.cisco.com" target="_blank">
+//                     <span class="icon-cisco"></span>
+//                 </a>
+//                 <div class="header__title">Your App Title</div>
+//             </div>
+//             <div class="header-panel header-panel--center">
+//                 <div class="form-group form-group--inline input--icon">
+//                     <div class="form-group__text">
+//                         <input type="search" placeholder="Search products, docs, cases and more" style="width:320px">
+//                         <button type="button" class="link" tabindex="-1">
+//                             <span class="icon-search"></span>
+//                         </button>
+//                     </div>
+//                 </div>
+//             </div>
+//             <div class="header-panel header-panel--right">
+//                 <a class="header-item">
+//                     <span class="icon-communities icon-size-20"></span>
+//                     <span class="qtr-margin-left">Communities</span>
+//                 </a>
+//                 <a class="header-item">
+//                     <span class="icon-learning icon-size-20"></span>
+//                     <span class="qtr-margin-left">Learning</span>
+//                 </a>
+//                 <div class="header-item dropdown dropdown--left">
+//                     <a>
+//                         <img src="public/img/user-photo-thumb-1.png" style="width:30px;height:30px;">
+//                     </a>
+//                     <div class="dropdown__menu">
+//                         <a>View my Profile</a>
+//                         <a>Manage My Cases</a>
+//                         <a>Contact Cisco</a>
+//                     </div>
+//                 </div>
+//             </div>
+//         </div>
+//     </div>
+// </header>
+//
+// Weight: 3
+//
+// Styleguide Layout.Header.Search
+//
+
+.header {
+    display: flex;
+    position: fixed;
+    top: 0;
+    align-items: center;
+    background: var(--cui-header-background);
+    border-bottom: var(--cui-header-border-bottom);
+    height: var(--cui-header-height);
+    overflow: visible; // To accommodate dropdowns
+    width: 100%;
+    z-index: var(--cui-header-zindex);
+
+
+    ~ .content {
+        padding-top: var(--cui-header-height);
+    }
+
+    // Search input in header should be pill-shaped and have a background
+    input[type="search"] {
+        border-radius: 50px;
+        background-color: var(--cui-background-alt);
+        border: none;
+    }
+
+    // Tabs in the header should not have a border along bottom edge
+    .tabs {
+        box-shadow: none;
+        margin-top: -3px;
+    }
+    .tabs.tabs--bordered {
+        margin-top: 7px;
+    }
+
+    // Dropdown menus in the header should align to bottom of header
+    .dropdown .dropdown__menu {
+        top: calc(100% + 13px);
+    }
+
+    .header__toggle {
+        color: var(--cui-inactive-color);
+        font-size: var(--cui-header-toggle-font-size);
+        margin-right: var(--cui-header-item-spacing);
+        position: absolute;
+        left: var(--cui-header-item-spacing);
+    }
+    .header__logo {
+        span.icon-cisco {
+            color: var(--cui-accent-color);
+            font-size: var(--cui-header-logo-font-size);
+        }
+    }
+    .header__logo + .header__title {
+        margin-left: var(--cui-header-item-spacing);
+    }
+    .header__title {
+        @include text-ellipsis;
+        margin: 0 auto 0 0;
+        font-size: var(--cui-header-title-font-size);
+        font-weight: var(--cui-header-title-font-weight);
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    // Backwards Compatibility
+    // TODO Deprecated. Use the simple header instead
+    .header-bar {
+        > * {
+            display: none;
+        }
+        &:before {
+            @include deprecated('Full Header pattern deprecated. Use the simple header instead');
+        }
+    }
+}
+
+.header-panels {
+    display: inline-flex;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+
+    .header-panel {
+        display: inline-flex;
+        align-items: center;
+        flex: 1;
+
+        &.header-panel--center {
+            justify-content: center;
+        }
+        &.header-panel--right {
+            justify-content: flex-end;
+        }
+
+        div.dropdown > a,
+        a.header-item {
+            color: var(--cui-inactive-color);
+            &:hover, &:focus {
+                color: var(--cui-active-color);
+            }
+        }
+        .header-item {
+            text-decoration: none;
+            &:hover {
+                text-decoration: none;
+            }
+            + .header-item {
+                margin-left: var(--cui-header-item-spacing);
+            }
+        }
+        .separator {
+            @include vertical-divider;
+        }
+    }
+}

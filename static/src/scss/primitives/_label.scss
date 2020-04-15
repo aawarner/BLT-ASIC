@@ -1,0 +1,214 @@
+//
+// Label
+//
+// Styleguide Primitives.Label
+//
+
+
+//
+// Size
+//
+// Markup:
+// <span class="label label--tiny">tiny</span>
+// <span class="label label--small">small</span>
+// <span class="label">default</span>
+// <span class="label label--large">large</span>
+//
+// Weight: 1
+//
+// Styleguide Primitives.Label.Size
+//
+
+
+//
+// Color
+//
+// Markup:
+// <span class="label label--primary">primary</span>
+// <span class="label label--secondary">secondary</span>
+// <span class="label label--tertiary">tertiary</span>
+// <span class="label label--success">success</span>
+// <span class="label label--info">info</span>
+// <span class="label label--warning-alt">warning-alt</span>
+// <span class="label label--warning">warning</span>
+// <span class="label label--danger">danger</span>
+// <span class="label label--dark">dark</span>
+// <span class="label label--light">light</span>
+//
+// Weight: 2
+//
+// Styleguide Primitives.Label.Color
+//
+
+
+//
+// Bordered
+//
+// Markup:
+// <span class="label label--primary label--bordered">primary</span>
+// <span class="label label--secondary label--bordered">secondary</span>
+// <span class="label label--tertiary label--bordered">tertiary</span>
+// <span class="label label--success label--bordered">success</span>
+// <span class="label label--info label--bordered">info</span>
+// <span class="label label--warning-alt label--bordered">warning-alt</span>
+// <span class="label label--warning label--bordered">warning</span>
+// <span class="label label--danger label--bordered">danger</span>
+// <span class="label label--dark label--bordered">dark</span>
+// <span class="label label--light label--bordered">light</span>
+//
+// Weight: 3
+//
+// Styleguide Primitives.Label.Bordered
+//
+
+
+//
+// Removable
+//
+// Markup:
+// <span class="label label--primary">
+//     <span>primary</span>
+//     <span class="icon-close"></span>
+// </span>
+// <span class="label label--secondary">
+//     <span>secondary</span>
+//     <span class="icon-close"></span>
+// </span>
+// <span class="label label--tertiary">
+//     <span>tertiary</span>
+//     <span class="icon-close"></span>
+// </span>
+// <span class="label label--success">
+//     <span>success</span>
+//     <span class="icon-close"></span>
+// </span>
+// <span class="label label--info">
+//     <span>info</span>
+//     <span class="icon-close"></span>
+// </span>
+// <span class="label label--warning-alt">
+//     <span>warning-alt</span>
+//     <span class="icon-close"></span>
+// </span>
+// <span class="label label--warning">
+//     <span>warning</span>
+//     <span class="icon-close"></span>
+// </span>
+// <span class="label label--danger">
+//     <span>danger</span>
+//     <span class="icon-close"></span>
+// </span>
+// <span class="label label--dark">
+//     <span>dark</span>
+//     <span class="icon-close"></span>
+// </span>
+// <span class="label label--light">
+//     <span>light</span>
+//     <span class="icon-close"></span>
+// </span>
+//
+// Weight: 4
+//
+// Styleguide Primitives.Label.Removable
+//
+
+
+//
+// Raised
+//
+// Markup:
+// <span class="label label--primary label--raised">primary</span>
+// <span class="label label--secondary label--raised">secondary</span>
+// <span class="label label--tertiary label--raised">tertiary</span>
+// <span class="label label--success label--raised">success</span>
+// <span class="label label--info label--raised">info</span>
+// <span class="label label--warning-alt label--raised">warning-alt</span>
+// <span class="label label--warning label--raised">warning</span>
+// <span class="label label--danger label--raised">danger</span>
+// <span class="label label--dark label--raised">dark</span>
+// <span class="label label--light label--raised">light</span>
+//
+// Weight: 5
+//
+// Styleguide Primitives.Label.Raised
+//
+
+@mixin build-label-size(
+    $height: var(--cui-label-default-height),
+    $padding: var(--cui-label-default-padding),
+    $font-size: var(--cui-label-default-font-size)
+) {
+    height: $height;
+    padding: $padding;
+    font-size: $font-size;
+}
+
+@mixin build-label-style(
+    $bg: var(--cui-theme-primary),
+    $color: var(--cui-theme-primary-color),
+    $border-color: var(--cui-theme-primary),
+    $border-width: var(--cui-label-border-thickness)
+) {
+    background-color: $bg;
+    border: $border-width solid $border-color;
+    color: $color;
+
+    .icon-close {
+        color: $color;
+        cursor: pointer;
+        font-size: var(--cui-font-size-xs);
+        font-weight: bold;
+        margin-left: var(--cui-spacing-qtr);
+
+        &:hover {
+            opacity: 1;
+            text-decoration: none;
+        }
+    }
+}
+
+.label {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    border-width: var(--cui-label-border-thickness);
+    border-radius: var(--cui-border-radius);
+    border-style: solid;
+    font-weight: var(--cui-label-font-weight);
+
+    + .label {
+        margin-bottom: var(--cui-spacing-qtr);
+    }
+
+    @each $name, $value in $cui-label-sizes {
+        @if $name == "default" {
+            @include build-label-size($value...);
+        } @else {
+            &.label--#{$name} {
+                @include build-label-size($value...);
+            }
+        }
+    }
+
+    @include build-label-style();
+    @each $name, $color in $cui-theme-colors {
+        &.label--#{$name} {
+            @include build-label-style(
+                $bg: var(--cui-theme-#{$name}),
+                $color: var(--cui-theme-#{$name}-color),
+                $border-color: var(--cui-theme-#{$name}),
+                $border-width: var(--cui-label-border-thickness)
+            );
+        }
+    }
+
+    &.label--bordered,
+    &.label--outlined {
+        background-color: transparent;
+        color: var(--cui-font-color);
+    }
+
+    &.label--raised {
+        box-shadow: var(--cui-shadow-outset);
+    }
+}

@@ -1,0 +1,124 @@
+//
+// Toast
+//
+// Styleguide Components.Toast
+//
+
+
+//
+// Structure
+//
+// Markup:
+// <div class="row">
+//     <div class="col-md-4">
+//         <div class="subheader">No Icon</div>
+//         <div class="toast">
+//             <div class="toast__body">
+//                 <div class="toast__title">Title</div>
+//                 <div class="toast__message">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
+//             </div>
+//         </div>
+//     </div>
+//     <div class="col-md-4">
+//         <div class="subheader">With Icon</div>
+//         <div class="toast">
+//             <div class="toast__icon text-info icon-info-outline"></div>
+//             <div class="toast__body">
+//                 <div class="toast__title">Title</div>
+//                 <div class="toast__message">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
+//             </div>
+//         </div>
+//     </div>
+//     <div class="col-md-4">
+//         <div class="subheader">Dismissable</div>
+//         <div class="toast toast--loose">
+//             <div class="toast__icon text-info icon-info-outline"></div>
+//             <div class="toast__body">
+//                 <div class="toast__title">Title</div>
+//                 <div class="toast__message">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
+//             </div>
+//             <a href="javascript:;" class="toast__close icon-close"></a>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 1
+//
+// Styleguide Components.Toast.Structure
+//
+
+
+//
+// Examples
+//
+// Markup:
+// <div class="row">
+//     <div class="col-md-4">
+//         <div class="toast">
+//             <div class="toast__icon text-success icon-check-outline"></div>
+//             <div class="toast__body">
+//                 <div class="toast__title">Upload Complete</div>
+//                 <div class="toast__message">Successfully uploaded file <span class="text-muted">cfg_449021_cat.pkg</span> 297kb</div>
+//             </div>
+//         </div>
+//     </div>
+//     <div class="col-md-4">
+//         <div class="toast">
+//             <div class="toast__icon text-danger icon-error-outline"></div>
+//             <div class="toast__body">
+//                 <div class="toast__title">Operation Failed</div>
+//                 <div class="toast__message">Failed to add device <a>SJ-33998-Lab4-Rack1</a> to inventory. Maximum device limit reached. <br><br> Click <a href="http://www.cisco.com" target="_blank">here</a> for more details</div>
+//             </div>
+//         </div>
+//     </div>
+//     <div class="col-md-4">
+//         <div class="toast">
+//             <div class="toast__icon text-muted icon-alert"></div>
+//             <div class="toast__body">
+//                 <div class="toast__title">Long Message Truncated</div>
+//                 <div class="toast__message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt purus mauris. Nam massa sem, ullamcorper vitae leo sit amet, elementum elementum magna. Maecenas lacinia sollicitudin turpis, eu pulvinar justo blandit id. Etiam nulla quam, viverra nec metus ...</div>
+//             </div>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 2
+//
+// Styleguide Components.Toast.Examples
+//
+
+.toast {
+    display: flex;
+    position: relative;
+    max-width: var(--cui-toast-max-width);
+    background-color: var(--cui-toast-background);
+    border-radius: var(--cui-border-radius);
+    box-shadow: var(--cui-shadow-outset-lg);
+    padding: var(--cui-toast-padding);
+    z-index: var(--cui-toast-zindex);
+
+    .toast__icon,
+    .toast__close,
+    .toast__message {
+        align-self: flex-start;
+    }
+    .toast__close {
+        color: var(--cui-inactive-color);
+        font-size: var(--cui-toast-close-icon-size);
+        line-height: 1;
+        padding-left: var(--cui-toast-padding);
+
+        &:hover {
+            color: var(--cui-active-color);
+            text-decoration: none;
+        }
+    }
+    .toast__icon {
+        font-size: var(--cui-toast-icon-size);
+        line-height: 1;
+        padding-right: var(--cui-toast-padding);
+    }
+    .toast__title {
+        font-weight: bold;
+    }
+}

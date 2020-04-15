@@ -1,0 +1,120 @@
+::placeholder {
+    color: var(--cui-inactive-color);
+}
+
+.form-group {
+
+    margin: 0;
+    padding: 0;
+    line-height: var(--cui-form-line-height);
+
+    // Help and Action Blocks
+    .help-block,
+    .form-group__help {
+        display: block;
+        text-align: right;
+        text-transform: var(--cui-form-help-transform);
+        color: var(--cui-inactive-color);
+        font-size: var(--cui-form-help-font-size);
+        margin-top: var(--cui-form-label-spacing);
+
+        span[class^="icon-"] + span {
+            margin-left: var(--cui-spacing-qtr);
+        }
+    }
+
+    // Modfifier - Errors
+    &.form-group--error .form-group__text {
+        @include cui-form-input-error;
+    }
+
+    // Inline forms
+    &.form-group--inline,
+    &.form-group--inline.dropdown {
+        display: inline-flex;
+        margin: 0;
+    }
+
+    // Horizontal forms
+    &.form-group--horizontal {
+        .form-group__text {
+            flex-direction: row;
+            label {
+                align-self: center;
+                padding-left: 0;
+            }
+        }
+    }
+
+    // Modifier - Inline Labels
+    &.form-group--inline .form-group__text,
+    &.form-group--inline .form-group__text.select {
+        flex-direction: row;
+        label {
+            align-self: center;
+            margin: 0 var(--cui-form-label-spacing) 0 0;
+        }
+    }
+
+    // Modifier - Icons
+    &.input--icon .form-group__text,
+    &.form-group--icon .form-group__text {
+        input {
+            padding-left: var(--cui-form-size);
+        }
+        input + button, label + button {
+            font-size: var(--cui-form-icon-size);
+            position: absolute;
+            display: inline-flex;
+            height: var(--cui-form-size);
+            width: var(--cui-form-size);
+            align-items: center;
+            justify-content: center;
+            bottom: 0;
+            padding: 0;
+            margin: 0;
+
+            &:hover,
+            &:active,
+            &:focus {
+                color: var(--cui-link-color);
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.form-group.dropdown {
+    display: block; // Dropdowns on form groups require block display
+}
+
+// Inline Form Group Spacing
+.form-group.form-group--inline.form-group--compressed +
+.form-group.form-group--inline.form-group--compressed {
+    margin: 0 0 0 var(--cui-spacing-half);
+}
+.form-group.form-group--inline +
+.form-group.form-group--inline {
+    margin: 0 0 0 var(--cui-spacing);
+}
+.form-group.form-group--inline.form-group--loose +
+.form-group.form-group--inline.form-group--loose {
+    margin: 0 0 0 var(--cui-spacing-dbl);
+}
+
+// Stacked Form Group Spacing
+.form-group.form-group--compressed + .form-group.form-group--compressed {
+    margin: var(--cui-spacing-half) 0 0 0;
+}
+.form-group + .form-group {
+    margin: var(--cui-spacing) 0 0 0;
+}
+.form-group.form-group--loose + .form-group.form-group--loose {
+    margin: var(--cui-spacing-dbl) 0 0 0;
+}
+
+
+// No margins if form group wrapped within a col class
+.form-group + .form-group[class*='col-'] {
+    margin: 0;
+}

@@ -1,0 +1,321 @@
+//
+// Radio
+//
+// Styleguide Primitives.Radio
+//
+
+
+//
+// States
+//
+// Markup:
+// <div class="row">
+//     <div class="col-lg-2 col-md-4 col-6">
+//         <div class="subheader">Enabled On</div>
+//         <label class="radio">
+//             <input type="radio" checked>
+//             <span class="radio__input"></span>
+//         </label>
+//     </div>
+//     <div class="col-lg-2 col-md-4 col-6">
+//         <div class="subheader">Disabled On</div>
+//         <label class="radio disabled">
+//             <input type="radio" checked>
+//             <span class="radio__input"></span>
+//         </label>
+//     </div>
+//     <div class="col-lg-2 col-md-4 col-6">
+//         <div class="subheader">Hover On</div>
+//         <label class="radio">
+//             <input type="radio" checked class="hover">
+//             <span class="radio__input"></span>
+//         </label>
+//     </div>
+//     <div class="col-lg-2 col-md-4 col-6">
+//         <div class="subheader">Focus On</div>
+//         <label class="radio">
+//             <input type="radio" checked class="focus">
+//             <span class="radio__input"></span>
+//         </label>
+//     </div>
+//     <div class="col-lg-2 col-md-4 col-6">
+//         <div class="subheader">Pressed On</div>
+//         <label class="radio">
+//             <input type="radio" checked class="active">
+//             <span class="radio__input"></span>
+//         </label>
+//     </div>
+// </div>
+// <div class="row">
+//     <div class="col-lg-2 col-md-4 col-6">
+//         <div class="subheader">Enabled Off</div>
+//         <label class="radio">
+//             <input type="radio">
+//             <span class="radio__input"></span>
+//         </label>
+//     </div>
+//     <div class="col-lg-2 col-md-4 col-6">
+//         <div class="subheader">Disabled Off</div>
+//         <label class="radio disabled">
+//             <input type="radio">
+//             <span class="radio__input"></span>
+//         </label>
+//     </div>
+//     <div class="col-lg-2 col-md-4 col-6">
+//         <div class="subheader">Hover Off</div>
+//         <label class="radio">
+//             <input type="radio" class="hover">
+//             <span class="radio__input"></span>
+//         </label>
+//     </div>
+//     <div class="col-lg-2 col-md-4 col-6">
+//         <div class="subheader">Focus Off</div>
+//         <label class="radio">
+//             <input type="radio" class="focus">
+//             <span class="radio__input"></span>
+//         </label>
+//     </div>
+//     <div class="col-lg-2 col-md-4 col-6">
+//         <div class="subheader">Pressed Off</div>
+//         <label class="radio">
+//             <input type="radio" class="active">
+//             <span class="radio__input"></span>
+//         </label>
+//     </div>
+// </div>
+//
+// Weight: 1
+//
+// Styleguide Primitives.Radio.States
+//
+
+
+//
+// Layout
+//
+// Radio elements are stacked by default. Add the form group modifier `form-group--inline` to align them horizontally.
+//
+// Markup:
+// <div class="row">
+//     <div class="col-lg-3 col-6">
+//         <div class="subheader">Stacked (default)</div>
+//         <div class="form-group">
+//             <label class="radio">
+//                 <input type="radio" name="radio-stacked" checked>
+//                 <span class="radio__input"></span>
+//                 <span class="radio__label">One</span>
+//             </label>
+//         </div>
+//         <div class="form-group">
+//             <label class="radio">
+//                 <input type="radio" name="radio-stacked">
+//                 <span class="radio__input"></span>
+//                 <span class="radio__label">Two</span>
+//             </label>
+//         </div>
+//         <div class="form-group">
+//             <label class="radio">
+//                 <input type="radio" name="radio-stacked">
+//                 <span class="radio__input"></span>
+//                 <span class="radio__label">Three</span>
+//             </label>
+//         </div>
+//     </div>
+//     <div class="col-lg-3 col-6">
+//         <div class="subheader">Inline</div>
+//         <div class="form-group form-group--inline">
+//             <label class="radio">
+//                 <input type="radio" checked name="radio-inline">
+//                 <span class="radio__input"></span>
+//                 <span class="radio__label">One</span>
+//             </label>
+//         </div>
+//         <div class="form-group form-group--inline">
+//             <label class="radio">
+//                 <input type="radio" name="radio-inline">
+//                 <span class="radio__input"></span>
+//                 <span class="radio__label">Two</span>
+//             </label>
+//         </div>
+//         <div class="form-group form-group--inline">
+//             <label class="radio">
+//                 <input type="radio" name="radio-inline">
+//                 <span class="radio__input"></span>
+//                 <span class="radio__label">Three</span>
+//             </label>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 2
+//
+// Styleguide Primitives.Radio.Layout
+//
+
+
+//
+// Spacing
+//
+// Wrap your radio elements in a `form-group` to control spacing. This applies to both inline and stacked radio elements.
+//
+// Markup:
+// <div class="row no-gutters">
+//     <div class="col-lg-4 col-6">
+//         <div class="subheader">Compressed</div>
+//         <div class="form-group form-group--inline form-group--compressed">
+//             <label class="radio">
+//                 <input type="radio" checked name="radio-compressed">
+//                 <span class="radio__input"></span>
+//                 <span class="radio__label">One</span>
+//             </label>
+//         </div>
+//         <div class="form-group form-group--inline form-group--compressed">
+//             <label class="radio">
+//                 <input type="radio" name="radio-compressed">
+//                 <span class="radio__input"></span>
+//                 <span class="radio__label">Two</span>
+//             </label>
+//         </div>
+//         <div class="form-group form-group--inline form-group--compressed">
+//             <label class="radio">
+//                 <input type="radio" name="radio-compressed">
+//                 <span class="radio__input"></span>
+//                 <span class="radio__label">Three</span>
+//             </label>
+//         </div>
+//     </div>
+//     <div class="col-lg-4 col-6">
+//         <div class="subheader">Default</div>
+//         <div class="form-group form-group--inline">
+//             <label class="radio">
+//                 <input type="radio" checked name="radio-default">
+//                 <span class="radio__input"></span>
+//                 <span class="radio__label">One</span>
+//             </label>
+//         </div>
+//         <div class="form-group form-group--inline">
+//             <label class="radio">
+//                 <input type="radio" name="radio-default">
+//                 <span class="radio__input"></span>
+//                 <span class="radio__label">Two</span>
+//             </label>
+//         </div>
+//         <div class="form-group form-group--inline">
+//             <label class="radio">
+//                 <input type="radio" name="radio-default">
+//                 <span class="radio__input"></span>
+//                 <span class="radio__label">Three</span>
+//             </label>
+//         </div>
+//     </div>
+//     <div class="col-lg-4 col-6">
+//         <div class="subheader">Loose</div>
+//         <div class="form-group form-group--inline form-group--loose">
+//             <label class="radio">
+//                 <input type="radio" checked name="radio-loose">
+//                 <span class="radio__input"></span>
+//                 <span class="radio__label">One</span>
+//             </label>
+//         </div>
+//         <div class="form-group form-group--inline form-group--loose">
+//             <label class="radio">
+//                 <input type="radio" name="radio-loose">
+//                 <span class="radio__input"></span>
+//                 <span class="radio__label">Two</span>
+//             </label>
+//         </div>
+//         <div class="form-group form-group--inline form-group--loose">
+//             <label class="radio">
+//                 <input type="radio" name="radio-loose">
+//                 <span class="radio__input"></span>
+//                 <span class="radio__label">Three</span>
+//             </label>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 3
+//
+// Styleguide Primitives.Radio.Spacing
+//
+
+.radio {
+    cursor: pointer;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+
+    input {
+        @include hidden-input;
+        width: var(--cui-radio-size);
+        height: var(--cui-radio-size);
+        font-weight: var(--cui-form-value-font-weight);
+        margin: 0;
+
+        // Radio states
+        &.hover, &:hover {
+            ~ .radio__input {
+                border: var(--cui-radio-border-hover);
+            }
+        }
+
+        &.checked, &:checked {
+            ~ .radio__input {
+                background-color: var(--cui-radio-background-active);
+                border: var(--cui-radio-border-active);
+            }
+            ~ .radio__input:after {
+                border-width: var(--cui-radio-knob-size);
+                opacity: 1;
+            }
+        }
+
+        &.focus, &:focus {
+            ~ .radio__input {
+                border: var(--cui-radio-border-active);
+            }
+            ~ .radio__input:before {
+                @include cui-focus-outline;
+            }
+        }
+
+        &.active, &:active {
+            ~ .radio__input {
+                background-color: var(--cui-radio-background-active);
+                border: var(--cui-radio-border-active);
+            }
+        }
+    }
+
+    .radio__input { // The actual radio button
+        position: relative;
+        display: inline-flex;
+        width: var(--cui-radio-size);
+        min-width: var(--cui-radio-size);
+        height: var(--cui-radio-size);
+        border: var(--cui-radio-border);
+        outline: var(--cui-radio-border-thickness) transparent; // For high contrast mode
+        border-radius: var(--cui-radio-border-radius);
+        background-color: var(--cui-radio-background);
+
+        &:before, &:after {
+            @include hidden-element;
+        }
+        &:before { // The focus element
+            border-radius: var(--cui-radio-border-radius);
+            transition: all .4s ease-in-out;
+        }
+        &:after { // The dot in the radio button
+            opacity: 0;
+            border-radius: var(--cui-radio-border-radius);
+            background-color: var(--cui-radio-knob-color);
+            border: 1px solid var(--cui-radio-knob-background);
+            transition: all .4s cubic-bezier(0.2, 0.8, 0.2, 1.2);
+        }
+    }
+
+    .radio__label {
+        @include cui-form-label;
+        margin-left: var(--cui-form-label-spacing);
+    }
+}

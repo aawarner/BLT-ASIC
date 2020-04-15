@@ -1,0 +1,535 @@
+/*
+================================================================================
+Cisco Brand UI Kit Default Theme
+--------------------------------------------------------------------------------
+*/
+
+html {
+    /* 1rem = 10px (see https://snook.ca/archives/html_and_css/font-size-with-rem)*/
+    --cui-html-font-size: 62.5%;
+}
+
+body.cui {
+
+    /* Font */
+    --cui-font-size: 14px;
+    --cui-font-size-xs: 10px;
+    --cui-font-size-sm: 12px;
+    --cui-font-size-lg: 16px;
+
+    --cui-font-stack: 'CiscoSans', 'Arial', sans-serif;
+    --cui-font-mono-stack: Monaco, Inconsolata, Consolas, 'Courier New',
+        Courier, 'Lucida Console', monospace;
+    --cui-font-weight: 300;
+    --cui-header-height: 50px;
+    --cui-item-height: 34px;
+    --cui-line-height: 1.5;
+
+    /* Spacing */
+    --cui-spacing: 20px;
+    --cui-spacing-qtr: calc(var(--cui-spacing) * .25);
+    --cui-spacing-half: calc(var(--cui-spacing) * .5);
+    --cui-spacing-triqtr: calc(var(--cui-spacing) * .75);
+    --cui-spacing-dbl: calc(var(--cui-spacing) * 2);
+
+    /* Colors */
+    --cui-color-white: #ffffff;
+    --cui-color-gray-100: #f8f8f8;
+    --cui-color-gray-200: #f2f2f2;
+    --cui-color-gray-300: #dee2e6;
+    --cui-color-gray-400: #ced4da;
+    --cui-color-gray-500: #adb5bd;
+    --cui-color-gray-600: #6c757d;
+    --cui-color-gray-700: #495057;
+    --cui-color-gray-800: #343a40;
+    --cui-color-gray-900: #212529;
+    --cui-color-black: #000000;
+
+    --cui-color-danger: #e2231a;
+    --cui-color-info: #64bbe3;
+    --cui-color-midnight: #0d274d;
+    --cui-color-ocean: #1e4471;
+    --cui-color-sky: #00bceb;
+    --cui-color-sky-rgb: 0, 188, 235;
+    --cui-color-success: #6abf4b;
+    --cui-color-warning: #fbab18;
+    --cui-color-warning-alt: #eed202;
+    --cui-color-link: #0175a2;
+
+    --cui-color-dark: var(--cui-font-color);
+    --cui-color-light: var(--cui-color-white);
+
+    /* Theme */
+    --cui-theme-primary: var(--cui-color-sky);
+    --cui-theme-primary-darker: #00a3d2;
+    --cui-theme-primary-lighter: #1ad6ff;
+    --cui-theme-primary-color: var(--cui-color-dark);
+    --cui-theme-primary-rgb: 0, 188, 235;
+    --cui-theme-primary-link-decoration: none;
+
+    --cui-theme-secondary: var(--cui-color-ocean);
+    --cui-theme-secondary-darker: #052b58;
+    --cui-theme-secondary-lighter: #385e8b;
+    --cui-theme-secondary-color: var(--cui-color-light);
+    --cui-theme-secondary-rgb: 30, 68, 113;
+    --cui-theme-primary-link-decoration: none;
+
+    --cui-theme-tertiary: var(--cui-color-midnight);
+    --cui-theme-tertiary-darker: #000E34;
+    --cui-theme-tertiary-lighter: #274167;
+    --cui-theme-tertiary-color: var(--cui-color-light);
+    --cui-theme-tertiary-rgb: 13  39  77;
+    --cui-theme-tertiary-link-decoration: underline;
+
+    --cui-theme-success: var(--cui-color-success);
+    --cui-theme-success-darker: #51a632;
+    --cui-theme-success-lighter: #84d965;
+    --cui-theme-success-color: var(--cui-color-dark);
+    --cui-theme-success-rgb: 106, 191, 75;
+    --cui-theme-success-link-decoration: none;
+
+    --cui-theme-info: var(--cui-color-info);
+    --cui-theme-info-darker: #4BA2CA;
+    --cui-theme-info-lighter: #7ED5FD;
+    --cui-theme-info-color: var(--cui-color-dark);
+    --cui-theme-info-rgb: 100, 187, 227;
+    --cui-theme-info-link-decoration: none;
+
+    --cui-theme-warning-alt: var(--cui-color-warning-alt);
+    --cui-theme-warning-alt-darker: #d75d17;
+    --cui-theme-warning-alt-lighter: #f17630;
+    --cui-theme-warning-alt-color: var(--cui-color-dark);
+    --cui-theme-warning-alt-rgb: 239, 103, 25;
+    --cui-theme-warning-alt-link-decoration: underline;
+
+    --cui-theme-warning: var(--cui-color-warning);
+    --cui-theme-warning-darker: #E29200;
+    --cui-theme-warning-lighter: #FFC532;
+    --cui-theme-warning-color: var(--cui-color-dark);
+    --cui-theme-warning-rgb: 251, 171, 24;
+    --cui-theme-warning-link-decoration: underline;
+
+    --cui-theme-danger: var(--cui-color-danger);
+    --cui-theme-danger-darker: #C90A01;
+    --cui-theme-danger-lighter: #FC3D34;
+    --cui-theme-danger-color: var(--cui-color-light);
+    --cui-theme-danger-rgb: 226, 35, 26;
+    --cui-theme-danger-link-decoration: underline;
+
+    --cui-theme-dark: var(--cui-color-gray-700);
+    --cui-theme-dark-darker: #30373e;
+    --cui-theme-dark-lighter: #636a71;
+    --cui-theme-dark-color: var(--cui-color-light);
+    --cui-theme-dark-rgb: 88, 88, 91;
+    --cui-theme-dark-link-decoration: underline;
+
+    --cui-theme-light: var(--cui-color-gray-400);
+    --cui-theme-light-darker: var(--cui-color-gray-500);
+    --cui-theme-light-lighter: var(--cui-color-gray-300);
+    --cui-theme-light-color: var(--cui-color-dark);
+    --cui-theme-light-rgb: 206, 212, 218;
+    --cui-theme-light-link-decoration: none;
+
+    --cui-brand-colors: sky,midnight,ocean;
+    --cui-theme-colors: primary,secondary,tertiary,success,danger,warning-alt,warning,dark,light;
+    --cui-gray-colors: white,gray-100,gray-200,gray-300,gray-400,gray-500,gray-600,gray-700,gray-800,gray-900,black;
+    --cui-status-colors: success,info,warning,warning-alt,danger;
+    --cui-misc-colors: link;
+
+    /* Accent */
+    --cui-accent-color: var(--cui-color-sky);
+    --cui-accent-color-rgb: var(--cui-color-sky-rgb);
+    --cui-accent-thickness: 3px;
+
+    /* Backdrops and Backgrounds */
+    --cui-backdrop-color: var(--cui-color-gray-400);
+    --cui-backdrop-opacity: .5;
+    --cui-background-color: var(--cui-color-white);
+    --cui-background-active: var(--cui-color-gray-200);
+    --cui-background-inactive: var(--cui-color-gray-100);
+    --cui-background-alt: var(--cui-color-gray-200);
+    --cui-background-hover: var(--cui-color-gray-100);
+    --cui-background-selection: var(--cui-accent-color);
+    --cui-background-selected: var(--cui-color-gray-300);
+
+    /* Borders */
+    --cui-border-form-color: var(--cui-color-gray-500);
+    --cui-border-color: var(--cui-color-gray-300);
+    --cui-border-radius: 2px;
+    --cui-border-radius-round: 2rem;
+    --cui-border-thickness: 1px;
+    --cui-border: var(--cui-border-thickness) solid var(--cui-border-color);
+
+    /* Headings */
+    --cui-headings-line-height: 1.2;
+    --cui-headings-margin: var(--cui-spacing-half);
+
+    /* Shadows */
+    --cui-shadow-inset: inset 0 5px 10px -5px rgba(0,0,0,.25);
+    --cui-shadow-inset-sm: inset 0 2px 5px -2px rgba(0,0,0,.25);
+    --cui-shadow-inset-lg: inset 0 10px 20px -10px rgba(0,0,0,.25);
+    --cui-shadow-outset-color: rgba(0,0,0,.15);
+    --cui-shadow-outset: 0 5px 10px var(--cui-shadow-outset-color);
+    --cui-shadow-outset-sm: 0 2px 5px var(--cui-shadow-outset-color);
+    --cui-shadow-outset-lg: 0 10px 20px var(--cui-shadow-outset-color);
+
+    /* Sidebar */
+    --cui-sidebar-width: 270px;
+
+    /* Focus */
+    --cui-focus-opacity: .25;
+    --cui-focus-thickness: 3px;
+    --cui-focus-color: var(--cui-accent-color-rgb);
+
+    /* Font and Link Color */
+    --cui-font-color: var(--cui-color-gray-900);
+    --cui-active-color: var(--cui-font-color);
+    --cui-inactive-color: var(--cui-color-gray-700);
+    --cui-link-color: var(--cui-color-link);
+    --cui-link-color-active: var(--cui-color-ocean);
+    --cui-link-font-weight: normal;
+
+    /* Page Setup */
+    --cui-default-page-width: 1600px;
+    --cui-min-page-width: 320px;
+    --cui-max-page-width: 2560px;
+    --cui-max-zindex: 1000;
+}
+
+/* Accordion */
+body.cui .accordion {
+    --cui-accordion-icon-font-size: var(--cui-font-size);
+    --cui-accordion-title-font-size: 18px;
+}
+
+/* Alert */
+body.cui .alert {
+    --cui-alert-background-opacity: .1;
+    --cui-alert-close-icon-size: 20px;
+    --cui-alert-icon-size: 24px;
+    --cui-alert-margin: var(--cui-spacing-half) 0 var(--cui-spacing) 0;
+    --cui-alert-padding: var(--cui-spacing);
+}
+
+/* Badge */
+body.cui .badge {
+    --cui-badge-border-color: var(--cui-background-color);
+    --cui-badge-border-radius: var(--cui-border-radius-round);
+    --cui-badge-border-width: 3px;
+    --cui-badge-default-size: 20px;
+    --cui-badge-default-font-size: var(--cui-font-size-sm);
+    --cui-badge-font-weight: normal;
+    --cui-badge-max-width: calc(var(--cui-badge-default-size) * 2);
+    --cui-badge-padding: 0 3px;
+}
+
+/* Blockquote */
+body.cui blockquote,
+body.cui .blockquote {
+    --cui-blockquote-margin: var(--cui-spacing-half) 0 var(--cui-spacing) 0;
+    --cui-blockquote-default-position: left;
+    --cui-blockquote-default-padding: var(--cui-spacing-half);
+    --cui-blockquote-compressed-padding: var(--cui-spacing-qtr);
+    --cui-blockquote-regular-padding: var(--cui-blockquote-default-padding);
+    --cui-blockquote-loose-padding: var(--cui-spacing);
+}
+
+/* Breadcrumb */
+body.cui .breadcrumb {
+    --cui-breadcrumb-padding: 0 2px 0 6px;
+    --cui-breadcrumb-separator: '/\00a0';
+}
+
+/* Button */
+body.cui .btn {
+    --cui-button-border-radius: var(--cui-border-radius-round);
+    --cui-button-border-thickness: 1px;
+    --cui-button-font-weight: normal;
+    --cui-button-hover-opacity: .9;
+    --cui-button-spacing: var(--cui-spacing-half);
+    --cui-button-text-transform: none;
+    --cui-button-wide-padding: calc(var(--cui-spacing) * 3);
+    --cui-button-colors: primary, secondary, success, dark;
+}
+
+/* Checkbox */
+body.cui .checkbox {
+    --cui-checkbox-background: transparent;
+    --cui-checkbox-background-active: transparent;
+    --cui-checkbox-border-thickness: 1px;
+    --cui-checkbox-border: var(--cui-checkbox-border-thickness) solid var(--cui-border-form-color);
+    --cui-checkbox-border-active: var(--cui-checkbox-border-thickness) solid var(--cui-border-form-color);
+    --cui-checkbox-border-hover: var(--cui-checkbox-border-thickness) solid var(--cui-accent-color);
+    --cui-checkbox-border-radius: 0px;
+    --cui-checkbox-icon-color: var(--cui-accent-color);
+    --cui-checkbox-icon-size: var(--cui-font-size-sm);
+    --cui-checkbox-size: 18px;
+}
+
+/* Dropdown */
+body.cui .dropdown {
+    --cui-dropdown-zindex: 900;
+    --cui-dropdown-background-color: var(--cui-background-color);
+    --cui-dropdown-icon-selected: var(--cui-accent-color);
+    --cui-dropdown-max-height: 75vh;
+    --cui-dropdown-menu-min-width: 200px;
+    --cui-dropdown-menu-item-height: 35px;
+    --cui-dropdown-menu-item-padding: 0 var(--cui-spacing-dbl) 0 var(--cui-spacing-half);
+}
+
+/* Footer */
+body.cui .footer {
+    --cui-footer-padding: 15px var(--cui-spacing);
+}
+
+/* Form */
+body.cui .form-group,
+body.cui .checkbox,
+body.cui .radio,
+body.cui .select,
+body.cui .switch {
+    --cui-form-background: transparent;
+    --cui-form-icon-dropdown-font-size: var(--cui-font-size-xs);
+    --cui-form-help-font-size: 90%;
+    --cui-form-help-transform: none;
+    --cui-form-icon-size: var(--cui-font-size);
+    --cui-form-icon-yoffset: calc(calc(var(--cui-form-size) * .5) - (calc(var(--cui-form-icon-dropdown-font-size) * .5)));
+    --cui-form-label-color: var(--cui-inactive-color);
+    --cui-form-label-spacing: 5px;
+    --cui-form-label-transform: normal;
+    --cui-form-label-font-size: var(--cui-font-size);
+    --cui-form-label-font-weight: var(--cui-font-weight);
+    --cui-form-line-height: 1.2;
+    --cui-form-padding: var(--cui-spacing-half);
+    --cui-form-placeholder-font-size: var(--cui-font-size-sm);
+    --cui-form-size: 35px;
+    --cui-form-value-color: var(--cui-active-color);
+    --cui-form-value-font-weight: var(--cui-font-weight);
+}
+
+/* Gauge */
+body.cui .gauge {
+    --cui-gauge-background: var(--cui-background-color);
+    --cui-gauge-inset-border: 2px solid var(--cui-background-color);
+    --cui-gauge-inset-shadow: inset 0 0 0 1px var(--cui-border-color);
+}
+
+/* Header */
+body.cui .header {
+    --cui-header-background: var(--cui-background-color);
+    --cui-header-border-bottom: var(--cui-border);
+    --cui-header-logo-font-size: 2.4rem;
+    --cui-header-padding: 0 var(--cui-spacing);
+    --cui-header-title-font-size: 20px;
+    --cui-header-title-font-weight: 200;
+    --cui-header-toggle-font-size: 2rem;
+    --cui-header-item-spacing: var(--cui-spacing);
+    --cui-header-zindex: calc(var(--cui-max-zindex) + 1);
+}
+
+/* Label */
+body.cui .label {
+    --cui-label-border-thickness: 2px;
+    --cui-label-font-weight: normal;
+    --cui-label-default-height: 30px;
+    --cui-label-default-padding: 0px var(--cui-spacing-half);
+    --cui-label-default-font-size: var(--cui-font-size);
+    --cui-label-tiny-height: 18px;
+    --cui-label-tiny-padding: 0px var(--cui-spacing-qtr);
+    --cui-label-tiny-font-size: var(--cui-font-size-xs);
+    --cui-label-small-height: 24px;
+    --cui-label-small-padding: 0px var(--cui-spacing-qtr);
+    --cui-label-small-font-size: var(--cui-font-size-sm);
+    --cui-label-large-height: 40px;
+    --cui-label-large-padding: 0px var(--cui-spacing);
+    --cui-label-large-font-size: var(--cui-font-size-lg);
+}
+
+/* Loader */
+body.cui .loading-spinner,
+body.cui .loader {
+    --cui-loader-animation-speed: 1.1s;
+    --cui-loader-border-thickness: var(--cui-accent-thickness);
+    --cui-loader-border-color: var(--cui-border-color);
+    --cui-loader-spinner-color: var(--cui-accent-color);
+    --cui-loader-zindex: var(--cui-max-zindex);
+}
+
+/* Modal */
+body.cui .modal {
+    --cui-modal-alignment: left;
+    --cui-modal-alignment-footer: right;
+    --cui-modal-background: var(--cui-color-white);
+    --cui-modal-icon-size: 24px;
+    --cui-modal-padding: var(--cui-spacing);
+    --cui-modal-shadow: var(--cui-shadow-outset-lg);
+    --cui-modal-title-font-size: 28px;
+    --cui-modal-width: 768px;
+    --cui-modal-width-small: 576px;
+    --cui-modal-width-large: 992px;
+}
+
+/* Pagination */
+body.cui .pagination {
+    --cui-pagination-background-active: var(--cui-accent-color);
+    --cui-pagination-background-inactive: var(--cui-background-alt);
+    --cui-pagination-border-hover: var(--cui-border-thickness) solid var(--cui-accent-color);
+    --cui-pagination-border-inactive: 1px solid transparent;
+    --cui-pagination-color-active: var(--cui-color-dark);
+    --cui-pagination-margin: var(--cui-spacing-qtr);
+    --cui-pagination-default-font-size: var(--cui-font-size);
+    --cui-pagination-default-padding: 0px 10px;
+    --cui-pagination-default-height: 30px;
+    --cui-pagination-small-font-size: var(--cui-font-size-sm);
+    --cui-pagination-small-padding: 0px 8px;
+    --cui-pagination-small-height: 24px;
+    --cui-pagination-medium-font-size: var(--cui-pagination-default-font-size);
+    --cui-pagination-medium-padding: var(--cui-pagination-default-padding);
+    --cui-pagination-large-font-size: var(--cui-font-size-lg);
+    --cui-pagination-large-padding: 0px 12px;
+    --cui-pagination-large-height: 40px;
+}
+
+/* Panel */
+body.cui .panel {
+    --cui-panel-border-radius: 0;
+    --cui-panel-well: var(--cui-shadow-inset);
+    --cui-panel-default-padding: var(--cui-spacing-half);
+    --cui-panel-none-padding: 0;
+    --cui-panel-compressed-padding: var(--cui-spacing-qtr);
+    --cui-panel-regular-padding: var(--cui-panel-default-padding);
+    --cui-panel-loose-padding: var(--cui-spacing);
+}
+
+/* Progressbar */
+body.cui .progressbar {
+    --cui-progressbar-background: var(--cui-background-active);
+    --cui-progressbar-border-radius: var(--cui-border-radius-round);
+    --cui-progressbar-default-size: var(--cui-spacing-qtr);
+    --cui-progressbar-small-size: 2px;
+    --cui-progressbar-medum-size: var(--cui-progressbar-default-size);
+    --cui-progressbar-large-size: var(--cui-spacing-half);
+}
+
+/* Radio */
+body.cui .radio {
+    --cui-radio-background: transparent;
+    --cui-radio-background-active: transparent;
+    --cui-radio-border-thickness: 1px;
+    --cui-radio-border: var(--cui-radio-border-thickness) solid var(--cui-border-form-color);
+    --cui-radio-border-active: var(--cui-radio-border-thickness) solid var(--cui-border-form-color);
+    --cui-radio-border-hover: var(--cui-radio-border-thickness) solid var(--cui-accent-color);
+    --cui-radio-border-radius: var(--cui-border-radius-round);
+    --cui-radio-knob-background: var(--cui-color-white);
+    --cui-radio-knob-color: var(--cui-accent-color);
+    --cui-radio-knob-size: 3px;
+    --cui-radio-size: 18px;
+}
+
+/* Rating */
+body.cui .rating {
+    --cui-rating-color: var(--cui-accent-color);
+    --cui-rating-color-alt: var(--cui-theme-warning-alt);
+    --cui-rating-color-inactive: var(--cui-color-gray-300);
+    --cui-rating-icon-size: 24px;
+    --cui-rating-icon-size-small: 20px;
+    --cui-rating-icon-size-large: 28px;
+    --cui-rating-margin: 3px;
+}
+
+/* Sidebar */
+body.cui .sidebar {
+    --cui-sidebar-accent-thickness: var(--cui-accent-thickness);
+    --cui-sidebar-background-active: rgba(0,0,0,.2);
+    --cui-sidebar-background-hover: rgba(0,0,0,.1);
+    --cui-sidebar-colors: primary, secondary, tertiary, dark, light;
+    --cui-sidebar-divider-color: rgba(255,255,255,.2);
+    --cui-sidebar-menu-icon-size-mini: 22px;
+    --cui-sidebar-inactive-opacity: .75;
+    --cui-sidebar-item-padding: 7px var(--cui-spacing);
+    --cui-sidebar-title-font-size: 20px;
+    --cui-sidebar-title-font-weight: var(--cui-font-weight);
+    --cui-sidebar-chevron-font-size: var(--cui-font-size-xs);
+    --cui-sidebar-width-mini: 80px;
+    --cui-sidebar-zindex: var(--cui-max-zindex);
+}
+
+/* Step */
+body.cui .step,
+body.cui .ui-step {
+    --cui-step-background-visited: var(--cui-background-inactive);
+    --cui-step-line-thickness-visited: var(--cui-border-thickness);
+    --cui-step-line-thickness-inactive: var(--cui-border-thickness);
+    --cui-step-size: 40px;
+    --cui-step-font-size: var(--cui-font-size);
+    --cui-step-size-dot: 12px;
+    --cui-step-font-size-dot: 0;
+    --cui-step-size-small: 32px;
+    --cui-step-font-size-small: var(--cui-font-size-sm);
+    --cui-step-size-large: 48px;
+    --cui-step-font-size-large: var(--cui-font-size-lg);
+}
+
+/* Switch */
+body.cui .switch {
+    --cui-switch-knob-background: var(--cui-color-gray-500);
+    --cui-switch-knob-background-active: var(--cui-color-white);
+    --cui-switch-knob-border: transparent;
+    --cui-switch-knob-border-width: 1px;
+    --cui-switch-knob-border-width-hover: 1px;
+    --cui-switch-knob-border-active: var(--cui-accent-color);
+    --cui-switch-knob-border-hover: var(--cui-accent-color);
+    --cui-switch-size: 20px;
+    --cui-switch-slider-background: var(--cui-color-gray-300);
+    --cui-switch-slider-background-active: var(--cui-accent-color);
+    --cui-switch-slider-border-radius: var(--cui-border-radius-round);
+    --cui-switch-slider-height: 12px;
+}
+
+/* Tab */
+body.cui .tabs {
+    --cui-tab-background-active: var(--cui-background-color);
+    --cui-tab-border-active: var(--cui-accent-color);
+    --cui-tab-padding: var(--cui-spacing-half);
+    --cui-tab-spacing: var(--cui-spacing);
+    --cui-vertical-tab-padding: 7px var(--cui-spacing);
+}
+
+/* Table */
+body.cui .table {
+    --cui-table-border: var(--cui-border);
+    --cui-table-striping-odd: var(--cui-background-alt);
+    --cui-table-striping-even: var(--cui-background-color);
+    --cui-table-padding: 7px 10px;
+    --cui-table-padding-compressed: 7px;
+    --cui-table-padding-loose: 10px;
+    --cui-table-font-size: var(--cui-font-size);
+    --cui-table-font-size-compressed: var(--cui-font-size-sm);
+    --cui-table-font-size-loose: var(--cui-font-size);
+    --cui-table-header-separator: 2px solid var(--cui-border-color);
+}
+
+/* Timeline */
+body.cui .timeline {
+    --cui-timeline-icon-size: 48px;
+    --cui-timeline-line-color: var(--cui-border-color);
+    --cui-timeline-line-width: var(--cui-border-thickness);
+    --cui-timeline-padding: var(--cui-spacing);
+}
+
+/* Toast */
+body.cui .toast {
+    --cui-toast-background: var(--cui-background-color);
+    --cui-toast-icon-size: 24px;
+    --cui-toast-close-icon-size: 20px;
+    --cui-toast-padding: var(--cui-spacing);
+    --cui-toast-max-width: 350px;
+    --cui-toast-zindex: 901;
+}
+
+/* Tooltip */
+body.cui [data-balloon] {
+    --cui-tooltip-background: var(--cui-color-gray-700);
+    --cui-tooltip-border-radius: var(--cui-border-radius);
+    --cui-tooltip-padding: var(--cui-spacing-qtr) var(--cui-spacing-half);
+}

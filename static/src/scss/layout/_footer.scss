@@ -1,0 +1,183 @@
+//
+// Footer
+//
+// Styleguide Layout.Footer
+//
+
+//
+// Structure
+//
+// The links in this footer are the minimum required by Cisco legal.
+//
+// Markup:
+// <footer class="footer">
+//     <div class="footer__links">
+//         <ul class="list list--inline">
+//             <li><a href="http://www.cisco.com/cisco/web/siteassets/contacts/index.html" target="_blank">Contacts</a></li>
+//             <li><a href="https://secure.opinionlab.com/ccc01/o.asp?id=jBjOhqOJ" target="_blank">Feedback</a></li>
+//             <li><a href="https://www.cisco.com/c/en/us/about/help.html" target="_blank">Help</a></li>
+//             <li><a href="http://www.cisco.com/c/en/us/about/sitemap.html" target="_blank">Site Map</a></li>
+//             <li><a href="https://www.cisco.com/c/en/us/about/legal/terms-conditions.html" target="_blank">Terms & Conditions</a></li></li>
+//             <li><a href="https://www.cisco.com/c/en/us/about/legal/privacy-full.html" target="_blank">Privacy Statement</a></li>
+//             <li><a href="https://www.cisco.com/c/en/us/about/legal/privacy-full.html#cookies" target="_blank">Cookie Policy</a></li>
+//             <li><a href="https://www.cisco.com/c/en/us/about/legal/trademarks.html" target="_blank">Trademarks</a></li>
+//         </ul>
+//     </div>
+// </footer>
+//
+// Weight: 1
+//
+// Styleguide Layout.Footer.Structure
+//
+
+
+//
+// Color
+//
+// Markup:
+// <div class="subheader">Default</div>
+// <footer class="footer">
+//     <div class="footer__links">
+//         <ul class="list list--inline">
+//             <li><a href="http://www.cisco.com/cisco/web/siteassets/contacts/index.html" target="_blank">Contacts</a></li>
+//             <li><a href="https://secure.opinionlab.com/ccc01/o.asp?id=jBjOhqOJ" target="_blank">Feedback</a></li>
+//             <li><a href="https://www.cisco.com/c/en/us/about/help.html" target="_blank">Help</a></li>
+//             <li><a href="http://www.cisco.com/c/en/us/about/sitemap.html" target="_blank">Site Map</a></li>
+//             <li><a href="https://www.cisco.com/c/en/us/about/legal/terms-conditions.html" target="_blank">Terms & Conditions</a></li></li>
+//             <li><a href="https://www.cisco.com/c/en/us/about/legal/privacy-full.html" target="_blank">Privacy Statement</a></li>
+//             <li><a href="https://www.cisco.com/c/en/us/about/legal/privacy-full.html#cookies" target="_blank">Cookie Policy</a></li>
+//             <li><a href="https://www.cisco.com/c/en/us/about/legal/trademarks.html" target="_blank">Trademarks</a></li>
+//         </ul>
+//     </div>
+// </footer>
+// <div class="subheader">Primary</div>
+// <footer class="footer footer--primary">
+//     <div class="footer__links">
+//         <ul class="list list--inline">
+//             <li><a href="http://www.cisco.com/cisco/web/siteassets/contacts/index.html" target="_blank">Contacts</a></li>
+//             <li><a href="https://secure.opinionlab.com/ccc01/o.asp?id=jBjOhqOJ" target="_blank">Feedback</a></li>
+//             <li><a href="https://www.cisco.com/c/en/us/about/help.html" target="_blank">Help</a></li>
+//             <li><a href="http://www.cisco.com/c/en/us/about/sitemap.html" target="_blank">Site Map</a></li>
+//             <li><a href="https://www.cisco.com/c/en/us/about/legal/terms-conditions.html" target="_blank">Terms & Conditions</a></li></li>
+//             <li><a href="https://www.cisco.com/c/en/us/about/legal/privacy-full.html" target="_blank">Privacy Statement</a></li>
+//             <li><a href="https://www.cisco.com/c/en/us/about/legal/privacy-full.html#cookies" target="_blank">Cookie Policy</a></li>
+//             <li><a href="https://www.cisco.com/c/en/us/about/legal/trademarks.html" target="_blank">Trademarks</a></li>
+//         </ul>
+//     </div>
+// </footer>
+// <div class="subheader">Secondary</div>
+// <footer class="footer footer--secondary">
+//     <div class="footer__links">
+//         <ul class="list list--inline">
+//             <li><a href="http://www.cisco.com/cisco/web/siteassets/contacts/index.html" target="_blank">Contacts</a></li>
+//             <li><a href="https://secure.opinionlab.com/ccc01/o.asp?id=jBjOhqOJ" target="_blank">Feedback</a></li>
+//             <li><a href="https://www.cisco.com/c/en/us/about/help.html" target="_blank">Help</a></li>
+//             <li><a href="http://www.cisco.com/c/en/us/about/sitemap.html" target="_blank">Site Map</a></li>
+//             <li><a href="https://www.cisco.com/c/en/us/about/legal/terms-conditions.html" target="_blank">Terms & Conditions</a></li></li>
+//             <li><a href="https://www.cisco.com/c/en/us/about/legal/privacy-full.html" target="_blank">Privacy Statement</a></li>
+//             <li><a href="https://www.cisco.com/c/en/us/about/legal/privacy-full.html#cookies" target="_blank">Cookie Policy</a></li>
+//             <li><a href="https://www.cisco.com/c/en/us/about/legal/trademarks.html" target="_blank">Trademarks</a></li>
+//         </ul>
+//     </div>
+// </footer>
+// <div class="subheader">Tertiary</div>
+// <footer class="footer footer--tertiary">
+//     <div class="footer__links">
+//         <ul class="list list--inline">
+//             <li><a href="http://www.cisco.com/cisco/web/siteassets/contacts/index.html" target="_blank">Contacts</a></li>
+//             <li><a href="https://secure.opinionlab.com/ccc01/o.asp?id=jBjOhqOJ" target="_blank">Feedback</a></li>
+//             <li><a href="https://www.cisco.com/c/en/us/about/help.html" target="_blank">Help</a></li>
+//             <li><a href="http://www.cisco.com/c/en/us/about/sitemap.html" target="_blank">Site Map</a></li>
+//             <li><a href="https://www.cisco.com/c/en/us/about/legal/terms-conditions.html" target="_blank">Terms & Conditions</a></li></li>
+//             <li><a href="https://www.cisco.com/c/en/us/about/legal/privacy-full.html" target="_blank">Privacy Statement</a></li>
+//             <li><a href="https://www.cisco.com/c/en/us/about/legal/privacy-full.html#cookies" target="_blank">Cookie Policy</a></li>
+//             <li><a href="https://www.cisco.com/c/en/us/about/legal/trademarks.html" target="_blank">Trademarks</a></li>
+//         </ul>
+//     </div>
+// </footer>
+// <div class="subheader">Dark</div>
+// <footer class="footer footer--dark">
+//     <div class="footer__links">
+//         <ul class="list list--inline">
+//             <li><a href="http://www.cisco.com/cisco/web/siteassets/contacts/index.html" target="_blank">Contacts</a></li>
+//             <li><a href="https://secure.opinionlab.com/ccc01/o.asp?id=jBjOhqOJ" target="_blank">Feedback</a></li>
+//             <li><a href="https://www.cisco.com/c/en/us/about/help.html" target="_blank">Help</a></li>
+//             <li><a href="http://www.cisco.com/c/en/us/about/sitemap.html" target="_blank">Site Map</a></li>
+//             <li><a href="https://www.cisco.com/c/en/us/about/legal/terms-conditions.html" target="_blank">Terms & Conditions</a></li></li>
+//             <li><a href="https://www.cisco.com/c/en/us/about/legal/privacy-full.html" target="_blank">Privacy Statement</a></li>
+//             <li><a href="https://www.cisco.com/c/en/us/about/legal/privacy-full.html#cookies" target="_blank">Cookie Policy</a></li>
+//             <li><a href="https://www.cisco.com/c/en/us/about/legal/trademarks.html" target="_blank">Trademarks</a></li>
+//         </ul>
+//     </div>
+// </footer>
+// <div class="subheader">Light</div>
+// <footer class="footer footer--light">
+//     <div class="footer__links">
+//         <ul class="list list--inline">
+//             <li><a href="http://www.cisco.com/cisco/web/siteassets/contacts/index.html" target="_blank">Contacts</a></li>
+//             <li><a href="https://secure.opinionlab.com/ccc01/o.asp?id=jBjOhqOJ" target="_blank">Feedback</a></li>
+//             <li><a href="https://www.cisco.com/c/en/us/about/help.html" target="_blank">Help</a></li>
+//             <li><a href="http://www.cisco.com/c/en/us/about/sitemap.html" target="_blank">Site Map</a></li>
+//             <li><a href="https://www.cisco.com/c/en/us/about/legal/terms-conditions.html" target="_blank">Terms & Conditions</a></li></li>
+//             <li><a href="https://www.cisco.com/c/en/us/about/legal/privacy-full.html" target="_blank">Privacy Statement</a></li>
+//             <li><a href="https://www.cisco.com/c/en/us/about/legal/privacy-full.html#cookies" target="_blank">Cookie Policy</a></li>
+//             <li><a href="https://www.cisco.com/c/en/us/about/legal/trademarks.html" target="_blank">Trademarks</a></li>
+//         </ul>
+//     </div>
+// </footer>
+//
+// Weight: 2
+//
+// Styleguide Layout.Footer.Color
+//
+
+footer, .footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--cui-footer-padding);
+    margin-top: var(--cui-spacing);
+    border-top: var(--cui-border);
+
+    .footer__links {
+        ul.list {
+            display: inline-flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+
+            li + li {
+                margin-left: var(--cui-spacing);
+            }
+        }
+    }
+
+    // Backwards Compatibility
+    // TODO Deprecated. Use simple footer instead
+    .footer__legal {
+        display: inline-flex;
+        align-items: center;
+        font-weight: normal;
+        margin-left: var(--cui-spacing-dbl);
+
+        .footer__logo {
+            font-size: 32px;
+            margin-right: var(--cui-spacing);
+        }
+    }
+
+    @include build-background-style(
+        $link-decoration: none
+    );
+
+    @each $color in $cui-footer-colors {
+        &.footer--#{$color} {
+            @include build-background-style(
+                $bg: var(--cui-theme-#{$color}),
+                $color: var(--cui-theme-#{$color}-color),
+                $link-color: var(--cui-theme-#{$color}-color),
+                $link-color-hover: var(--cui-theme-#{$color}-color),
+                $link-decoration: none
+            );
+        }
+    }
+}

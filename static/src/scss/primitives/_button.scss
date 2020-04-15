@@ -1,0 +1,462 @@
+//
+// Button
+//
+// Styleguide Primitives.Button
+//
+
+
+//
+// Size
+//
+// Markup:
+// <button class="btn btn--small">Small</button>
+// <button class="btn">Default</button>
+// <button class="btn btn--large">Large</button>
+//
+// Weight: 1
+//
+// Styleguide Primitives.Button.Size
+//
+
+
+//
+// Color
+//
+// Markup:
+// <div class="row">
+//     <div class="col-6 col-lg-2 half-margin-top half-margin-bottom">
+//         <div class="subheader">Primary</div>
+//     </div>
+//     <div class="col-6 col-lg-2 half-margin-top half-margin-bottom">
+//         <button class="btn btn--primary">Normal</button>
+//     </div>
+//     <div class="col-6 col-lg-2 half-margin-top half-margin-bottom">
+//         <button class="btn btn--primary hover">Hover</button>
+//     </div>
+//     <div class="col-6 col-lg-2 half-margin-top half-margin-bottom">
+//         <button class="btn btn--primary active">Active</button>
+//     </div>
+//     <div class="col-6 col-lg-2 half-margin-top half-margin-bottom">
+//         <button class="btn btn--primary disabled">Disabled</button>
+//     </div>
+//     <div class="col-6 col-lg-2 half-margin-top half-margin-bottom">
+//         <button class="btn btn--primary focus">Focus</button>
+//     </div>
+// </div>
+// <div class="row">
+//     <div class="col-6 col-lg-2 half-margin-top half-margin-bottom">
+//         <div class="subheader">Secondary</div>
+//     </div>
+//     <div class="col-6 col-lg-2 half-margin-top half-margin-bottom">
+//         <button class="btn btn--secondary">Normal</button>
+//     </div>
+//     <div class="col-6 col-lg-2 half-margin-top half-margin-bottom">
+//         <button class="btn btn--secondary hover">Hover</button>
+//     </div>
+//     <div class="col-6 col-lg-2 half-margin-top half-margin-bottom">
+//         <button class="btn btn--secondary active">Active</button>
+//     </div>
+//     <div class="col-6 col-lg-2 half-margin-top half-margin-bottom">
+//         <button class="btn btn--secondary disabled">Disabled</button>
+//     </div>
+//     <div class="col-6 col-lg-2 half-margin-top half-margin-bottom">
+//         <button class="btn btn--secondary focus">Focus</button>
+//     </div>
+// </div>
+// <div class="row">
+//     <div class="col-6 col-lg-2 half-margin-top half-margin-bottom">
+//         <div class="subheader">Success</div>
+//     </div>
+//     <div class="col-6 col-lg-2 half-margin-top half-margin-bottom">
+//         <button class="btn btn--success">Normal</button>
+//     </div>
+//     <div class="col-6 col-lg-2 half-margin-top half-margin-bottom">
+//         <button class="btn btn--success hover">Hover</button>
+//     </div>
+//     <div class="col-6 col-lg-2 half-margin-top half-margin-bottom">
+//         <button class="btn btn--success active">Active</button>
+//     </div>
+//     <div class="col-6 col-lg-2 half-margin-top half-margin-bottom">
+//         <button class="btn btn--success disabled">Disabled</button>
+//     </div>
+//     <div class="col-6 col-lg-2 half-margin-top half-margin-bottom">
+//         <button class="btn btn--success focus">Focus</button>
+//     </div>
+// </div>
+// <div class="row">
+//     <div class="col-6 col-lg-2 half-margin-top half-margin-bottom">
+//         <div class="subheader">Dark</div>
+//     </div>
+//     <div class="col-6 col-lg-2 half-margin-top half-margin-bottom">
+//         <button class="btn btn--dark">Normal</button>
+//     </div>
+//     <div class="col-6 col-lg-2 half-margin-top half-margin-bottom">
+//         <button class="btn btn--dark hover">Hover</button>
+//     </div>
+//     <div class="col-6 col-lg-2 half-margin-top half-margin-bottom">
+//         <button class="btn btn--dark active">Active</button>
+//     </div>
+//     <div class="col-6 col-lg-2 half-margin-top half-margin-bottom">
+//         <button class="btn btn--dark disabled">Disabled</button>
+//     </div>
+//     <div class="col-6 col-lg-2 half-margin-top half-margin-bottom">
+//         <button class="btn btn--dark focus">Focus</button>
+//     </div>
+// </div>
+// <div class="row">
+//     <div class="col-6 col-lg-2 half-margin-top half-margin-bottom">
+//         <div class="subheader">Ghost</div>
+//     </div>
+//     <div class="col-6 col-lg-2 half-margin-top half-margin-bottom">
+//         <button class="btn btn--ghost">Normal</button>
+//     </div>
+//     <div class="col-6 col-lg-2 half-margin-top half-margin-bottom">
+//         <button class="btn btn--ghost hover">Hover</button>
+//     </div>
+//     <div class="col-6 col-lg-2 half-margin-top half-margin-bottom">
+//         <button class="btn btn--ghost active">Active</button>
+//     </div>
+//     <div class="col-6 col-lg-2 half-margin-top half-margin-bottom">
+//         <button class="btn btn--ghost disabled">Disabled</button>
+//     </div>
+//     <div class="col-6 col-lg-2 half-margin-top half-margin-bottom">
+//         <button class="btn btn--ghost focus">Focus</button>
+//     </div>
+// </div>
+// <div class="row">
+//     <div class="col-6 col-lg-2 half-margin-top half-margin-bottom">
+//         <div class="subheader">Link</div>
+//     </div>
+//     <div class="col-6 col-lg-2 half-margin-top half-margin-bottom">
+//         <button class="btn btn--link">Normal</button>
+//     </div>
+//     <div class="col-6 col-lg-2 half-margin-top half-margin-bottom">
+//         <button class="btn btn--link hover">Hover</button>
+//     </div>
+//     <div class="col-6 col-lg-2 half-margin-top half-margin-bottom">
+//         <button class="btn btn--link active">Active</button>
+//     </div>
+//     <div class="col-6 col-lg-2 half-margin-top half-margin-bottom">
+//         <button class="btn btn--link disabled">Disabled</button>
+//     </div>
+//     <div class="col-6 col-lg-2 half-margin-top half-margin-bottom">
+//         <button class="btn btn--link focus">Focus</button>
+//     </div>
+// </div>
+//
+// Weight: 2
+//
+// Styleguide Primitives.Button.Color
+//
+
+
+
+//
+// Modifiers
+//
+// Markup:
+// <div class="row">
+//     <div class="col-md-3">
+//         <div class="subheader">Extra Horizontal Padding</div>
+//         <button class="btn btn--large btn--wide">Wide</button>
+//     </div>
+//     <div class="col-md-4">
+//         <div class="subheader">Fill Space Available</div>
+//         <button class="btn btn--large btn--justified">Justified</button>
+//     </div>
+// </div>
+//
+// Weight: 3
+//
+// Styleguide Primitives.Button.Modifiers
+//
+
+
+//
+// Circle
+//
+// Markup:
+// <div class="row">
+//     <div class="col-4 col-md-1">
+//         <div class="subheader">Small</div>
+//         <button class="btn btn--circle btn--small">
+//             <span class="icon-check"></span>
+//         </button>
+//     </div>
+//     <div class="col-4 col-md-1">
+//         <div class="subheader">Default</div>
+//         <button class="btn btn--circle">
+//             <span class="icon-check"></span>
+//         </button>
+//     </div>
+//     <div class="col-4 col-md-1">
+//         <div class="subheader">Large</div>
+//         <button class="btn btn--circle btn--large">
+//             <span class="icon-check"></span>
+//         </button>
+//     </div>
+// </div>
+//
+// Weight: 5
+//
+// Styleguide Primitives.Button.Circle
+//
+
+
+
+//
+// Group
+//
+// Markup:
+// <div class="subheader">Default</div>
+// <div class="btn-group">
+//     <button class="btn btn--ghost selected">One</button>
+//     <button class="btn btn--ghost">Two</button>
+//     <button class="btn btn--ghost disabled">Disabled</button>
+// </div>
+// <div class="subheader">Square</div>
+// <div class="btn-group btn-group--square">
+//     <button class="btn btn--ghost selected">One</button>
+//     <button class="btn btn--ghost">Two</button>
+//     <button class="btn btn--ghost disabled">Disabled</button>
+// </div>
+// <div class="subheader">With Divider</div>
+// <div class="btn-group btn-group--divider">
+//     <button class="btn btn--ghost selected">One</button>
+//     <button class="btn btn--ghost">Two</button>
+//     <button class="btn btn--ghost disabled">Disabled</button>
+// </div>
+//
+// Weight: 6
+//
+// Styleguide Primitives.Button.Group
+//
+
+@mixin build-button-size($height, $padding, $font-size) {
+    line-height: $height;
+    padding: 0 $padding;
+    font-size: $font-size;
+}
+
+@mixin build-button-circle-size($size, $font-size) {
+
+    $line-height: $size - 2px; // Account for the border top and bottom
+    min-width: $size;
+    min-height: $size;
+    width: $size;
+    height: $size;
+    line-height: 1;
+    padding: 0;
+    border-radius: 100%;
+    font-size: $font-size;
+
+    span[class^="icon-"] {
+        &:before {
+            font-size: $font-size;
+        }
+    }
+}
+
+@mixin build-button-style(
+    $bg: var(--cui-theme-primary),
+    $bg-active: var(--cui-theme-primary-darker),
+    $bg-hover: var(--cui-theme-primary-lighter),
+    $border: var(--cui-theme-primary),
+    $border-focus: var(--cui-theme-primary-rgb),
+    $color: var(--cui-theme-primary-color),
+    $color-active: var(--cui-theme-primary-color)
+) {
+    background-color: $bg;
+    border-color: $border;
+    color: $color;
+
+    &.hover, &:hover {
+        background-color: $bg-hover;
+        color: $color-active;
+        transition: all .15s ease-in;
+    }
+    &.focus, &:focus {
+        @if $border-focus == transparent {
+            outline: none;
+            box-shadow: none;
+        }
+        @else {
+            @include cui-focus-outline($border-focus);
+        }
+    }
+    &.disabled, &[disabled] {
+        background-color: transparent;
+        border: 1px dotted var(--cui-inactive-color);
+        color: var(--cui-inactive-color);
+        opacity: 1;
+    }
+    &.active, &.selected, &:active {
+        background-color: $bg-active;
+        color: $color-active;
+    }
+}
+
+.btn {
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    text-transform: var(--cui-button-text-transform);
+    border-width: var(--cui-button-border-thickness);
+    border-radius: var(--cui-button-border-radius);
+    border-style: solid;
+    font-weight: var(--cui-button-font-weight);
+    transition: all .15s ease;
+
+    // Remove the inner border, padding in FF
+    &::-moz-focus-inner {
+        border: 0;
+        padding: 0;
+    }
+
+    // Button sizes
+    @each $name, $value in $cui-button-sizes {
+        @if $name == "default" {
+            @include build-button-size($value...);
+        } @else {
+            &.btn--#{$name} {
+                @include build-button-size($value...);
+            }
+        }
+    }
+
+    @include build-button-style();
+    @each $color in $cui-button-colors {
+        &.btn--#{$color} {
+            @include build-button-style(
+                $bg: var(--cui-theme-#{$color}),
+                $bg-active: var(--cui-theme-#{$color}-darker),
+                $bg-hover: var(--cui-theme-#{$color}-lighter),
+                $border: var(--cui-theme-#{$color}),
+                $border-focus: var(--cui-theme-#{$color}-rgb),
+                $color: var(--cui-theme-#{$color}-color),
+                $color-active: var(--cui-theme-#{$color}-color)
+            );
+        }
+    }
+
+    // Add ghost button
+    &.btn--ghost {
+        @include build-button-style(
+            $bg: transparent,
+            $bg-active: var(--cui-theme-dark-darker),
+            $bg-hover: var(--cui-theme-dark-lighter),
+            $border: var(--cui-theme-dark),
+            $border-focus: var(--cui-theme-dark-rgb),
+            $color: var(--cui-font-color),
+            $color-active: var(--cui-theme-dark-color)
+        );
+    }
+
+    // Link button
+    &.btn--link {
+        @include build-button-style(
+            $bg: transparent,
+            $bg-active: transparent,
+            $bg-hover: transparent,
+            $border: transparent,
+            $border-focus: transparent,
+            $color: var(--cui-link-color),
+            $color-active: var(--cui-link-color-active)
+        );
+    }
+
+    // Circle buttons
+    &.btn--circle,
+    &.btn--icon {
+        @each $name, $value in $cui-button-sizes {
+            @if $name == "default" {
+                @include build-button-circle-size(map-get($value, 'height'),
+                    map-get($value, 'font-size'));
+            } @else {
+                &.btn--#{$name} {
+                    @include build-button-circle-size(map-get($value, 'height'),
+                        map-get($value, 'font-size'));
+                }
+            }
+        }
+    }
+
+    // Wide buttons
+    &.btn--wide {
+        padding-left: var(--cui-button-wide-padding);
+        padding-right: var(--cui-button-wide-padding);
+    }
+
+    // block justified buttons
+    &.btn--justified {
+        display: block;
+        width: 100%;
+    }
+
+    + .btn {
+        margin-left: var(--cui-button-spacing);
+    }
+}
+
+// Button Groups
+.btn-group {
+
+    display: inline-flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+
+    > .btn {
+        + .btn {
+            margin-left: 0;
+        }
+        &:nth-child(n+2) {
+            margin-left: -1px;
+        }
+        &:not(:first-child):not(:last-child) {
+            border-radius: 0;
+        }
+        &:first-child {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        &:last-child {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+        &:hover, &:active, &:focus {
+            outline: none;
+            box-shadow: none;
+        }
+    }
+
+    &.btn-group--square {
+        > .btn {
+            &:first-child {
+                border-top-left-radius: var(--cui-border-radius);
+                border-bottom-left-radius: var(--cui-border-radius);
+            }
+            &:last-child {
+                border-top-right-radius: var(--cui-border-radius);
+                border-bottom-right-radius: var(--cui-border-radius);
+            }
+        }
+    }
+
+    &.btn-group--divider {
+        width: 100%;
+        text-align: center;
+
+        &:before,
+        &:after {
+            content: '';
+            border-top: var(--cui-border);
+            border-left: 0;
+            border-bottom: 0;
+            border-right: 0;
+            width: 100%;
+        }
+    }
+}

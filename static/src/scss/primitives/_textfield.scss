@@ -1,0 +1,456 @@
+//
+// Textfield
+//
+// Add the modifier class `form-group--error` to indicate a validation error.
+//
+// Styleguide Primitives.Textfield
+//
+
+
+//
+// Types
+//
+// Markup:
+// <div class="row">
+//     <div class="col-md-3">
+//         <div class="form-group base-margin-bottom">
+//             <div class="form-group__text">
+//                 <input id="input-type-email" type="email" value="dadams@cisco.com">
+//                 <label for="input-type-email">Email</label>
+//             </div>
+//         </div>
+//     </div>
+//     <div class="col-md-3">
+//         <div class="form-group base-margin-bottom">
+//             <div class="form-group__text">
+//                 <input id="input-type-number" type="number" value="42">
+//                 <label for="input-type-number">Number</label>
+//             </div>
+//         </div>
+//     </div>
+//     <div class="col-md-3">
+//         <div class="form-group base-margin-bottom">
+//             <div class="form-group__text">
+//                 <input id="input-type-password" type="password" value="hitchhiker">
+//                 <label for="input-type-password">Password</label>
+//             </div>
+//         </div>
+//     </div>
+//     <div class="col-md-3">
+//         <div class="form-group base-margin-bottom">
+//             <div class="form-group__text">
+//                 <input id="input-type-telephone" type="tel" value="8675309">
+//                 <label for="input-type-telephone">Telephone</label>
+//             </div>
+//         </div>
+//     </div>
+//     <div class="col-md-3">
+//         <div class="form-group base-margin-bottom">
+//             <div class="form-group__text">
+//                 <input id="input-type-url" type="url" value="http://www.cisco.com">
+//                 <label for="input-type-url">URL</label>
+//             </div>
+//         </div>
+//     </div>
+//     <div class="col-md-3">
+//         <div class="form-group base-margin-bottom">
+//             <div class="form-group__text">
+//                 <input id="input-type-date" type="date">
+//                 <label for="input-type-date">Date</label>
+//             </div>
+//         </div>
+//     </div>
+//     <div class="col-md-3">
+//         <div class="form-group base-margin-bottom">
+//             <div class="form-group__text">
+//                 <input id="input-type-time" type="time">
+//                 <label for="input-type-time">Time</label>
+//             </div>
+//         </div>
+//     </div>
+//     <div class="col-md-3">
+//         <div class="form-group input--icon base-margin-bottom">
+//             <div class="form-group__text">
+//                 <input id="input-type-search" type="search" value="Douglas Adams">
+//                 <label for="input-type-search">Search</label>
+//                 <button type="button" class="link">
+//                     <span class="icon-search"></span>
+//                 </button>
+//             </div>
+//         </div>
+//     </div>
+//     <div class="col-md-3">
+//         <div class="form-group base-margin-bottom">
+//             <div class="form-group__text select">
+//                 <select id="input-type-select">
+//                     <option value="first">First Value</option>
+//                     <option value="second" selected="">Second Value</option>
+//                     <option value="third">Third Value</option>
+//                 </select>
+//                 <label for="input-type-select">Basic Select</label>
+//             </div>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 1
+//
+// Styleguide Primitives.Textfield.Types
+//
+
+
+//
+// States
+//
+// Markup:
+// <div class="row">
+//     <div class="col-md-3">
+//         <div class="form-group base-margin-bottom">
+//             <div class="form-group__text">
+//                 <input id="input-state-default" type="text">
+//                 <label for="input-state-default">Default</label>
+//             </div>
+//         </div>
+//     </div>
+//     <div class="col-md-3">
+//         <div class="form-group base-margin-bottom">
+//             <div class="form-group__text">
+//                 <input id="input-state-disabled" type="text" disabled>
+//                 <label for="input-state-disabled">Disabled</label>
+//             </div>
+//         </div>
+//     </div>
+//     <div class="col-md-3">
+//         <div class="form-group base-margin-bottom">
+//             <div class="form-group__text">
+//                 <input id="input-state-readonly" type="text" readonly>
+//                 <label for="input-state-readonly">Readonly</label>
+//             </div>
+//         </div>
+//     </div>
+//     <div class="col-md-3">
+//         <div class="form-group base-margin-bottom">
+//             <div class="form-group__text">
+//                 <input class="form-group--plaintext" id="input-state-plaintext" type="text" value="plain text">
+//                 <label for="input-state-plaintext">Plain Text</label>
+//             </div>
+//         </div>
+//     </div>
+//     <div class="col-md-3">
+//         <div class="form-group base-margin-bottom">
+//             <div class="form-group__text">
+//                 <input id="input-state-required" type="text" required>
+//                 <label for="input-state-required">
+//                     <span>Required</span>
+//                     <span title="this is a required field">*</span>
+//                 </label>
+//             </div>
+//         </div>
+//     </div>
+//     <div class="col-md-3">
+//         <div class="form-group base-margin-bottom">
+//             <div class="form-group__text">
+//                 <input id="input-state-hover" class="hover" type="text" required>
+//                 <label for="input-state-hover">Hover</label>
+//             </div>
+//         </div>
+//     </div>
+//     <div class="col-md-3">
+//         <div class="form-group base-margin-bottom">
+//             <div class="form-group__text">
+//                 <input id="input-state-focus" class="focus" type="text" required>
+//                 <label for="input-state-focus">Focus</label>
+//             </div>
+//         </div>
+//     </div>
+//     <div class="col-md-3">
+//         <div class="form-group form-group--error">
+//             <div class="form-group__text">
+//                 <input id="input-state-error" type="text" value="(*#&$*(H*(H@#($*">
+//                 <label for="input-state-error">Error</label>
+//             </div>
+//             <div class="form-group__help" role="alert">
+//                 <span>Invalid or unknown string</span>
+//             </div>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 2
+//
+// Styleguide Primitives.Textfield.States
+//
+
+
+//
+// Icons
+//
+// Markup:
+// <div class="row">
+//     <div class="col-md-3">
+//         <div class="form-group input--icon">
+//             <div class="form-group__text">
+//                 <input type="search" required>
+//                 <label>Search Inventory</label>
+//                 <button type="button" class="link" tabindex="-1">
+//                     <span class="icon-search"></span>
+//                 </button>
+//             </div>
+//         </div>
+//     </div>
+//     <div class="col-md-3">
+//         <div class="form-group input--icon">
+//             <div class="form-group__text">
+//                 <input required>
+//                 <label>Enter Date</label>
+//                 <button type="button" class="link" tabindex="-1">
+//                     <span class="icon-month"></span>
+//                 </button>
+//             </div>
+//         </div>
+//     </div>
+//     <div class="col-md-3">
+//         <div class="form-group input--icon">
+//             <div class="form-group__text">
+//                 <input required></input>
+//                 <label>Add Tag</label>
+//                 <button type="button" class="link" tabindex="-1">
+//                     <span class="icon-tags"></span>
+//                 </button>
+//             </div>
+//         </div>
+//     </div>
+//     <div class="col-md-3">
+//         <div class="form-group form-group--error input--icon">
+//             <div class="form-group__text">
+//                 <input value="douglasadams@hhguide" required></input>
+//                 <label>Enter Email</label>
+//                 <button type="button" class="link">
+//                     <span class="icon-email"></span>
+//                 </button>
+//             </div>
+//             <div class="form-group__help" role="alert" tabindex="-1">
+//                 <span>Invalid email address</span>
+//             </div>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 3
+//
+// Styleguide Primitives.Textfield.Icons
+//
+
+
+//
+// Hint Text
+//
+// Use hint text to provide a description of what the input field should contain.
+//
+// Markup:
+// <div class="row">
+//     <div class="col-md-6">
+//         <div class="form-group">
+//             <div class="form-group__text">
+//                 <input id="input-hint-default" type="text">
+//                 <label for="input-hint-default">PICA ID</label>
+//             </div>
+//             <div class="form-group__help">
+//                 <span>partner initiated customer access identifier</span>
+//             </div>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 4
+//
+// Styleguide Primitives.Textfield.Hinting
+//
+
+
+//
+// Default Layout
+//
+// By default, textfields are stacked with label above the textfield.
+//
+// Markup:
+// <div class="row">
+//     <div class="col-md-6">
+//         <div class="subheader">Default</div>
+//         <div class="form-group">
+//             <div class="form-group__text">
+//                 <input id="input-layout-stacked-1" type="text">
+//                 <label for="input-layout-stacked-1">Field 1</label>
+//             </div>
+//         </div>
+//         <div class="form-group">
+//             <div class="form-group__text">
+//                 <input id="input-layout-stacked-2" type="text">
+//                 <label for="input-layout-stacked-2">Field 2</label>
+//             </div>
+//         </div>
+//         <div class="form-group">
+//             <div class="form-group__text">
+//                 <input id="input-layout-stacked-3" type="text">
+//                 <label for="input-layout-stacked-3">Field 3</label>
+//             </div>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 5
+//
+// Styleguide Primitives.Textfield.Default Layout
+//
+
+
+//
+// Inline Layout
+//
+// Add the class modifier `form-group--inline` to align elements on the same line.
+//
+// Markup:
+// <div class="row">
+//     <div class="col-9">
+//         <div class="subheader">Inline</div>
+//         <div class="form-group form-group--inline">
+//             <div class="form-group__text">
+//                 <input id="input-layout-inline-1" type="text">
+//                 <label for="input-layout-inline-1">Field 1</label>
+//             </div>
+//         </div>
+//         <div class="form-group form-group--inline">
+//             <div class="form-group__text">
+//                 <input id="input-layout-inline-2" type="text">
+//                 <label for="input-layout-inline-2">Field 2</label>
+//             </div>
+//         </div>
+//         <div class="form-group form-group--inline">
+//             <div class="form-group__text">
+//                 <input id="input-layout-inline-3" type="text">
+//                 <label for="input-layout-inline-3">Field 3</label>
+//             </div>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 6
+//
+// Styleguide Primitives.Textfield.Inline Layout
+//
+
+
+//
+// Horizontal Layout
+//
+// Add the class modifier `form-group--horizontal` to align multiple form-groups and their labels.
+//
+// Markup:
+// <div class="row">
+//     <div class="col-lg-6">
+//         <div class="subheader">Horizontal (left-aligned, col-3)</div>
+//         <div class="form-group form-group--horizontal">
+//             <div class="form-group__text">
+//                 <input id="input-size-default" type="text">
+//                 <label class="col-3" for="input-size-default">Lorem</label>
+//             </div>
+//         </div>
+//         <div class="form-group form-group--horizontal">
+//             <div class="form-group__text">
+//                 <input id="input-size-default" type="text">
+//                 <label class="col-3" for="input-size-default">Lorem Ipsum</label>
+//             </div>
+//         </div>
+//         <div class="form-group form-group--horizontal">
+//             <div class="form-group__text">
+//                 <input id="input-size-default" type="text">
+//                 <label class="col-3" for="input-size-default">Dolor</label>
+//             </div>
+//         </div>
+//     </div>
+//     <div class="col-lg-6">
+//         <div class="subheader">Horizontal (right-aligned, col-6)</div>
+//         <div class="form-group form-group--horizontal">
+//             <div class="form-group__text">
+//                 <input id="input-size-default" type="text">
+//                 <label class="col-6 text-right" for="input-size-default">Lorem</label>
+//             </div>
+//         </div>
+//         <div class="form-group form-group--horizontal">
+//             <div class="form-group__text">
+//                 <input id="input-size-default" type="text">
+//                 <label class="col-6 text-right" for="input-size-default">Lorem Ipsum</label>
+//             </div>
+//         </div>
+//         <div class="form-group form-group--horizontal">
+//             <div class="form-group__text">
+//                 <input id="input-size-default" type="text">
+//                 <label class="col-6 text-right" for="input-size-default">Dolor</label>
+//             </div>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 7
+//
+// Styleguide Primitives.Textfield.Horizontal Layout
+//
+
+.form-group .form-group__text {
+
+    @include cui-form-input-size;
+    @include cui-form-input-style;
+    @include cui-form-input-behavior;
+
+    input[type="password"] {
+        font: caption;
+        font-size: var(--cui-font-size-lg);
+    }
+
+    // Plain text
+    input.form-group--plaintext {
+        border-color: transparent;
+        background-color: transparent;
+        padding-left: 0;
+
+        &:hover, &:focus {
+            border-color: transparent;
+            box-shadow: none;
+        }
+    }
+    input.form-group--plaintext[readonly],
+    input.form-group--plaintext.readonly {
+        background-color: transparent;
+        color: var(--cui-font-color);
+    }
+
+    // Modfifier - Errors
+    &.form-group--error .form-group__text {
+        @include cui-form-input-error;
+    }
+
+    // Modifier - Icons
+    &.input--icon .form-group__text,
+    &.form-group--icon .form-group__text {
+        input {
+            padding-left: var(--cui-form-size);
+        }
+        input + button, label + button {
+            font-size: var(--cui-form-icon-size);
+            position: absolute;
+            display: inline-flex;
+            height: var(--cui-form-size);
+            width: var(--cui-form-size);
+            align-items: center;
+            justify-content: center;
+            bottom: 0;
+            padding: 0;
+            margin: 0;
+
+            &:hover, &:active, &:focus {
+                color: var(--cui-link-color);
+                text-decoration: none;
+            }
+        }
+    }
+}

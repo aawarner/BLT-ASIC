@@ -1,0 +1,836 @@
+//
+// Table
+//
+// Styleguide Primitives.Table
+//
+
+
+//
+// Default
+//
+// Markup:
+// <div class="responsive-table">
+//     <table class="table">
+//         <thead>
+//             <tr>
+//                 <th>
+//                     <label class="checkbox">
+//                         <input type="checkbox"/>
+//                         <span class="checkbox__input"></span>
+//                     </label>
+//                 </th>
+//                 <th class="sortable">Header 1 <span class="sort-indicator icon-dropdown"></span></th>
+//                 <th>Header 2</th>
+//                 <th>Header 3</th>
+//             </tr>
+//         </thead>
+//         <tbody>
+//             <tr>
+//                 <td>
+//                     <label class="checkbox">
+//                         <input type="checkbox"/>
+//                         <span class="checkbox__input"></span>
+//                     </label>
+//                 </td>
+//                 <td>Row 1, Column 1</td>
+//                 <td>Row 1, Column 2</td>
+//                 <td>Row 1, Column 3</td>
+//             </tr>
+//             <tr>
+//                 <td>
+//                     <label class="checkbox">
+//                         <input type="checkbox"/>
+//                         <span class="checkbox__input"></span>
+//                     </label>
+//                 </td>
+//                 <td>Row 2, Column 1</td>
+//                 <td>Row 2, Column 2</td>
+//                 <td>Row 2, Column 3</td>
+//             </tr>
+//             <tr>
+//                 <td>
+//                     <label class="checkbox">
+//                         <input type="checkbox"/>
+//                         <span class="checkbox__input"></span>
+//                     </label>
+//                 </td>
+//                 <td>Row 3, Column 1</td>
+//                 <td>Row 3, Column 2</td>
+//                 <td>Row 3, Column 3</td>
+//             </tr>
+//         </tbody>
+//     </table>
+// </div>
+//
+// Weight: 1
+//
+// Styleguide Primitives.Table.Default
+//
+
+
+//
+// Lined
+//
+// Markup:
+// <div class="responsive-table">
+//     <table class="table table--lined">
+//         <thead>
+//             <tr>
+//                 <th>
+//                     <label class="checkbox">
+//                         <input type="checkbox"/>
+//                         <span class="checkbox__input"></span>
+//                     </label>
+//                 </th>
+//                 <th class="sortable">Header 1 <span class="sort-indicator icon-dropdown"></span></th>
+//                 <th>Header 2</th>
+//                 <th>Header 3</th>
+//             </tr>
+//         </thead>
+//         <tbody>
+//             <tr>
+//                 <td>
+//                     <label class="checkbox">
+//                         <input type="checkbox"/>
+//                         <span class="checkbox__input"></span>
+//                     </label>
+//                 </td>
+//                 <td>Row 1, Column 1</td>
+//                 <td>Row 1, Column 2</td>
+//                 <td>Row 1, Column 3</td>
+//             </tr>
+//             <tr>
+//                 <td>
+//                     <label class="checkbox">
+//                         <input type="checkbox"/>
+//                         <span class="checkbox__input"></span>
+//                     </label>
+//                 </td>
+//                 <td>Row 2, Column 1</td>
+//                 <td>Row 2, Column 2</td>
+//                 <td>Row 2, Column 3</td>
+//             </tr>
+//             <tr>
+//                 <td>
+//                     <label class="checkbox">
+//                         <input type="checkbox"/>
+//                         <span class="checkbox__input"></span>
+//                     </label>
+//                 </td>
+//                 <td>Row 3, Column 1</td>
+//                 <td>Row 3, Column 2</td>
+//                 <td>Row 3, Column 3</td>
+//             </tr>
+//         </tbody>
+//     </table>
+// </div>
+//
+// Weight: 2
+//
+// Styleguide Primitives.Table.Lined
+//
+
+
+//
+// Bordered
+//
+// Markup:
+// <div class="responsive-table">
+//     <table class="table table--bordered">
+//         <thead>
+//             <tr>
+//                 <th>
+//                     <label class="checkbox">
+//                         <input type="checkbox"/>
+//                         <span class="checkbox__input"></span>
+//                     </label>
+//                 </th>
+//                 <th class="sortable">Header 1 <span class="sort-indicator icon-dropdown"></span></th>
+//                 <th>Header 2</th>
+//                 <th>Header 3</th>
+//             </tr>
+//         </thead>
+//         <tbody>
+//             <tr>
+//                 <td>
+//                     <label class="checkbox">
+//                         <input type="checkbox"/>
+//                         <span class="checkbox__input"></span>
+//                     </label>
+//                 </td>
+//                 <td>Row 1, Column 1</td>
+//                 <td>Row 1, Column 2</td>
+//                 <td>Row 1, Column 3</td>
+//             </tr>
+//             <tr>
+//                 <td>
+//                     <label class="checkbox">
+//                         <input type="checkbox"/>
+//                         <span class="checkbox__input"></span>
+//                     </label>
+//                 </td>
+//                 <td>Row 2, Column 1</td>
+//                 <td>Row 2, Column 2</td>
+//                 <td>Row 2, Column 3</td>
+//             </tr>
+//             <tr>
+//                 <td>
+//                     <label class="checkbox">
+//                         <input type="checkbox"/>
+//                         <span class="checkbox__input"></span>
+//                     </label>
+//                 </td>
+//                 <td>Row 3, Column 1</td>
+//                 <td>Row 3, Column 2</td>
+//                 <td>Row 3, Column 3</td>
+//             </tr>
+//         </tbody>
+//     </table>
+// </div>
+//
+// Weight: 3
+//
+// Styleguide Primitives.Table.Bordered
+//
+
+
+//
+// Striped
+//
+// Markup:
+// <div class="responsive-table">
+//     <table class="table table--striped">
+//         <thead>
+//             <tr>
+//                 <th>
+//                     <label class="checkbox">
+//                         <input type="checkbox"/>
+//                         <span class="checkbox__input"></span>
+//                     </label>
+//                 </th>
+//                 <th class="sortable">Header 1 <span class="sort-indicator icon-dropdown"></span></th>
+//                 <th>Header 2</th>
+//                 <th>Header 3</th>
+//             </tr>
+//         </thead>
+//         <tbody>
+//             <tr>
+//                 <td>
+//                     <label class="checkbox">
+//                         <input type="checkbox"/>
+//                         <span class="checkbox__input"></span>
+//                     </label>
+//                 </td>
+//                 <td>Row 1, Column 1 <a href="javascript:;">link</a></td>
+//                 <td>Row 1, Column 2</td>
+//                 <td>Row 1, Column 3</td>
+//             </tr>
+//             <tr>
+//                 <td>
+//                     <label class="checkbox">
+//                         <input type="checkbox"/>
+//                         <span class="checkbox__input"></span>
+//                     </label>
+//                 </td>
+//                 <td>Row 2, Column 1 <a href="javascript:;">link</a></td>
+//                 <td>Row 2, Column 2</td>
+//                 <td>Row 2, Column 3</td>
+//             </tr>
+//             <tr>
+//                 <td>
+//                     <label class="checkbox">
+//                         <input type="checkbox"/>
+//                         <span class="checkbox__input"></span>
+//                     </label>
+//                 </td>
+//                 <td>Row 3, Column 1 <a href="javascript:;">link</a></td>
+//                 <td>Row 3, Column 2</td>
+//                 <td>Row 3, Column 3</td>
+//             </tr>
+//         </tbody>
+//     </table>
+// </div>
+//
+// Weight: 4
+//
+// Styleguide Primitives.Table.Striped
+//
+
+
+//
+// Selectable
+//
+// Add the class `active` to the selected row.
+//
+// Markup:
+// <div class="responsive-table">
+//     <table class="table table--lined table--selectable">
+//         <thead>
+//             <tr>
+//                 <th>
+//                     <label class="checkbox">
+//                         <input type="checkbox"/>
+//                         <span class="checkbox__input"></span>
+//                     </label>
+//                 </th>
+//                 <th class="sortable">Header 1 <span class="sort-indicator icon-dropdown"></span></th>
+//                 <th>Header 2</th>
+//                 <th>Header 3</th>
+//             </tr>
+//         </thead>
+//         <tbody>
+//             <tr>
+//                 <td>
+//                     <label class="checkbox">
+//                         <input type="checkbox"/>
+//                         <span class="checkbox__input"></span>
+//                     </label>
+//                 </td>
+//                 <td>Row 1, Column 1 <a href="javascript:;">link</a></td>
+//                 <td>Row 1, Column 2 <a href="javascript:;">link</a></td>
+//                 <td>Row 1, Column 3 <a href="javascript:;">link</a></td>
+//             </tr>
+//             <tr class="active">
+//                 <td>
+//                     <label class="checkbox">
+//                         <input type="checkbox" checked>
+//                         <span class="checkbox__input"></span>
+//                     </label>
+//                 </td>
+//                 <td>Selected</td>
+//                 <td>Row 2, Column 2</td>
+//                 <td>Row 2, Column 3</td>
+//             </tr>
+//             <tr>
+//                 <td>
+//                     <label class="checkbox">
+//                         <input type="checkbox"/>
+//                         <span class="checkbox__input"></span>
+//                     </label>
+//                 </td>
+//                 <td>Row 3, Column 1</td>
+//                 <td>Row 3, Column 2</td>
+//                 <td>Row 3, Column 3</td>
+//             </tr>
+//         </tbody>
+//     </table>
+// </div>
+//
+// Weight: 5
+//
+// Styleguide Primitives.Table.Selectable
+//
+
+
+//
+// Fixed
+//
+// Add the class `table--fixed` to change the table to have a fixed column width layout. A fixed table layout will render much quicker in your browser because the data does not define the size of the cells.
+//
+// Markup:
+// <div class="responsive-table">
+//     <table class="table table--lined table--fixed">
+//         <thead>
+//             <tr>
+//                 <th class="sortable">Header 1 <span class="sort-indicator icon-dropdown"></span></th>
+//                 <th>Header 2</th>
+//                 <th>Header 3</th>
+//             </tr>
+//         </thead>
+//         <tbody>
+//             <tr>
+//                 <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis mattis dui. Phasellus at sagittis nulla. Cras fermentum eu ligula vitae posuere. Nullam ut elit vel quam finibus mattis.</td>
+//                 <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis mattis dui. Phasellus at sagittis nulla. Cras fermentum eu ligula vitae posuere. Nullam ut elit vel quam finibus mattis.</td>
+//                 <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis mattis dui. Phasellus at sagittis nulla. Cras fermentum eu ligula vitae posuere. Nullam ut elit vel quam finibus mattis.</td>
+//             </tr>
+//             <tr>
+//                 <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis mattis dui. Phasellus at sagittis nulla. Cras fermentum eu ligula vitae posuere. Nullam ut elit vel quam finibus mattis.</td>
+//                 <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis mattis dui. Phasellus at sagittis nulla. Cras fermentum eu ligula vitae posuere. Nullam ut elit vel quam finibus mattis.</td>
+//                 <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis mattis dui. Phasellus at sagittis nulla. Cras fermentum eu ligula vitae posuere. Nullam ut elit vel quam finibus mattis.</td>
+//             </tr>
+//             <tr>
+//                 <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis mattis dui. Phasellus at sagittis nulla. Cras fermentum eu ligula vitae posuere. Nullam ut elit vel quam finibus mattis.</td>
+//                 <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis mattis dui. Phasellus at sagittis nulla. Cras fermentum eu ligula vitae posuere. Nullam ut elit vel quam finibus mattis.</td>
+//                 <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis mattis dui. Phasellus at sagittis nulla. Cras fermentum eu ligula vitae posuere. Nullam ut elit vel quam finibus mattis.</td>
+//             </tr>
+//         </tbody>
+//     </table>
+// </div>
+//
+// Weight: 6
+//
+// Styleguide Primitives.Table.Fixed
+//
+
+
+//
+// Wrapped
+//
+// Add the class `table--wrapped` to wrap text in the cells. By default, text is not wrapped.
+//
+// Markup:
+// <div class="responsive-table">
+//     <table class="table table--lined table--wrapped">
+//         <thead>
+//             <tr>
+//                 <th>
+//                     <label class="checkbox">
+//                         <input type="checkbox"/>
+//                         <span class="checkbox__input"></span>
+//                     </label>
+//                 </th>
+//                 <th class="sortable">Header 1 <span class="sort-indicator icon-dropdown"></span></th>
+//                 <th>Header 2</th>
+//                 <th>Header 3</th>
+//             </tr>
+//         </thead>
+//         <tbody>
+//             <tr>
+//                 <td>
+//                     <label class="checkbox">
+//                         <input type="checkbox"/>
+//                         <span class="checkbox__input"></span>
+//                     </label>
+//                 </td>
+//                 <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+//                 <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis mattis dui. Phasellus at sagittis nulla. Cras fermentum eu ligula vitae posuere. Nullam ut elit vel quam finibus mattis.</td>
+//                 <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis mattis dui. Phasellus at sagittis nulla. Cras fermentum eu ligula vitae posuere. Nullam ut elit vel quam finibus mattis. Curabitur sagittis velit at elit efficitur, nec facilisis augue vehicula. Nulla semper est at tincidunt blandit</td>
+//             </tr>
+//             <tr>
+//                 <td>
+//                     <label class="checkbox">
+//                         <input type="checkbox"/>
+//                         <span class="checkbox__input"></span>
+//                     </label>
+//                 </td>
+//                 <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+//                 <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis mattis dui. Phasellus at sagittis nulla. Cras fermentum eu ligula vitae posuere. Nullam ut elit vel quam finibus mattis.</td>
+//                 <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis mattis dui. Phasellus at sagittis nulla. Cras fermentum eu ligula vitae posuere. Nullam ut elit vel quam finibus mattis. Curabitur sagittis velit at elit efficitur, nec facilisis augue vehicula. Nulla semper est at tincidunt blandit</td>
+//             </tr>
+//             <tr>
+//                 <td>
+//                     <label class="checkbox">
+//                         <input type="checkbox"/>
+//                         <span class="checkbox__input"></span>
+//                     </label>
+//                 </td>
+//                 <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+//                 <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis mattis dui. Phasellus at sagittis nulla. Cras fermentum eu ligula vitae posuere. Nullam ut elit vel quam finibus mattis.</td>
+//                 <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis mattis dui. Phasellus at sagittis nulla. Cras fermentum eu ligula vitae posuere. Nullam ut elit vel quam finibus mattis. Curabitur sagittis velit at elit efficitur, nec facilisis augue vehicula. Nulla semper est at tincidunt blandit</td>
+//             </tr>
+//         </tbody>
+//     </table>
+// </div>
+//
+// Weight: 7
+//
+// Styleguide Primitives.Table.Wrapped
+//
+
+
+//
+// Compressed
+//
+// Markup:
+// <div class="responsive-table">
+//     <table class="table table--lined table--compressed">
+//         <thead>
+//             <tr>
+//                 <th>
+//                     <label class="checkbox">
+//                         <input type="checkbox"/>
+//                         <span class="checkbox__input"></span>
+//                     </label>
+//                 </th>
+//                 <th class="sortable">Header 1 <span class="sort-indicator icon-dropdown"></span></th>
+//                 <th>Header 2</th>
+//                 <th>Header 3</th>
+//             </tr>
+//         </thead>
+//         <tbody>
+//             <tr>
+//                 <td>
+//                     <label class="checkbox">
+//                         <input type="checkbox"/>
+//                         <span class="checkbox__input"></span>
+//                     </label>
+//                 </td>
+//                 <td>Row 1, Column 1</td>
+//                 <td>Row 1, Column 2</td>
+//                 <td>Row 1, Column 3</td>
+//             </tr>
+//             <tr>
+//                 <td>
+//                     <label class="checkbox">
+//                         <input type="checkbox"/>
+//                         <span class="checkbox__input"></span>
+//                     </label>
+//                 </td>
+//                 <td>Row 2, Column 1</td>
+//                 <td>Row 2, Column 2</td>
+//                 <td>Row 2, Column 3</td>
+//             </tr>
+//             <tr>
+//                 <td>
+//                     <label class="checkbox">
+//                         <input type="checkbox"/>
+//                         <span class="checkbox__input"></span>
+//                     </label>
+//                 </td>
+//                 <td>Row 3, Column 1</td>
+//                 <td>Row 3, Column 2</td>
+//                 <td>Row 3, Column 3</td>
+//             </tr>
+//         </tbody>
+//     </table>
+// </div>
+//
+// Weight: 8
+//
+// Styleguide Primitives.Table.Compressed
+//
+
+
+//
+// Loose
+//
+// Markup:
+// <div class="responsive-table">
+//     <table class="table table--lined table--loose">
+//         <thead>
+//             <tr>
+//                 <th>
+//                     <label class="checkbox">
+//                         <input type="checkbox"/>
+//                         <span class="checkbox__input"></span>
+//                     </label>
+//                 </th>
+//                 <th class="sortable">Header 1 <span class="sort-indicator icon-dropdown"></span></th>
+//                 <th>Header 2</th>
+//                 <th>Header 3</th>
+//             </tr>
+//         </thead>
+//         <tbody>
+//             <tr>
+//                 <td>
+//                     <label class="checkbox">
+//                         <input type="checkbox"/>
+//                         <span class="checkbox__input"></span>
+//                     </label>
+//                 </td>
+//                 <td>Row 1, Column 1</td>
+//                 <td>Row 1, Column 2</td>
+//                 <td>Row 1, Column 3</td>
+//             </tr>
+//             <tr>
+//                 <td>
+//                     <label class="checkbox">
+//                         <input type="checkbox"/>
+//                         <span class="checkbox__input"></span>
+//                     </label>
+//                 </td>
+//                 <td>Row 2, Column 1</td>
+//                 <td>Row 2, Column 2</td>
+//                 <td>Row 2, Column 3</td>
+//             </tr>
+//             <tr>
+//                 <td>
+//                     <label class="checkbox">
+//                         <input type="checkbox"/>
+//                         <span class="checkbox__input"></span>
+//                     </label>
+//                 </td>
+//                 <td>Row 3, Column 1</td>
+//                 <td>Row 3, Column 2</td>
+//                 <td>Row 3, Column 3</td>
+//             </tr>
+//         </tbody>
+//     </table>
+// </div>
+//
+// Weight: 9
+//
+// Styleguide Primitives.Table.Loose
+//
+
+@mixin row-active {
+	border-left: var(--cui-accent-thickness) solid var(--cui-accent-color);
+}
+
+@mixin row-inactive {
+	border-left: var(--cui-accent-thickness) solid transparent;
+}
+
+@mixin table-spacing($padding, $font-size) {
+	th {
+		&:after {
+			display: none;
+		}
+	}
+	tr, td, th {
+		padding: $padding;
+		font-size: $font-size;
+	}
+}
+
+.responsive-table {
+	display: block;
+	max-width: 100%;
+	overflow: auto;
+}
+
+.table {
+	width: 100%;
+	border-collapse: separate;
+	border-spacing: 0;
+	font-feature-settings: "kern", "liga", "tnum";
+
+	// Table wells
+	> tbody > tr.well > td {
+	    padding: 0;
+	    border-top: 0 none;
+	}
+	> tbody > tr.well td:first-child,
+	> tbody > tr.well:hover td:first-child,
+	.table--highlight > tbody > tr.well:hover td:first-child {
+	    border-left: 0 none;
+	}
+
+	th {
+		background: 0 none;
+		position: relative;
+		text-align: left;
+
+		&:last-child {
+			&:after {
+				display: none;
+			}
+		}
+
+		input {
+			font-weight: normal; // Exclude form fields for column filtering
+		}
+	}
+
+	td > * {
+		vertical-align: middle;
+	}
+
+	tr, td, th {
+		@include text-ellipsis;
+		padding: var(--cui-table-padding);
+		vertical-align: middle;
+
+		&:first-child {
+			width: 1px; // Auto size first column. This is used for tables with
+						// a selection checkbox in the first column. Setting the
+						// width to 1px will ensure that the content fits in a
+						// "snug" manner so as to not waste horizontal space
+						// For fixed tables we set this to "auto" otherwise your
+						// content gets clipped (KJB)
+		}
+	}
+
+	tr td:first-child,
+	tr th:first-child {
+		@include row-inactive;
+
+		label.checkbox {
+			margin: 0;
+			vertical-align: middle;
+		}
+	}
+	&.table--lined {
+		border: 0 none;
+		th, td, tr {
+			border: 0 none;
+			background: transparent;
+		}
+		> tbody > tr:nth-child(odd),
+		> tbody > tr:nth-child(even) {
+			background: transparent;
+		}
+		th {
+			border-bottom: var(--cui-table-header-separator);
+		}
+		td {
+			border-bottom: var(--cui-table-border);
+		}
+		&:not(.table--selectable) {
+			th:first-child, td:first-child {
+				padding-left: 1px;
+			}
+			th:last-child, td:last-child {
+				padding-right: 1px;
+			}
+		}
+	}
+	&.table--bordered {
+		border: var(--cui-table-border);
+		th {
+			border-right: var(--cui-table-border);
+			&:after {
+				visibility: hidden;
+			}
+			&:last-child {
+				border-right: 0 none;
+			}
+		}
+		td {
+			border-top: var(--cui-table-border);
+			border-right: var(--cui-table-border);
+
+  			&:last-child {
+  				border-right: 1px solid transparent;
+  			}
+  		}
+		&-inner {
+			border: 0 none;
+		}
+	}
+	&.table--striped {
+		> tbody > tr:nth-child(odd) {
+			background-color: var(--cui-table-striping-odd);
+		}
+
+		> tbody > tr:nth-child(even) {
+			background-color: var(--cui-table-striping-even);
+		}
+
+		> tbody > tr.active td:first-child {
+			@include row-active;
+		}
+	}
+	&.table--wrap, &.table--wrapped {
+		@include table-wrap;
+	}
+	@include media-breakpoint-down(md) {
+		&.table--wrap-md, &.table--wrapped-md {
+			@include table-wrap;
+		}
+	}
+	@include media-breakpoint-down(sm) {
+		&.table--wrap-sm, &.table--wrapped-sm {
+			@include table-wrap;
+		}
+	}
+	@include media-breakpoint-down(xs) {
+		&.table--wrap-xs, &.table--wrapped-xs {
+			@include table-wrap;
+		}
+	}
+
+	&.table--nowrap--col--1 {
+		td:nth-child(1),th:nth-child(1) {
+			white-space: nowrap;
+		}
+	}
+	&.table--nostripes {
+		th {
+			background: 0 none;
+		}
+		> tbody > tr:nth-child(odd),
+		> tbody > tr:nth-child(even) {
+			background: transparent;
+		}
+	}
+	&.table--nopadding {
+		@include table-spacing(var(--cui-spacing-qtr), 0);
+	}
+	&.table--compressed {
+		@include table-spacing(var(--cui-table-padding-compressed), var(--cui-table-font-size-compressed));
+	}
+	&.table--loose {
+		@include table-spacing(var(--cui-table-padding-loose), var(--cui-table-font-size-loose));
+	}
+	&.table--fixed {
+		table-layout: fixed;
+		tr, td, th {
+			&:first-child {
+				width: auto; // Set this to auto ONLY for fixed tables otherwise
+							 // the content of the first column gets clipped
+			}
+		}
+	}
+	&.table--highlight {
+		> tbody > tr:hover {
+			cursor: pointer;
+		}
+		> tbody > tr:hover td:first-child {
+			@include row-active;
+			transition: all .2s ease;
+		}
+	}
+	&.table--nohighlight {
+		> tbody > tr:hover td:first-child {
+			border-left-color: transparent;
+		}
+	}
+	&.table--hover {
+		> tbody > tr:hover {
+			background-color: var(--cui-background-hover);
+			transition: all .2s ease;
+		}
+	}
+	&.table--selectable {
+	    > thead > th:first-child,
+		> tbody > tr > td:first-child {
+	        border-left: var(--cui-accent-thickness) solid transparent;
+	    }
+
+		> tbody {
+			> tr {
+				transition: all .2s ease;
+				&:hover, &.active {
+					transition: all .2s ease;
+				}
+				&:hover {
+					background: var(--cui-background-hover);
+					> td:first-child {
+						@include row-active;
+					}
+				}
+				td:hover {
+					cursor: pointer;
+				}
+				&.active {
+					background: var(--cui-background-active);
+					> td:first-child {
+						@include row-active;
+					}
+				}
+			}
+		}
+	}
+}
+
+.sortable {
+	cursor: pointer;
+}
+
+.sort-indicator {
+	margin-left: 1px;
+	font-size: 50%;
+	vertical-align: middle;
+}
+
+.fixed-header {
+	position: relative;
+	width: 100%;
+	padding: 36px 0 0;
+
+	.responsive-table {
+		width: 100%;
+
+		thead {
+			tr {
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				margin: 0;
+				padding: 0;
+			}
+		}
+	}
+}

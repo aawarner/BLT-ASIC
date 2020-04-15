@@ -1,0 +1,221 @@
+//
+// Modal
+//
+// A separate backdrop element which was required in previous versions is no longer required. It is built into the pattern itself.
+//
+// Styleguide Components.Modal
+//
+
+
+//
+// Size
+//
+// <div class="alert alert--info"><span class="alert__icon icon-info-outline"></span><div class="alert__message">For best results, we recommend you add your modal elements to the end of the page body tag.</div></div>
+//
+// Markup:
+// <button class="btn" onclick="openModal('modal-small')">Small &#8594; 576px</button>
+// <button class="btn" onclick="openModal('modal-default')">Default &#8594; 768px</button>
+// <button class="btn" onclick="openModal('modal-large')">Large &#8594; 992px</button>
+// <br>
+// <div class="modal modal--small hide" id="modal-small">
+//     <div class="modal__dialog">
+//         <div class="modal__content">
+//             <a class="modal__close" onclick="closeModal('modal-small')"><span class="icon-close"></span></a>
+//             <div class="modal__header">
+//                 <div class="modal__title">Small Modal</div>
+//             </div>
+//             <div class="modal__body">
+//                <p class="subtitle">This is a small width modal</p>
+//             </div>
+//             <div class="modal__footer">
+//                 <button class="btn" onclick="closeModal('modal-small')">Ok</button>
+//             </div>
+//         </div>
+//     </div>
+// </div>
+// <div class="modal hide" id="modal-default">
+//     <div class="modal__dialog">
+//         <div class="modal__content">
+//             <a class="modal__close" onclick="closeModal('modal-default')"><span class="icon-close"></span></a>
+//             <div class="modal__header">
+//                 <div class="modal__title">Default Modal</div>
+//             </div>
+//             <div class="modal__body">
+//                <p class="subtitle">This is a default modal</p>
+//             </div>
+//             <div class="modal__footer">
+//                 <button class="btn" onclick="closeModal('modal-default')">Ok</button>
+//             </div>
+//         </div>
+//     </div>
+// </div>
+// <div class="modal modal--large hide" id="modal-large">
+//     <div class="modal__dialog">
+//         <div class="modal__content">
+//             <a class="modal__close" onclick="closeModal('modal-large')"><span class="icon-close"></span></a>
+//             <div class="modal__header">
+//                 <div class="modal__title">Large Modal</div>
+//             </div>
+//             <div class="modal__body">
+//                <p class="subtitle">This is a large width modal</p>
+//             </div>
+//             <div class="modal__footer">
+//                 <button class="btn" onclick="closeModal('modal-large')">Ok</button>
+//             </div>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 1
+//
+// Styleguide Components.Modal.Size
+//
+
+
+//
+// Full Width
+//
+// Add the modifier class `modal--full` to create a full width (horizontal only) modal.
+//
+// Markup:
+// <button class="btn" onclick="openModal('modal-full')">Full Width</button>
+// <br>
+// <div class="modal modal--full hide" id="modal-full">
+//     <div class="modal__dialog">
+//         <div class="modal__content">
+//             <a class="modal__close" onclick="closeModal('modal-full')"><span class="icon-close"></span></a>
+//             <div class="modal__header">
+//                 <div class="modal__title">Full Width Modal</div>
+//             </div>
+//             <div class="modal__body">
+//                <p class="subtitle">This is a full width modal</p>
+//             </div>
+//             <div class="modal__footer">
+//                 <button class="btn" onclick="closeModal('modal-full')">Ok</button>
+//             </div>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 2
+//
+// Styleguide Components.Modal.Full Width
+//
+
+
+//
+// Full Page
+//
+// Add the modifier class `modal--fluid` to create a full page modal (covers entire viewport).
+//
+// Markup:
+// <button class="btn" onclick="openModal('modal-fluid')">Full Page</button>
+// <br>
+// <div class="modal modal--fluid hide" id="modal-fluid">
+//     <div class="modal__dialog">
+//         <div class="modal__content">
+//             <a class="modal__close" onclick="closeModal('modal-fluid')"><span class="icon-close"></span></a>
+//             <div class="modal__header">
+//                 <div class="modal__title">Full Page Modal</div>
+//             </div>
+//             <div class="modal__body">
+//                <p class="subtitle">This is a fluid modal (fills entire viewport)</p>
+//             </div>
+//             <div class="modal__footer">
+//                 <button class="btn" onclick="closeModal('modal-fluid')">Ok</button>
+//             </div>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 3
+//
+// Styleguide Components.Modal.Full Page
+//
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    z-index: 1040;
+    transition: opacity .15s linear;
+    background-color: rgba(0,0,0, var(--cui-backdrop-opacity));
+
+    .modal__dialog {
+        position: relative;
+        width: var(--cui-modal-width);
+        max-width: calc(100% - .01px);
+        margin: 0 auto;
+        padding: var(--cui-spacing);
+        animation: blowup .3s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards, fade-in .25s 1 linear;
+
+        @include media-breakpoint-down(xs) {
+            padding: var(--cui-spacing-qtr);
+        }
+    }
+
+    .modal__content {
+        position: relative;
+        display: block;
+        text-align: var(--cui-modal-alignment);
+        padding: var(--cui-modal-padding);
+        background-color: var(--cui-modal-background);
+        color: var(--cui-font-color);
+        border-radius: var(--cui-border-radius);
+        border: 0 none;
+        box-shadow: var(--cui-modal-shadow);
+
+        @include media-breakpoint-down(sm) {
+            padding: calc(var(--cui-spacing) * .5);
+        }
+
+        .modal__close {
+            font-size: var(--cui-modal-icon-size);
+            position: absolute;
+            right: var(--cui-spacing);
+            top: var(--cui-spacing);
+            color: var(--cui-inactive-color);
+
+            &:hover {
+                color: var(--cui-active-color);
+                text-decoration: none;
+            }
+        }
+
+        .modal__header {
+            margin-bottom: var(--cui-spacing);
+
+            .modal__title {
+                font-size: var(--cui-modal-title-font-size);
+            }
+        }
+        .modal__footer {
+            margin-top: var(--cui-spacing);
+            text-align: var(--cui-modal-alignment-footer);
+        }
+    }
+    &.modal--small .modal__dialog {
+        width: var(--cui-modal-width-small);
+    }
+    &.modal--large .modal__dialog {
+        width: var(--cui-modal-width-large);
+    }
+    &.modal--full .modal__dialog {
+        width: 100%;
+        padding: 0;
+    }
+    &.modal--fluid {
+        .modal__dialog {
+            padding: 0;
+            height: 100%;
+            width: 100%;
+        }
+        .modal__content {
+            height: 100%;
+        }
+    }
+}

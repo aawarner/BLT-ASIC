@@ -1,0 +1,338 @@
+//
+// Checkbox
+//
+// Styleguide Primitives.Checkbox
+//
+
+
+//
+// States
+//
+// Markup:
+// <div class="row">
+//     <div class="col-lg-2 col-md-4 col-6">
+//         <div class="subheader">Enabled On</div>
+//         <label class="checkbox">
+//             <input type="checkbox" checked>
+//             <span class="checkbox__input"></span>
+//         </label>
+//     </div>
+//     <div class="col-lg-2 col-md-4 col-6">
+//         <div class="subheader">Disabled On</div>
+//         <label class="checkbox disabled">
+//             <input type="checkbox" checked>
+//             <span class="checkbox__input"></span>
+//         </label>
+//     </div>
+//     <div class="col-lg-2 col-md-4 col-6">
+//         <div class="subheader">Hover On</div>
+//         <label class="checkbox">
+//             <input type="checkbox" checked class="hover">
+//             <span class="checkbox__input"></span>
+//         </label>
+//     </div>
+//     <div class="col-lg-2 col-md-4 col-6">
+//         <div class="subheader">Focus On</div>
+//         <label class="checkbox">
+//             <input type="checkbox" checked class="focus">
+//             <span class="checkbox__input"></span>
+//         </label>
+//     </div>
+//     <div class="col-lg-2 col-md-4 col-6">
+//         <div class="subheader">Active On</div>
+//         <label class="checkbox">
+//             <input type="checkbox" checked class="active">
+//             <span class="checkbox__input"></span>
+//         </label>
+//     </div>
+// </div>
+// <div class="row">
+//     <div class="col-lg-2 col-md-4 col-6">
+//         <div class="subheader">Enabled Off</div>
+//         <label class="checkbox">
+//             <input type="checkbox">
+//             <span class="checkbox__input"></span>
+//         </label>
+//     </div>
+//     <div class="col-lg-2 col-md-4 col-6">
+//         <div class="subheader">Disabled Off</div>
+//         <label class="checkbox disabled">
+//             <input type="checkbox">
+//             <span class="checkbox__input"></span>
+//         </label>
+//     </div>
+//     <div class="col-lg-2 col-md-4 col-6">
+//         <div class="subheader">Hover Off</div>
+//         <label class="checkbox">
+//             <input type="checkbox" class="hover">
+//             <span class="checkbox__input"></span>
+//         </label>
+//     </div>
+//     <div class="col-lg-2 col-md-4 col-6">
+//         <div class="subheader">Focus Off</div>
+//         <label class="checkbox">
+//             <input type="checkbox" class="focus">
+//             <span class="checkbox__input"></span>
+//         </label>
+//     </div>
+//     <div class="col-lg-2 col-md-4 col-6">
+//         <div class="subheader">Active Off</div>
+//         <label class="checkbox">
+//             <input type="checkbox" class="active">
+//             <span class="checkbox__input"></span>
+//         </label>
+//     </div>
+// </div>
+//
+// Weight: 1
+//
+// Styleguide Primitives.Checkbox.States
+//
+
+
+//
+// Layout
+//
+// Checkbox elements are stacked by default. Add the form group modifier `form-group--inline` to align them horizontally.
+//
+// Markup:
+// <div class="row">
+//     <div class="col-lg-3 col-6">
+//         <div class="subheader">Stacked (default)</div>
+//         <div class="form-group">
+//             <label class="checkbox">
+//                 <input type="checkbox" checked>
+//                 <span class="checkbox__input"></span>
+//                 <span class="checkbox__label">One</span>
+//             </label>
+//         </div>
+//         <div class="form-group">
+//             <label class="checkbox">
+//                 <input type="checkbox">
+//                 <span class="checkbox__input"></span>
+//                <span class="checkbox__label">Two</span>
+//             </label>
+//         </div>
+//         <div class="form-group">
+//             <label class="checkbox">
+//                 <input type="checkbox">
+//                 <span class="checkbox__input"></span>
+//                 <span class="checkbox__label">Three</span>
+//             </label>
+//         </div>
+//     </div>
+//     <div class="col-lg-3 col-6">
+//         <div class="subheader">Inline</div>
+//         <div class="form-group form-group--inline">
+//             <label class="checkbox">
+//                 <input type="checkbox" checked>
+//                 <span class="checkbox__input"></span>
+//                 <span class="checkbox__label">One</span>
+//             </label>
+//         </div>
+//         <div class="form-group form-group--inline">
+//             <label class="checkbox">
+//                 <input type="checkbox">
+//                 <span class="checkbox__input"></span>
+//                 <span class="checkbox__label">Two</span>
+//             </label>
+//         </div>
+//         <div class="form-group form-group--inline">
+//             <label class="checkbox">
+//                 <input type="checkbox">
+//                 <span class="checkbox__input"></span>
+//                 <span class="checkbox__label">Three</span>
+//             </label>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 2
+//
+// Styleguide Primitives.Checkbox.Layout
+//
+
+
+//
+// Spacing
+//
+// Wrap your checkbox elements in a `form-group` to control spacing. This applies to both inline and stacked checkbox elements.
+//
+// Markup:
+// <div class="row no-gutters">
+//     <div class="col-lg-4 col-6">
+//         <div class="subheader">Compressed</div>
+//         <div class="form-group form-group--inline form-group--compressed">
+//             <label class="checkbox">
+//                 <input type="checkbox" checked>
+//                 <span class="checkbox__input"></span>
+//                 <span class="checkbox__label">One</span>
+//             </label>
+//         </div>
+//         <div class="form-group form-group--inline form-group--compressed">
+//             <label class="checkbox">
+//                 <input type="checkbox">
+//                 <span class="checkbox__input"></span>
+//                 <span class="checkbox__label">Two</span>
+//             </label>
+//         </div>
+//         <div class="form-group form-group--inline form-group--compressed">
+//             <label class="checkbox">
+//                 <input type="checkbox">
+//                 <span class="checkbox__input"></span>
+//                 <span class="checkbox__label">Three</span>
+//             </label>
+//         </div>
+//     </div>
+//     <div class="col-lg-4 col-6">
+//         <div class="subheader">Default</div>
+//         <div class="form-group form-group--inline">
+//             <label class="checkbox">
+//                 <input type="checkbox" checked>
+//                 <span class="checkbox__input"></span>
+//                 <span class="checkbox__label">One</span>
+//             </label>
+//         </div>
+//         <div class="form-group form-group--inline">
+//             <label class="checkbox">
+//                 <input type="checkbox">
+//                 <span class="checkbox__input"></span>
+//                 <span class="checkbox__label">Two</span>
+//             </label>
+//         </div>
+//         <div class="form-group form-group--inline">
+//             <label class="checkbox">
+//                 <input type="checkbox">
+//                 <span class="checkbox__input"></span>
+//                 <span class="checkbox__label">Three</span>
+//             </label>
+//         </div>
+//     </div>
+//     <div class="col-lg-4 col-6">
+//         <div class="subheader">Loose</div>
+//         <div class="form-group form-group--inline form-group--loose">
+//             <label class="checkbox">
+//                 <input type="checkbox" checked>
+//                 <span class="checkbox__input"></span>
+//                 <span class="checkbox__label">One</span>
+//             </label>
+//         </div>
+//         <div class="form-group form-group--inline form-group--loose">
+//             <label class="checkbox">
+//                 <input type="checkbox">
+//                 <span class="checkbox__input"></span>
+//                 <span class="checkbox__label">Two</span>
+//             </label>
+//         </div>
+//         <div class="form-group form-group--inline form-group--loose">
+//             <label class="checkbox">
+//                 <input type="checkbox">
+//                 <span class="checkbox__input"></span>
+//                 <span class="checkbox__label">Three</span>
+//             </label>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 3
+//
+// Styleguide Primitives.Checkbox.Spacing
+//
+
+.checkbox {
+    cursor: pointer;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+
+    input {
+        @include hidden-input;
+        width: var(--cui-checkbox-size);
+        height: var(--cui-checkbox-size);
+        font-weight: var(--cui-form-value-font-weight);
+        margin: 0;
+
+        // Checkbox states
+        &.hover, &:hover {
+            ~ .checkbox__input { // The actual checkbox
+                border: var(--cui-checkbox-border-hover);
+            }
+            ~ .checkbox__input:before { // The focus element
+                @include cui-focus-outline();
+            }
+        }
+
+        &.checked, &:checked {
+            ~ .checkbox__input { // The actual checkbox
+                background-color: var(--cui-checkbox-background-active);
+                border: var(--cui-checkbox-border-active);
+            }
+            ~ .checkbox__input:after { // The checkmark icon
+                color: var(--cui-checkbox-icon-color);
+                font-size: var(--cui-checkbox-icon-size);
+                opacity: 1;
+            }
+        }
+
+        &.focus, &:focus {
+            ~ .checkbox__input { // The actual checkbox
+                border: var(--cui-checkbox-border-active);
+            }
+            ~ .checkbox__input:before { // The focus element
+                @include cui-focus-outline();
+            }
+        }
+
+        &.active, &:active {
+            ~ .checkbox__input { // The actual checkbox
+                background-color: var(--cui-checkbox-background-active);
+                border: var(--cui-checkbox-border-active);
+            }
+            ~ .checkbox__input:before { // The focus element
+                @include cui-focus-outline();
+            }
+        }
+
+        &.disabled, &:disabled {
+            ~ .checkbox__input { // The actual checkbox
+                background-color: var(--cui-checkbox-background-disabled);
+            }
+        }
+    }
+
+    .checkbox__input { // The actual checkbox
+        position: relative;
+        display: inline-flex;
+        width: var(--cui-checkbox-size);
+        min-width: var(--cui-checkbox-size);
+        height: var(--cui-checkbox-size);
+        border: var(--cui-checkbox-border);
+        outline: var(--cui-checkbox-border-thickness) transparent; // For high contrast mode
+        border-radius: var(--cui-checkbox-border-radius);
+        background-color: var(--cui-checkbox-background);
+
+        &:before, &:after {
+            @include hidden-element;
+            transition: all .25s ease;
+        }
+        &:before { // The focus element
+            border-radius: var(--cui-checkbox-border-radius);
+            opacity: 0;
+        }
+        &:after { // The checkmark icon
+            @include icon-check;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--cui-checkbox-icon-color);
+            font-size: 0;
+            font-weight: bold;
+            line-height: 1;
+        }
+    }
+
+    .checkbox__label {
+        @include cui-form-label;
+        margin-left: var(--cui-form-label-spacing);
+    }
+}

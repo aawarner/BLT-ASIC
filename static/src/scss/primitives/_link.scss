@@ -1,0 +1,89 @@
+//
+// Link
+//
+//
+
+
+//
+// Color
+//
+// Markup:
+// <div><a>Default</a></div>
+// <div><a class="link">Muted</a></div>
+// <div><a class="link link--ghost">Ghost</a></div>
+//
+// Weight: 1
+//
+//
+
+
+//
+// Inline
+//
+// Markup:
+// <ul class="list list--inline list--divider">
+//     <li><a class="link" href="#">Contacts</a></li>
+//     <li><a class="link" href="#">Feedback</a></li>
+//     <li><a class="link" href="#">Site Map</a></li>
+//     <li><a class="link" href="#">Terms & Conditions</a></li>
+//     <li><a class="link" href="#">Privacy Statement</a></li>
+//     <li><a class="link" href="#">Cookie Policy</a></li>
+//     <li><a class="link" href="#">Trademarks</a></li>
+// </ul>
+//
+// Weight: 2
+//
+//
+
+a:not(.btn), .link {
+
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border-width: 0;
+    font-weight: inherit;
+    cursor: pointer;
+    -webkit-font-smoothing: inherit;
+
+    display: inline-flex;
+    flex-wrap: wrap;
+    color: var(--cui-link-color);
+    font-weight: var(--cui-link-font-weight);
+    background: transparent;
+    text-decoration: none;
+
+    &:active {
+        color: var(--cui-link-color-active);
+    }
+    &:focus,
+    &:hover {
+        color: var(--cui-link-color-active);
+    }
+    &:active,
+    &:hover,
+    &:focus {
+        text-decoration: underline;
+    }
+    &:focus {
+        outline: none;
+    }
+    &.link--ghost {
+        color: var(--cui-color-white);
+        opacity: 0.75;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+.link {
+    color: var(--cui-inactive-color);
+}
+
+
+// Icons wrapped by links. Do not underline icons
+
+span[class^="icon-"]:before {
+	display: inline-block;
+	text-decoration: none;
+}

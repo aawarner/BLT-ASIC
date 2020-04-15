@@ -1,0 +1,82 @@
+//
+// Image
+//
+//
+
+
+//
+// Responsive
+//
+// Use the image fluid classes to make an image responsive within it's parent container.
+//
+// Markup:
+// <div>
+//     <div class="subheader">Default</div>
+//     <img src="public/img/figure-example-3.jpg" width="600px" height="400px">
+// </div>
+// <div>
+//     <div class="subheader">Fluid Vertical</div>
+//     <img src="public/img/figure-example-3.jpg" class="img-fluid-vertical" width="600px" height="400px">
+// </div>
+// <div>
+//     <div class="subheader">Fluid Horizontal</div>
+//     <img src="public/img/figure-example-3.jpg" class="img-fluid-horizontal" width="600px" height="400px">
+// </div>
+// <div>
+//     <div class="subheader">Fluid Both</div>
+//     <img src="public/img/figure-example-3.jpg" class="img-fluid" width="600px" height="400px">
+// </div>
+//
+// Weight: 1
+//
+//
+
+a > img.thumb {
+    transform: scale(1);
+    transition: all .25s;
+}
+a:hover > img.thumb {
+    transform: scale(1.1);
+    border-color: var(--cui-accent-color);
+}
+
+img {
+
+    &.thumb {
+        border: 3px solid var(--cui-border-color);
+        box-shadow: var(--cui-shadow-outset-lg);
+        height: 100%;
+        width: 100%;
+    }
+    &.image-fluid {
+        width: 100%;
+        height: auto;
+    }
+    &.image-fluid-horizontal {
+        max-width: 100%;
+        height: auto;
+    }
+    &.image-fluid-vertical {
+        max-height: 100%;
+        width: auto;
+        max-width: none;
+    }
+    &.image-rounded {
+        border-radius: 50%;
+    }
+
+    @each $name, $size in $cui-common-sizes {
+        &.image-#{$name} {
+            height: $size;
+            width: $size;
+        }
+        &.image-horizontal-#{$name} {
+            width: $size;
+            height: auto;
+        }
+        &.image-vertical-#{$name} {
+            height: $size;
+            width: auto;
+        }
+    }
+}

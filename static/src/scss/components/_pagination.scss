@@ -1,0 +1,270 @@
+//
+// Pagination
+//
+// Styleguide Components.Pagination
+//
+
+
+//
+// Size
+//
+// Markup:
+// <div class="base-margin-bottom">
+//     <div class="subheader">Small</div>
+//     <ul class="pagination pagination--small">
+//         <li><a href="javascript:;">Previous</a></li>
+//         <li><a href="javascript:;">1</a></li>
+//         <li><a href="javascript:;">2</a></li>
+//         <li class="active"><a href="javascript:;">3</a></li>
+//         <li><a href="javascript:;">4</a></li>
+//         <li><a href="javascript:;">5</a></li>
+//         <li><a href="javascript:;">Next</a></li>
+//     </ul>
+// </div>
+// <div class="base-margin-bottom">
+//     <div class="subheader">Default</div>
+//     <ul class="pagination">
+//         <li><a href="javascript:;">Previous</a></li>
+//         <li><a href="javascript:;">1</a></li>
+//         <li><a href="javascript:;">2</a></li>
+//         <li class="active"><a href="javascript:;">3</a></li>
+//         <li><a href="javascript:;">4</a></li>
+//         <li><a href="javascript:;">5</a></li>
+//         <li><a href="javascript:;">Next</a></li>
+//     </ul>
+// </div>
+// <div class="base-margin-bottom">
+//     <div class="subheader">Large</div>
+//     <ul class="pagination pagination--large">
+//         <li><a href="javascript:;">Previous</a></li>
+//         <li><a href="javascript:;">1</a></li>
+//         <li><a href="javascript:;">2</a></li>
+//         <li class="active"><a href="javascript:;">3</a></li>
+//         <li><a href="javascript:;">4</a></li>
+//         <li><a href="javascript:;">5</a></li>
+//         <li><a href="javascript:;">Next</a></li>
+//     </ul>
+// </div>
+//
+// Weight: 1
+//
+// Styleguide Components.Pagination.Size
+//
+
+
+//
+// Style
+//
+// Markup:
+// <div class="base-margin-bottom">
+//     <div class="subheader">Default</div>
+//     <ul class="pagination">
+//         <li><a href="javascript:;">Previous</a></li>
+//         <li><a href="javascript:;">1</a></li>
+//         <li><a href="javascript:;">2</a></li>
+//         <li class="active"><a href="javascript:;">3</a></li>
+//         <li><a href="javascript:;">4</a></li>
+//         <li><a href="javascript:;">5</a></li>
+//         <li><a href="javascript:;">Next</a></li>
+//     </ul>
+// </div>
+// <div class="base-margin-bottom">
+//     <div class="subheader">Rounded</div>
+//     <ul class="pagination pagination--rounded">
+//         <li><a href="javascript:;">Previous</a></li>
+//         <li><a href="javascript:;">1</a></li>
+//         <li><a href="javascript:;">2</a></li>
+//         <li class="active"><a href="javascript:;">3</a></li>
+//         <li><a href="javascript:;">4</a></li>
+//         <li><a href="javascript:;">5</a></li>
+//         <li><a href="javascript:;">Next</a></li>
+//     </ul>
+// </div>
+//
+// Weight: 2
+//
+// Styleguide Components.Pagination.Style
+//
+
+
+//
+// With Icons
+//
+// Markup:
+// <div class="row">
+//     <div class="col-xl-6 half-margin-top">
+//         <ul class="pagination">
+//             <li><a href="javascript:;"><span class="icon-chevron-left-double"></span></a></li>
+//             <li><a href="javascript:;"><span class="icon-chevron-left"></span></a></li>
+//             <li><a href="javascript:;">1</a></li>
+//             <li><a href="javascript:;">2</a></li>
+//             <li class="active"><a href="javascript:;">3</a></li>
+//             <li><a href="javascript:;">4</a></li>
+//             <li><a href="javascript:;">5</a></li>
+//             <li><a href="javascript:;"><span class="icon-chevron-right"></span></a></li>
+//             <li><a href="javascript:;"><span class="icon-chevron-right-double"></span></a></li>
+//         </ul>
+//     </div>
+// </div>
+//
+// Weight: 3
+//
+// Styleguide Components.Pagination.Icons
+//
+
+
+//
+// Big Data
+//
+// Use the following rules and examples for handling large datasets:
+//
+// Markup:
+// <div class="row">
+//     <div class="col-xl-6">
+//         <ul class="base-margin-bottom">
+//             <li>When first page selected, disable the 'first' and 'previous' actions.</li>
+//             <li>When last page selected, disable the 'last' and 'next' actions.</li>
+//             <li>Always render the first and last page actions.</span>
+//             <li>Render a maximum of 5 clickable actions.</span>
+//             <li>If page count > 5 use an ellipsis to denote additional actions.</li>
+//         </ul>
+//     </div>
+//     <div class="col-xl-6">
+//         <ul class="pagination">
+//             <li><a class="disabled" href="javascript:;"><span class="icon-chevron-left-double"></span></a></li>
+//             <li><a class="disabled" href="javascript:;"><span class="icon-chevron-left"></span></a></li>
+//             <li class="active"><a href="javascript:;">1</a></li>
+//             <li><a href="javascript:;">2</a></li>
+//             <li><a href="javascript:;">3</a></li>
+//             <li><a href="javascript:;">4</a></li>
+//             <li><span class="icon-more"></span></li>
+//             <li><a href="javascript:;">71</a></li>
+//             <li><a href="javascript:;"><span class="icon-chevron-right"></span></a></li>
+//             <li><a href="javascript:;"><span class="icon-chevron-right-double"></span></a></li>
+//         </ul>
+//         <div class="base-padding"></div>
+//         <ul class="pagination">
+//             <li><a href="javascript:;"><span class="icon-chevron-left-double"></span></a></li>
+//             <li><a href="javascript:;"><span class="icon-chevron-left"></span></a></li>
+//             <li><a href="javascript:;">1</a></li>
+//             <li><span class="icon-more"></span></li>
+//             <li><a href="javascript:;">5</a></li>
+//             <li class="active"><a href="javascript:;">6</a></li>
+//             <li><a href="javascript:;">7</a></li>
+//             <li><span class="icon-more"></span></li>
+//             <li><a href="javascript:;">71</a></li>
+//             <li><a href="javascript:;"><span class="icon-chevron-right"></span></a></li>
+//             <li><a href="javascript:;"><span class="icon-chevron-right-double"></span></a></li>
+//         </ul>
+//         <div class="base-padding"></div>
+//         <ul class="pagination pagination--bordered">
+//             <li><a href="javascript:;"><span class="icon-chevron-left-double"></span></a></li>
+//             <li><a href="javascript:;"><span class="icon-chevron-left"></span></a></li>
+//             <li><a href="javascript:;">1</a></li>
+//             <li><span class="icon-more"></span></li>
+//             <li><a href="javascript:;">68</a></li>
+//             <li><a href="javascript:;">69</a></li>
+//             <li><a href="javascript:;">70</a></li>
+//             <li class="active"><a href="javascript:;">71</a></li>
+//             <li><a class="disabled" href="javascript:;"><span class="icon-chevron-right"></span></a></li>
+//             <li><a class="disabled" href="javascript:;"><span class="icon-chevron-right-double"></span></a></li>
+//         </ul>
+//     </div>
+// </div>
+//
+// Weight: 4
+//
+// Styleguide Components.Pagination.Big
+//
+
+@mixin build-pagination-style(
+    $border-radius: var(--cui-pagination-border-radius)
+) {
+    > li > a {
+        border-radius: $border-radius;
+    }
+}
+
+@mixin build-pagination-size(
+    $font-size: var(--cui-pagination-default-font-size),
+    $padding: var(--cui-pagination-default-padding),
+    $height: var(--cui-pagination-default-height)
+) {
+    > li > a {
+        font-size: $font-size;
+        padding: $padding;
+        height: $height;
+    }
+}
+
+.pagination {
+
+    display: inline-flex;
+    list-style: none;
+    margin: var(--cui-spacing) 0 0 0;
+    padding: 0;
+
+    @include build-pagination-style();
+    @include build-pagination-size();
+
+    @each $modifier in small, medium, large {
+        &.pagination--#{$modifier} {
+            @include build-pagination-size(
+                $font-size: var(--cui-pagination-#{$modifier}-font-size),
+                $padding: var(--cui-pagination-#{$modifier}-padding),
+                $height: var(--cui-pagination-#{$modifier}-height)
+            );
+        }
+    }
+
+    > li {
+        > a {
+            display: inline-flex;
+            align-items: center;
+            border: var(--cui-pagination-border-inactive);
+            background: var(--cui-pagination-background-inactive);
+            border-radius: var(--cui-border-radius);
+            color: var(--cui-inactive-color);
+            transition: all .25s ease;
+            text-decoration: none;
+
+            &:hover, &:active, &:focus, &:visited {
+                color: var(--cui-active-color);
+                text-decoration: none;
+            }
+
+            &:hover, &:focus {
+                border: var(--cui-pagination-border-hover);
+            }
+
+            &:focus {
+                @include cui-focus-outline;
+            }
+        }
+
+        + li {
+            margin-left: var(--cui-pagination-margin);
+        }
+
+        .icon-more {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding: 0 var(--cui-spacing-half);
+        }
+
+        &.active {
+            > a {
+                background-color: var(--cui-pagination-background-active);
+                color: var(--cui-pagination-color-active);
+                transition: all .25s ease;
+            }
+        }
+    }
+
+    // Modifiers
+
+    &.pagination--rounded {
+        @include build-pagination-style(var(--cui-border-radius-round));
+    }
+}

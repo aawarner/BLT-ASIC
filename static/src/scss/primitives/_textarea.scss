@@ -1,0 +1,155 @@
+//
+// Textarea
+//
+// Add the modifier class `form-group--error` to indicate a validation error.
+//
+// Styleguide Primitives.Textarea
+//
+
+
+//
+// States
+//
+// Markup:
+// <div class="row">
+//     <div class="col-md-3">
+//         <div class="form-group base-margin-bottom">
+//             <div class="form-group__text">
+//                 <textarea id="textarea-state-default" rows="3"></textarea>
+//                 <label for="textarea-state-default">Default</label>
+//             </div>
+//         </div>
+//     </div>
+//     <div class="col-md-3">
+//         <div class="form-group base-margin-bottom">
+//             <div class="form-group__text">
+//                 <textarea id="textarea-state-disabled" rows="3" disabled></textarea>
+//                 <label for="textarea-state-disabled">Disabled</label>
+//             </div>
+//         </div>
+//     </div>
+//     <div class="col-md-3">
+//         <div class="form-group base-margin-bottom">
+//             <div class="form-group__text">
+//                 <textarea id="textarea-state-readonly" rows="3" readonly></textarea>
+//                 <label for="textarea-state-readonly">Readonly</label>
+//             </div>
+//         </div>
+//     </div>
+//     <div class="col-md-3">
+//         <div class="form-group base-margin-bottom">
+//             <div class="form-group__text">
+//                 <textarea id="textarea-state-required" rows="3" required></textarea>
+//                 <label for="textarea-state-required">
+//                     <span>Required</span>
+//                     <span title="this is a required field">*</span>
+//                 </label>
+//             </div>
+//         </div>
+//     </div>
+//     <div class="col-md-3">
+//         <div class="form-group base-margin-bottom">
+//             <div class="form-group__text">
+//                 <textarea id="textarea-state-hover" rows="3" class="hover"></textarea>
+//                 <label for="textarea-state-hover">Hover</label>
+//             </div>
+//         </div>
+//     </div>
+//     <div class="col-md-3">
+//         <div class="form-group base-margin-bottom">
+//             <div class="form-group__text">
+//                 <textarea id="textarea-state-focus" rows="3" class="focus"></textarea>
+//                 <label for="textarea-state-focus">Focus</label>
+//             </div>
+//         </div>
+//     </div>
+//     <div class="col-md-3">
+//         <div class="form-group form-group--error">
+//             <div class="form-group__text">
+//                 <textarea id="textarea-state-error" rows="3">(*#&$*(H*(H@#($*</textarea>
+//                 <label for="textarea-state-error">Error</label>
+//             </div>
+//             <div class="help-block" role="alert">
+//                 <span>Invalid or unknown string</span>
+//             </div>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 1
+//
+// Styleguide Primitives.Textarea.States
+//
+
+
+//
+// Label Layout
+//
+// Markup:
+// <div class="row">
+//     <div class="col-md-6">
+//         <div class="subheader">Default</div>
+//         <div class="form-group base-margin-bottom">
+//             <div class="form-group__text">
+//                 <textarea id="textarea-label-default" class="textarea" rows="3"></textarea>
+//                 <label for="textarea-label-default">Textarea Label</label>
+//             </div>
+//         </div>
+//     </div>
+//     <div class="col-md-6">
+//         <div class="subheader">Inline</div>
+//         <div class="form-group form-group--inline">
+//             <div class="form-group__text">
+//                 <textarea id="textarea-label-inline" class="textarea" rows="3"></textarea>
+//                 <label for="textarea-label-inline">Textarea Label</label>
+//             </div>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 2
+//
+// Styleguide Primitives.Textarea.Layout
+//
+
+
+//
+// Hint Text
+//
+// Use hint text to provide a description of what the field should contain.
+//
+// Markup:
+// <div class="row">
+//     <div class="col-md-6">
+//         <div class="form-group">
+//             <div class="form-group__text">
+//                 <textarea id="textarea-hint" class="textarea" rows="3"></textarea>
+//                 <label for="textarea-hint">PSIRT Description</label>
+//             </div>
+//             <div class="help-block" role="alert">
+//                 <span>Product security incident response team description</span>
+//             </div>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 3
+//
+// Styleguide Primitives.Textarea.Hinting
+//
+
+.form-group .form-group__text textarea {
+
+    resize: none;
+
+    @include cui-form-input-size;
+    @include cui-form-input-style;
+    @include cui-form-input-behavior;
+
+    font-weight: var(--cui-form-value-font-weight);
+}
+
+// Inline labels
+.form-group.form-group--inline .form-group__text textarea ~label {
+    align-self: flex-start;
+}

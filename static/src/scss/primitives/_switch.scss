@@ -1,0 +1,355 @@
+//
+// Switch
+//
+// Styleguide Primitives.Switch
+//
+
+
+//
+// States
+//
+// Markup:
+// <div class="row">
+//     <div class="col-lg-2 col-md-4 col-6">
+//         <div class="subheader">Enabled On</div>
+//         <label class="switch">
+//             <input type="checkbox" checked>
+//             <span class="switch__input"></span>
+//         </label>
+//     </div>
+//     <div class="col-lg-2 col-md-4 col-6">
+//         <div class="subheader">Disabled On</div>
+//         <label class="switch disabled">
+//             <input type="checkbox" checked>
+//             <span class="switch__input"></span>
+//         </label>
+//     </div>
+//     <div class="col-lg-2 col-md-4 col-6">
+//         <div class="subheader">Hover On</div>
+//         <label class="switch">
+//             <input type="checkbox" checked class="hover">
+//             <span class="switch__input"></span>
+//         </label>
+//     </div>
+//     <div class="col-lg-2 col-md-4 col-6">
+//         <div class="subheader">Focus On</div>
+//         <label class="switch">
+//             <input type="checkbox" checked class="focus">
+//             <span class="switch__input"></span>
+//         </label>
+//     </div>
+//     <div class="col-lg-2 col-md-4 col-6">
+//         <div class="subheader">Active On</div>
+//         <label class="switch">
+//             <input type="checkbox" checked class="active">
+//             <span class="switch__input"></span>
+//         </label>
+//     </div>
+// </div>
+// <div class="row">
+//     <div class="col-lg-2 col-md-4 col-6">
+//         <div class="subheader">Enabled Off</div>
+//         <label class="switch">
+//             <input type="checkbox">
+//             <span class="switch__input"></span>
+//         </label>
+//     </div>
+//     <div class="col-lg-2 col-md-4 col-6">
+//         <div class="subheader">Disabled Off</div>
+//         <label class="switch disabled">
+//             <input type="checkbox">
+//             <span class="switch__input"></span>
+//         </label>
+//     </div>
+//     <div class="col-lg-2 col-md-4 col-6">
+//         <div class="subheader">Hover Off</div>
+//         <label class="switch">
+//             <input type="checkbox" class="hover">
+//             <span class="switch__input"></span>
+//         </label>
+//     </div>
+//     <div class="col-lg-2 col-md-4 col-6">
+//         <div class="subheader">Focus Off</div>
+//         <label class="switch">
+//             <input type="checkbox" class="focus">
+//             <span class="switch__input"></span>
+//         </label>
+//     </div>
+//     <div class="col-lg-2 col-md-4 col-6">
+//         <div class="subheader">Active Off</div>
+//         <label class="switch">
+//             <input type="checkbox" class="active">
+//             <span class="switch__input"></span>
+//         </label>
+//     </div>
+// </div>
+//
+// Weight: 1
+//
+// Styleguide Primitives.Switch.States
+//
+
+
+//
+// Layout
+//
+// Switch elements are stacked by default. Add the form modifier `form-group--inline` to inline them.
+//
+// Markup:
+// <div class="row">
+//     <div class="col-md-6">
+//         <div class="subheader">Stacked (default)</div>
+//         <div class="form-group">
+//             <label class="switch">
+//                 <input type="checkbox" checked>
+//                 <span class="switch__input"></span>
+//                 <span class="switch__label">One</span>
+//             </label>
+//         </div>
+//         <div class="form-group">
+//             <label class="switch">
+//                 <input type="checkbox">
+//                 <span class="switch__input"></span>
+//                 <span class="switch__label">Two</span>
+//             </label>
+//         </div>
+//         <div class="form-group">
+//             <label class="switch">
+//                 <input type="checkbox">
+//                 <span class="switch__input"></span>
+//                 <span class="switch__label">Three</span>
+//             </label>
+//         </div>
+//     </div>
+//     <div class="col-md-6">
+//         <div class="subheader">Inline</div>
+//         <div class="form-group form-group--inline">
+//             <label class="switch">
+//                 <input type="checkbox" checked>
+//                 <span class="switch__input"></span>
+//                 <span class="switch__label">One</span>
+//             </label>
+//         </div>
+//         <div class="form-group form-group--inline">
+//             <label class="switch">
+//                 <input type="checkbox">
+//                 <span class="switch__input"></span>
+//                 <span class="switch__label">Two</span>
+//             </label>
+//         </div>
+//         <div class="form-group form-group--inline">
+//             <label class="switch">
+//                 <input type="checkbox">
+//                 <span class="switch__input"></span>
+//                 <span class="switch__label">Three</span>
+//             </label>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 2
+//
+// Styleguide Primitives.Switch.Layout
+//
+
+
+//
+// Labels
+//
+// Switch Labels can be placed left, right, or on both sides of the switch element.
+//
+// Markup:
+// <div class="form-group">
+//     <label class="switch">
+//         <input type="checkbox" checked>
+//         <span class="switch__label">Left</span>
+//         <span class="switch__input"></span>
+//     </label>
+// </div>
+// <div class="form-group">
+//     <label class="switch">
+//         <input type="checkbox" checked>
+//         <span class="switch__input"></span>
+//         <span class="switch__label">Right</span>
+//     </label>
+// </div>
+// <div class="form-group">
+//     <label class="switch">
+//         <input type="checkbox" checked>
+//         <span class="switch__label">Both</span>
+//         <span class="switch__input"></span>
+//         <span class="switch__label">Both</span>
+//     </label>
+// </div>
+//
+// Weight: 3
+//
+// Styleguide Primitives.Switch.Labels
+//
+
+
+//
+// Spacing
+//
+// Wrap your switch elements in a form-group to control spacing between other form group elements. This applies to both inline and stacked switch elements.
+//
+// Markup:
+// <div class="row no-gutters">
+//     <div class="col-lg-4 col-6">
+//         <div class="subheader">Compressed</div>
+//         <div class="form-group form-group--compressed">
+//             <label class="switch">
+//                 <input type="checkbox" checked>
+//                 <span class="switch__input"></span>
+//                 <span class="switch__label">One</span>
+//             </label>
+//         </div>
+//         <div class="form-group form-group--compressed">
+//             <label class="switch">
+//                 <input type="checkbox">
+//                 <span class="switch__input"></span>
+//                 <span class="switch__label">Two</span>
+//             </label>
+//         </div>
+//         <div class="form-group form-group--compressed">
+//             <label class="switch">
+//                 <input type="checkbox">
+//                 <span class="switch__input"></span>
+//                 <span class="switch__label">Three</span>
+//             </label>
+//         </div>
+//     </div>
+//     <div class="col-lg-4 col-6">
+//         <div class="subheader">Default</div>
+//         <div class="form-group">
+//             <label class="switch">
+//                 <input type="checkbox" checked>
+//                 <span class="switch__input"></span>
+//                 <span class="switch__label">One</span>
+//             </label>
+//         </div>
+//         <div class="form-group">
+//             <label class="switch">
+//                 <input type="checkbox">
+//                 <span class="switch__input"></span>
+//                 <span class="switch__label">Two</span>
+//             </label>
+//         </div>
+//         <div class="form-group">
+//             <label class="switch">
+//                 <input type="checkbox">
+//                 <span class="switch__input"></span>
+//                 <span class="switch__label">Three</span>
+//             </label>
+//         </div>
+//     </div>
+//     <div class="col-lg-4 col-6">
+//         <div class="subheader">Loose</div>
+//         <div class="form-group form-group--loose">
+//             <label class="switch">
+//                 <input type="checkbox" checked>
+//                 <span class="switch__input"></span>
+//                 <span class="switch__label">One</span>
+//             </label>
+//         </div>
+//         <div class="form-group form-group--loose">
+//             <label class="switch">
+//                 <input type="checkbox">
+//                 <span class="switch__input"></span>
+//                 <span class="switch__label">Two</span>
+//             </label>
+//         </div>
+//         <div class="form-group form-group--loose">
+//             <label class="switch">
+//                 <input type="checkbox">
+//                 <span class="switch__input"></span>
+//                 <span class="switch__label">Three</span>
+//             </label>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 4
+//
+// Styleguide Primitives.Switch.Spacing
+//
+
+.switch {
+    cursor: pointer;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+
+    input {
+        @include hidden-input;
+        font-weight: var(--cui-form-value-font-weight);
+        margin: 0;
+
+        // Switch states
+        &.hover, &:hover {
+            ~ .switch__input:after {
+                border-color: var(--cui-switch-knob-border-hover);
+                border-width: var(--cui-switch-knob-border-width-hover);
+                @include cui-focus-outline;
+            }
+        }
+
+        &.checked, &:checked {
+            ~ .switch__input { // Slider
+                background-color: var(--cui-switch-slider-background-active);
+            }
+            ~ .switch__input:after { // Knob
+                background-color: var(--cui-switch-knob-background-active);
+                border-color: var(--cui-switch-knob-border-active);
+                transform: translateX(100%);
+            }
+        }
+
+        &.focus, &:focus {
+            ~ .switch__input:after { // Knob
+                @include cui-focus-outline;
+            }
+        }
+    }
+
+    .switch__input { // The actual switch slider
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--cui-switch-slider-background);
+        height: var(--cui-switch-slider-height);
+        width: calc(var(--cui-switch-size) * 2);
+        border-radius: var(--cui-switch-slider-border-radius);
+        transition: background 0.4s ease-out;
+
+        &:before { // The focus element
+            @include hidden-element;
+            border-radius: var(--cui-switch-slider-border-radius);
+        }
+        &:after { // The switch knob
+            display: block;
+            position: absolute;
+            left: 0;
+            content: '';
+            cursor: pointer;
+            height: var(--cui-switch-size);
+            width: var(--cui-switch-size);
+            background-color: var(--cui-switch-knob-background);
+            border-radius: 50%;
+            border-width: var(--cui-switch-knob-border-width);
+            border-style: solid;
+            border-color: var(--cui-switch-knob-border);
+            transform: translateX(0);
+            transition: all .4s cubic-bezier(0.2, 0.8, 0.2, 1.2);
+        }
+    }
+
+    .switch__label {
+        @include cui-form-label;
+    }
+    .switch__label + .switch__input,
+    .switch__input + .switch__label {
+        margin-left: calc(var(--cui-form-label-spacing) * 2);
+    }
+}

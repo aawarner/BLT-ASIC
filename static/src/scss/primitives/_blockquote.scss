@@ -1,0 +1,242 @@
+//
+// Blockquote
+//
+// Styleguide Primitives.Blockquote
+//
+
+
+//
+// Color
+//
+// Markup:
+// <div class="row">
+//     <div class="col-md-3">
+//         <div class="subheader">Primary</div>
+//         <blockquote class="blockquote--primary">
+//             <p>"Everything should be made as simple as possible, but not simpler."</p>
+//             <cite>Albert Einstein</cite>
+//         </blockquote>
+//     </div>
+//     <div class="col-md-3">
+//         <div class="subheader">Secondary</div>
+//         <blockquote class="blockquote--secondary">
+//             <p>"Good friends, good books, and a sleepy conscience: this is the ideal life."</p>
+//             <cite>Mark Twain</cite>
+//         </blockquote>
+//     </div>
+//     <div class="col-md-3">
+//         <div class="subheader">Tertiary</div>
+//         <blockquote class="blockquote--tertiary">
+//             <p>"I don’t think of all the misery but of the beauty that still remains."</p>
+//             <cite>Anne Frank</cite>
+//         </blockquote>
+//     </div>
+//     <div class="col-md-3">
+//         <div class="subheader">Success</div>
+//         <blockquote class="blockquote--success">
+//             <p>"Good people do not need laws to tell them to act responsibly, while bad people will find a way around the laws."</p>
+//             <cite>Plato</cite>
+//         </blockquote>
+//     </div>
+//     <div class="col-md-3">
+//         <div class="subheader">Info</div>
+//         <blockquote class="blockquote--info">
+//             <p>"When one door of happiness closes, another opens; but often we look so long at the closed door that we do not see the one which has been opened for us."</p>
+//             <cite>Helen Keller</cite>
+//         </blockquote>
+//     </div>
+//     <div class="col-md-3">
+//         <div class="subheader">Warning Alt</div>
+//         <blockquote class="blockquote--warning-alt">
+//             <p>"Those who dare to fail miserably can achieve greatly."</p>
+//             <cite>John F. Kennedy</cite>
+//         </blockquote>
+//     </div>
+//     <div class="col-md-3">
+//         <div class="subheader">Warning</div>
+//         <blockquote class="blockquote--warning">
+//             <p>"Great minds discuss ideas; average minds discuss events; small minds discuss people."</p>
+//             <cite>Eleanor Roosevelt</cite>
+//         </blockquote>
+//     </div>
+//     <div class="col-md-3">
+//         <div class="subheader">Danger</div>
+//         <blockquote class="blockquote--danger">
+//             <p>"Everything should be made as simple as possible, but not simpler."</p>
+//             <cite>Albert Einstein</cite>
+//         </blockquote>
+//     </div>
+//     <div class="col-md-3">
+//         <div class="subheader">Dark</div>
+//         <blockquote class="blockquote--dark">
+//             <p>"Perfect typography is the most elusive of all arts."</p>
+//             <cite>Jan Tschichold</cite>
+//         </blockquote>
+//     </div>
+//     <div class="col-md-3">
+//         <div class="subheader">Light</div>
+//         <blockquote class="blockquote--light">
+//             <p>"Little by little, one travels far."</p>
+//             <cite>J.R.R. Tolkien</cite>
+//         </blockquote>
+//     </div>
+// </div>
+//
+// Weight: 1
+//
+// Styleguide Primitives.Blockquote.Color
+//
+
+
+//
+// Alignment
+//
+// Markup:
+// <div class="row">
+//     <div class="col-md-4">
+//         <div class="subheader">Default</div>
+//         <blockquote>
+//             <p>"I have come to believe that the whole world is an enigma, a harmless enigma that is made terrible by our own mad attempt to interpret it as though it had an underlying truth."</p>
+//             <cite>Umberto Eco</cite>
+//         </blockquote>
+//     </div>
+//     <div class="col-md-4">
+//         <div class="subheader text-center">Center</div>
+//         <blockquote class="blockquote--center">
+//             <p>"Be nice to people on your way up because you meet them on your way down."</p>
+//             <cite>Jimmy Durante</cite>
+//         </blockquote>
+//     </div>
+//     <div class="col-md-4">
+//         <div class="subheader text-right">Right</div>
+//         <blockquote class="blockquote--right">
+//             <p>"In science one tries to tell people, in such a way as to be understood by everyone, something that no one ever knew before. But in poetry, it's the exact opposite."</p>
+//             <cite>Paul Dirac</cite>
+//         </blockquote>
+//     </div>
+// </div>
+//
+// Weight: 2
+//
+// Styleguide Primitives.Blockquote.Alignment
+//
+
+
+//
+// Padding
+//
+// Markup:
+// <div class="row">
+//     <div class="col-md-3">
+//         <div class="subheader">Compressed</div>
+//         <blockquote class="blockquote--compressed">
+//             <p>"There is a wisdom of the head, and a wisdom of the heart."</p>
+//             <cite>Charles Dickens</cite>
+//         </blockquote>
+//     </div>
+//     <div class="col-md-3">
+//         <div class="subheader">Default</div>
+//         <blockquote>
+//             <p>"You are remembered for the rules you break."</p>
+//             <cite>Douglas MacArthur</cite>
+//         </blockquote>
+//     </div>
+//     <div class="col-md-3">
+//         <div class="subheader">Loose</div>
+//         <blockquote class="blockquote--loose">
+//             <p>"Weeds are flowers too, once you get to know them."</p>
+//             <cite>A. A. Milne</cite>
+//         </blockquote>
+//     </div>
+// </div>
+//
+// Weight: 3
+//
+// Styleguide Primitives.Blockquote.Padding
+//
+
+@mixin build-blockquote-style(
+    $border-color: var(--cui-theme-primary)
+) {
+    border-color: $border-color;
+    cite {
+        border-color: $border-color;
+    }
+}
+
+@mixin build-blockquote-alignment(
+    $direction: left
+) {
+    border-width: 0;
+    border-style: none;
+
+    @if $direction == left {
+        border-left-width: var(--cui-accent-thickness);
+        border-left-style: solid;
+    }
+    @else if $direction == right {
+        text-align: right;
+        border-right-width: var(--cui-accent-thickness);
+        border-right-style: solid;
+    }
+    @else if $direction == center {
+        text-align: center;
+        cite {
+            width: 50%;
+            padding-top: var(--cui-spacing-half);
+            border-top-width: var(--cui-accent-thickness);
+            border-top-style: solid;
+        }
+    }
+    @else {
+        @error "[Blockquote] Unknown blockquote direction #{$direction}.";
+    }
+}
+
+@mixin build-blockquote-padding(
+    $padding: var(--cui-blockquote-default-padding)
+) {
+    padding: 0 $padding;
+}
+
+blockquote {
+
+    margin: var(--cui-blockquote-margin);
+
+    @include build-blockquote-padding();
+    @each $modifier in compressed, regular, loose {
+        &.blockquote--#{$modifier} {
+            @include build-blockquote-padding(
+                $padding: var(--cui-blockquote-#{$modifier}-padding)
+            );
+        }
+    }
+
+    @include build-blockquote-style();
+    @each $name, $color in $cui-theme-colors {
+        &.blockquote--#{$name} {
+            @include build-blockquote-style(
+                $border-color: var(--cui-theme-#{$name})
+            );
+        }
+    }
+
+    @include build-blockquote-alignment();
+    @each $modifier in left, center, right {
+        &.blockquote--#{$modifier} {
+            @include build-blockquote-alignment(
+                $direction: $modifier
+            );
+        }
+    }
+}
+
+cite {
+    display: inline-block;
+    color: var(--cui-inactive-color);
+    font-style: italic;
+
+    &:before {
+        content: "\2014 \00A0";
+    }
+}

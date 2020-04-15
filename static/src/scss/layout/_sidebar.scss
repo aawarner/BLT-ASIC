@@ -1,0 +1,1015 @@
+//
+// Sidebar
+//
+// Styleguide Layout.Sidebar
+//
+
+
+//
+// Structure
+//
+// Markup:
+// <div class="row dbl-padding-bottom">
+//     <div class="col-lg-6 col-xl-4 base-padding-bottom">
+//         <div class="subheader">Basic</div>
+//         <nav class="sidebar" role="navigation">
+//             <div class="sidebar__header">
+//                 <div class="sidebar__header-title">Title Area</div>
+//             </div>
+//             <ul>
+//                 <li class="sidebar__item">
+//                     <a tabindex="0">Home</a>
+//                 </li>
+//                 <li class="sidebar__item">
+//                     <a tabindex="0">Alerts</a>
+//                 </li>
+//                 <li class="sidebar__item">
+//                     <a tabindex="0">Charts</a>
+//                 </li>
+//                 <li class="sidebar__item">
+//                     <a tabindex="0">Devices</a>
+//                 </li>
+//                 <li class="sidebar__item">
+//                     <a tabindex="0">Settings</a>
+//                 </li>
+//                 <li class="sidebar__item">
+//                     <a tabindex="0">Help</a>
+//                 </li>
+//             </ul>
+//         </nav>
+//     </div>
+//     <div class="col-lg-6 col-xl-4 base-padding-bottom">
+//         <div class="subheader">Icons and Dividers</div>
+//         <nav class="sidebar" role="navigation">
+//             <div class="sidebar__header">
+//                 <div class="sidebar__header-title">Title Area</div>
+//             </div>
+//             <ul>
+//                 <li class="sidebar__item">
+//                     <a tabindex="0">
+//                         <span class="icon-home"></span>
+//                         <span>Home</span>
+//                     </a>
+//                 </li>
+//                 <li class="sidebar__item">
+//                     <a tabindex="0">
+//                         <span class="icon-bell"></span>
+//                         <span>Alerts</span>
+//                     </a>
+//                 </li>
+//                 <li class="sidebar__item">
+//                     <a tabindex="0">
+//                         <span class="icon-graph"></span>
+//                         <span>Charts</span>
+//                     </a>
+//                 </li>
+//                 <li class="sidebar__item">
+//                     <a tabindex="0">
+//                         <span class="icon-devices"></span>
+//                         <span>Devices</span>
+//                     </a>
+//                 </li>
+//                 <li class="divider"></li>
+//                 <li class="sidebar__item">
+//                     <a tabindex="0">
+//                         <span class="icon-cog"></span>
+//                         <span>Settings</span>
+//                     </a>
+//                 </li>
+//                 <li class="sidebar__item">
+//                     <a tabindex="0">
+//                         <span class="icon-help"></span>
+//                         <span>Help</span>
+//                     </a>
+//                 </li>
+//             </ul>
+//         </nav>
+//     </div>
+//     <div class="col-lg-6 col-xl-4 base-padding-bottom">
+//         <div class="subheader">With Drawers</div>
+//         <nav class="sidebar" role="navigation">
+//             <div class="sidebar__header">
+//                 <div class="sidebar__header-title">Title Area</div>
+//             </div>
+//             <ul>
+//                 <li class="sidebar__item">
+//                     <a tabindex="0">
+//                         <span class="icon-home"></span>
+//                         <span>Home</span>
+//                     </a>
+//                 </li>
+//                 <li class="sidebar__item">
+//                     <a tabindex="0">
+//                         <span class="icon-bell"></span>
+//                         <span>Alerts</span>
+//                     </a>
+//                 </li>
+//                 <li class="sidebar__item">
+//                     <a tabindex="0">
+//                         <span class="icon-graph"></span>
+//                         <span>Charts</span>
+//                     </a>
+//                 </li>
+//                 <li class="sidebar__drawer">
+//                     <a tabindex="0">
+//                         <span class="icon-devices"></span>
+//                         <span>Devices</span>
+//                     </a>
+//                     <ul>
+//                         <li class="sidebar__drawer">
+//                             <a tabindex="0">Switches</a>
+//                             <ul>
+//                                 <li class="sidebar__item"><a tabindex="0">LAN Access Switches</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">LAN Digital Building Switches</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Core / Distribution Switches</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Data Center Switches</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Industrial Ethernet Switches</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Small Business Switches</a></li>
+//                             </ul>
+//                         </li>
+//                         <li class="sidebar__drawer">
+//                             <a tabindex="0">Routers</a>
+//                             <ul>
+//                                 <li class="sidebar__item"><a tabindex="0">Branch Routers</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">WAN Aggregation Routers</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Edge Routers</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Service Provider Core Routers</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Industrial Routers</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Virtual Routers</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Small Business Routers</a></li>
+//                             </ul>
+//                         </li>
+//                         <li class="sidebar__drawer">
+//                             <a tabindex="0">Wireless</a>
+//                             <ul>
+//                                 <li class="sidebar__item"><a tabindex="0">Indoor Access Points</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Outdoor / Industrial Access Points</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Wireless LAN Controllers</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Cloud-Managed Access Points</a></li>
+//                             </ul>
+//                         </li>
+//                         <li class="sidebar__item"><a tabindex="0">Aironet 3500i Access Point</a></li>
+//                         <li class="sidebar__item"><a tabindex="0">Cisco Catalyst 3750-24TS</a></li>
+//                         <li class="sidebar__item"><a tabindex="0">Cisco 1841 ISR</a></li>
+//                     </ul>
+//                 </li>
+//                 <li class="divider"></li>
+//                 <li class="sidebar__item">
+//                     <a tabindex="0">
+//                         <span class="icon-cog"></span>
+//                         <span>Settings</span>
+//                     </a>
+//                 </li>
+//                 <li class="sidebar__item">
+//                     <a tabindex="0">
+//                         <span class="icon-help"></span>
+//                         <span>Help</span>
+//                     </a>
+//                 </li>
+//             </ul>
+//         </nav>
+//     </div>
+// </div>
+//
+// Weight: 1
+//
+// Styleguide Layout.Sidebar.Structure
+//
+
+
+//
+// Color
+//
+// Markup:
+// <div class="row dbl-padding-bottom">
+//     <div class="col-lg-6 col-xl-4 base-padding-bottom">
+//         <div class="subheader">Default</div>
+//         <nav class="sidebar" role="navigation">
+//             <div class="sidebar__header">
+//                 <div class="sidebar__header-title">Title Area</div>
+//             </div>
+//             <ul>
+//                 <li class="sidebar__item">
+//                     <a tabindex="0">
+//                         <span class="icon-home"></span>
+//                         <span>Home</span>
+//                     </a>
+//                 </li>
+//                 <li class="sidebar__item">
+//                     <a tabindex="0">
+//                         <span class="icon-bell"></span>
+//                         <span>Alerts</span>
+//                     </a>
+//                 </li>
+//                 <li class="sidebar__item">
+//                     <a tabindex="0">
+//                         <span class="icon-graph"></span>
+//                         <span>Charts</span>
+//                     </a>
+//                 </li>
+//                 <li class="sidebar__drawer">
+//                     <a tabindex="0">
+//                         <span class="icon-devices"></span>
+//                         <span>Devices</span>
+//                     </a>
+//                     <ul>
+//                         <li class="sidebar__drawer">
+//                             <a tabindex="0">Switches</a>
+//                             <ul>
+//                                 <li class="sidebar__item"><a tabindex="0">LAN Access Switches</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">LAN Digital Building Switches</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Core / Distribution Switches</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Data Center Switches</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Industrial Ethernet Switches</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Small Business Switches</a></li>
+//                             </ul>
+//                         </li>
+//                         <li class="sidebar__drawer">
+//                             <a tabindex="0">Routers</a>
+//                             <ul>
+//                                 <li class="sidebar__item"><a tabindex="0">Branch Routers</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">WAN Aggregation Routers</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Edge Routers</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Service Provider Core Routers</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Industrial Routers</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Virtual Routers</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Small Business Routers</a></li>
+//                             </ul>
+//                         </li>
+//                         <li class="sidebar__drawer">
+//                             <a tabindex="0">Wireless</a>
+//                             <ul>
+//                                 <li class="sidebar__item"><a tabindex="0">Indoor Access Points</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Outdoor / Industrial Access Points</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Wireless LAN Controllers</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Cloud-Managed Access Points</a></li>
+//                             </ul>
+//                         </li>
+//                         <li class="sidebar__item"><a tabindex="0">Aironet 3500i Access Point</a></li>
+//                         <li class="sidebar__item"><a tabindex="0">Cisco Catalyst 3750-24TS</a></li>
+//                         <li class="sidebar__item"><a tabindex="0">Cisco 1841 ISR</a></li>
+//                     </ul>
+//                 </li>
+//                 <li class="divider"></li>
+//                 <li class="sidebar__item">
+//                     <a tabindex="0">
+//                         <span class="icon-cog"></span>
+//                         <span>Settings</span>
+//                     </a>
+//                 </li>
+//                 <li class="sidebar__item">
+//                     <a tabindex="0">
+//                         <span class="icon-help"></span>
+//                         <span>Help</span>
+//                     </a>
+//                 </li>
+//             </ul>
+//         </nav>
+//     </div>
+//     <div class="col-lg-6 col-xl-4 base-padding-bottom">
+//         <div class="subheader">Primary</div>
+//         <nav class="sidebar sidebar--primary" role="navigation">
+//             <div class="sidebar__header">
+//                 <div class="sidebar__header-title">Title Area</div>
+//             </div>
+//             <ul>
+//                 <li class="sidebar__item">
+//                     <a tabindex="0">
+//                         <span class="icon-home"></span>
+//                         <span>Home</span>
+//                     </a>
+//                 </li>
+//                 <li class="sidebar__item">
+//                     <a tabindex="0">
+//                         <span class="icon-bell"></span>
+//                         <span>Alerts</span>
+//                     </a>
+//                 </li>
+//                 <li class="sidebar__item">
+//                     <a tabindex="0">
+//                         <span class="icon-graph"></span>
+//                         <span>Charts</span>
+//                     </a>
+//                 </li>
+//                 <li class="sidebar__drawer">
+//                     <a tabindex="0">
+//                         <span class="icon-devices"></span>
+//                         <span>Devices</span>
+//                     </a>
+//                     <ul>
+//                         <li class="sidebar__drawer">
+//                             <a tabindex="0">Switches</a>
+//                             <ul>
+//                                 <li class="sidebar__item"><a tabindex="0">LAN Access Switches</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">LAN Digital Building Switches</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Core / Distribution Switches</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Data Center Switches</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Industrial Ethernet Switches</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Small Business Switches</a></li>
+//                             </ul>
+//                         </li>
+//                         <li class="sidebar__drawer">
+//                             <a tabindex="0">Routers</a>
+//                             <ul>
+//                                 <li class="sidebar__item"><a tabindex="0">Branch Routers</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">WAN Aggregation Routers</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Edge Routers</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Service Provider Core Routers</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Industrial Routers</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Virtual Routers</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Small Business Routers</a></li>
+//                             </ul>
+//                         </li>
+//                         <li class="sidebar__drawer">
+//                             <a tabindex="0">Wireless</a>
+//                             <ul>
+//                                 <li class="sidebar__item"><a tabindex="0">Indoor Access Points</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Outdoor / Industrial Access Points</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Wireless LAN Controllers</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Cloud-Managed Access Points</a></li>
+//                             </ul>
+//                         </li>
+//                         <li class="sidebar__item"><a tabindex="0">Aironet 3500i Access Point</a></li>
+//                         <li class="sidebar__item"><a tabindex="0">Cisco Catalyst 3750-24TS</a></li>
+//                         <li class="sidebar__item"><a tabindex="0">Cisco 1841 ISR</a></li>
+//                     </ul>
+//                 </li>
+//                 <li class="divider"></li>
+//                 <li class="sidebar__item">
+//                     <a tabindex="0">
+//                         <span class="icon-cog"></span>
+//                         <span>Settings</span>
+//                     </a>
+//                 </li>
+//                 <li class="sidebar__item">
+//                     <a tabindex="0">
+//                         <span class="icon-help"></span>
+//                         <span>Help</span>
+//                     </a>
+//                 </li>
+//             </ul>
+//         </nav>
+//     </div>
+//     <div class="col-lg-6 col-xl-4 base-padding-bottom">
+//         <div class="subheader">Secondary</div>
+//         <nav class="sidebar sidebar--secondary" role="navigation">
+//             <div class="sidebar__header">
+//                 <div class="sidebar__header-title">Title Area</div>
+//             </div>
+//             <ul>
+//                 <li class="sidebar__item">
+//                     <a tabindex="0">
+//                         <span class="icon-home"></span>
+//                         <span>Home</span>
+//                     </a>
+//                 </li>
+//                 <li class="sidebar__item">
+//                     <a tabindex="0">
+//                         <span class="icon-bell"></span>
+//                         <span>Alerts</span>
+//                     </a>
+//                 </li>
+//                 <li class="sidebar__item">
+//                     <a tabindex="0">
+//                         <span class="icon-graph"></span>
+//                         <span>Charts</span>
+//                     </a>
+//                 </li>
+//                 <li class="sidebar__drawer">
+//                     <a tabindex="0">
+//                         <span class="icon-devices"></span>
+//                         <span>Devices</span>
+//                     </a>
+//                     <ul>
+//                         <li class="sidebar__drawer">
+//                             <a tabindex="0">Switches</a>
+//                             <ul>
+//                                 <li class="sidebar__item"><a tabindex="0">LAN Access Switches</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">LAN Digital Building Switches</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Core / Distribution Switches</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Data Center Switches</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Industrial Ethernet Switches</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Small Business Switches</a></li>
+//                             </ul>
+//                         </li>
+//                         <li class="sidebar__drawer">
+//                             <a tabindex="0">Routers</a>
+//                             <ul>
+//                                 <li class="sidebar__item"><a tabindex="0">Branch Routers</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">WAN Aggregation Routers</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Edge Routers</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Service Provider Core Routers</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Industrial Routers</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Virtual Routers</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Small Business Routers</a></li>
+//                             </ul>
+//                         </li>
+//                         <li class="sidebar__drawer">
+//                             <a tabindex="0">Wireless</a>
+//                             <ul>
+//                                 <li class="sidebar__item"><a tabindex="0">Indoor Access Points</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Outdoor / Industrial Access Points</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Wireless LAN Controllers</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Cloud-Managed Access Points</a></li>
+//                             </ul>
+//                         </li>
+//                         <li class="sidebar__item"><a tabindex="0">Aironet 3500i Access Point</a></li>
+//                         <li class="sidebar__item"><a tabindex="0">Cisco Catalyst 3750-24TS</a></li>
+//                         <li class="sidebar__item"><a tabindex="0">Cisco 1841 ISR</a></li>
+//                     </ul>
+//                 </li>
+//                 <li class="divider"></li>
+//                 <li class="sidebar__item">
+//                     <a tabindex="0">
+//                         <span class="icon-cog"></span>
+//                         <span>Settings</span>
+//                     </a>
+//                 </li>
+//                 <li class="sidebar__item">
+//                     <a tabindex="0">
+//                         <span class="icon-help"></span>
+//                         <span>Help</span>
+//                     </a>
+//                 </li>
+//             </ul>
+//         </nav>
+//     </div>
+//     <div class="col-lg-6 col-xl-4 base-padding-bottom">
+//         <div class="subheader">Tertiary</div>
+//         <nav class="sidebar sidebar--tertiary" role="navigation">
+//             <div class="sidebar__header">
+//                 <div class="sidebar__header-title">Title Area</div>
+//             </div>
+//             <ul>
+//                 <li class="sidebar__item">
+//                     <a tabindex="0">
+//                         <span class="icon-home"></span>
+//                         <span>Home</span>
+//                     </a>
+//                 </li>
+//                 <li class="sidebar__item">
+//                     <a tabindex="0">
+//                         <span class="icon-bell"></span>
+//                         <span>Alerts</span>
+//                     </a>
+//                 </li>
+//                 <li class="sidebar__item">
+//                     <a tabindex="0">
+//                         <span class="icon-graph"></span>
+//                         <span>Charts</span>
+//                     </a>
+//                 </li>
+//                 <li class="sidebar__drawer">
+//                     <a tabindex="0">
+//                         <span class="icon-devices"></span>
+//                         <span>Devices</span>
+//                     </a>
+//                     <ul>
+//                         <li class="sidebar__drawer">
+//                             <a tabindex="0">Switches</a>
+//                             <ul>
+//                                 <li class="sidebar__item"><a tabindex="0">LAN Access Switches</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">LAN Digital Building Switches</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Core / Distribution Switches</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Data Center Switches</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Industrial Ethernet Switches</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Small Business Switches</a></li>
+//                             </ul>
+//                         </li>
+//                         <li class="sidebar__drawer">
+//                             <a tabindex="0">Routers</a>
+//                             <ul>
+//                                 <li class="sidebar__item"><a tabindex="0">Branch Routers</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">WAN Aggregation Routers</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Edge Routers</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Service Provider Core Routers</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Industrial Routers</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Virtual Routers</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Small Business Routers</a></li>
+//                             </ul>
+//                         </li>
+//                         <li class="sidebar__drawer">
+//                             <a tabindex="0">Wireless</a>
+//                             <ul>
+//                                 <li class="sidebar__item"><a tabindex="0">Indoor Access Points</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Outdoor / Industrial Access Points</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Wireless LAN Controllers</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Cloud-Managed Access Points</a></li>
+//                             </ul>
+//                         </li>
+//                         <li class="sidebar__item"><a tabindex="0">Aironet 3500i Access Point</a></li>
+//                         <li class="sidebar__item"><a tabindex="0">Cisco Catalyst 3750-24TS</a></li>
+//                         <li class="sidebar__item"><a tabindex="0">Cisco 1841 ISR</a></li>
+//                     </ul>
+//                 </li>
+//                 <li class="divider"></li>
+//                 <li class="sidebar__item">
+//                     <a tabindex="0">
+//                         <span class="icon-cog"></span>
+//                         <span>Settings</span>
+//                     </a>
+//                 </li>
+//                 <li class="sidebar__item">
+//                     <a tabindex="0">
+//                         <span class="icon-help"></span>
+//                         <span>Help</span>
+//                     </a>
+//                 </li>
+//             </ul>
+//         </nav>
+//     </div>
+//     <div class="col-lg-6 col-xl-4 base-padding-bottom">
+//         <div class="subheader">Light</div>
+//         <nav class="sidebar sidebar--light" role="navigation">
+//             <div class="sidebar__header">
+//                 <div class="sidebar__header-title">Title Area</div>
+//             </div>
+//             <ul>
+//                 <li class="sidebar__item">
+//                     <a tabindex="0">
+//                         <span class="icon-home"></span>
+//                         <span>Home</span>
+//                     </a>
+//                 </li>
+//                 <li class="sidebar__item">
+//                     <a tabindex="0">
+//                         <span class="icon-bell"></span>
+//                         <span>Alerts</span>
+//                     </a>
+//                 </li>
+//                 <li class="sidebar__item">
+//                     <a tabindex="0">
+//                         <span class="icon-graph"></span>
+//                         <span>Charts</span>
+//                     </a>
+//                 </li>
+//                 <li class="sidebar__drawer">
+//                     <a tabindex="0">
+//                         <span class="icon-devices"></span>
+//                         <span>Devices</span>
+//                     </a>
+//                     <ul>
+//                         <li class="sidebar__drawer">
+//                             <a tabindex="0">Switches</a>
+//                             <ul>
+//                                 <li class="sidebar__item"><a tabindex="0">LAN Access Switches</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">LAN Digital Building Switches</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Core / Distribution Switches</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Data Center Switches</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Industrial Ethernet Switches</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Small Business Switches</a></li>
+//                             </ul>
+//                         </li>
+//                         <li class="sidebar__drawer">
+//                             <a tabindex="0">Routers</a>
+//                             <ul>
+//                                 <li class="sidebar__item"><a tabindex="0">Branch Routers</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">WAN Aggregation Routers</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Edge Routers</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Service Provider Core Routers</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Industrial Routers</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Virtual Routers</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Small Business Routers</a></li>
+//                             </ul>
+//                         </li>
+//                         <li class="sidebar__drawer">
+//                             <a tabindex="0">Wireless</a>
+//                             <ul>
+//                                 <li class="sidebar__item"><a tabindex="0">Indoor Access Points</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Outdoor / Industrial Access Points</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Wireless LAN Controllers</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Cloud-Managed Access Points</a></li>
+//                             </ul>
+//                         </li>
+//                         <li class="sidebar__item"><a tabindex="0">Aironet 3500i Access Point</a></li>
+//                         <li class="sidebar__item"><a tabindex="0">Cisco Catalyst 3750-24TS</a></li>
+//                         <li class="sidebar__item"><a tabindex="0">Cisco 1841 ISR</a></li>
+//                     </ul>
+//                 </li>
+//                 <li class="divider"></li>
+//                 <li class="sidebar__item">
+//                     <a tabindex="0">
+//                         <span class="icon-cog"></span>
+//                         <span>Settings</span>
+//                     </a>
+//                 </li>
+//                 <li class="sidebar__item">
+//                     <a tabindex="0">
+//                         <span class="icon-help"></span>
+//                         <span>Help</span>
+//                     </a>
+//                 </li>
+//             </ul>
+//         </nav>
+//     </div>
+// </div>
+//
+// Weight: 2
+//
+// Styleguide Layout.Sidebar.Color
+//
+
+
+//
+// Mini Sidebar
+//
+// Markup:
+// <div class="row">
+//     <div class="col-12">
+//         <nav class="sidebar sidebar--mini" role="navigation">
+//             <div class="sidebar__header">
+//                 <a href="javascript:;">
+//                     <span class="icon-toggle-menu"></span>
+//                 </a>
+//                 <div class="sidebar__header-title">Title Area</div>
+//             </div>
+//             <ul>
+//                 <li class="sidebar__item">
+//                     <a tabindex="0">
+//                         <span class="icon-home"></span>
+//                         <span>Home</span>
+//                     </a>
+//                 </li>
+//                 <li class="sidebar__item">
+//                     <a tabindex="0">
+//                         <span class="icon-bell"></span>
+//                         <span>Alerts</span>
+//                     </a>
+//                 </li>
+//                 <li class="sidebar__item">
+//                     <a tabindex="0">
+//                         <span class="icon-graph"></span>
+//                         <span>Charts</span>
+//                     </a>
+//                 </li>
+//                 <li class="sidebar__drawer">
+//                     <a tabindex="0">
+//                         <span class="icon-devices"></span>
+//                         <span>Devices</span>
+//                     </a>
+//                     <ul>
+//                         <li class="sidebar__drawer">
+//                             <a tabindex="0">Switches</a>
+//                             <ul>
+//                                 <li class="sidebar__item"><a tabindex="0">LAN Access Switches</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">LAN Digital Building Switches</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Core / Distribution Switches</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Data Center Switches</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Industrial Ethernet Switches</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Small Business Switches</a></li>
+//                             </ul>
+//                         </li>
+//                         <li class="sidebar__drawer">
+//                             <a tabindex="0">Routers</a>
+//                             <ul>
+//                                 <li class="sidebar__item"><a tabindex="0">Branch Routers</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">WAN Aggregation Routers</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Edge Routers</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Service Provider Core Routers</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Industrial Routers</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Virtual Routers</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Small Business Routers</a></li>
+//                             </ul>
+//                         </li>
+//                         <li class="sidebar__drawer">
+//                             <a tabindex="0">Wireless</a>
+//                             <ul>
+//                                 <li class="sidebar__item"><a tabindex="0">Indoor Access Points</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Outdoor / Industrial Access Points</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Wireless LAN Controllers</a></li>
+//                                 <li class="sidebar__item"><a tabindex="0">Cloud-Managed Access Points</a></li>
+//                             </ul>
+//                         </li>
+//                         <li class="sidebar__item"><a tabindex="0">Aironet 3500i Access Point</a></li>
+//                     </ul>
+//                 </li>
+//                 <li class="divider"></li>
+//                 <li class="sidebar__item">
+//                     <a tabindex="0">
+//                         <span class="icon-cog"></span>
+//                         <span>Settings</span>
+//                     </a>
+//                 </li>
+//                 <li class="sidebar__item">
+//                     <a tabindex="0">
+//                         <span class="icon-help"></span>
+//                         <span>Help</span>
+//                     </a>
+//                 </li>
+//             </ul>
+//         </nav>
+//     </div>
+// </div>
+//
+// Weight: 3
+//
+// Styleguide Layout.Sidebar.Mini
+//
+
+@mixin build-sidebar-style(
+    $bg: var(--cui-theme-dark),
+    $bg-active: var(--cui-theme-dark-darker),
+    $color: var(--cui-theme-dark-color),
+    $link-color: var(--cui-theme-dark-color),
+    $link-color-hover: var(--cui-theme-dark-color),
+    $link-decoration: none,
+    $link-decoration-active: none
+) {
+    @include build-background-style(
+        $bg: $bg,
+        $color: $color,
+        $link-color: $link-color,
+        $link-color-hover: $link-color-hover,
+        $link-decoration: $link-decoration,
+        $link-decoration-active: $link-decoration-active
+    );
+
+    .badge-wrapper .badge {
+        box-shadow: 0 0 0 var(--cui-badge-border-width) $bg;
+    }
+
+    ul ul {
+        background-color: $bg-active;
+    }
+    ul li a {
+        color: $color;
+    }
+
+}
+
+.sidebar {
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch; // Enable momentum scrolling on touch devices
+    z-index: var(--cui-sidebar-zindex);
+    padding: 0;
+
+    + * {
+        margin-left: auto;
+    }
+
+    .badge-wrapper .badge {
+        position: absolute;
+        right: 50%;
+    }
+
+    @include build-sidebar-style();
+
+    @each $color in $cui-sidebar-colors {
+        &.sidebar--#{$color} {
+            @include build-sidebar-style(
+                $bg: var(--cui-theme-#{$color}),
+                $bg-active: var(--cui-theme-#{$color}-darker),
+                $color: var(--cui-theme-#{$color}-color),
+                $link-color: var(--cui-theme-#{$color}-color),
+                $link-color-hover: var(--cui-theme-#{$color}-color),
+                $link-decoration: none,
+                $link-decoration-active: none
+            );
+        }
+    }
+
+    .sidebar__header {
+        display: flex;
+        align-items: center;
+        height: var(--cui-header-height);
+        padding: 0 var(--cui-spacing);
+        border-bottom: var(--cui-border-thickness) solid var(--cui-sidebar-divider-color);
+
+        + ul {
+            margin-top: var(--cui-spacing-half);
+        }
+
+        &-title {
+            font-size: var(--cui-sidebar-title-font-size);
+            font-weight: var(--cui-sidebar-title-font-weight);
+        }
+    }
+
+    ul {
+        @include clearfix;
+        @include list-unstyled;
+
+        margin: 0;
+        padding: 0;
+
+        li {
+            a {
+                display: flex;
+                align-items: center;
+                opacity: var(--cui-sidebar-inactive-opacity);
+                padding: var(--cui-sidebar-item-padding);
+                position: relative;
+                user-select: none;
+                white-space: normal;
+                transition: color .5s, opacity .5s, background-color .25s;
+                border-right-color: transparent;
+                border-right-style: solid;
+                border-right-width: var(--cui-sidebar-accent-thickness);
+
+                span[class^="icon-"] {
+                    margin-right: var(--cui-spacing-half);
+                }
+
+                &:hover, &:active, &:focus {
+                    border-right-color: var(--cui-accent-color);
+                    background-color: var(--cui-sidebar-background-hover);
+                    color: inherit;
+                    opacity: 1;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        li.divider {
+            margin-top: var(--cui-border-thickness);
+            border-top: var(--cui-border-thickness) solid var(--cui-sidebar-divider-color);
+        }
+
+        li.sidebar__drawer {
+            > ul {
+                display: none;
+            }
+
+            > a:after {
+                @include drawer-closed;
+                @include icon-chevron-down;
+
+                font-size: var(--cui-sidebar-chevron-font-size);
+                position: absolute;
+                right: var(--cui-spacing-half);
+            }
+        }
+        li.sidebar__drawer.sidebar__drawer--opened {
+            > ul {
+                display: block;
+            }
+            > a:after {
+                @include drawer-opened;
+            }
+        }
+
+        li.sidebar__drawer.sidebar__drawer--selected,
+        li.sidebar__item.sidebar__item--selected {
+            > a {
+                opacity: 1;
+                background-color: var(--cui-sidebar-background-active);
+                border-right-color: var(--cui-accent-color);
+            }
+        }
+
+        // Indentation
+        li>ul li a { padding-left: calc(var(--cui-spacing) * 2); }
+        li>ul li>ul li a { padding-left: calc(var(--cui-spacing) * 3); }
+        li>ul li>ul li>ul li a { padding-left: calc(var(--cui-spacing) * 4); }
+    }
+
+    // Modifiers
+    &.sidebar--hidden {
+        width: 0;
+    }
+
+    &.sidebar--mini.sidebar--hidden {
+        width: 0;
+        overflow: hidden;
+    }
+
+    &.sidebar--mini {
+        width: var(--cui-sidebar-width-mini);
+        overflow: visible;
+
+        li a {
+            height: auto;
+            padding: var(--cui-sidebar-item-padding);
+            flex-wrap: nowrap;
+            flex-direction: column;
+            position: relative;
+        }
+
+        > ul > li.sidebar__item--selected a {
+            span[class^=icon-] {
+                opacity: 1;
+            }
+        }
+        > ul > li> a {
+            &:hover,
+            &:focus,
+            &:active {
+                span[class^=icon-] {
+                    opacity: 1;
+                }
+            }
+        }
+        a {
+            opacity: 1;
+        }
+        a span[class^=icon-] {
+            margin: 0;
+            font-size: var(--cui-sidebar-menu-icon-size-mini);
+
+            + * {
+                text-align: center;
+                white-space: normal;
+                margin-top: var(--cui-spacing-qtr);
+                font-size: 1.1rem;
+                font-weight: normal;
+            }
+        }
+        .sidebar__header {
+            justify-content: center;
+            .sidebar__header-title {
+                font-size: 0;
+            }
+        }
+        .sidebar__item a,
+        .sidebar__drawer a {
+            justify-content: center;
+        }
+        .sidebar__drawer {
+            position: relative;
+
+            ul {
+                display: block;
+                opacity: 0;
+                margin-left: -100%;
+                height: 0;
+                width: 0;
+                visibility: hidden;
+                border-left: 1px solid var(--cui-sidebar-divider-color);
+            }
+            > a:after {
+                transform: rotate(270deg);
+                right: var(--cui-spacing-qtr);
+            }
+            &.sidebar__drawer--opened {
+                > a {
+                    &:after {
+                        transform: rotate(90deg);
+                    }
+                }
+                > ul {
+                    position: absolute;
+                    margin-left: 0;
+                    padding: 0;
+                    width: auto;
+                    min-width: 250px;
+                    height: auto;
+                    opacity: 1;
+                    flex-wrap: wrap;
+                    left: 100%;
+                    top: 0;
+                    visibility: visible;
+                    transition: margin-left .2s, opacity .5s;
+                    box-shadow: 5px 5px 5px rgba(0,0,0,.25);
+
+                    a {
+                        padding-left: var(--cui-spacing);
+                        align-items: flex-start;
+                    }
+                    > ul {
+                        overflow-y: auto;
+                        height: auto;
+                        max-height: 250px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.content-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1029;
+    display: block;
+    margin: auto;
+    background: rgba(0,0,0,0.2);
+    content: '';
+    opacity: 0;
+    cursor: pointer;
+    pointer-events: none;
+}
+
+a.sidebar-toggle {
+    opacity: 1;
+    position: absolute;
+    left: 26.5px;
+
+    span[class^=icon-] {
+        font-weight: bold;
+        font-size: var(--cui-sidebar-menu-icon-size-mini);
+    }
+
+    &:hover {
+        opacity: 1;
+        color: inherit;
+        text-decoration: none;
+    }
+}

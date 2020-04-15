@@ -1,0 +1,229 @@
+//
+// Alert
+//
+// Styleguide Components.Alert
+//
+
+
+//
+// Structure
+//
+// Markup:
+// <div class="row">
+//     <div class="col-lg-4">
+//         <div class="base-margin-bottom">
+//             <div class="subheader">No Icon</div>
+//             <div class="alert">
+//                 <div class="alert__message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus gravida posuere tellus, eu congue nunc.</div>
+//             </div>
+//         </div>
+//     </div>
+//     <div class="col-lg-4">
+//         <div class="base-margin-bottom">
+//             <div class="subheader">With Icon</div>
+//             <div class="alert">
+//                 <div class="alert__icon icon-info-outline"></div>
+//                 <div class="alert__message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus gravida posuere tellus, eu congue nunc.</div>
+//             </div>
+//         </div>
+//     </div>
+//     <div class="col-lg-4">
+//         <div class="base-margin-bottom">
+//             <div class="subheader">Dismissable</div>
+//             <div class="alert">
+//                 <div class="alert__message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus gravida posuere tellus, eu congue nunc.</div>
+//                 <a href="javascript:;" class="alert__close icon-close"></a>
+//             </div>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 1
+//
+// Styleguide Components.Alert.Structure
+//
+
+
+//
+// Color
+//
+// Markup:
+// <div class="row">
+//     <div class="col-lg-6 col-xl-4">
+//         <div class="subheader">Info</div>
+//         <div class="alert alert--info">
+//             <div class="alert__message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus gravida posuere tellus, eu congue nunc.</div>
+//         </div>
+//     </div>
+//     <div class="col-lg-6 col-xl-4">
+//         <div class="subheader">Warning</div>
+//         <div class="alert alert--warning">
+//             <div class="alert__message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus gravida posuere tellus, eu congue nunc.</div>
+//         </div>
+//     </div>
+//     <div class="col-lg-6 col-xl-4">
+//         <div class="subheader">Warning Alt</div>
+//         <div class="alert alert--warning-alt">
+//             <div class="alert__message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus gravida posuere tellus, eu congue nunc.</div>
+//         </div>
+//     </div>
+//     <div class="col-lg-6 col-xl-4">
+//         <div class="subheader">Success</div>
+//         <div class="alert alert--success">
+//             <div class="alert__message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus gravida posuere tellus, eu congue nunc.</div>
+//         </div>
+//     </div>
+//     <div class="col-lg-6 col-xl-4">
+//         <div class="subheader">Dark</div>
+//         <div class="alert alert--dark" role="alert">
+//             <div class="alert__message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus gravida posuere tellus, eu congue nunc.</div>
+//         </div>
+//     </div>
+//     <div class="col-lg-6 col-xl-4">
+//         <div class="subheader">Light</div>
+//         <div class="alert alert--light" role="alert">
+//             <div class="alert__message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus gravida posuere tellus, eu congue nunc.</div>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 2
+//
+// Styleguide Components.Alert.Color
+//
+
+
+//
+// With Icon
+//
+// The icons shown here are examples. Use the icon which matches
+//
+// Markup:
+// <div class="row">
+//     <div class="col-lg-6 col-xl-4">
+//         <div class="subheader">Info</div>
+//         <div class="alert alert--info">
+//             <div class="alert__icon icon-info-outline"></div>
+//             <div class="alert__message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus gravida posuere tellus, eu congue nunc.</div>
+//         </div>
+//     </div>
+//     <div class="col-lg-6 col-xl-4">
+//         <div class="subheader">Warning</div>
+//         <div class="alert alert--warning">
+//             <div class="alert__icon icon-warning-outline"></div>
+//             <div class="alert__message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus gravida posuere tellus, eu congue nunc.</div>
+//         </div>
+//     </div>
+//     <div class="col-lg-6 col-xl-4">
+//         <div class="subheader">Warning Alt</div>
+//         <div class="alert alert--warning-alt">
+//             <div class="alert__icon icon-warning-outline"></div>
+//             <div class="alert__message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus gravida posuere tellus, eu congue nunc.</div>
+//         </div>
+//     </div>
+//     <div class="col-lg-6 col-xl-4">
+//         <div class="subheader">Success</div>
+//         <div class="alert alert--success">
+//             <div class="alert__icon icon-check-outline"></div>
+//             <div class="alert__message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus gravida posuere tellus, eu congue nunc.</div>
+//         </div>
+//     </div>
+//     <div class="col-lg-6 col-xl-4">
+//         <div class="subheader">Dark</div>
+//         <div class="alert alert--dark" role="alert">
+//             <div class="alert__icon icon-help-outline"></div>
+//             <div class="alert__message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus gravida posuere tellus, eu congue nunc.</div>
+//         </div>
+//     </div>
+//     <div class="col-lg-6 col-xl-4">
+//         <div class="subheader">Light</div>
+//         <div class="alert alert--light" role="alert">
+//             <div class="alert__icon icon-help-outline"></div>
+//             <div class="alert__message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus gravida posuere tellus, eu congue nunc.</div>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 3
+//
+// Styleguide Components.Alert.Icon
+//
+
+
+//
+// Example
+//
+// Markup:
+// <div class="row">
+//     <div class="col-xl-6">
+//         <div class="alert alert--info">
+//             <div class="alert__icon icon-info-outline"></div>
+//             <div class="alert__message">
+//                 <h4>Title</h4>
+//                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque. Ut enim massa, sodales tempor convallis et, iaculis ac massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque. Ut enim massa, sodales tempor convallis et, iaculis ac massa.</p>
+//                 <a href="javascript:;">Link</a>
+//             </div>
+//             <a href="javascript:;" class="alert__close icon-close"></a>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 4
+//
+// Styleguide Components.Alert.Example
+//
+
+@mixin build-alert-style(
+    $color: var(--cui-theme-info-rgb)
+) {
+    background-color: rgba($color, var(--cui-alert-background-opacity));
+    border-left: var(--cui-accent-thickness) solid rgba($color, 1);
+
+    .alert__icon {
+        color: rgba($color, 1);
+    }
+}
+
+.alert {
+
+    display: flex;
+    position: relative;
+    border-radius: var(--cui-border-radius);
+    margin: var(--cui-alert-margin);
+    padding: var(--cui-alert-padding);
+
+    @include build-alert-style();
+    @each $color, $value in $cui-status-colors-rgb {
+        &.alert--#{$color} {
+            @include build-alert-style($value);
+        }
+    }
+    &.alert--dark {
+        @include build-alert-style(var(--cui-theme-dark-rgb));
+    }
+    &.alert--light {
+        @include build-alert-style(var(--cui-theme-light-rgb));
+    }
+
+    .alert__icon,
+    .alert__close,
+    .alert__message {
+        align-self: flex-start;
+    }
+    .alert__close {
+        color: var(--cui-inactive-color);
+        font-size: var(--cui-alert-close-icon-size);
+        line-height: 1;
+        padding-left: var(--cui-alert-padding);
+
+        &:hover {
+            color: var(--cui-active-color);
+            text-decoration: none;
+        }
+    }
+    .alert__icon {
+        font-size: var(--cui-alert-icon-size);
+        line-height: 1;
+        padding-right: var(--cui-alert-padding);
+    }
+}

@@ -1,0 +1,405 @@
+//
+// Gauge
+//
+// Styleguide Components.Gauge
+//
+
+
+//
+// Size
+//
+// Markup:
+// <div class="row">
+//     <div class="col-6 col-lg-3 base-margin-bottom">
+//         <div class="gauge gauge--small" data-percentage="25">
+//             <div class="gauge__circle">
+//                 <div class="mask full">
+//                     <div class="fill"></div>
+//                 </div>
+//                 <div class="mask half">
+//                     <div class="fill"></div>
+//                     <div class="fill fix"></div>
+//                 </div>
+//             </div>
+//             <div class="gauge__inset">
+//                 <div class="gauge__percentage">25</div>
+//             </div>
+//         </div>
+//         <div class="gauge__label">Small</div>
+//     </div>
+//     <div class="col-6 col-lg-3 base-margin-bottom">
+//         <div class="gauge gauge--medium" data-percentage="25">
+//             <div class="gauge__circle">
+//                 <div class="mask full">
+//                     <div class="fill"></div>
+//                 </div>
+//                 <div class="mask half">
+//                     <div class="fill"></div>
+//                     <div class="fill fix"></div>
+//                 </div>
+//             </div>
+//             <div class="gauge__inset">
+//                 <div class="gauge__percentage">25</div>
+//             </div>
+//         </div>
+//         <div class="gauge__label">Default</div>
+//     </div>
+//     <div class="col-6 col-lg-3 base-margin-bottom">
+//         <div class="gauge gauge--large" data-percentage="25">
+//             <div class="gauge__circle">
+//                 <div class="mask full">
+//                     <div class="fill"></div>
+//                 </div>
+//                 <div class="mask half">
+//                     <div class="fill"></div>
+//                     <div class="fill fix"></div>
+//                 </div>
+//             </div>
+//             <div class="gauge__inset">
+//                 <div class="gauge__percentage">25</div>
+//             </div>
+//         </div>
+//         <div class="gauge__label">Large</div>
+//     </div>
+// </div>
+//
+// Weight: 1
+//
+// Styleguide Components.Gauge.Size
+//
+
+
+//
+// Color
+//
+// Markup:
+// <div class="row">
+//     <div class="col-6 col-md-3 col-lg-2 text-center base-margin-bottom">
+//         <div class="gauge gauge--primary" data-percentage="25">
+//             <div class="gauge__circle">
+//                 <div class="mask full">
+//                     <div class="fill"></div>
+//                 </div>
+//                 <div class="mask half">
+//                     <div class="fill"></div>
+//                     <div class="fill fix"></div>
+//                 </div>
+//             </div>
+//             <div class="gauge__inset">
+//                 <div class="gauge__percentage">25</div>
+//             </div>
+//         </div>
+//         <div class="gauge__label">Primary</div>
+//     </div>
+//     <div class="col-6 col-md-3 col-lg-2 text-center base-margin-bottom">
+//         <div class="gauge gauge--secondary" data-percentage="25">
+//             <div class="gauge__circle">
+//                 <div class="mask full">
+//                     <div class="fill"></div>
+//                 </div>
+//                 <div class="mask half">
+//                     <div class="fill"></div>
+//                     <div class="fill fix"></div>
+//                 </div>
+//             </div>
+//             <div class="gauge__inset">
+//                 <div class="gauge__percentage">25</div>
+//             </div>
+//         </div>
+//         <div class="gauge__label">Secondary</div>
+//     </div>
+//     <div class="col-6 col-md-3 col-lg-2 text-center base-margin-bottom">
+//         <div class="gauge gauge--tertiary" data-percentage="25">
+//             <div class="gauge__circle">
+//                 <div class="mask full">
+//                     <div class="fill"></div>
+//                 </div>
+//                 <div class="mask half">
+//                     <div class="fill"></div>
+//                     <div class="fill fix"></div>
+//                 </div>
+//             </div>
+//             <div class="gauge__inset">
+//                 <div class="gauge__percentage">25</div>
+//             </div>
+//         </div>
+//         <div class="gauge__label">Tertiary</div>
+//     </div>
+//     <div class="col-6 col-md-3 col-lg-2 text-center base-margin-bottom">
+//         <div class="gauge gauge--success" data-percentage="25">
+//             <div class="gauge__circle">
+//                 <div class="mask full">
+//                     <div class="fill"></div>
+//                 </div>
+//                 <div class="mask half">
+//                     <div class="fill"></div>
+//                     <div class="fill fix"></div>
+//                 </div>
+//             </div>
+//             <div class="gauge__inset">
+//                 <div class="gauge__percentage">25</div>
+//             </div>
+//         </div>
+//         <div class="gauge__label">Success</div>
+//     </div>
+//     <div class="col-6 col-md-3 col-lg-2 text-center base-margin-bottom">
+//         <div class="gauge gauge--info" data-percentage="25">
+//             <div class="gauge__circle">
+//                 <div class="mask full">
+//                     <div class="fill"></div>
+//                 </div>
+//                 <div class="mask half">
+//                     <div class="fill"></div>
+//                     <div class="fill fix"></div>
+//                 </div>
+//             </div>
+//             <div class="gauge__inset">
+//                 <div class="gauge__percentage">25</div>
+//             </div>
+//         </div>
+//         <div class="gauge__label">Info</div>
+//     </div>
+//     <div class="col-6 col-md-3 col-lg-2 text-center base-margin-bottom">
+//         <div class="gauge gauge--warning-alt" data-percentage="25">
+//             <div class="gauge__circle">
+//                 <div class="mask full">
+//                     <div class="fill"></div>
+//                 </div>
+//                 <div class="mask half">
+//                     <div class="fill"></div>
+//                     <div class="fill fix"></div>
+//                 </div>
+//             </div>
+//             <div class="gauge__inset">
+//                 <div class="gauge__percentage">25</div>
+//             </div>
+//         </div>
+//         <div class="gauge__label">Warning Alt</div>
+//     </div>
+//     <div class="col-6 col-md-3 col-lg-2 text-center base-margin-bottom">
+//         <div class="gauge gauge--warning" data-percentage="25">
+//             <div class="gauge__circle">
+//                 <div class="mask full">
+//                     <div class="fill"></div>
+//                 </div>
+//                 <div class="mask half">
+//                     <div class="fill"></div>
+//                     <div class="fill fix"></div>
+//                 </div>
+//             </div>
+//             <div class="gauge__inset">
+//                 <div class="gauge__percentage">25</div>
+//             </div>
+//         </div>
+//         <div class="gauge__label">Warning</div>
+//     </div>
+//     <div class="col-6 col-md-3 col-lg-2 text-center base-margin-bottom">
+//         <div class="gauge gauge--danger" data-percentage="25">
+//             <div class="gauge__circle">
+//                 <div class="mask full">
+//                     <div class="fill"></div>
+//                 </div>
+//                 <div class="mask half">
+//                     <div class="fill"></div>
+//                     <div class="fill fix"></div>
+//                 </div>
+//             </div>
+//             <div class="gauge__inset">
+//                 <div class="gauge__percentage">25</div>
+//             </div>
+//         </div>
+//         <div class="gauge__label">Danger</div>
+//     </div>
+//     <div class="col-6 col-md-3 col-lg-2 text-center base-margin-bottom">
+//         <div class="gauge gauge--dark" data-percentage="25">
+//             <div class="gauge__circle">
+//                 <div class="mask full">
+//                     <div class="fill"></div>
+//                 </div>
+//                 <div class="mask half">
+//                     <div class="fill"></div>
+//                     <div class="fill fix"></div>
+//                 </div>
+//             </div>
+//             <div class="gauge__inset">
+//                 <div class="gauge__percentage">25</div>
+//             </div>
+//         </div>
+//         <div class="gauge__label">Dark</div>
+//     </div>
+//     <div class="col-6 col-md-3 col-lg-2 text-center base-margin-bottom">
+//         <div class="gauge gauge--light" data-percentage="25">
+//             <div class="gauge__circle">
+//                 <div class="mask full">
+//                     <div class="fill"></div>
+//                 </div>
+//                 <div class="mask half">
+//                     <div class="fill"></div>
+//                     <div class="fill fix"></div>
+//                 </div>
+//             </div>
+//             <div class="gauge__inset">
+//                 <div class="gauge__percentage">25</div>
+//             </div>
+//         </div>
+//         <div class="gauge__label">Light</div>
+//     </div>
+// </div>
+//
+// Weight: 2
+//
+// Styleguide Components.Gauge.Color
+//
+
+
+//
+// Labels
+//
+// Markup:
+// <div class="gauge-container">
+//     <div class="gauge" data-percentage="25">
+//         <div class="gauge__circle">
+//             <div class="mask full">
+//                 <div class="fill"></div>
+//             </div>
+//             <div class="mask half">
+//                 <div class="fill"></div>
+//                 <div class="fill fix"></div>
+//             </div>
+//         </div>
+//         <div class="gauge__inset">
+//             <div class="gauge__percentage">25</div>
+//         </div>
+//     </div>
+//     <div class="gauge__label">Routers</div>
+// </div>
+//
+// Weight: 3
+//
+// Styleguide Components.Gauge.Labels
+//
+
+@mixin build-gauge-style($color) {
+    .gauge__circle {
+        .mask {
+            .fill {
+                background-color: $color;
+            }
+        }
+    }
+}
+
+@mixin build-gauge-size($size, $font-size, $font-weight, $circle-thickness) {
+
+    $inset-size: $size - $circle-thickness;
+    $transition-length: 1s;
+
+    display: inline-block;
+    position: relative;
+    width: $size;
+    height: $size;
+    background-color: var(--cui-gauge-background);
+    border-radius: 50%;
+
+    .gauge__circle {
+        .mask, .fill,
+        .shadow {
+            width: $size;
+            height: $size;
+            position: absolute;
+            border-radius: 50%;
+        }
+
+        .mask, .fill {
+            -webkit-backface-visibility: hidden;
+            transition: transform $transition-length;
+            border-radius: 50%;
+        }
+
+        .mask {
+            clip: rect(0px, $size, $size, $size / 2);
+            .fill {
+                clip: rect(0px, $size / 2, $size, 0px);
+            }
+        }
+    }
+
+    .gauge__inset {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: $inset-size;
+        height: $inset-size;
+        position: absolute;
+        margin-left: ($size - $inset-size)/2;
+        margin-top: ($size - $inset-size)/2;
+        border-radius: 50%;
+        border: var(--cui-gauge-inset-border);
+        box-shadow: var(--cui-gauge-inset-shadow);
+        background-color: var(--cui-gauge-background);
+
+        .gauge__percentage {
+            font-size: $font-size;
+            @if $font-weight != "" {
+                font-weight: $font-weight;
+            }
+            @else {
+                font-weight: 200;
+            }
+        }
+    }
+
+    $i: 0;
+    $increment: 180deg / 100;
+    @for $i from 1 through 100 {
+        &[data-percentage="#{$i}"] {
+            .gauge__circle {
+                .mask.full, .fill {
+                    transform: rotate($increment * $i);
+                }
+                .fill.fix {
+                    transform: rotate($increment * $i * 2);
+                }
+            }
+        }
+    }
+}
+
+.gauge {
+
+    @each $name, $value in $cui-gauge-sizes {
+        @if $name == "default" {
+            @include build-gauge-size($value...);
+        } @else {
+            &.gauge--#{$name} {
+                @include build-gauge-size($value...);
+            }
+        }
+    }
+
+    // Build default gauge
+    @include build-gauge-style(var(--cui-theme-primary));
+
+
+    @each $name, $color in $cui-theme-colors {
+        &.gauge--#{$name} {
+            @include build-gauge-style($color);
+        }
+    }
+}
+
+.gauge-container {
+
+    &.disabled {
+        opacity: 0.75;
+    }
+
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    margin: unset;
+
+    .gauge__label {
+        margin-top: var(--cui-spacing-half);
+    }
+}

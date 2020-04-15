@@ -1,0 +1,292 @@
+//
+// Grid
+//
+// This kit utilizes the <a href="https://getbootstrap.com/docs/4.1/layout/grid/" target="_blank">Bootstrap</a> 12 column grid. We use a customized set of breakpoints that run from mobile to ultra wide desktop.
+//
+// Styleguide Layout.Grid
+//
+
+
+//
+// Breakpoints
+//
+// Markup:
+// <div class="row">
+//     <div class="col-lg-6">
+//         <div class="responsive-table">
+//             <table class="table table--lined table--compressed">
+//                 <thead>
+//                     <tr>
+//                         <th>Name</th>
+//                         <th>Description</th>
+//                         <th>Screen Width</th>
+//                     </tr>
+//                 </thead>
+//                 <tbody>
+//                     <tr>
+//                         <td>xs</td>
+//                         <td>Extra Small</td>
+//                         <td>320px - 575px</td>
+//                     </tr>
+//                     <tr>
+//                         <td>sm</td>
+//                         <td>Small</td>
+//                         <td>576px - 767px</td>
+//                     </tr>
+//                     <tr>
+//                         <td>md</td>
+//                         <td>Medium</td>
+//                         <td>768px - 991px</td>
+//                     </tr>
+//                     <tr>
+//                         <td>lg</td>
+//                         <td>Large</td>
+//                         <td>992px - 1199px</td>
+//                     </tr>
+//                     <tr>
+//                         <td>xl</td>
+//                         <td>Extra Large</td>
+//                         <td>1200px - 1439px</td>
+//                     </tr>
+//                     <tr>
+//                         <td>2xl</td>
+//                         <td>2x Extra Large</td>
+//                         <td>1440px - 1599px</td>
+//                     </tr>
+//                     <tr>
+//                         <td>3xl</td>
+//                         <td>3x Extra Large</td>
+//                         <td>1600px - 1839px</td>
+//                     </tr>
+//                     <tr>
+//                         <td>4xl</td>
+//                         <td>4x Extra Large</td>
+//                         <td>1840px - 2099px</td>
+//                     </tr>
+//                     <tr>
+//                         <td>5xl</td>
+//                         <td>5x Extra Large</td>
+//                         <td>2100px - 2560px</td>
+//                     </tr>
+//                 </tbody>
+//             </table>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 1
+//
+// Styleguide Layout.Grid.Breakpoints
+//
+
+//
+// Responsive Grid
+//
+// Markup:
+// <div class="row base-margin-bottom">
+//     <div class="col-12">
+//         <div class="panel panel--dark">Col 1</div>
+//     </div>
+// </div>
+// <div class="row base-margin-bottom">
+//     <div class="col-6">
+//         <div class="panel panel--dark">Col 1</div>
+//     </div>
+//     <div class="col-6">
+//         <div class="panel panel--dark">Col 2</div>
+//     </div>
+// </div>
+// <div class="row base-margin-bottom">
+//     <div class="col-4">
+//         <div class="panel panel--dark">Col 1</div>
+//     </div>
+//     <div class="col-4">
+//         <div class="panel panel--dark">Col 2</div>
+//     </div>
+//     <div class="col-4">
+//         <div class="panel panel--dark">Col 3</div>
+//     </div>
+// </div>
+// <div class="row base-margin-bottom">
+//     <div class="col-3">
+//         <div class="panel panel--dark">Col 1</div>
+//     </div>
+//     <div class="col-3">
+//         <div class="panel panel--dark">Col 2</div>
+//     </div>
+//     <div class="col-3">
+//         <div class="panel panel--dark">Col 3</div>
+//     </div>
+//     <div class="col-3">
+//         <div class="panel panel--dark">Col 4</div>
+//     </div>
+// </div>
+// <div class="row base-margin-bottom">
+//     <div class="col-2">
+//         <div class="panel panel--dark">Col 1</div>
+//     </div>
+//     <div class="col-2">
+//         <div class="panel panel--dark">Col 2</div>
+//     </div>
+//     <div class="col-2">
+//         <div class="panel panel--dark">Col 3</div>
+//     </div>
+//     <div class="col-2">
+//         <div class="panel panel--dark">Col 4</div>
+//     </div>
+//     <div class="col-2">
+//         <div class="panel panel--dark">Col 5</div>
+//     </div>
+//     <div class="col-2">
+//         <div class="panel panel--dark">Col 6</div>
+//     </div>
+// </div>
+// <div class="row base-margin-bottom">
+//     <div class="col-1">
+//         <div class="panel panel--dark">Col 1</div>
+//     </div>
+//     <div class="col-1">
+//         <div class="panel panel--dark">Col 2</div>
+//     </div>
+//     <div class="col-1">
+//         <div class="panel panel--dark">Col 3</div>
+//     </div>
+//     <div class="col-1">
+//         <div class="panel panel--dark">Col 4</div>
+//     </div>
+//     <div class="col-1">
+//         <div class="panel panel--dark">Col 5</div>
+//     </div>
+//     <div class="col-1">
+//         <div class="panel panel--dark">Col 6</div>
+//     </div>
+//     <div class="col-1">
+//         <div class="panel panel--dark">Col 7</div>
+//     </div>
+//     <div class="col-1">
+//         <div class="panel panel--dark">Col 8</div>
+//     </div>
+//     <div class="col-1">
+//         <div class="panel panel--dark">Col 9</div>
+//     </div>
+//     <div class="col-1">
+//         <div class="panel panel--dark">Col 10</div>
+//     </div>
+//     <div class="col-1">
+//         <div class="panel panel--dark">Col 11</div>
+//     </div>
+//     <div class="col-1">
+//         <div class="panel panel--dark">Col 12</div>
+//     </div>
+// </div>
+// <div class="row base-margin-bottom">
+//     <div class="col-1">
+//         <div class="panel panel--dark">Col 1</div>
+//     </div>
+//     <div class="col-11">
+//         <div class="panel panel--dark">Col 2</div>
+//     </div>
+// </div>
+//
+// Weight: 2
+//
+// Styleguide Layout.Grid.Responsive
+//
+
+
+//
+// Advanced Grid
+//
+// The advanced grid is a specialized container for panels which provides more control over gutters and element selection. NOTE: This grid is only supported on modern browsers (no IE11 support).
+//
+// Markup:
+// <div class="row base-margin-bottom">
+//     <div class="col-xl-6 flex-center-vertical">
+//         <div class="btn-group btn-group--square">
+//             <button id="grid-group" class="btn btn--gray-ghost">3up</button>
+//             <button id="grid-group" class="btn btn--gray-ghost">4up</button>
+//             <button id="grid-group" class="btn btn--gray-ghost selected">5up</button>
+//         </div>
+//     </div>
+//     <div class="col-xl-6 flex-center-vertical flex-right">
+//         <div class="form-group form-group--inline">
+//             <label class="switch">
+//                 <input id="grid-selectable" type="checkbox" checked>
+//                 <span class="switch__input"></span>
+//                 <span class="switch__label">Selectable</span>
+//             </label>
+//         </div>
+//         <div class="base-margin-left form-group form-group--inline">
+//             <div class="form-group__text">
+//                 <input id="grid-cards" type="number" value="15">
+//                 <label for="grid-cards">Panels</label>
+//             </div>
+//         </div>
+//         <div class="base-margin-left form-group form-group--inline">
+//             <div class="form-group__text">
+//                 <input id="grid-gutters" type="number" value="10">
+//                 <label for="grid-gutters">Gutters</label>
+//             </div>
+//         </div>
+//     </div>
+// </div>
+// <div id="grid" class="grid grid--selectable grid--5up"></div>
+//
+//
+//
+
+.grid {
+
+    display: grid;
+    width: 100%;
+    margin: 0 auto;
+
+    grid-template-columns: repeat(auto-fill, minmax($cui-grid-advanced-cell-width, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax($cui-grid-advanced-cell-width, 1fr));
+    grid-gap: var($cui-grid-advanced-gutters);
+
+    @for $i from 1 through $cui-grid-advanced-rows {
+        &.grid--row-#{$i} {
+            grid-template-rows: repeat($i, minmax($cui-grid-advanced-cell-width, 1fr));
+        }
+    }
+
+    @for $i from 1 through $cui-grid-columns {
+        &.grid--col-#{$i},
+        &.grid--#{$i}up {
+            grid-template-columns: repeat($i, 1fr);
+        }
+    }
+
+    @each $breakpoint in map-keys($cui-grid-breakpoints) {
+        @include media-breakpoint-up($breakpoint) {
+            $infix: breakpoint-infix($breakpoint, $cui-grid-breakpoints);
+            &.grid--col#{$infix}-1 {
+                grid-template-columns: 100%;
+            }
+            @for $i from 2 through $cui-grid-columns {
+                &.grid--col#{$infix}-#{$i} {
+                    grid-template-columns: repeat($i, 1fr);
+                }
+                .area-col#{$infix}-#{$i} {
+                    grid-column: span $i;
+                }
+                .area-row#{$infix}-#{$i} {
+                    grid-row: span $i;
+                }
+            }
+        }
+    }
+
+    &.grid--selectable {
+        > *:hover {
+            border: 1px solid var(--cui-accent-color);
+            cursor: pointer;
+        }
+    }
+
+    &.grid--spacing-qtr     { grid-gap: var(--cui-spacing-qtr); }
+    &.grid--spacing-half    { grid-gap: var(--cui-spacing-half); }
+    &.grid--spacing-base    { grid-gap: var(--cui-spacing); }
+    &.grid--spacing-dbl     { grid-gap: var(--cui-spacing-dbl); }
+}

@@ -1,0 +1,197 @@
+<!--
+Copyright (c) 2019 Cisco and/or its affiliates.
+This software is licensed to you under the terms of the Cisco Sample
+Code License, Version 1.1 (the "License"). You may obtain a copy of the
+License at
+               https://developer.cisco.com/docs/licenses
+All use of the material herein must be in accordance with the terms of
+the License. All rights not expressly granted by the License are
+reserved. Unless required by applicable law or agreed to separately in
+writing, software distributed under the License is distributed on an "AS
+IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+or implied.
+-->
+<!DOCTYPE html>
+
+<link rel="stylesheet" href="{{ url_for('static',filename='css/cui-standard.min.css') }}">
+<html>
+<body class="cui">
+<header class="header">
+    <div class="container">
+        <div class="header-panels">
+            <div class="header-panel">
+                <a class="header__logo" href="http://www.cisco.com" target="_blank">
+                    <span class="icon-cisco"></span>
+                </a>
+                <div class="header__title">Brownfield Smart Licensing Conversion Tool</div>
+            </div>
+            <div class="header-panel header-panel--right">
+                <div class="header-item">
+                    <ul id="tabsheader" class="tabs tabs--bordered">
+                        <li id="main" class="tab active">
+                            <a tabindex="0" href="/">
+                                <div class="tab__heading">Main</div>
+                            </a>
+                        </li>
+                        <li id="help" class="tab dbl-padding-right">
+                            <a tabindex="0" href="help">
+                                <div class="tab__heading">Help</div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div align="right">
+                <form method="get" action="/logout">
+                    <button class="btn btn--primary">Logout</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</header>
+<br><br><br><br>
+<div class="row" align="center">
+    <div class="col">
+        <h4>Please select a data source from the options below</h4>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+
+        <!-- Left Rail -->
+        <div class="col-xl-4">
+            <div class="section">
+
+                <div align="center" class="form-group">
+                    <form action="/scanupload" method="get">
+                        <div class="subheader">Scan network devices for serial numbers</div>
+                        <button class="btn btn--primary" type="submit">Next</button>
+                    </form>
+                    <br><br>
+                    <div class="panel panel--bordered-top"></div>
+                    <br><br>
+                    <div class="subheader">Scan Data Summary</div>
+                    <div class="alert">
+                        <div class="alert__message">{{scan_data}}</div>
+                    </div>
+                    <form method="get" action="/clearscan">
+                        <button class="btn btn--primary">Clear</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+        <!-- Middle Rail -->
+        <div class="col-xl-4">
+            <div class="section">
+                <div align="center" class="form-group">
+                    <form action="/serialnumber" method="get">
+                        <div class="subheader">Search for entitlement data by serial number</div>
+                        <button class="btn btn--primary" type="submit">Next</button>
+                    </form>
+                    <br><br>
+                    <div class="panel panel--bordered-top"></div>
+                    <br><br>
+                    <div class="subheader">Serial Number Data Summary</div>
+                    <div class="alert">
+                        <div class="alert__message">{{sn_data_web}}<br><br>{{sn_data_csv}}</div>
+
+                    </div>
+                    <form method="get" action="/clearsn">
+                        <button class="btn btn--primary">Clear</button>
+                    </form>
+                    <br><br>
+
+                </div>
+            </div>
+        </div>
+        <!-- Right Rail -->
+        <div class="col-xl-4">
+            <div class="section">
+                <div align="center" class="form-group">
+                    <form action="/salesorder" method="get">
+                        <div class="subheader">Search for entitlement data by sales order number</div>
+                        <button class="btn btn--primary" type="submit">Next</button>
+                    </form>
+                    <br><br>
+                    <div class="panel panel--bordered-top"></div>
+                    <br><br>
+                    <div class="subheader">Sales Order Data Summary</div>
+                    <div class="alert">
+                        <div class="alert__message">{{so_data}}</div>
+                    </div>
+                    <form method="get" action="/clearso">
+                        <button class="btn btn--primary">Clear</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xl-4 dbl-margin-bottom dbl-padding-bottom"></div>
+    <div class="col-xl-4" align="center">
+        <div class="subheader">Submit Data to CCWR</div>
+        <div class="panel panel--raised">
+            <span class="subheader">Total Deduplicated SN:</span>
+            <br>
+            <span class="subheader">{{data_total}}</span>
+            <br><br>
+            <form method="get" action="/ccwrresults">
+                <button class="btn btn--primary" onclick="loading()">Submit</button>
+                <br><br>Please note: All associated config items will be returned.
+                <br>This takes time.<br>
+                <font color="blue"><p id="loadvis"></p></font>
+                <script>
+                        function loading() {
+                          document.getElementById("loadvis").innerHTML = "<h5>Loading...please wait</h5>";
+                        }
+
+
+                </script>
+            </form>
+        </div>
+    </div>
+    <br>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <div class="col">
+        <div class="alert alert--warning-alt">
+            <div class="alert__icon icon-warning-outline"></div>
+            <div class="alert__message">{{ message }}</div>
+        </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+</div>
+
+</div>
+</div>
+
+
+</div>
+
+<footer class="footer footer--primary fixed-bottom">
+    <div class="footer__links">
+        <ul class="list list--inline">
+            <li><a href="http://www.cisco.com/cisco/web/siteassets/contacts/index.html" target="_blank">Contacts</a>
+            </li>
+            <li><a href="https://secure.opinionlab.com/ccc01/o.asp?id=jBjOhqOJ" target="_blank">Feedback</a></li>
+            <li><a href="https://www.cisco.com/c/en/us/about/help.html" target="_blank">Help</a></li>
+            <li><a href="http://www.cisco.com/c/en/us/about/sitemap.html" target="_blank">Site Map</a></li>
+            <li><a href="https://www.cisco.com/c/en/us/about/legal/terms-conditions.html" target="_blank">Terms &
+                Conditions</a></li>
+            </li>
+            <li><a href="https://www.cisco.com/c/en/us/about/legal/privacy-full.html" target="_blank">Privacy
+                Statement</a></li>
+            <li><a href="https://www.cisco.com/c/en/us/about/legal/privacy-full.html#cookies" target="_blank">Cookie
+                Policy</a></li>
+            <li><a href="https://www.cisco.com/c/en/us/about/legal/trademarks.html" target="_blank">Trademarks</a></li>
+        </ul>
+    </div>
+</footer>
+</body>
+</html>

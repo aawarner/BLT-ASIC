@@ -1,0 +1,319 @@
+//
+// Panel
+//
+// Panels act as a general purpose container for your content. They can be used as simple containers to control spacing or even as cards and hero elements.
+//
+// Styleguide Primitives.Panel
+//
+
+
+//
+// Color
+//
+// Font and link colors are pre-defined for each panel color background to ensure a AA-compliant contrast ratio.
+//
+// Markup:
+// <div class="row">
+//     <div class="col-md-6 col-lg-4 col-xl-3 base-margin-bottom">
+//         <div class="panel">
+//             <span class="subheader">Plain</span>
+//             <a href="javascript:;">link</a>
+//         </div>
+//     </div>
+//     <div class="col-md-6 col-lg-4 col-xl-3 base-margin-bottom">
+//         <div class="panel panel--primary">
+//             <span class="subheader">Primary</span>
+//             <a href="javascript:;">link</a>
+//         </div>
+//     </div>
+//     <div class="col-md-6 col-lg-4 col-xl-3 base-margin-bottom">
+//         <div class="panel panel--secondary">
+//             <span class="subheader">Secondary</span>
+//             <a href="javascript:;">link</a>
+//         </div>
+//     </div>
+//     <div class="col-md-6 col-lg-4 col-xl-3 base-margin-bottom">
+//         <div class="panel panel--tertiary">
+//             <span class="subheader">Tertiary</span>
+//             <a href="javascript:;">link</a>
+//         </div>
+//     </div>
+//     <div class="col-md-6 col-lg-4 col-xl-3 base-margin-bottom">
+//         <div class="panel panel--success">
+//             <span class="subheader">Success</span>
+//             <a href="javascript:;">link</a>
+//         </div>
+//     </div>
+//     <div class="col-md-6 col-lg-4 col-xl-3 base-margin-bottom">
+//         <div class="panel panel--info">
+//             <span class="subheader">Info</span>
+//             <a href="javascript:;">link</a>
+//         </div>
+//     </div>
+//     <div class="col-md-6 col-lg-4 col-xl-3 base-margin-bottom">
+//         <div class="panel panel--warning-alt">
+//             <span class="subheader">Warning Alt</span>
+//             <a href="javascript:;">link</a>
+//         </div>
+//     </div>
+//     <div class="col-md-6 col-lg-4 col-xl-3 base-margin-bottom">
+//         <div class="panel panel--warning">
+//             <span class="subheader">Warning</span>
+//             <a href="javascript:;">link</a>
+//         </div>
+//     </div>
+//     <div class="col-md-6 col-lg-4 col-xl-3 base-margin-bottom">
+//         <div class="panel panel--danger">
+//             <span class="subheader">Danger</span>
+//             <a href="javascript:;">link</a>
+//         </div>
+//     </div>
+//     <div class="col-md-6 col-lg-4 col-xl-3 base-margin-bottom">
+//         <div class="panel panel--dark">
+//             <span class="subheader">Dark</span>
+//             <a href="javascript:;">link</a>
+//         </div>
+//     </div>
+//     <div class="col-md-6 col-lg-4 col-xl-3 base-margin-bottom">
+//         <div class="panel panel--light">
+//             <span class="subheader">Light</span>
+//             <a href="javascript:;">link</a>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 1
+//
+// Styleguide Primitives.Panel.Color
+//
+
+
+//
+// Padding
+//
+// Control the inner spacing of your panel.
+//
+// Markup:
+// <div class="row">
+//     <div class="col-md-6 col-lg-4 col-xl-3">
+//         <div class="panel panel--dark panel--none">
+//             <span class="subheader">None</span>
+//         </div>
+//     </div>
+//     <div class="col-md-6 col-lg-4 col-xl-3">
+//         <div class="panel panel--dark panel--compressed">
+//             <span class="subheader">Compressed</span>
+//         </div>
+//     </div>
+//     <div class="col-md-6 col-lg-4 col-xl-3">
+//         <div class="panel panel--dark">
+//             <span class="subheader">Default</span>
+//         </div>
+//     </div>
+//     <div class="col-md-6 col-lg-4 col-xl-3">
+//         <div class="panel panel--dark panel--loose">
+//             <span class="subheader">Loose</span>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 2
+//
+// Styleguide Primitives.Panel.Padding
+//
+
+
+//
+// Bordered
+//
+// Add a border to your panel. The default border color is used. You can also specify partial borders.
+//
+// Markup:
+// <div class="row">
+//     <div class="col-md-6">
+//         <div class="panel panel--bordered">
+//             <span class="subheader">Bordered</span>
+//         </div>
+//     </div>
+// </div>
+// <br>
+// <div class="row">
+//     <div class="col-md-6">
+//         <div class="panel panel--bordered-top">
+//             <span class="subheader">Bordered Top</span>
+//         </div>
+//     </div>
+//     <div class="col-md-6">
+//         <div class="panel panel--bordered-right">
+//             <span class="subheader">Bordered Right</span>
+//         </div>
+//     </div>
+//     <div class="col-md-6">
+//         <div class="panel panel--bordered-bottom">
+//             <span class="subheader">Bordered Bottom</span>
+//         </div>
+//     </div>
+//     <div class="col-md-6">
+//         <div class="panel panel--bordered-left">
+//             <span class="subheader">Bordered Left</span>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 3
+//
+// Styleguide Primitives.Panel.Bordered
+//
+
+
+//
+// Raised
+//
+// Add an embossed effect to your panel.
+//
+// Markup:
+// <div class="panel panel--raised">
+//     <span class="subheader">Raised</span>
+// </div>
+//
+// Weight: 4
+//
+// Styleguide Primitives.Panel.Raised
+//
+
+
+//
+// Well
+//
+// Add an engraved effect to your panel.
+//
+// Markup:
+// <div class="row">
+//     <div class="col-md-6">
+//         <div class="panel panel--well">
+//             <span class="subheader">Well</span>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 5
+//
+// Styleguide Primitives.Panel.Well
+//
+
+
+//
+// Examples
+//
+// Markup:
+// <div class="subheader">As Hero</div>
+// <div class="panel panel--loose panel--secondary dbl-padding">
+//     <div class="row">
+//         <div class="col-md-8">
+//             <h4 class="no-margin">Welcome to</h4>
+//             <h1 class="display-0">
+//                 <span>Living<span class="text-primary">Cisco</span></span>
+//             </h1>
+//             <p class="lead">Lorem ipsum dolor sit amet.</p>
+//         </div>
+//         <div class="col-md-4">
+//             <img src="public/img/iheartcisco.png">
+//         </div>
+//     </div>
+// </div>
+// <div class="subheader">As Card</div>
+// <div class="row">
+//     <div class="col-lg-3 col-md-6 col-12">
+//         <div class="panel panel--bordered panel--raised panel--loose">
+//             <div class="subtitle">BLD2-FLR1-DST1</div>
+//             <small>Catalyst 9300-24P-A Switch</small>
+//             <div class="section text-center">
+//                 <img class="image-size-128" src="public/img/devices/1600-wap.png">
+//             </div>
+//             <div class="row">
+//                 <div class="col-md-6">
+//                     <div class="text-small">IP ADDRESS</div>
+//                     <div class="text-normal">127.0.0.1</div>
+//                     <div class="text-small base-margin-top">LAST SCAN</div>
+//                     <div class="text-normal">3 hours ago</div>
+//                     <div class="text-small base-margin-top">SERIAL NUMBER</div>
+//                     <div class="text-normal">FJC2027DO62</div>
+//                 </div>
+//                 <div class="col-md-6">
+//                     <div class="text-small">SOFTWARE</div>
+//                     <div class="text-normal">IOS XE 16.6.3</div>
+//                     <div class="text-small base-margin-top">ROLE</div>
+//                     <div class="text-normal">Border Router</div>
+//                 </div>
+//             </div>
+//             <hr>
+//             <div class="flex flex-between base-margin-top">
+//                 <a href="javascript:;">Action 1</a>
+//                 <a href="javascript:;">Action 2</a>
+//                 <a href="javascript:;">Action 3</a>
+//             </div>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 6
+//
+// Styleguide Primitives.Panel.Examples
+//
+
+
+@mixin build-panel-padding(
+    $padding: var(--cui-panel-default-padding)
+) {
+    padding: $padding;
+}
+
+a.panel, .panel {
+    display: block;
+    position: relative;
+    margin: 0;
+    border: 0 none;
+    border-radius: var(--cui-panel-border-radius);
+    height: auto;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+    @include build-background-style($link-decoration: none);
+    @each $name, $color in $cui-theme-colors {
+        &.panel--#{$name} {
+            @include build-background-style(
+                $bg: var(--cui-theme-#{$name}),
+                $color: var(--cui-theme-#{$name}-color),
+                $link-color: var(--cui-theme-#{$name}-color),
+                $link-color-hover: var(--cui-theme-#{$name}-color),
+                $link-decoration: var(--cui-theme-#{$name}-link-decoration)
+            );
+        }
+    }
+
+    @include build-panel-padding();
+    @each $modifier in none, compressed, regular, loose {
+        &.panel--#{$modifier} {
+            @include build-panel-padding(
+                $padding: var(--cui-panel-#{$modifier}-padding)
+            );
+        }
+    }
+
+    &.panel--bordered         { border: var(--cui-border); }
+    &.panel--bordered-top     { border-top: var(--cui-border); }
+    &.panel--bordered-right   { border-right: var(--cui-border); }
+    &.panel--bordered-bottom  { border-bottom: var(--cui-border); }
+    &.panel--bordered-left    { border-left: var(--cui-border); }
+
+    &.panel--raised {
+        box-shadow: var(--cui-shadow-outset);
+    }
+    &.panel--well {
+        box-shadow: var(--cui-shadow-inset);
+    }
+    &.panel--hover { // Deprecated. Use the helper hover-shadow
+        &:hover {
+            box-shadow: var(--cui-shadow-outset);
+        }
+    }
+}

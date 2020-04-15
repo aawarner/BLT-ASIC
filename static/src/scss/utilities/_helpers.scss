@@ -1,0 +1,1146 @@
+//
+// Helpers
+//
+// Styleguide Utilities.Helpers
+//
+
+
+//
+// Disabled
+//
+// Add a disabled attribute or a `disabled` class to an element. Pointer events are turned off and opacity is changed to indicate the state.
+//
+// Markup:
+// <div>
+//     <button class="btn">Normal Button</button>
+//     <button class="btn" disabled>Disabled Button</button>
+// </div>
+//
+// Weight: 1
+//
+// Styleguide Utilities.Helpers.Disabled
+//
+
+*[disabled], .disabled {
+    @include disabled;
+}
+.disable-pointer {
+    pointer-events: none !important;
+}
+.readonly {
+    @include readonly;
+}
+
+
+//
+// Float
+//
+// Force elements to the left or right. To clear the floats add the class `clearfix` to the parent container.
+//
+// Markup:
+// <div class="clearfix">
+//     <div class="panel panel--raised panel--loose pull-left">
+//         <div class="subheader">pull-left</div>
+//     </div>
+//     <div class="panel panel--raised panel--loose pull-right">
+//         <div class="subheader">pull-right</div>
+//     </div>
+// </div>
+//
+// Weight: 2
+//
+// Styleguide Utilities.Helpers.Float
+//
+
+.clearfix { @include clearfix; }
+.pull-left { float: left !important; }
+.pull-right { float: right !important; }
+
+
+//
+// Hover
+//
+// On hover, add embossed or engraved effects to an element.
+//
+// Markup:
+// <div class="row">
+//     <div class="col-md-6">
+//         <div class="subheader">Embossed</div>
+//         <div class="panel panel--bordered hover-emboss--small half-margin-bottom">Small Emboss</div>
+//         <div class="panel panel--bordered hover-emboss--medium half-margin-bottom">Medium Emboss</div>
+//         <div class="panel panel--bordered hover-emboss--large half-margin-bottom">Large Emboss</div>
+//     </div>
+//     <div class="col-md-6">
+//         <div class="subheader">Engraved</div>
+//         <div class="panel panel--bordered hover-engrave--small half-margin-bottom">Small Engrave</div>
+//         <div class="panel panel--bordered hover-engrave--medium half-margin-bottom">Medium Engrave</div>
+//         <div class="panel panel--bordered hover-engrave--large half-margin-bottom">Large Engrave</div>
+//     </div>
+// </div>
+//
+// Weight: 3
+//
+// Styleguide Utilities.Helpers.Hover
+//
+
+[class*='hover-emboss'], [class*='hover-engrave'] {
+    transition: box-shadow .2s ease-in;
+}
+
+.hover-emboss--small:hover  { box-shadow: var(--cui-shadow-outset-sm); }
+.hover-emboss:hover, .hover-emboss--medium:hover { box-shadow: var(--cui-shadow-outset); }
+.hover-emboss--large:hover  { box-shadow: var(--cui-shadow-outset-lg); }
+
+.hover-engrave--small:hover  { box-shadow: var(--cui-shadow-inset-sm); }
+.hover-engrave:hover, .hover-engrave--medium:hover { box-shadow: var(--cui-shadow-inset); }
+.hover-engrave--large:hover  { box-shadow: var(--cui-shadow-inset-lg); }
+
+.emboss--small:hover  { box-shadow: var(--cui-shadow-outset-sm); }
+.emboss, .emboss--medium { box-shadow: var(--cui-shadow-outset); }
+.emboss--large  { box-shadow: var(--cui-shadow-outset-lg); }
+
+
+//
+// Opacity
+//
+// Set the opacity of an element using these helper classes.
+//
+// Markup:
+// <div class="row">
+//     <div class="col-xl-1 col-lg-2 col-md-4 col-6">
+//         <div class="subheader">10%</div>
+//         <span class="icon-acessibility icon-size-24 opacity-10"></span>
+//     </div>
+//     <div class="col-xl-1 col-lg-2 col-md-4 col-6">
+//         <div class="subheader">20%</div>
+//         <span class="icon-acessibility icon-size-24 opacity-20"></span>
+//     </div>
+//     <div class="col-xl-1 col-lg-2 col-md-4 col-6">
+//         <div class="subheader">30%</div>
+//         <span class="icon-acessibility icon-size-24 opacity-30"></span>
+//     </div>
+//     <div class="col-xl-1 col-lg-2 col-md-4 col-6">
+//         <div class="subheader">40%</div>
+//         <span class="icon-acessibility icon-size-24 opacity-40"></span>
+//     </div>
+//     <div class="col-xl-1 col-lg-2 col-md-4 col-6">
+//         <div class="subheader">50%</div>
+//         <span class="icon-acessibility icon-size-24 opacity-50"></span>
+//     </div>
+//     <div class="col-xl-1 col-lg-2 col-md-4 col-6">
+//         <div class="subheader">60%</div>
+//         <span class="icon-acessibility icon-size-24 opacity-60"></span>
+//     </div>
+//     <div class="col-xl-1 col-lg-2 col-md-4 col-6">
+//         <div class="subheader">70%</div>
+//         <span class="icon-acessibility icon-size-24 opacity-70"></span>
+//     </div>
+//     <div class="col-xl-1 col-lg-2 col-md-4 col-6">
+//         <div class="subheader">80%</div>
+//         <span class="icon-acessibility icon-size-24 opacity-80"></span>
+//     </div>
+//     <div class="col-xl-1 col-lg-2 col-md-4 col-6">
+//         <div class="subheader">90%</div>
+//         <span class="icon-acessibility icon-size-24 opacity-90"></span>
+//     </div>
+// </div>
+//
+// Weight: 4
+//
+// Styleguide Utilities.Helpers.Opacity
+//
+
+.opacity-10 { opacity: .10 !important; }
+.opacity-20 { opacity: .20 !important; }
+.opacity-30 { opacity: .30 !important; }
+.opacity-40 { opacity: .40 !important; }
+.opacity-50 { opacity: .50 !important; }
+.opacity-60 { opacity: .60 !important; }
+.opacity-70 { opacity: .70 !important; }
+.opacity-80 { opacity: .80 !important; }
+.opacity-90 { opacity: .90 !important; }
+
+
+//
+// Rotate
+//
+// Rotate an element using these helper classes.
+//
+// Markup:
+// <div class="row">
+//     <div class="col-xl-1 col-lg-2 col-md-4 col-6">
+//         <div class="subheader">30&deg;</div>
+//         <span class="icon-acessibility icon-size-24 rotate-30"></span>
+//     </div>
+//     <div class="col-xl-1 col-lg-2 col-md-4 col-6">
+//         <div class="subheader">45&deg;</div>
+//         <span class="icon-acessibility icon-size-24 rotate-45"></span>
+//     </div>
+//     <div class="col-xl-1 col-lg-2 col-md-4 col-6">
+//         <div class="subheader">60&deg;</div>
+//         <span class="icon-acessibility icon-size-24 rotate-60"></span>
+//     </div>
+//     <div class="col-xl-1 col-lg-2 col-md-4 col-6">
+//         <div class="subheader">90&deg;</div>
+//         <span class="icon-acessibility icon-size-24 rotate-90"></span>
+//     </div>
+//     <div class="col-xl-1 col-lg-2 col-md-4 col-6">
+//         <div class="subheader">135&deg;</div>
+//         <span class="icon-acessibility icon-size-24 rotate-135"></span>
+//     </div>
+//     <div class="col-xl-1 col-lg-2 col-md-4 col-6">
+//         <div class="subheader">180&deg;</div>
+//         <span class="icon-acessibility icon-size-24 rotate-180"></span>
+//     </div>
+//     <div class="col-xl-1 col-lg-2 col-md-4 col-6">
+//         <div class="subheader">225&deg;</div>
+//         <span class="icon-acessibility icon-size-24 rotate-225"></span>
+//     </div>
+//     <div class="col-xl-1 col-lg-2 col-md-4 col-6">
+//         <div class="subheader">270&deg;</div>
+//         <span class="icon-acessibility icon-size-24 rotate-270"></span>
+//     </div>
+//     <div class="col-xl-1 col-lg-2 col-md-4 col-6">
+//         <div class="subheader">315&deg;</div>
+//         <span class="icon-acessibility icon-size-24 rotate-315"></span>
+//     </div>
+// </div>
+//
+// Weight: 5
+//
+// Styleguide Utilities.Helpers.Rotate
+//
+
+.rotate-30  { transform: rotate(30deg)  !important; }
+.rotate-45  { transform: rotate(45deg)  !important; }
+.rotate-60  { transform: rotate(60deg)  !important; }
+.rotate-90  { transform: rotate(90deg)  !important; }
+.rotate-135 { transform: rotate(135deg) !important; }
+.rotate-180 { transform: rotate(180deg) !important; }
+.rotate-225 { transform: rotate(225deg) !important; }
+.rotate-270 { transform: rotate(270deg) !important; }
+.rotate-315 { transform: rotate(315deg) !important; }
+
+
+//
+// Icon Size
+//
+// Size helpers for your icons.
+//
+// Markup:
+// <div class="row">
+//     <div class="col-xl-1 col-lg-2 col-md-4 col-6">
+//         <div class="subheader">size-10</div>
+//         <span class="icon-acessibility icon-size-10"></span>
+//     </div>
+//     <div class="col-xl-1 col-lg-2 col-md-4 col-6">
+//         <div class="subheader">size-12</div>
+//         <span class="icon-acessibility icon-size-12"></span>
+//     </div>
+//     <div class="col-xl-1 col-lg-2 col-md-4 col-6">
+//         <div class="subheader">size-14</div>
+//         <span class="icon-acessibility icon-size-14"></span>
+//     </div>
+//     <div class="col-xl-1 col-lg-2 col-md-4 col-6">
+//         <div class="subheader">size-16</div>
+//         <span class="icon-acessibility icon-size-16"></span>
+//     </div>
+//     <div class="col-xl-1 col-lg-2 col-md-4 col-6">
+//         <div class="subheader">size-18</div>
+//         <span class="icon-acessibility icon-size-18"></span>
+//     </div>
+//     <div class="col-xl-1 col-lg-2 col-md-4 col-6">
+//         <div class="subheader">size-20</div>
+//         <span class="icon-acessibility icon-size-20"></span>
+//     </div>
+//     <div class="col-xl-1 col-lg-2 col-md-4 col-6">
+//         <div class="subheader">size-24</div>
+//         <span class="icon-acessibility icon-size-24"></span>
+//     </div>
+//     <div class="col-xl-1 col-lg-2 col-md-4 col-6">
+//         <div class="subheader">size-28</div>
+//         <span class="icon-acessibility icon-size-28"></span>
+//     </div>
+//     <div class="col-xl-1 col-lg-2 col-md-4 col-6">
+//         <div class="subheader">size-32</div>
+//         <span class="icon-acessibility icon-size-32"></span>
+//     </div>
+//     <div class="col-xl-1 col-lg-2 col-md-4 col-6">
+//         <div class="subheader">size-36</div>
+//         <span class="icon-acessibility icon-size-36"></span>
+//     </div>
+//     <div class="col-xl-1 col-lg-2 col-md-4 col-6">
+//         <div class="subheader">size-48</div>
+//         <span class="icon-acessibility icon-size-48"></span>
+//     </div>
+// </div>
+//
+// Weight: 6
+//
+// Styleguide Utilities.Helpers.Icon Size
+//
+
+@each $name, $size in $cui-common-sizes {
+    .icon-#{$name} {
+        line-height: $size !important;
+        font-size: $size !important;
+    }
+}
+
+.icon-huge &:before {
+    line-height: 84px !important;
+    font-size: 84px !important;
+}
+.icon-large &:before {
+    line-height: 56px !important;
+    font-size: 56px !important;
+}
+.icon-medium-large &:before {
+    line-height: 36px !important;
+    font-size: 36px !important;
+}
+.icon-medium &:before {
+    line-height: 28px !important;
+    font-size: 28px !important;
+}
+.icon-medium-small &:before {
+    line-height: 24px !important;
+    font-size: 24px !important;
+}
+.icon-small &:before {
+    line-height: 16px !important;
+    font-size: 16px !important;
+}
+.icon-tiny &:before {
+    line-height: 10px !important;
+    font-size: 10px !important;
+}
+
+
+//
+// Nudges
+//
+// Use nudges to add extra margin (or padding) to your elements. Nudges are fractional based off of the global spacing value.
+//
+// Markup:
+// <div class="subheader">Margin Nudges</div>
+// <div class="row">
+//     <div class="col-xl-2 col-lg-4 col-6">
+//         <div class="panel panel--none panel--bordered">
+//             <div class="panel panel--dkgray subheader text-center no-margin">no-margin</div>
+//         </div>
+//     </div>
+//     <div class="col-xl-2 col-lg-4 col-6">
+//         <div class="panel panel--none panel--bordered">
+//             <div class="panel panel--dkgray subheader text-center qtr-margin">qtr-margin</div>
+//         </div>
+//     </div>
+//     <div class="col-xl-2 col-lg-4 col-6">
+//         <div class="panel panel--none panel--bordered">
+//             <div class="panel panel--dkgray subheader text-center half-margin">half-margin</div>
+//         </div>
+//     </div>
+//     <div class="col-xl-2 col-lg-4 col-6">
+//         <div class="panel panel--none panel--bordered">
+//             <div class="panel panel--dkgray subheader text-center base-margin">base-margin</div>
+//         </div>
+//     </div>
+//     <div class="col-xl-2 col-lg-4 col-6">
+//         <div class="panel panel--none panel--bordered">
+//             <div class="panel panel--dkgray subheader text-center dbl-margin">dbl-margin</div>
+//         </div>
+//     </div>
+// </div>
+// <div class="subheader">Padding Nudges</div>
+// <div class="row">
+//     <div class="col-xl-2 col-lg-4 col-6">
+//         <div class="panel panel--bordered">
+//             <div class="panel panel--dkgray subheader text-center no-margin no-padding">no-padding</div>
+//         </div>
+//     </div>
+//     <div class="col-xl-2 col-lg-4 col-6">
+//         <div class="panel panel--bordered">
+//             <div class="panel panel--dkgray subheader text-center no-margin qtr-padding">qtr-padding</div>
+//         </div>
+//     </div>
+//     <div class="col-xl-2 col-lg-4 col-6">
+//         <div class="panel panel--bordered">
+//             <div class="panel panel--dkgray subheader text-center no-margin half-padding">half-padding</div>
+//         </div>
+//     </div>
+//     <div class="col-xl-2 col-lg-4 col-6">
+//         <div class="panel panel--bordered">
+//             <div class="panel panel--dkgray subheader text-center no-margin base-padding">base-padding</div>
+//         </div>
+//     </div>
+//     <div class="col-xl-2 col-lg-4 col-6">
+//         <div class="panel panel--bordered">
+//             <div class="panel panel--dkgray subheader text-center no-margin dbl-padding">dbl-padding</div>
+//         </div>
+//     </div>
+// </div>
+// <div class="row">
+//     <div class="col-12 base-margin-top">
+//         <div class="subheader">Margin Nudges</div>
+//         <table class="table table--lined table--compressed">
+//             <thead>
+//                 <th>Class</th>
+//                 <th>Description</th>
+//             </thead>
+//             <tbody>
+//                 <tr>
+//                     <td>
+//                         <code>no-margin</code>
+//                         <code>no-margin-top</code>
+//                         <code>no-margin-right</code>
+//                         <code>no-margin-bottom</code>
+//                         <code>no-margin-left</code>
+//                     </td>
+//                     <td>Remove margin from element</td>
+//                 </tr>
+//                 <tr>
+//                     <td>
+//                         <code>qtr-margin</code>
+//                         <code>qtr-margin-top</code>
+//                         <code>qtr-margin-right</code>
+//                         <code>qtr-margin-bottom</code>
+//                         <code>qtr-margin-left</code>
+//                     </td>
+//                     <td>Add .25x spacing margin to element</td>
+//                 </tr>
+//                 <tr>
+//                     <td>
+//                         <code>half-margin</code>
+//                         <code>half-margin-top</code>
+//                         <code>half-margin-right</code>
+//                         <code>half-margin-bottom</code>
+//                         <code>half-margin-left</code>
+//                     </td>
+//                     <td>Add .5x spacing margin to element</td>
+//                 </tr>
+//                 <tr>
+//                     <td>
+//                         <code>base-margin</code>
+//                         <code>base-margin-top</code>
+//                         <code>base-margin-right</code>
+//                         <code>base-margin-bottom</code>
+//                         <code>base-margin-left</code>
+//                     </td>
+//                     <td>Add 1x spacing margin to element</td>
+//                 </tr>
+//                 <tr>
+//                     <td>
+//                         <code>dbl-margin</code>
+//                         <code>dbl-margin-top</code>
+//                         <code>dbl-margin-right</code>
+//                         <code>dbl-margin-bottom</code>
+//                         <code>dbl-margin-left</code>
+//                     </td>
+//                     <td>Add 2x spacing margin to element</td>
+//                 </tr>
+//             </tbody>
+//         </table>
+//     </div>
+// </div>
+// <div class="row">
+//     <div class="col-12 base-margin-top">
+//         <div class="subheader">Padding Nudges</div>
+//         <table class="table table--lined table--compressed">
+//             <thead>
+//                 <th>Class</th>
+//                 <th>Description</th>
+//             </thead>
+//             <tbody>
+//                 <tr>
+//                     <td>
+//                         <code>no-padding</code>
+//                         <code>no-padding-top</code>
+//                         <code>no-padding-right</code>
+//                         <code>no-padding-bottom</code>
+//                         <code>no-padding-left</code>
+//                     </td>
+//                     <td>Remove padding from element</td>
+//                 </tr>
+//                 <tr>
+//                     <td>
+//                         <code>qtr-padding</code>
+//                         <code>qtr-padding-top</code>
+//                         <code>qtr-padding-right</code>
+//                         <code>qtr-padding-bottom</code>
+//                         <code>qtr-padding-left</code>
+//                     </td>
+//                     <td>Add .25x spacing padding to element</td>
+//                 </tr>
+//                 <tr>
+//                     <td>
+//                         <code>half-padding</code>
+//                         <code>half-padding-top</code>
+//                         <code>half-padding-right</code>
+//                         <code>half-padding-bottom</code>
+//                         <code>half-padding-left</code>
+//                     </td>
+//                     <td>Add .5x spacing padding to element</td>
+//                 </tr>
+//                 <tr>
+//                     <td>
+//                         <code>base-padding</code>
+//                         <code>base-padding-top</code>
+//                         <code>base-padding-right</code>
+//                         <code>base-padding-bottom</code>
+//                         <code>base-padding-left</code>
+//                     </td>
+//                     <td>Add 1x spacing padding to element</td>
+//                 </tr>
+//                 <tr>
+//                     <td>
+//                         <code>dbl-padding</code>
+//                         <code>dbl-padding-top</code>
+//                         <code>dbl-padding-right</code>
+//                         <code>dbl-padding-bottom</code>
+//                         <code>dbl-padding-left</code>
+//                     </td>
+//                     <td>Add 2x spacing padding to element</td>
+//                 </tr>
+//             </tbody>
+//         </table>
+//     </div>
+// </div>
+//
+// Weight: 7
+//
+// Styleguide Utilities.Helpers.Nudges
+//
+
+.inline-qtr-spacing {
+    > *+* {
+        margin-left: var(--cui-spacing-qtr);
+    }
+}
+
+.no-margin           { margin: 0 !important; }
+.no-margin-top       { margin-top: 0 !important; }
+.no-margin-right     { margin-right: 0 !important; }
+.no-margin-bottom    { margin-bottom: 0 !important; }
+.no-margin-left      { margin-left: 0 !important; }
+
+.qtr-margin          { margin: var(--cui-spacing-qtr) !important; }
+.qtr-margin-top      { margin-top: var(--cui-spacing-qtr) !important; }
+.qtr-margin-right    { margin-right: var(--cui-spacing-qtr) !important; }
+.qtr-margin-bottom   { margin-bottom: var(--cui-spacing-qtr) !important; }
+.qtr-margin-left     { margin-left: var(--cui-spacing-qtr) !important; }
+
+.half-margin         { margin: var(--cui-spacing-half) !important; }
+.half-margin-top     { margin-top: var(--cui-spacing-half) !important; }
+.half-margin-right   { margin-right: var(--cui-spacing-half) !important; }
+.half-margin-bottom  { margin-bottom: var(--cui-spacing-half) !important; }
+.half-margin-left    { margin-left: var(--cui-spacing-half) !important; }
+
+.base-margin         { margin: var(--cui-spacing) !important; }
+.base-margin-top     { margin-top: var(--cui-spacing) !important; }
+.base-margin-right   { margin-right: var(--cui-spacing) !important; }
+.base-margin-bottom  { margin-bottom: var(--cui-spacing) !important; }
+.base-margin-left    { margin-left: var(--cui-spacing) !important; }
+
+.dbl-margin          { margin: var(--cui-spacing-dbl) !important; }
+.dbl-margin-top      { margin-top: var(--cui-spacing-dbl) !important; }
+.dbl-margin-right    { margin-right: var(--cui-spacing-dbl) !important; }
+.dbl-margin-bottom   { margin-bottom: var(--cui-spacing-dbl) !important; }
+.dbl-margin-left     { margin-left: var(--cui-spacing-dbl) !important; }
+
+.no-padding          { padding: 0 !important; }
+.no-padding-top      { padding-top: 0 !important; }
+.no-padding-right    { padding-right: 0 !important; }
+.no-padding-bottom   { padding-bottom: 0 !important; }
+.no-padding-left     { padding-left: 0 !important; }
+
+.qtr-padding         { padding: var(--cui-spacing-qtr) !important; }
+.qtr-padding-top     { padding-top: var(--cui-spacing-qtr) !important; }
+.qtr-padding-right   { padding-right: var(--cui-spacing-qtr) !important; }
+.qtr-padding-bottom  { padding-bottom: var(--cui-spacing-qtr) !important; }
+.qtr-padding-left    { padding-left: var(--cui-spacing-qtr) !important; }
+
+.half-padding        { padding: var(--cui-spacing-half) !important; }
+.half-padding-top    { padding-top: var(--cui-spacing-half) !important; }
+.half-padding-right  { padding-right: var(--cui-spacing-half) !important; }
+.half-padding-bottom { padding-bottom: var(--cui-spacing-half) !important; }
+.half-padding-left   { padding-left: var(--cui-spacing-half) !important; }
+
+.base-padding        { padding: var(--cui-spacing) !important; }
+.base-padding-top    { padding-top: var(--cui-spacing) !important; }
+.base-padding-right  { padding-right: var(--cui-spacing) !important; }
+.base-padding-bottom { padding-bottom: var(--cui-spacing) !important; }
+.base-padding-left   { padding-left: var(--cui-spacing) !important; }
+
+.dbl-padding         { padding: var(--cui-spacing-dbl) !important; }
+.dbl-padding-top     { padding-top: var(--cui-spacing-dbl) !important; }
+.dbl-padding-right   { padding-right: var(--cui-spacing-dbl) !important; }
+.dbl-padding-bottom  { padding-bottom: var(--cui-spacing-dbl) !important; }
+.dbl-padding-left    { padding-left: var(--cui-spacing-dbl) !important; }
+
+
+//
+// Position
+//
+// Use these helpers to help position your elements. Support for both absolute and fixed positioning.
+//
+// Markup:
+// <div class="row">
+//     <div class="col-lg-6 base-margin-bottom">
+//         <div class="subheader">Absolute</div>
+//         <table class="table table--lined table--compressed">
+//             <thead>
+//                 <th>Class</th>
+//                 <th>Description</th>
+//             </thead>
+//             <tbody>
+//                 <tr>
+//                     <td><code>absolute-center</code></td>
+//                     <td>Element positioned page center</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>absolute-top</code></td>
+//                     <td>Element positioned page top</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>absolute-right</code></td>
+//                     <td>Element positioned page right</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>absolute-bottom</code></td>
+//                     <td>Element positioned page bottom</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>absolute-left</code></td>
+//                     <td>Element positioned page left</td>
+//                 </tr>
+//             </tbody>
+//         </table>
+//     </div>
+//     <div class="col-lg-6 base-margin-bottom">
+//         <div class="subheader">Fixed</div>
+//         <table class="table table--lined table--compressed">
+//             <thead>
+//                 <th>Class</th>
+//                 <th>Description</th>
+//             </thead>
+//             <tbody>
+//                 <tr>
+//                     <td><code>fixed-top</code></td>
+//                     <td>Element fixed page top</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>fixed-right</code></td>
+//                     <td>Element fixed page right</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>fixed-bottom</code></td>
+//                     <td>Element fixed page bottom</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>fixed-left</code></td>
+//                     <td>Element fixed page left</td>
+//                 </tr>
+//             </tbody>
+//         </table>
+//     </div>
+// </div>
+//
+// Weight: 8
+//
+// Styleguide Utilities.Helpers.Position
+//
+
+[class*='absolute-'] {
+    position: absolute !important;
+}
+
+.absolute { position: absolute !important; }
+.relative { position: relative !important; }
+
+.absolute-center {
+    @include absolute-center;
+    &--top      { top: 30% !important; }
+    &--right    { left: 70% !important; }
+    &--bottom   { top: 70% !important; }
+    &--left     { left: 30% !important; }
+}
+.absolute-top { top: 0 !important; }
+.absolute-right { right: 0 !important; }
+.absolute-bottom { bottom: 0 !important; }
+.absolute-left { left: 0 !important; }
+.absolute-top-half-negative { top: -50%; }
+
+.fixed-top { position: fixed !important; top: 0 !important; }
+.fixed-right { position: fixed !important; right: 0 !important; }
+.fixed-bottom { position: fixed !important; bottom: 0 !important; }
+.fixed-left { position: fixed !important; left: 0 !important; }
+
+$positions: top, right, bottom, left;
+@each $pos in $positions {
+    @each $name, $size in $grid-breakpoints {
+        .fixed-#{$pos}-#{$name}-up {
+            @include media-breakpoint-up($name) {
+                position: fixed !important;
+                #{$pos}: 0;
+            }
+        }
+    }
+}
+@each $pos in $positions {
+    @each $name, $size in $grid-breakpoints {
+        .fixed-#{$pos}-#{$name}-down {
+            @include media-breakpoint-down($name) {
+                position: fixed !important;
+                #{$pos}: 0;
+            }
+        }
+    }
+}
+
+
+//
+// Visibility
+//
+// Use these helpers to hide or display elements based on breakpoint. Resize your browser to see the effect.
+//
+// Markup:
+// <div class="row">
+//     <div class="col-md-3">
+//         <div class="panel panel--raised base-margin panel--bordered text-center hidden-xs-up">
+//             <div class="subheader">XSmall</div>
+//             <div class="text-size-12 text-italic">320-576px</div>
+//         </div>
+//         <div class="panel panel--raised base-margin panel--success text-center visible-xs-up">
+//             <div class="subheader">
+//                 <span class="icon-check icon-size-16"></span>
+//                 <span class="qtr-margin-left">XSmall</span>
+//             </div>
+//             <div class="text-size-12 text-italic">320-576px</div>
+//         </div>
+//     </div>
+//     <div class="col-md-3">
+//         <div class="panel panel--raised base-margin panel--bordered text-center hidden-sm-up">
+//             <div class="subheader">Small</div>
+//             <div class="text-size-12 text-italic">577-768px</div>
+//         </div>
+//         <div class="panel panel--raised base-margin panel--success text-center visible-sm-up">
+//             <div class="subheader">
+//                 <span class="icon-check icon-size-16"></span>
+//                 <span class="qtr-margin-left">Small</span>
+//             </div>
+//             <div class="text-size-12 text-italic">577-768px</div>
+//         </div>
+//     </div>
+//     <div class="col-md-3">
+//         <div class="panel panel--raised base-margin panel--bordered text-center hidden-md-up">
+//             <div class="subheader">Medium</div>
+//             <div class="text-size-12 text-italic">769-992px</div>
+//         </div>
+//         <div class="panel panel--raised base-margin panel--success text-center visible-md-up">
+//             <div class="subheader">
+//                 <span class="icon-check icon-size-16"></span>
+//                 <span class="qtr-margin-left">Medium</span>
+//             </div>
+//             <div class="text-size-12 text-italic">769-992px</div>
+//         </div>
+//     </div>
+//     <div class="col-md-3">
+//         <div class="panel panel--raised base-margin panel--bordered text-center hidden-lg-up">
+//             <div class="subheader">Large</div>
+//             <div class="text-size-12 text-italic">993-1200px</div>
+//         </div>
+//         <div class="panel panel--raised base-margin panel--success text-center visible-lg-up">
+//             <div class="subheader">
+//                 <span class="icon-check icon-size-16"></span>
+//                 <span class="qtr-margin-left">Large</span>
+//             </div>
+//             <div class="text-size-12 text-italic">993-1200px</div>
+//         </div>
+//     </div>
+//     <div class="col-md-3">
+//         <div class="panel panel--raised base-margin panel--bordered text-center hidden-xl-up">
+//             <div class="subheader">XLarge</div>
+//             <div class="text-size-12 text-italic">1201-1440px</div>
+//         </div>
+//         <div class="panel panel--raised base-margin panel--success text-center visible-xl-up">
+//             <div class="subheader">
+//                 <span class="icon-check icon-size-16"></span>
+//                 <span class="qtr-margin-left">XLarge</span>
+//             </div>
+//             <div class="text-size-12 text-italic">1201-1440px</div>
+//         </div>
+//     </div>
+//     <div class="col-md-3">
+//         <div class="panel panel--raised base-margin panel--bordered text-center hidden-2xl-up">
+//             <div class="subheader">2XLarge</div>
+//             <div class="text-size-12 text-italic">1441-1600px</div>
+//         </div>
+//         <div class="panel panel--raised base-margin panel--success text-center visible-2xl-up">
+//             <div class="subheader">
+//                 <span class="icon-check icon-size-16"></span>
+//                 <span class="qtr-margin-left">2XLarge</span>
+//             </div>
+//             <div class="text-size-12 text-italic">1441-1600px</div>
+//         </div>
+//     </div>
+//     <div class="col-md-3">
+//         <div class="panel panel--raised base-margin panel--bordered text-center hidden-3xl-up">
+//             <div class="subheader">3XLarge</div>
+//             <div class="text-size-12 text-italic">1601-1840px</div>
+//         </div>
+//         <div class="panel panel--raised base-margin panel--success text-center visible-3xl-up">
+//             <div class="subheader">
+//                 <span class="icon-check icon-size-16"></span>
+//                 <span class="qtr-margin-left">3XLarge</span>
+//             </div>
+//             <div class="text-size-12 text-italic">1601-1840px</div>
+//         </div>
+//     </div>
+//     <div class="col-md-3">
+//         <div class="panel panel--raised base-margin panel--bordered text-center hidden-4xl-up">
+//             <div class="subheader">4XLarge</div>
+//             <div class="text-size-12 text-italic">1841-2100px</div>
+//         </div>
+//         <div class="panel panel--raised base-margin panel--success text-center visible-4xl-up">
+//             <div class="subheader">
+//                 <span class="icon-check icon-size-16"></span>
+//                 <span class="qtr-margin-left">4XLarge</span>
+//             </div>
+//             <div class="text-size-12 text-italic">1841-2100px</div>
+//         </div>
+//     </div>
+//     <div class="col-md-3">
+//         <div class="panel panel--raised base-margin panel--bordered text-center hidden-5xl-up">
+//             <div class="subheader">5XLarge</div>
+//             <div class="text-size-12 text-italic">2101-2560px</div>
+//         </div>
+//         <div class="panel panel--raised base-margin panel--success text-center visible-5xl-up">
+//             <div class="subheader">
+//                 <span class="icon-check icon-size-16"></span>
+//                 <span class="qtr-margin-left">5XLarge</span>
+//             </div>
+//             <div class="text-size-12 text-italic">2101-2560px</div>
+//         </div>
+//     </div>
+// </div>
+// <div class="row">
+//     <div class="col-lg-6 base-margin-top">
+//         <div class="subheader">Visible Up</div>
+//         <table class="table table--lined table--compressed">
+//             <thead>
+//                 <th>Class</th>
+//                 <th>Description</th>
+//             </thead>
+//             <tbody>
+//                 <tr>
+//                     <td><code>visible-xs-up</code></td>
+//                     <td>Element visible 320px - 2560px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>visible-sm-up</code></td>
+//                     <td>Element visible 577px - 2560px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>visible-md-up</code></td>
+//                     <td>Element visible 768px - 2560px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>visible-lg-up</code></td>
+//                     <td>Element visible 993px - 2560px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>visible-xl-up</code></td>
+//                     <td>Element visible 1201px - 2560px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>visible-2xl-up</code></td>
+//                     <td>Element visible 1441px - 2560px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>visible-3xl-up</code></td>
+//                     <td>Element visible 1601px - 2560px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>visible-4xl-up</code></td>
+//                     <td>Element visible 1841px - 2560px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>visible-5xl-up</code></td>
+//                     <td>Element visible 2101px - 2560px</td>
+//                 </tr>
+//             </tbody>
+//         </table>
+//     </div>
+//     <div class="col-lg-6 base-margin-top">
+//         <div class="subheader">Visible Down</div>
+//         <table class="table table--lined table--compressed">
+//             <thead>
+//                 <th>Class</th>
+//                 <th>Description</th>
+//             </thead>
+//             <tbody>
+//                 <tr>
+//                     <td><code>visible-xs-down</code></td>
+//                     <td>Element visible 575px - 320px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>visible-sm-down</code></td>
+//                     <td>Element visible 767px - 320px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>visible-md-down</code></td>
+//                     <td>Element visible 991px - 320px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>visible-lg-down</code></td>
+//                     <td>Element visible 1199px - 320px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>visible-xl-down</code></td>
+//                     <td>Element visible 1439px - 320px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>visible-2xl-down</code></td>
+//                     <td>Element visible 1599px - 320px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>visible-3xl-down</code></td>
+//                     <td>Element visible 1839px - 320px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>visible-4xl-down</code></td>
+//                     <td>Element visible 2099px - 320px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>visible-5xl-down</code></td>
+//                     <td>Element visible 2560px - 320px</td>
+//                 </tr>
+//             </tbody>
+//         </table>
+//     </div>
+//     <div class="col-lg-6 base-margin-top">
+//         <div class="subheader">Hidden Up</div>
+//         <table class="table table--lined table--compressed">
+//             <thead>
+//                 <th>Class</th>
+//                 <th>Description</th>
+//             </thead>
+//             <tbody>
+//                 <tr>
+//                     <td><code>hidden-xs-up</code></td>
+//                     <td>Element visible 320px - 2560px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>hidden-sm-up</code></td>
+//                     <td>Element visible 577px - 2560px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>hidden-md-up</code></td>
+//                     <td>Element visible 768px - 2560px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>hidden-lg-up</code></td>
+//                     <td>Element visible 993px - 2560px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>hidden-xl-up</code></td>
+//                     <td>Element visible 1201px - 2560px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>hidden-2xl-up</code></td>
+//                     <td>Element visible 1441px - 2560px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>hidden-3xl-up</code></td>
+//                     <td>Element visible 1601px - 2560px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>hidden-4xl-up</code></td>
+//                     <td>Element visible 1841px - 2560px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>hidden-5xl-up</code></td>
+//                     <td>Element visible 2101px - 2560px</td>
+//                 </tr>
+//             </tbody>
+//         </table>
+//     </div>
+//     <div class="col-lg-6 base-margin-top">
+//         <div class="subheader">Hidden Down</div>
+//         <table class="table table--lined table--compressed">
+//             <thead>
+//                 <th>Class</th>
+//                 <th>Description</th>
+//             </thead>
+//             <tbody>
+//                 <tr>
+//                     <td><code>hidden-xs-down</code></td>
+//                     <td>Element visible 575px - 320px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>hidden-sm-down</code></td>
+//                     <td>Element visible 767px - 320px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>hidden-md-down</code></td>
+//                     <td>Element visible 991px - 320px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>hidden-lg-down</code></td>
+//                     <td>Element visible 1199px - 320px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>hidden-xl-down</code></td>
+//                     <td>Element visible 1439px - 320px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>hidden-2xl-down</code></td>
+//                     <td>Element visible 1599px - 320px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>hidden-3xl-down</code></td>
+//                     <td>Element visible 1839px - 320px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>hidden-4xl-down</code></td>
+//                     <td>Element visible 2099px - 320px</td>
+//                 </tr>
+//                 <tr>
+//                     <td><code>hidden-5xl-down</code></td>
+//                     <td>Element visible 2560px - 320px</td>
+//                 </tr>
+//             </tbody>
+//         </table>
+//     </div>
+// </div>
+//
+// Weight: 9
+//
+// Styleguide Utilities.Helpers.Visibility
+//
+
+[class*='visible-'] {
+    display: none !important;
+}
+
+.hide { display: none !important; }
+.show { display: block !important; }
+.visible { visibility: visible !important; }
+.invisible { visibility: hidden !important; }
+
+.overflow-auto { overflow: auto !important; }
+.overflow-hidden { overflow: hidden !important; }
+
+@each $name, $size in $grid-breakpoints {
+    .hidden-#{$name}-down {
+        @include media-breakpoint-down($name) { display: none !important; }
+    }
+    .visible-#{$name}-down {
+        @include media-breakpoint-down($name) { display: block !important; }
+    }
+}
+
+@each $name, $size in $grid-breakpoints {
+    .hidden-#{$name}-up {
+        @include media-breakpoint-up($name) { display: none !important; }
+    }
+    .visible-#{$name}-up {
+        @include media-breakpoint-up($name) { display: block !important; }
+    }
+}
+
+//
+// For backwards compatibility we include the old hidden-{breakpoint} and
+// visible-{breakpoint} visibility classes
+//
+@media (max-width: 575px) {
+    .hidden-xs { display: none !important; }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+    .hidden-sm { display: none !important; }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .hidden-md { display: none !important; }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+    .hidden-lg { display: none !important; }
+}
+@media (min-width: 1200px) {
+    .hidden-xl { display: none !important; }
+}
+@media (max-width: 575px) {
+    .visible-xs { display: block !important; }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+    .visible-sm { display: block !important; }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .visible-md { display: block !important; }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+    .visible-lg { display: block !important; }
+}
+@media (min-width: 1200px) {
+    .visible-xl { display: block !important; }
+}
+
+.v-separator {
+    border-right: 1px solid var(--cui-border-color);
+    margin: var(--cui-spacing-qtr) var(--cui-spacing-half) var(--cui-spacing-qtr) 0;
+    padding-left: var(--cui-spacing-half);
+    display: inline-flex;
+    vertical-align: middle;
+    height: var(--cui-spacing-triqtr);
+
+    &--small { height: var(--cui-spacing-half); }
+    &--large { height: var(--cui-spacing); }
+    &--huge  { height: var(--cui-spacing-dbl); }
+}
+
+@media (max-width: 767px) {
+    .center-xs {
+        text-align: center !important;
+    }
+    .pull-right-xs {
+        float: right !important;
+    }
+    .pull-left-xs {
+        float: left !important;
+    }
+    .text-left-xs {
+        text-align: left;
+    }
+    .visible-inline-xs {
+        display: inline-block !important;
+    }
+}
+
+.row.no-gutters {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+.row.no-gutters > [class^="col-"],
+.row.no-gutters > [class*=" col-"] {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+}
+
+.max-height { height: 100% !important; }
+.max-width { width: 100% !important; }
+
+
+
+@each $name, $color in $cui-theme-colors {
+    .bg-#{$name} {
+        background-color: $color !important;
+    }
+}
+@each $name, $color in $cui-gray-colors {
+    .bg-gray-#{$name} {
+        background-color: $color !important;
+    }
+}
+
+.pill-border-radius {
+    border-radius: 50px !important;
+}

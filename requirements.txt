@@ -1,0 +1,6 @@
+flask==1.0.2
+netmiko==2.4.1
+requests==2.22.0
+pyOpenSSL==19.1.0
+ordered-set==3.1.1
+flask_unsign==0.0.2

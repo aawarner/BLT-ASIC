@@ -1,0 +1,103 @@
+//
+// Icons
+//
+// Styleguide Primitives.Icons
+//
+
+<%
+    _.each(glyphs, function(glyph) {
+        glyph.groupName = _.upperFirst(_.toLower(_(glyph.fileName).split('-').nth(0)));
+        glyph.fileName = _(glyph.fileName).split('-').slice(1, glyph.fileName.length).join('-');
+    });
+
+    glyphsByGroup = _.groupBy(glyphs, 'groupName');
+%>
+
+@font-face {
+  font-family: "<%= fontName %>";
+  src: url('#{$cui-resource-path}/fonts/<%= fontName %>.eot');
+  src: url('#{$cui-resource-path}/fonts/<%= fontName %>.eot?#iefix') format('eot'),
+       url('#{$cui-resource-path}/fonts/<%= fontName %>.woff2') format('woff2'),
+       url('#{$cui-resource-path}/fonts/<%= fontName %>.woff') format('woff'),
+       url('#{$cui-resource-path}/fonts/<%= fontName %>.ttf') format('truetype'),
+       url('#{$cui-resource-path}/fonts/<%= fontName %>.svg#<%= fontName %>') format('svg');
+}
+
+%icon,
+*[class*='icon-'] {
+  position: relative;
+  display:inline-block;
+  font-family:"<%= fontName %>";
+  font-size: inherit;
+  font-style:normal;
+  font-weight:normal;
+  speak:none;
+  text-decoration:inherit;
+  text-transform:none;
+  text-rendering:optimizeLegibility;
+  vertical-align: middle;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+@function icon-char($filename) {
+  $char: "";
+<% _.each(glyphs, function(glyph) { %>
+  @if $filename == <%= glyph.fileName %> {
+    $char: "\<%= glyph.codePoint %>";
+  }<% }); %>
+
+  @return $char;
+}
+
+@mixin icon($filename) {
+  content: icon-char($filename);
+}
+
+<%
+    glyphGroupIndex = 1;
+    _.forEach(glyphsByGroup, function(glyphList, glyphGroup) {
+%>
+
+
+//
+// <%= glyphGroup %>
+//
+// Markup:
+// <div id="icon-main-results" class="row"><% _.each(glyphList, function(theGlyph) { %>
+//     <div class="col-6 col-lg-4 col-xl-3 panel-icon">
+//         <a class="panel hover-emboss base-margin-bottom"  data-icon="icon-<%= theGlyph.fileName %>" data-balloon="Click to copy" data-balloon-pos="up" data-balloon-length="medium">
+//             <div class="flex-center-vertical">
+//                 <div class="flex-center">
+//                     <span class="icon-<%= theGlyph.fileName %> icon-size-24"></span>
+//                 </div>
+//                 <div class="flex-fluid half-margin-left text-ellipsis">
+//                     <div class="text-ellipsis">icon-<%= theGlyph.fileName %></div>
+//                 </div>
+//             </div>
+//         </a>
+//     </div><% }); %>
+// </div>
+//
+// Weight: <%= glyphGroupIndex %>
+//
+// Styleguide Primitives.Icons.<%= glyphGroup %>
+//
+
+<%
+    glyphGroupIndex += 1;
+    });
+%>
+
+<% _.each(glyphs, function(glyph) { %>
+.icon-<%= glyph.fileName %>{
+  &:before {
+    @include icon(<%= glyph.fileName %>);
+  }
+}
+
+@mixin icon-<%= glyph.fileName %> {
+  @extend %icon;
+  @include icon(<%= glyph.fileName %>);
+}
+<% }); %>

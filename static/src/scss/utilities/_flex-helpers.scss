@@ -1,0 +1,361 @@
+//
+// Flex
+//
+// Leverage the power of flexbox to help you create a wide range of layouts.
+//
+// Styleguide Utilities.Flex
+//
+
+
+//
+// Horizontal Alignment
+//
+// Items within flex containers can be horizontally aligned. By default, items are left-aligned within the container .
+//
+// Markup:
+// <div class="subheader">flex-left</div>
+// <div class="flex flex-left">
+//     <div class="panel panel--raised panel--loose">
+//         <div class="subheader">item 1</div>
+//     </div>
+//     <div class="panel panel--raised panel--loose base-margin-left">
+//         <div class="subheader">item 2</div>
+//     </div>
+//     <div class="panel panel--raised panel--loose base-margin-left">
+//         <div class="subheader">item 3</div>
+//     </div>
+// </div>
+// <div class="dbl-margin-top subheader">flex-center</div>
+// <div class="flex flex-center">
+//     <div class="panel panel--raised panel--loose">
+//         <div class="subheader">item 1</div>
+//     </div>
+//     <div class="panel panel--raised panel--loose base-margin-left">
+//         <div class="subheader">item 2</div>
+//     </div>
+//     <div class="panel panel--raised panel--loose base-margin-left">
+//         <div class="subheader">item 3</div>
+//     </div>
+// </div>
+// <div class="dbl-margin-top subheader">flex-right</div>
+// <div class="flex flex-right">
+//     <div class="panel panel--raised panel--loose">
+//         <div class="subheader">item 1</div>
+//     </div>
+//     <div class="panel panel--raised panel--loose base-margin-left">
+//         <div class="subheader">item 2</div>
+//     </div>
+//     <div class="panel panel--raised panel--loose base-margin-left">
+//         <div class="subheader">item 3</div>
+//     </div>
+// </div>
+// <div class="dbl-margin-top subheader">flex-around</div>
+// <div class="flex flex-around">
+//     <div class="panel panel--raised panel--loose">
+//         <div class="subheader">item 1</div>
+//     </div>
+//     <div class="panel panel--raised panel--loose base-margin-left">
+//         <div class="subheader">item 2</div>
+//     </div>
+//     <div class="panel panel--raised panel--loose base-margin-left">
+//         <div class="subheader">item 3</div>
+//     </div>
+// </div>
+// <div class="dbl-margin-top subheader">flex-between</div>
+// <div class="flex flex-between">
+//     <div class="panel panel--raised panel--loose">
+//         <div class="subheader">item 1</div>
+//     </div>
+//     <div class="panel panel--raised panel--loose base-margin-left">
+//         <div class="subheader">item 2</div>
+//     </div>
+//     <div class="panel panel--raised panel--loose base-margin-left">
+//         <div class="subheader">item 3</div>
+//     </div>
+// </div>
+//
+// Weight: 1
+//
+// Styleguide Utilities.Flex.Horizontal Alignment
+//
+
+.flex {
+    display: flex;
+}
+.flex-inline {
+    display: inline-flex;
+}
+.flex-left,
+.flex-align-start {
+    justify-content: flex-start;
+}
+.flex-center,
+.flex-center-horizontal {
+    justify-content: center;
+}
+.flex-right,
+.flex-align-end {
+    justify-content: flex-end;
+}
+.flex-around {
+    justify-content: space-around;
+}
+.flex-between {
+    justify-content: space-between;
+}
+
+
+//
+// Vertical Alignment
+//
+// Items within flex containers can be vertically aligned. By default, items stretch to fill the height of their container.
+//
+// Markup:
+// <div class="row">
+//     <div class="col-md-6">
+//         <div class="base-margin-top subheader">flex-top</div>
+//         <div class="flex flex-top">
+//             <div class="panel panel--raised panel--loose">
+//                 <div class="subheader">item 1</div>
+//             </div>
+//             <div class="panel panel--raised panel--loose base-margin-left">
+//                 <div class="subheader">item 1</div>
+//                 <div class="subheader">item 2</div>
+//             </div>
+//             <div class="panel panel--raised panel--loose base-margin-left">
+//                 <div class="subheader">item 1</div>
+//                 <div class="subheader">item 2</div>
+//                 <div class="subheader">item 3</div>
+//             </div>
+//         </div>
+//     </div>
+//     <div class="col-md-6">
+//         <div class="base-margin-top subheader">flex-middle</div>
+//         <div class="flex flex-middle">
+//             <div class="panel panel--raised panel--loose">
+//                 <div class="subheader">item 1</div>
+//             </div>
+//             <div class="panel panel--raised panel--loose base-margin-left">
+//                 <div class="subheader">item 1</div>
+//                 <div class="subheader">item 2</div>
+//             </div>
+//             <div class="panel panel--raised panel--loose base-margin-left">
+//                 <div class="subheader">item 1</div>
+//                 <div class="subheader">item 2</div>
+//                 <div class="subheader">item 3</div>
+//             </div>
+//         </div>
+//     </div>
+//     <div class="col-md-6">
+//         <div class="base-margin-top subheader">flex-bottom</div>
+//         <div class="flex flex-bottom">
+//             <div class="panel panel--raised panel--loose">
+//                 <div class="subheader">item 1</div>
+//             </div>
+//             <div class="panel panel--raised panel--loose base-margin-left">
+//                 <div class="subheader">item 1</div>
+//                 <div class="subheader">item 2</div>
+//             </div>
+//             <div class="panel panel--raised panel--loose base-margin-left">
+//                 <div class="subheader">item 1</div>
+//                 <div class="subheader">item 2</div>
+//                 <div class="subheader">item 3</div>
+//             </div>
+//         </div>
+//     </div>
+//     <div class="col-md-6">
+//         <div class="base-margin-top subheader">flex-stretch</div>
+//         <div class="flex flex-stretch">
+//             <div class="panel panel--raised panel--loose">
+//                 <div class="subheader">item 1</div>
+//             </div>
+//             <div class="panel panel--raised panel--loose base-margin-left">
+//                 <div class="subheader">item 1</div>
+//                 <div class="subheader">item 2</div>
+//             </div>
+//             <div class="panel panel--raised panel--loose base-margin-left">
+//                 <div class="subheader">item 1</div>
+//                 <div class="subheader">item 2</div>
+//                 <div class="subheader">item 3</div>
+//             </div>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 2
+//
+// Styleguide Utilities.Flex.Vertical Alignment
+//
+
+.flex-top {
+    align-items: flex-start;
+}
+.flex-middle,
+.flex-center-vertical {
+    display: flex;
+    align-items: center;
+}
+.flex-bottom {
+    align-items: flex-end;
+}
+.flex-stretch {
+    align-items: stretch;
+}
+
+
+//
+// Wrapping
+//
+// By default, flex items are not wrapped and run from left to right. You can modify this behavior with the modifiers below.
+//
+// Markup:
+// <div class="row">
+//     <div class="col-md-6">
+//         <div class="subheader">flex-wrap</div>
+//         <div class="flex flex-left flex-wrap">
+//             <div class="panel panel--raised panel--loose base-margin">
+//                 <div class="subheader">item 1</div>
+//             </div>
+//             <div class="panel panel--raised panel--loose base-margin">
+//                 <div class="subheader">item 2</div>
+//             </div>
+//             <div class="panel panel--raised panel--loose base-margin">
+//                 <div class="subheader">item 3</div>
+//             </div>
+//             <div class="panel panel--raised panel--loose base-margin">
+//                 <div class="subheader">item 4</div>
+//             </div>
+//             <div class="panel panel--raised panel--loose base-margin">
+//                 <div class="subheader">item 5</div>
+//             </div>
+//             <div class="panel panel--raised panel--loose base-margin">
+//                 <div class="subheader">item 6</div>
+//             </div>
+//             <div class="panel panel--raised panel--loose base-margin">
+//                 <div class="subheader">item 7</div>
+//             </div>
+//             <div class="panel panel--raised panel--loose base-margin">
+//                 <div class="subheader">item 8</div>
+//             </div>
+//             <div class="panel panel--raised panel--loose base-margin">
+//                 <div class="subheader">item 9</div>
+//             </div>
+//             <div class="panel panel--raised panel--loose base-margin">
+//                 <div class="subheader">item 10</div>
+//             </div>
+//         </div>
+//     </div>
+//     <div class="col-md-6">
+//         <div class="subheader">flex-nowrap</div>
+//         <div class="flex flex-left flex-nowrap overflow-hidden">
+//             <div class="panel panel--raised panel--loose base-margin">
+//                 <div class="subheader">item 1</div>
+//             </div>
+//             <div class="panel panel--raised panel--loose base-margin">
+//                 <div class="subheader">item 2</div>
+//             </div>
+//             <div class="panel panel--raised panel--loose base-margin">
+//                 <div class="subheader">item 3</div>
+//             </div>
+//             <div class="panel panel--raised panel--loose base-margin">
+//                 <div class="subheader">item 4</div>
+//             </div>
+//             <div class="panel panel--raised panel--loose base-margin">
+//                 <div class="subheader">item 5</div>
+//             </div>
+//             <div class="panel panel--raised panel--loose base-margin">
+//                 <div class="subheader">item 6</div>
+//             </div>
+//             <div class="panel panel--raised panel--loose base-margin">
+//                 <div class="subheader">item 7</div>
+//             </div>
+//             <div class="panel panel--raised panel--loose base-margin">
+//                 <div class="subheader">item 8</div>
+//             </div>
+//             <div class="panel panel--raised panel--loose base-margin">
+//                 <div class="subheader">item 9</div>
+//             </div>
+//             <div class="panel panel--raised panel--loose base-margin">
+//                 <div class="subheader">item 10</div>
+//             </div>
+//         </div>
+//     </div>
+// </div>
+//
+// Weight: 3
+//
+// Styleguide Utilities.Flex.Wrapping
+//
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+.flex-nowrap {
+    flex-wrap: nowrap;
+}
+.flex-wrap-reverse {
+    flex-wrap: wrap-reverse;
+}
+
+
+
+@mixin flex {
+    display: flex !important;
+}
+@mixin flex-center {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+@mixin flex-center-vertical {
+    display: flex !important;
+    align-items: center !important;
+}
+@mixin flex-center-horizontal {
+    display: flex !important;
+    justify-content: center !important;
+}
+@mixin flex-fluid {
+    flex: 1 !important;
+    flex-shrink: 1 !important;
+    flex-wrap: wrap !important;
+}
+@mixin flex-panel {
+    display: flex;
+    flex: 1;
+    align-items: center;
+}
+
+
+.flex-fluid {
+    @include flex-fluid;
+}
+.flex-panel {
+    @include flex-panel;
+}
+@include media-breakpoint-down(xs) {
+    .flex-center-xs {
+        @include flex-center;
+    }
+}
+@include media-breakpoint-down(sm) {
+    .flex-center-sm,
+    .flex-center-sm-down {
+        @include flex-fluid;
+        @include flex-center;
+    }
+}
+@include media-breakpoint-down(md) {
+    .flex-center-md,
+    .flex-center-md-down {
+        @include flex-fluid;
+        @include flex-center;
+    }
+}
+@include media-breakpoint-down(lg) {
+    .flex-center-lg,
+    .flex-center-lg-down {
+        @include flex-fluid;
+        @include flex-center;
+    }
+}

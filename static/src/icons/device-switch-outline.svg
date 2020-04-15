@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>device-switch-outline</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="device-switch-outline" fill="#000000" fill-rule="nonzero">
+            <path d="M10,0 L38,0 C43.5228475,0 48,4.4771525 48,10 L48,38 C48,43.5228475 43.5228475,48 38,48 L10,48 C4.4771525,48 0,43.5228475 0,38 L0,10 C0,4.4771525 4.4771525,0 10,0 Z M10.6363636,3 C6.41891646,3 3,6.41891646 3,10.6363636 L3,37.3636364 C3,41.5810835 6.41891646,45 10.6363636,45 L37.3636364,45 C41.5810835,45 45,41.5810835 45,37.3636364 L45,10.6363636 C45,6.41891646 41.5810835,3 37.3636364,3 L10.6363636,3 Z M19,32 L16,35 L23,35 L23,37 L16,37 L19,40 L18,41 L9,36 L18,31 L19,32 Z M16,17 L23,17 L23,19 L16,19 L19,22 L18,23 L9,18 L18,13 L19,14 L16,17 Z M32,29 L29,26 L30,25 L39,30 L30,35 L29,34 L32,31 L25,31 L25,29 L32,29 Z M32,11 L29,8 L30,7 L39,12 L30,17 L29,16 L32,13 L25,13 L25,11 L32,11 Z" id="Combined-Shape"></path>
+        </g>
+    </g>
+</svg>
