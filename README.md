@@ -27,9 +27,9 @@ with GLO.
 
 Our solution will leverage the following Cisco technologies
 
-* [Cisco Commerce Workspace Order API](http://cisco.com/go/aci)
-* [Cisco Commerce Subscriptions and Software Contract Administration API](http://cisco.com/go/dna)
-* [Cisco IOS-XE](http://cisco.com/go/ios-xe)
+* [Cisco Commerce Workspace Order API](https://apiconsole.cisco.com)
+* [Cisco Commerce Subscriptions and Software Contract Administration API](https://apiconsole.cisco.com)
+* [Cisco IOS-XE](https://www.cisco.com/c/en/us/products/ios-nx-os-software/ios-xe/index.html)
 
 ## Team Members
 
@@ -58,7 +58,7 @@ See [BLT-Installation-Guide](docs/BLT-Install-Guide.pdf)
 
 ## License
 
-Provided under Cisco Sample Code License, for details see [LICENSE](./LICENSE.md)
+Provided under Cisco Sample Code License, for details see [LICENSE](./LICENSE)
 
 ## Code of Conduct
 
