@@ -19,19 +19,26 @@ but are required when trying to prove the level of entitlement.
 ## Proposed Solution
 
 The proposed solution is to leverage three techniques to gather entitlement information for creation of licensing cases
-with GLO.
+with GLO. Customer serial numbers will be gathered in three ways as described below.
 
-1) Live scan of netework connected devices for serial number retrieval
-2) Search of serial number either inputed to a webpage or imported in the form of a .CSV
-3) Search of a sales order number inputed to a webpage
+1) Live scan of network connected devices for serial number retrieval
+2) Search of serial number either by user input to a webpage or imported in the form of a .CSV
+3) Search of a sales order number via CCW-O API by user input to a webpage
+
+Once serial numbers have been aggregated and deduplicated they will be send to CCW-R API for retrieval of
+the associated sales order information. Two reports will be generated in .CSV format along with an email 
+template to open a case with GLO.
+
+Support will be provided via Webex Teams. The link to join the Teams Space will be available in app.
 
 ### Cisco Products Technologies/ Services
 
-Our solution will leverage the following Cisco technologies
+Our solution uses the following Cisco technologies:
 
 * [Cisco Commerce Workspace Order API](https://apiconsole.cisco.com)
 * [Cisco Commerce Subscriptions and Software Contract Administration API](https://apiconsole.cisco.com)
 * [Cisco IOS-XE](https://www.cisco.com/c/en/us/products/ios-nx-os-software/ios-xe/index.html)
+* [Cisco UI Kit](https://developer.cisco.com/site/uiux/)
 
 ## Team Members
 
@@ -42,8 +49,17 @@ Our solution will leverage the following Cisco technologies
 
 ## Solution Components
 
-Python\
-Cisco-UI Kit
+This solution provides customer entitlement information in a simple four step process.
+This process can be seen in the diagram below.
+
+![diagram](docs/Picture1.png)
+
+1) Authenticate with Cisco.com
+2) Provide serial numbers via one of three methods listed in [Proposed Solution](#proposed solution) above.
+3) Send aggregated and deduplicated serial numbers to CCW-R API for search
+4) Generate reports and email templates for GLO case generation
+
+Help will be provided via webex teams. The teams room can be joined in app.
 
 ## Usage
 
