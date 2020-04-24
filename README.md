@@ -55,11 +55,12 @@ This process can be seen in the diagram below.
 ![diagram](docs/Picture1.png)
 
 1) Authenticate with Cisco.com
-2) Provide serial numbers via one of three methods listed in [Proposed Solution](#proposed solution) above.
+2) Provide serial numbers via one of three methods listed above.
 3) Send aggregated and deduplicated serial numbers to CCW-R API for search
 4) Generate reports and email templates for GLO case generation
 
-Help will be provided via webex teams. The teams room can be joined in app.
+Support will be provided via webex teams. The teams room can be joined in app by clicking on the 
+help tab.
 
 ## Usage
 
