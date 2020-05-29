@@ -140,17 +140,27 @@ or implied.
             <br><br>
             <form method="get" action="/ccwrresults">
                 <button class="btn btn--primary" onclick="loading()">Submit</button>
-                <br><br>Please note: All associated config items will be returned.
-                <br>This takes time.<br>
-                <font color="blue"><p id="loadvis"></p></font>
+                <br><br>
+                <div class="subheader" id="message"></div>
+                <br>
+                <div class="subheader" id="loadvis"></div>
+                <div class="loader", id="loader"></div>
                 <script>
                         function loading() {
-                          document.getElementById("loadvis").innerHTML = "<h5>Loading...please wait</h5>";
+                          document.getElementById("message").innerHTML = "Retrieving results from CCW. Do not refresh or leave the page.";
+                          document.getElementById("loadvis").innerHTML = "Loading...please wait";
+                          var loader1 = document.createElement("div");
+                          loader1.setAttribute('class', 'wrapper');
+                          loader1.id = "loader1";
+                          document.getElementById("loader").appendChild(loader1);
+                          var loader2 = document.createElement("div");
+                          loader2.setAttribute('class', 'wheel');
+                          loader2.id = "loader2";
+                          document.getElementById("loader1").appendChild(loader2);
                         }
-
-
                 </script>
             </form>
+    </div>
         </div>
     </div>
     <br>

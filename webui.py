@@ -19,7 +19,7 @@ import csv
 import os
 import logging
 from json import load, dump, dumps, loads
-from multiprocessing.dummy import Pool as ThreadPool
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timedelta
 from time import time, sleep
 from collections import Counter as ct
@@ -176,6 +176,104 @@ def create_3K_lic_rpt(ccwr_full_list, output_file, smart_account):
             f.write("\n")
 
 
+def ccwo_order_status(username, so_num):
+    try:
+        with open("profiles//%s//ccw_order_oauth.json" % username, "r") as f:
+            jl = load(f)
+        if (time() - jl["ts"]) > 3500:
+            ccwo_access_token = grab_oauth_ccw_order(username, password)
+            print(
+                "ccw order oauth2 token age: "
+                + str(int(time()) - jl["ts"])
+                + " seconds. Getting new token"
+            )
+        else:
+            ccwo_access_token = jl["access_token"]
+    except:
+        ccwo_access_token = grab_oauth_ccw_order(username, password)
+
+    url = "https://api.cisco.com/commerce/ORDER/v2/sync/checkOrderStatus"
+    headers = {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "Request-ID": "Type: Integer",
+        "Accept-Language": "en_us",
+        "Authorization": "Bearer %s" % ccwo_access_token,
+        "cache-control": "no-cache",
+        "Host": "api.cisco.com",
+        "Accept-Encoding": "gzip, deflate",
+        "Connection": "keep-alive",
+    }
+
+
+    if so_num.startswith("8"):
+        payload = dumps(
+            {
+                "GetPurchaseOrder": {
+                    "value": {
+                        "DataArea": {
+                            "PurchaseOrder": [
+                                {
+                                    "PurchaseOrderHeader": {
+                                        "ID": {"value": ""},
+                                        "DocumentReference": [
+                                            {"ID": {"value": so_num}}
+                                        ],
+                                        "SalesOrderReference": [{"ID": {"value": ""}}],
+                                        "Description": [
+                                            {"value": "Yes", "typeCode": "details"}
+                                        ],
+                                    }
+                                }
+                            ]
+                        },
+                        "ApplicationArea": {
+                            "CreationDateTime": "datetime",
+                            "BODID": {"value": "BoDID-test", "schemeVersionID": "V1"},
+                        },
+                    }
+                }
+            }
+        )
+    else:
+        payload = dumps(
+            {
+                "GetPurchaseOrder": {
+                    "value": {
+                        "DataArea": {
+                            "PurchaseOrder": [
+                                {
+                                    "PurchaseOrderHeader": {
+                                        "ID": {"value": ""},
+                                        "DocumentReference": [{"ID": {"value": ""}}],
+                                        "SalesOrderReference": [
+                                            {"ID": {"value": so_num}}
+                                        ],
+                                        "Description": [
+                                            {"value": "Yes", "typeCode": "details"}
+                                        ],
+                                    }
+                                }
+                            ]
+                        },
+                        "ApplicationArea": {
+                            "CreationDateTime": "datetime",
+                            "BODID": {"value": "BoDID-test", "schemeVersionID": "V1"},
+                        },
+                    }
+                }
+            }
+        )
+    response = rq("POST", url, data=payload, headers=headers)
+    result = response.json()
+    result = \
+    result["ShowPurchaseOrder"]["value"]["DataArea"]["PurchaseOrder"][0]["PurchaseOrderHeader"]["Extension"][4]["Name"][
+        0]["value"]
+
+    result = {so_num: result}
+    return result
+
+
 def ccwr_search_request(username, searchType="serialNumbers", search_list=[]):
     """ccw-r search function"""
     try:
@@ -244,11 +342,10 @@ def ccwr_search_request(username, searchType="serialNumbers", search_list=[]):
         return None, ccwr_access_token
 
 
-def ccwr_create_table(username, ccwr_response):
+def ccwr_create_table(username, ccwr_response, sa_list):
     """function to create table for ccw-r results"""
     # with open('contract_response.json','r') as f:
     # jsl=load(f)
-
     ccwr_full_list = [
         [
             "Product Number",
@@ -258,6 +355,7 @@ def ccwr_create_table(username, ccwr_response):
             "Instance Number",
             "Sales Order Number",
             "End Customer Name",
+            "Smart Account Name",
         ]
     ]
     raw_ccwr_output_csv = "profiles/%s/current_raw_CCWR_output.csv" % username
@@ -291,7 +389,14 @@ def ccwr_create_table(username, ccwr_response):
                 l.append("")
             try:
                 l.append(i["endCustomer"]["name"])
-            except Exception:
+            except:
+                l.append("")
+            try:
+                for i in sa_list:
+                    for k, v in i.items():
+                        if k == l[5]:
+                            l.append(v)
+            except:
                 l.append("")
             ccwr_full_list.append(l)
 
@@ -456,7 +561,8 @@ app = Flask(__name__)
 app.secret_key = "CHANGE_THIS_KEY_IF_RUNNING_PERSISTENTLY"
 app.permanent_session_lifetime = timedelta(minutes=10)
 ALLOWED_EXTENSIONS = {"csv"}
-
+CONTEXT = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
+CONTEXT.load_cert_chain("blt.cisco.com-60405.cer", "blt.key")
 
 @app.route("/login", methods=["POST"])
 def do_admin_login():
@@ -641,6 +747,7 @@ def webroot():
 @app.route("/ccwrresults", methods=["GET"])
 def ccwrresults_get():
     """Function to display ccw-r final results"""
+    start_time = datetime.now()
     session.pop("_flashes", [])
     if not session.get("logged_in"):
         return render_template("login.html")
@@ -652,7 +759,35 @@ def ccwrresults_get():
         ccwr_response, ccwr_access_token = ccwr_search_request(
             username, "serialNumbers", ccwr_search_list
         )
-        ccwr_temp_list = ccwr_create_table(username, ccwr_response)
+        so_for_sa_list = []
+        elapsed_time = datetime.now() - start_time
+        print("CCW-R API Time:")
+        print(elapsed_time)
+        start_time = datetime.now()
+        for i in ccwr_response["instances"]:
+            so_for_sa_list.append(i["salesOrderNumber"])
+        so_for_sa_list = [x for x in so_for_sa_list if x.startswith("1") or x.startswith("8") or x.startswith("9")]
+        so_for_sa_list_dedup = []
+        [so_for_sa_list_dedup.append(x) for x in so_for_sa_list if x not in so_for_sa_list_dedup]
+        threads = []
+        sa_list = []
+        with ThreadPoolExecutor(max_workers=50) as executor:
+            for so_num in so_for_sa_list_dedup:
+                threads.append(
+                    executor.submit(
+                        ccwo_order_status, username, so_num
+                    )
+                )
+        for task in as_completed(threads):
+            try:
+                result = task.result()
+                sa_list.append(result)
+            except:
+                continue
+        elapsed_time = datetime.now() - start_time
+        print("CCWO API Time:")
+        print(elapsed_time)
+        ccwr_temp_list = ccwr_create_table(username, ccwr_response, sa_list)
         os=OrderedSet([dumps(i) for i in ccwr_temp_list])
         ccwr_full_list=[loads(i) for i in os]
         output_file = "profiles/%s/CAT3K_License_Report.csv" % username
@@ -704,6 +839,7 @@ def ccwrresults_get():
         email = "mailto:{mailto}?subject={subject}&body={body}".format(
             mailto=mailto, subject=subject, body=body
         )
+        elapsed_time = datetime.now() - start_time
         return render_template(
             "ccwrresults.html", ccwr_full_list=ccwr_full_list, email=email
         )
@@ -719,6 +855,13 @@ def ccwrresults_get():
             "Connection to Cisco.com can not be established. Check network connectivity."
         )
         return render_template("index.html")
+
+    except TypeError:
+        flash(
+            "No data submitted. Gather entitlement data via one of the above methods."
+        )
+        return render_template("index.html")
+
 
 
 @app.route("/download3Krpt", methods=["GET"])
@@ -930,6 +1073,6 @@ def teamsupport():
 
 if __name__ == "__main__":
     if sys.platform == "win32":
-        app.run(host="127.0.0.1", debug=True, ssl_context="adhoc")
+        app.run(host="127.0.0.1", debug=True, ssl_context=CONTEXT)
     else:
-        app.run(host="0.0.0.0", debug=True, ssl_context="adhoc")
+        app.run(host="0.0.0.0", debug=True, ssl_context=CONTEXT)
