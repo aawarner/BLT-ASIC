@@ -12,18 +12,9 @@ IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
 or implied.
 -->
 <!DOCTYPE html>
-
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 <link rel="stylesheet" href="{{ url_for('static',filename='css/cui-standard.min.css') }}">
 <html>
-<head>
-    <script>
-function message() {
-document.getElementById("message").innerHTML = "Scanning network devices. Depending on the number of devices this could take some time.";
-document.getElementById("message1").innerHTML = "Please do not leave or refresh the page. You will be redirected when the scan is complete.";
-}
-
-    </script>
-</head>
 <body class="cui">
 <br>
 <br>
@@ -41,14 +32,19 @@ document.getElementById("message1").innerHTML = "Please do not leave or refresh 
             <div class="header-panel header-panel--right">
                 <div class="header-item">
                     <ul id="tabsheader" class="tabs tabs--bordered">
-                        <li id="main" class="tab active">
+                        <li id="main" class="tab">
                             <a tabindex="0" href="/">
                                 <div class="tab__heading">Main</div>
                             </a>
                         </li>
-                        <li id="help" class="tab dbl-padding-right">
+                        <li id="help" class="tab active">
                             <a tabindex="0" href="help">
                                 <div class="tab__heading">Help</div>
+                            </a>
+                        </li>
+                        <li id="Reports" class="tab dbl-padding-right">
+                            <a tabindex="0" href="Reports">
+                                <div class="tab__heading">Reports</div>
                             </a>
                         </li>
                     </ul>
@@ -62,42 +58,24 @@ document.getElementById("message1").innerHTML = "Please do not leave or refresh 
         </div>
     </div>
 </header>
-<div class="responsive-table half-margin">
-    <h4 class="section">Verify Network Login Information</h4>
-    <table class="table table--bordered table--selectable" id="table">
-        <thead>
-        <tr>
-            <th>IP Address</th>
-            <th>Username</th>
-            <th>Password</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for i in csvinfo %}
-        <tr>
-            <td>{{ i[0] }}</td>
-            <td>{{ i[1] }}</td>
-            <td>{{ i[2] }}</td>
-        </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-</div>
-<div class="col-md-4 half-margin">
-    <div class="form-group">
-        <form action="/scan" method="get">
-            <div class="subheader">Submit data to begin network scan</div>
-            <button class="btn btn--primary" type="submit" onclick="message();">Submit</button>
-        </form>
-    </div>
+
+<div class="base-padding-top" align="center">
+    <h4>Download the user and installation guides below</h4>
+    <form method="get" action="/downloadbltuserguide">
+        <button class="btn btn--primary">BLT User Guide</button>
+    </form>
+    <br>
+    <form method="get" action="/downloadbltinstallguide">
+        <button class="btn btn--primary">BLT Install Guide</button>
+    </form>
+    <br><br><br>
+
+    <form method="get" action="/teamsupport">
+        <div class="subheader">If you need support for BLT usage join the BLT Webex Teams space.</div>
+        <button class="btn btn--primary">Join Webex Teams Support Space</button>
+    </form>
 </div>
 <br><br>
-<p class="text-danger text-bold text-size-24 half-margin" id="message"></p>
-<p class="text-danger text-bold text-size-24 half-margin" id="message1"></p>
-<br>
-<br>
-<br>
-<br>
 <footer class="footer footer--primary">
     <div class="footer__links">
         <ul class="list list--inline">

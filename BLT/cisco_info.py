@@ -21,9 +21,8 @@ Description:    This program is designed to retrieve the serial number
 from datetime import datetime
 import csv
 from multiprocessing.dummy import Pool as ThreadPool
-import netmiko
 import sys
-import re
+import netmiko
 
 
 def getLoginInfo(csvFile):
@@ -46,12 +45,14 @@ def convertLoginDict(data):
         swlist = [[row["ipaddr"], row["username"], row["password"]] for row in data]
         return swlist
     except KeyError:
-        print("\nInvalid header in CSV file. Please modify to the format below: "
-              "\nipaddr,username,password"
-              "\n10.10.10.10,admin,cisco"
-              "\n10.10.10.11,admin,cisco\n"
-              )
-        sys.exit()
+        print(
+            "\nInvalid header in CSV file. Please modify to the format below: "
+            "\nipaddr,username,password"
+            "\n10.10.10.10,admin,cisco"
+            "\n10.10.10.11,admin,cisco\n"
+        )
+        swlist = []
+        return swlist
 
 
 def getDevInfo(ip, user, pwd):
@@ -71,38 +72,38 @@ def getDevInfo(ip, user, pwd):
     try:
         print("Connecting to switch {switch}".format(switch=ip))
         conn = netmiko.ConnectHandler(**session)
-        info = conn.send_command("show version")
-        sn = re.search(r"(?=.*\d{3})[A-Z]{3}[A-Za-z0-9]{8}", info)
-        sn = sn.group(0)
-        pid = re.search(r"C9[356]00.+?(?=\s)|[A-Z]{2}.[A-Z][0-9]{4}.+?(?=\s)", info)
-        pid = pid.group(0)
-        tech = re.search(r"network-.+?(?=\s)|ipservicesk9|ipbasek9|lanbasek9", info)
-        tech = tech.group(0)
+        info = conn.send_command("show inventory")
+        info = info.split()
+        sn = info[13]
+
+        pid = info[7]
+
+        tech = conn.send_command("show license right-to-use summary")
+        tech = tech.split()
+        tech = tech[6]
 
         devdata = [pid, sn, tech]
 
         print("Collection successful from switch {switch}".format(switch=ip))
 
         with open("device_info.csv", "a") as devFile:
-            devwriter = csv.writer(devFile)
+            devwriter = csv.writer(devFile, lineterminator="\n")
             devwriter.writerow(devdata)
             print(
                 "Data for switch {switch} successfully written to device_info.csv".format(
                     switch=ip
                 )
             )
-
+        return devdata
     except (
-        netmiko.NetMikoTimeoutException,
-        netmiko.NetMikoAuthenticationException,
+            netmiko.NetMikoTimeoutException,
+            netmiko.NetMikoAuthenticationException,
     ) as e:
         print(e)
 
-    except AttributeError:
-        print("Regex match error. Missing info for device {switch}".format(switch=ip))
-
 
 def main(args):
+    """Main code function"""
     try:
         title = ["Product ID", "Serial Number", "License Entitlement"]
         with open("device_info.csv", "w+") as devFile:
@@ -143,7 +144,8 @@ if __name__ == "__main__":
             "\nThis program is designed to retrieve the serial number\n"
             "and license entitlement for Cisco Catalyst switches running\n"
             "IOS-XE 16.8 and below.\n"
-            "\nThe program accepts two arguments. The name of a CSV file and the number of desired threads.\n "
+            "\nThe program accepts two arguments. The name of a CSV "
+            "file and the number of desired threads.\n "
             "\nThe CSV should be in the format below:\n"
             "\nipaddr,username,password"
             "\n10.10.10.10,admin,cisco"

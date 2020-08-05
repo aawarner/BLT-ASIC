@@ -12,7 +12,7 @@ IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
 or implied.
 -->
 <!DOCTYPE html>
-
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 <link rel="stylesheet" href="{{ url_for('static',filename='css/cui-standard.min.css') }}">
 <html>
 <body class="cui">
@@ -33,9 +33,14 @@ or implied.
                                 <div class="tab__heading">Main</div>
                             </a>
                         </li>
-                        <li id="help" class="tab dbl-padding-right">
+                        <li id="help" class="tab">
                             <a tabindex="0" href="help">
                                 <div class="tab__heading">Help</div>
+                            </a>
+                        </li>
+                        <li id="Reports" class="tab dbl-padding-right">
+                            <a tabindex="1" href="Reports">
+                                <div class="tab__heading">Reports</div>
                             </a>
                         </li>
                     </ul>

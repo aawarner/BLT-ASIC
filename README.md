@@ -52,7 +52,7 @@ Our solution uses the following Cisco technologies:
 This solution provides customer entitlement information in a simple four step process.
 This process can be seen in the diagram below.
 
-![diagram](docs/Picture1.png)
+![diagram](./BLT/docs/Picture1.png)
 
 1) Authenticate with Cisco.com
 2) Provide serial numbers via one of three methods listed above.
@@ -64,16 +64,16 @@ help tab.
 
 ## Usage
 
-See [BLT-User-Guide](docs/BLT-Install-Guide.pdf)
+See [BLT-User-Guide](./BLT/docs/BLT-Install-Guide.pdf)
 
 ## Installation
 
-See [BLT-Installation-Guide](docs/BLT-Install-Guide.pdf)
+See [BLT-Installation-Guide](./BLT/docs/BLT-Install-Guide.pdf)
 
 
 ## Documentation
 
-[Documentation](docs/)
+[Documentation](./BLT/docs/)
 
 ## Demo
 

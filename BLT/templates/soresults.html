@@ -12,7 +12,7 @@ IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
 or implied.
 -->
 <!DOCTYPE html>
-
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 <link rel="stylesheet" href="{{ url_for('static',filename='css/cui-standard.min.css') }}">
 <html>
 <body class="cui">
@@ -32,16 +32,27 @@ or implied.
             <div class="header-panel header-panel--right">
                 <div class="header-item">
                     <ul id="tabsheader" class="tabs tabs--bordered">
-                        <li id="main" class="tab active">
+                        <li id="main" class="tab">
                             <a tabindex="0" href="/">
                                 <div class="tab__heading">Main</div>
                             </a>
                         </li>
-                        <li id="help" class="tab dbl-padding-right">
+                        <li id="main" class="tab active">
+                            <a tabindex="0" href="/">
+                                <div class="tab__heading">SO Search Results</div>
+                            </a>
+                        </li>
+                        <li id="help" class="tab">
                             <a tabindex="0" href="help">
                                 <div class="tab__heading">Help</div>
                             </a>
                         </li>
+                        <li id="Reports" class="tab dbl-padding-right">
+                            <a tabindex="1" href="Reports">
+                                <div class="tab__heading">Reports</div>
+                            </a>
+                        </li>
+
                     </ul>
                 </div>
             </div>
@@ -53,49 +64,49 @@ or implied.
         </div>
     </div>
 </header>
-<div class="row">
-    <div class="col">
-<h4 class="section" align="center">CCWR Data Downloads:</h4>
-<div class="base-padding-top" align="center">
-    <form method="get" action="/downloadccwrraw">
-        <button class="btn btn--primary">CCW Raw Data</button>
-    </form>
-</div>
-<div class="base-padding-top" align="center">
-    <form method="get" action="/download3Krpt">
-        <button class="btn btn--primary">Cat 3K License Report</button>
-    </form>
-</div>
-<div class="base-padding-top" align="center">
-    <a href="{{ email }}" target="_top">
-        <button class="btn btn--primary">Open a Case with Cisco Licensing</button>
-    </a>
-</div>
+
+<h4 class="section" align="center">Add/Remove SO Data:
+    <div class="base-padding-top" align="center">
+        <form method="get" action="/">
+            <button class="btn btn--primary">Add SO SNs to Search Data</button>
+        </form>
+    </div>
+    <div class="base-padding-top" align="center">
+        <form method="get" action="/clearso">
+            <button class="btn btn--primary">Clear SO Data</button>
+        </form>
+    </div>
+</h4>
+<br>
+<h5> The SOs that have been successfully retrieved are:
+    {% for i in ccwo_success_so %}
+    {{i}}
+    {% endfor %}</h5>
+<br>
+<br>
+<h5> The SOs that have been <font color="red">UNSUCCESSFULLY</font> retrieved are:
+    {% for i in ccwo_error_so_list %}
+    {{i}}
+    {% endfor %}</h5>
 <br>
 <div class="panel panel--bordered-top"></div>
 <br>
-<h4 class="section" align="center">CCWR Returned Data:
+<h4 class="section" align="center">CCW Sales Order Returned Data:
 </h4>
 <div class="base-margin">
     <table class="table table--bordered table--selectable" id="table">
 
         <tbody>
-        {% for i in ccwr_full_list %}
+        {% for i in so_data_matrix %}
         <tr>
-            <td>{{ i[0][:25] }}</td>
-            <td>{{ i[1][:45] }}</td>
-            <td>{{ i[2][:15] }}</td>
-            <td>{{ i[3][:20] }}</td>
-            <td>{{ i[4][:15] }}</td>
-            <td>{{ i[5][:20] }}</td>
-            <td>{{ i[6][:30] }}</td>
-            <td>{{ i[7][:20] }}</td>
+            <td>{{ i[0] }}</td>
+            <td>{{ i[1] }}</td>
+            <td>{{ i[2] }}</td>
+            <td>{{ i[3] }}</td>
         </tr>
         {% endfor %}
         </tbody>
     </table>
-</div>
-    </div>
 </div>
 <br><br><br><br>
 <footer class="footer footer--primary">

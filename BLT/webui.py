@@ -21,35 +21,42 @@ import logging
 from json import load, dump, dumps, loads
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timedelta
-from time import time, sleep
+from time import time, sleep, ctime
 from collections import Counter as ct
 from ordered_set import OrderedSet
 from re import search, findall
 from requests import request as rq
 from requests import exceptions as ex
+from multiprocessing.dummy import Pool as ThreadPool
 from flask import Flask, render_template, request, redirect, session, send_file, flash
 import cisco_info
 
+
 def grab_oauth_ccw_order(username, password):
     """function for ccw order api oauth"""
-    with open("ccw_order_cred.json", "r") as f:
-        password_creds = load(f)
-    cred_tuple = (
-        password_creds["client_id"],
-        password_creds["client_secret"],
-        username,
-        password,
-    )
-    url = "https://cloudsso.cisco.com/as/token.oauth2"
-    payload = (
-        "client_id=%s&client_secret=%s&grant_type=password&username=%s&password=%s"
-        % cred_tuple
-    )
-    headers = {
-        "Content-Type": "application/x-www-form-urlencoded",
-        "Accept": "application/json",
-        "cache-control": "no-cache",
-    }
+
+    try:
+        with open("ccw_order_cred.json", "r") as f:
+            password_creds = load(f)
+        cred_tuple = (
+            password_creds["client_id"],
+            password_creds["client_secret"],
+            username,
+            password,
+        )
+        url = "https://cloudsso.cisco.com/as/token.oauth2"
+        payload = (
+            "client_id=%s&client_secret=%s&grant_type=password&username=%s&password=%s"
+            % cred_tuple
+        )
+        headers = {
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Accept": "application/json",
+            "cache-control": "no-cache",
+        }
+    except FileNotFoundError:
+        print("ccw_order_cred.json is missing...correct this problem")
+        return None
 
     try:
         response = rq("POST", url, data=payload, headers=headers)
@@ -58,6 +65,7 @@ def grab_oauth_ccw_order(username, password):
             os.mkdir("profiles")
         if username not in os.listdir("profiles"):
             os.mkdir("profiles//%s" % username)
+            os.mkdir("profiles//%s//reports" % username)
         with open("profiles//%s//ccw_order_oauth.json" % username, "w") as f:
             dump({"ts": int(time()), "access_token": ccwo_access_token}, f)
         return ccwo_access_token
@@ -94,7 +102,7 @@ def grab_oauth_ccwr(username):
     return ccwr_access_token
 
 
-def create_3K_lic_rpt(ccwr_full_list, output_file, smart_account):
+def create_3K_lic_rpt(ccwr_full_list, output_file_list, smart_account):
     """cat3k results report create function
     Create a group on lambda functions to perform RegEx searches
     Creates a CSV formatted Report of 3K licensing content from a file input
@@ -156,41 +164,34 @@ def create_3K_lic_rpt(ccwr_full_list, output_file, smart_account):
     # Perform count of elements in concatenated list and place in dict
     licdict = dict(ct(total_upg_lics))
     # Create output file
-    with open(output_file, "w") as f:
-        f.write("Top-Level Device OR License,-----,Count\n")
-        for i in devdict:
-            f.write(i + ",-----," + str(devdict[i]) + "\n")
-        f.write(4 * "\n")
-        f.write(
-            "LICENSES to be deposited in %s\n\n" % smart_account
-            + "License,-----,Count\n"
-        )
-        for i in licdict:
-            f.write(i + ",-----," + str(licdict[i]) + "\n")
-        f.write(4 * "\n")
-        f.write("Full License/Device Breakout from CCW-R\n\n")
-        for i in parsed_ccwr_rows_list:
-            for j in i:
-                f.write(j)
-                f.write(",")
-            f.write("\n")
+    for i in output_file_list:
+        with open(i, "w") as f:
+            f.write("Top-Level Device OR License,-----,Count\n")
+            for i in devdict:
+                f.write(i + ",-----," + str(devdict[i]) + "\n")
+            f.write(4 * "\n")
+            f.write(
+                "LICENSES to be deposited in %s\n\n" % smart_account
+                + "License,-----,Count\n"
+            )
+            for i in licdict:
+                f.write(i + ",-----," + str(licdict[i]) + "\n")
+            f.write(4 * "\n")
+            f.write("Full License/Device Breakout from CCW-R\n\n")
+            for i in parsed_ccwr_rows_list:
+                for j in i:
+                    f.write(j)
+                    f.write(",")
+                f.write("\n")
 
 
 def ccwo_order_status(username, so_num):
     try:
         with open("profiles//%s//ccw_order_oauth.json" % username, "r") as f:
             jl = load(f)
-        if (time() - jl["ts"]) > 3500:
-            ccwo_access_token = grab_oauth_ccw_order(username, password)
-            print(
-                "ccw order oauth2 token age: "
-                + str(int(time()) - jl["ts"])
-                + " seconds. Getting new token"
-            )
-        else:
-            ccwo_access_token = jl["access_token"]
-    except:
-        ccwo_access_token = grab_oauth_ccw_order(username, password)
+        ccwo_access_token = jl["access_token"]
+    except Exception as e:
+        print(e)
 
     url = "https://api.cisco.com/commerce/ORDER/v2/sync/checkOrderStatus"
     headers = {
@@ -311,14 +312,54 @@ def ccwr_search_request(username, searchType="serialNumbers", search_list=[]):
             "configurations": True,
         }
     )
-    response = rq("POST", url, data=payload, headers=headers)
-    if response.status_code == 403:
-        ccwr_access_token = grab_oauth_ccwr()
-        headers["Authorization"] = "Bearer %s" % ccwr_access_token
+
+    with open('counter_dict.json','r') as f:
+        counter_dict=load(f)
+    current_hr=int(ctime().split()[3].split(':')[0])
+    current_dt=ctime().split()[1:3]
+    if (current_hr != counter_dict['current_hr']) or (current_dt != counter_dict['current_dt']):
+        with open('counter_dict.json','w') as f:
+            counter_dict['current_hr']=current_hr
+            counter_dict['page_counter']=0
+            counter_dict['over']=False
+            counter_dict['current_dt']=current_dt
+            dump(counter_dict,f)
+    if counter_dict['over']==False :
         response = rq("POST", url, data=payload, headers=headers)
+        if response.status_code == 403:
+            ccwr_access_token = grab_oauth_ccwr()
+            headers["Authorization"] = "Bearer %s" % ccwr_access_token
+            response = rq("POST", url, data=payload, headers=headers)
+        else:
+            ccwr_response = response.json()
+            try:
+                counter_dict['page_counter']=counter_dict['page_counter']+(int(ccwr_response["totalRecords"]/1000)+1)
+            except:
+                pass
+            with open('counter_dict.json','w') as f:
+                if counter_dict['page_counter'] > 298:
+                    counter_dict['over']=True
+                    ts=str(int(time()))
+                    with open('jobs/%s.%s'%(username,ts),'w') as job:
+                        dump(search_list,job)
+                    print('\n\n\nDo some scheduling, the paging counter just went over!\n\n\n')
+                    dump(counter_dict,f)
+                    ccwr_response='over'
+                    return ccwr_response, ccwr_access_token
+                dump(counter_dict,f)
+
+    if counter_dict['over']==True:
+        ccwr_response='over'
+        ts=str(int(time()))
+        if search_list != []:
+            with open('jobs/%s.%s'%(username,ts),'w') as job:
+                dump(search_list,job)
+        return ccwr_response, ccwr_access_token
+
+
     else:
-        pass
-    ccwr_response = response.json()
+        response=None
+
     try:
         if int(ccwr_response["totalRecords"]) > 1000:
             additional_requests = int(int(ccwr_response["totalRecords"]) / 1000)
@@ -358,7 +399,10 @@ def ccwr_create_table(username, ccwr_response, sa_list):
             "Smart Account Name",
         ]
     ]
+    ccwr_out_ts=str(time())
     raw_ccwr_output_csv = "profiles/%s/current_raw_CCWR_output.csv" % username
+    raw_ccwr_output_csv_report = "profiles/%s/reports/CCWR_raw_output-%s.csv" % (username,ccwr_out_ts)
+    ccwr_out_filelist=[raw_ccwr_output_csv,raw_ccwr_output_csv_report]
     # print(dumps(ccwr_response, sort_keys=True, indent=4))
     try:
         for i in ccwr_response["instances"]:
@@ -392,26 +436,31 @@ def ccwr_create_table(username, ccwr_response, sa_list):
             except:
                 l.append("")
             try:
-                for i in sa_list:
-                    for k, v in i.items():
-                        if k == l[5]:
-                            l.append(v)
+                if not sa_list:
+                    l.append("")
+                else:
+                    for i in sa_list:
+                        for k, v in i.items():
+                            if k == l[5]:
+                                l.insert(7, v)
+                            else:
+                                l.append("")
             except:
                 l.append("")
+            l = l[:8]
             ccwr_full_list.append(l)
-
-        with open(raw_ccwr_output_csv, "w") as f:
-            for i in ccwr_full_list:
-                for j in i:
-                    f.write(j + ",")
-                f.write("\n")
-
+        for i in ccwr_out_filelist:
+            with open(i, "w") as f:
+                for i in ccwr_full_list:
+                    for j in i:
+                        f.write(j + ",")
+                    f.write("\n")
         return ccwr_full_list
     except:
 
         with open(raw_ccwr_output_csv, "w") as f:
             f.write("No Data")
-
+        ccwr_temp_list = []
         return ccwr_temp_list
 
 
@@ -456,12 +505,11 @@ def ccwo_search_request(username, so_list=[]):
         print(
             "ccw order oauth2 token age: " + str(int(time()) - jl["ts"]) + " seconds."
         )
-        if (time() - jl["ts"]) > 3500:
-            ccwo_access_token = grab_oauth_ccw_order(username,password)
-        else:
-            ccwo_access_token = jl["access_token"]
-    except:
-        ccwo_access_token = grab_oauth_ccw_order(username, so_list=[])
+
+        ccwo_access_token = jl["access_token"]
+    except FileNotFoundError as e:
+        print(e)
+        pass
 
     url = "https://api.cisco.com/commerce/ORDER/sync/getSerialNumbers"
     headers = {
@@ -561,8 +609,8 @@ app = Flask(__name__)
 app.secret_key = "CHANGE_THIS_KEY_IF_RUNNING_PERSISTENTLY"
 app.permanent_session_lifetime = timedelta(minutes=10)
 ALLOWED_EXTENSIONS = {"csv"}
-CONTEXT = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
-CONTEXT.load_cert_chain("blt.cisco.com-60405.cer", "blt.key")
+#CONTEXT = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
+#CONTEXT.load_cert_chain("blt.cisco.com-60405.cer", "blt.key")
 
 @app.route("/login", methods=["POST"])
 def do_admin_login():
@@ -588,6 +636,8 @@ def do_admin_login():
         session["logged_in"] = True
         if username not in os.listdir("profiles"):
             os.mkdir("profiles//%s" % username)
+            os.mkdir("profiles//%s//reports" % username)
+
         with open("profiles//%s//ccwr_oauth.json" % username, "w+") as f:
             f.write("Working Offline")
         return redirect("/")
@@ -759,6 +809,10 @@ def ccwrresults_get():
         ccwr_response, ccwr_access_token = ccwr_search_request(
             username, "serialNumbers", ccwr_search_list
         )
+        if ccwr_response=='over':
+            return render_template(
+                "apiover.html"
+            )
         so_for_sa_list = []
         elapsed_time = datetime.now() - start_time
         print("CCW-R API Time:")
@@ -791,7 +845,10 @@ def ccwrresults_get():
         os=OrderedSet([dumps(i) for i in ccwr_temp_list])
         ccwr_full_list=[loads(i) for i in os]
         output_file = "profiles/%s/CAT3K_License_Report.csv" % username
-        create_3K_lic_rpt(ccwr_full_list, output_file, sadomain)
+        reportstamp=str(int(time()))
+        report_output_file ="profiles/%s/reports/CAT3K_License_Report.%s.csv" % (username,reportstamp)
+        output_file_list=[output_file,report_output_file]
+        create_3K_lic_rpt(ccwr_full_list, output_file_list, sadomain)
         # print(ccwr_full_list)
         ##logger.debug(ccwr_full_list)
         if sadomain == "":
@@ -1055,6 +1112,9 @@ def scanupload():
         data = cisco_info.getLoginInfo(UPLOAD_FOLDER + f.filename)
         global SWLIST
         SWLIST = cisco_info.convertLoginDict(data)
+        if not SWLIST:
+            flash("CSV formatted incorrectly...Try again")
+            return render_template("scanupload.html")
         return render_template("netscan.html", csvinfo=SWLIST)
     return render_template("scanupload.html")
 
@@ -1063,6 +1123,45 @@ def scanupload():
 def helppage():
     """Function to return help page"""
     return render_template("help.html")
+
+@app.route("/Reports", methods=["GET"])
+def reportpage():
+    """Function to return user reports"""
+    if not session.get("logged_in"):
+        return render_template("login.html")
+    username = session["username"]
+    files_list = os.listdir('profiles/%s/reports'%username)
+    spooledreport_list=[i for i in files_list if 'spooled' in i]
+    spooledreport_list.sort()
+    report_list=[i for i in files_list if 'spooled' not in i]
+    report_list.sort()
+
+    return render_template("Reports.html",report_list=report_list, spooledreport_list=spooledreport_list)
+
+@app.route("/downloadreports/<filename>", methods=["GET"])
+def downloadreport(filename):
+    """Function to return user reports"""
+    if not session.get("logged_in"):
+        return render_template("login.html")
+    username = session["username"]
+    file_download = "profiles/%s/reports/%s" % (username,filename)
+    return send_file(file_download, as_attachment=True)
+
+@app.route("/deletereports/<filename>", methods=["GET"])
+def deletereport(filename):
+    """Function to return user reports"""
+    if not session.get("logged_in"):
+        return render_template("login.html")
+    username = session["username"]
+    file_delete = "profiles/%s/reports/%s" % (username,filename)
+    os.remove(file_delete)
+    files_list = os.listdir('profiles/%s/reports'%username)
+    spooledreport_list=[i for i in files_list if 'spooled' in i]
+    spooledreport_list.sort()
+    report_list=[i for i in files_list if 'spooled' not in i]
+    report_list.sort()
+    return render_template("Reports.html",report_list=report_list,spooledreport_list=spooledreport_list)
+
 
 
 @app.route("/teamsupport", methods=["GET"])
@@ -1073,6 +1172,6 @@ def teamsupport():
 
 if __name__ == "__main__":
     if sys.platform == "win32":
-        app.run(host="127.0.0.1", debug=True, ssl_context=CONTEXT)
+        app.run(host="127.0.0.1", debug=True, ssl_context="adhoc")
     else:
-        app.run(host="0.0.0.0", debug=True, ssl_context=CONTEXT)
+        app.run(host="0.0.0.0", debug=True, ssl_context="adhoc")

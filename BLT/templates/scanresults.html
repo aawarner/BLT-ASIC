@@ -12,7 +12,7 @@ IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
 or implied.
 -->
 <!DOCTYPE html>
-
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 <link rel="stylesheet" href="{{ url_for('static',filename='css/cui-standard.min.css') }}">
 <html>
 <body class="cui">
@@ -32,9 +32,14 @@ or implied.
             <div class="header-panel header-panel--right">
                 <div class="header-item">
                     <ul id="tabsheader" class="tabs tabs--bordered">
-                        <li id="main" class="tab active">
+                        <li id="main" class="tab">
                             <a tabindex="0" href="/">
                                 <div class="tab__heading">Main</div>
+                            </a>
+                        </li>
+                        <li id="scantab" class="tab active">
+                            <a tabindex="0" href="">
+                                <div class="tab__heading">Network Scan</div>
                             </a>
                         </li>
                         <li id="help" class="tab dbl-padding-right">
@@ -53,51 +58,27 @@ or implied.
         </div>
     </div>
 </header>
-
-<h4 class="section" align="center">Add/Remove SO Data:
-    <div class="base-padding-top" align="center">
-        <form method="get" action="/">
-            <button class="btn btn--primary">Add SO SNs to Search Data</button>
-        </form>
-    </div>
-    <div class="base-padding-top" align="center">
-        <form method="get" action="/clearso">
-            <button class="btn btn--primary">Clear SO Data</button>
-        </form>
-    </div>
-</h4>
-<br>
-<h5> The SOs that have been successfully retrieved are:
-    {% for i in ccwo_success_so %}
-    {{i}}
-    {% endfor %}</h5>
-<br>
-<br>
-<h5> The SOs that have been <font color="red">UNSUCCESSFULLY</font> retrieved are:
-    {% for i in ccwo_error_so_list %}
-    {{i}}
-    {% endfor %}</h5>
-<br>
-<div class="panel panel--bordered-top"></div>
-<br>
-<h4 class="section" align="center">CCW Sales Order Returned Data:
-</h4>
-<div class="base-margin">
+<div class="responsive-table half-margin">
+    <h4 class="section">Collected Network Entitlement Information</h4>
     <table class="table table--bordered table--selectable" id="table">
-
+        <thead>
+        <tr>
+            <th>Product ID</th>
+            <th>Serial Number</th>
+            <th>Entitlement</th>
+        </tr>
+        </thead>
         <tbody>
-        {% for i in so_data_matrix %}
+        {% for i in results %}
         <tr>
             <td>{{ i[0] }}</td>
             <td>{{ i[1] }}</td>
             <td>{{ i[2] }}</td>
-            <td>{{ i[3] }}</td>
         </tr>
         {% endfor %}
         </tbody>
     </table>
 </div>
-<br><br><br><br>
 <footer class="footer footer--primary">
     <div class="footer__links">
         <ul class="list list--inline">

@@ -12,7 +12,7 @@ IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
 or implied.
 -->
 <!DOCTYPE html>
-
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 <link rel="stylesheet" href="{{ url_for('static',filename='css/cui-standard.min.css') }}">
 <html>
 
@@ -33,14 +33,24 @@ or implied.
             <div class="header-panel header-panel--right">
                 <div class="header-item">
                     <ul id="tabsheader" class="tabs tabs--bordered">
-                        <li id="main" class="tab active">
+                        <li id="main" class="tab">
                             <a tabindex="0" href="/">
                                 <div class="tab__heading">Main</div>
                             </a>
                         </li>
-                        <li id="help" class="tab dbl-padding-right">
+                        <li id="serialnumber" class="tab active">
+                            <a tabindex="0" >
+                                <div class="tab__heading">Serial Numbers</div>
+                            </a>
+                        </li>
+                        <li id="help" class="tab">
                             <a tabindex="0" href="help">
                                 <div class="tab__heading">Help</div>
+                            </a>
+                        </li>
+                        <li id="Reports" class="tab dbl-padding-right">
+                            <a tabindex="1" href="Reports">
+                                <div class="tab__heading">Reports</div>
                             </a>
                         </li>
                     </ul>
@@ -54,50 +64,90 @@ or implied.
         </div>
     </div>
 </header>
-<div class="row">
-    <div class="col-xl">
-        <div align="center">
-            <h3>Search a single sales order number or multiple sales orders</h3>
-            <h4>Multiple sales orders should be comma separated</h4>
-        </div>
-    </div>
-</div>
-<div class="absolute-center" align="center">
 
+<div align="center" class="flex-center">
+    <h3>Use the search box and/or upload one or more .csv files containing serial numbers.</h3>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<div class="absolute-center" align="center">
     <div class="row">
-        <div class="col-lg-12">
-            <form action="/salesorder" method="post">
-                <div class="form-group input--icon">
+        <div class="flex flex-middle">
+        <div class="col-sm-5 dbl-padding-right">
+            <div class="panel panel--bordered">
+            <form action="/serialnumber" method="post">
+                <div class="form-group">
                     <div class="form-group__text">
-                        <input name="searchso">
-                        <label>Enter one or more Sales Order Numbers, with each SO seperated by a comma:</label>
-                        <button type="submit" class="link" tabindex="-1">
-                            <span class="icon-search"></span>
-                        </button>
+                        <input name="searchsn" type="text">
+                        <label>Enter one or more Serial Numbers, with each SN separated by a comma and click the magnifying glass to add to search data:</label>
 
                     </div>
-                </div>
+                    </div>
+                <br>
+                <button class="btn btn--primary" type="submit">Submit</button>
             </form>
-            <br><br>
-            <div class="subheader">Warning</div>
-            <div class="alert alert--warning">
-                <div class="alert__message">Please Note: This will only return order data that is available in 'CCW
-                    Order'.
-                    <br>This is typically orders that are within the last 2-3 years..
-                </div>
-            </div>
-        </div>
-        <br><br>
-    </div>
-    {% with messages = get_flashed_messages() %}
-    {% if messages %}
-    {% for message in messages %}
-    <p class="text-danger text-bold text-size-24 half-margin">{{ message }}</p>
-    {% endfor %}
-    {% endif %}
-    {% endwith %}
+                    </div>
 
+                    <div class="panel panel--bordered">
+                       The quantity of webform input SNs to be analyzed is:
+                        <font color="green">{{webform_sn_qty}}</font>
+                </div>
+
+                <form action="/clearwebsn"></form>
+
+                <div class="panel panel--bordered">
+                <form method="get" action="/clearwebsn">
+                    <button class="btn btn--primary">Clear Webform SN Data</button>
+                </form>
+                </div>
+
+        </div>
+
+
+        <div class="col-sm-2"></div>
+
+            <div class="col-sm-7 dbl-padding-left">
+                <div class="panel panel--bordered">
+                <form action="/serialnumber" method="post" enctype="multipart/form-data">
+                    Select a CSV file: <input type="file" name="csvfile" accept=".csv"><br><br>
+                    <button class="btn btn--primary" type="submit">Submit</button>
+                </form>
+            </div>
+            <div class="panel panel--bordered">
+               The CSV files containing SNs to be added to search data are:
+
+                  {% for i in csv_sn_file_name_list %}
+                  <div class="panel panel--bordered">
+                    <font color="green">
+                      {{i}}
+                      </font>
+                      </div>
+                  {% endfor %}
+
+        </div>
+        <div class="panel panel--bordered">
+        <form method="get" action="/clearcsv">
+            <button class="btn btn--primary">Clear File Data</button>
+        </form>
+        </div>
+        </div>
+
+        </div>
+
+    </div>
+    <br><br><br>
+    <div>
+    <h4><font color="green">Upon input completion, add to composite search data.</font></h4>
+    <form method="get" action="/">
+        <button class="btn btn--primary">Add SNs to Search Data</button>
+    </form>
+    </div>
 </div>
+
+
 <footer class="footer footer--primary">
     <div class="footer__links">
         <ul class="list list--inline">
