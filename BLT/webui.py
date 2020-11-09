@@ -17,6 +17,7 @@ import sys
 import ssl
 import csv
 import os
+import urllib
 import logging
 from json import load, dump, dumps, loads
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -31,35 +32,30 @@ from multiprocessing.dummy import Pool as ThreadPool
 from flask import Flask, render_template, request, redirect, session, send_file, flash
 import cisco_info
 
-
 def grab_oauth_ccw_order(username, password):
     """function for ccw order api oauth"""
-
-    try:
-        with open("ccw_order_cred.json", "r") as f:
-            password_creds = load(f)
-        cred_tuple = (
-            password_creds["client_id"],
-            password_creds["client_secret"],
-            username,
-            password,
-        )
-        url = "https://cloudsso.cisco.com/as/token.oauth2"
-        payload = (
-            "client_id=%s&client_secret=%s&grant_type=password&username=%s&password=%s"
-            % cred_tuple
-        )
-        headers = {
-            "Content-Type": "application/x-www-form-urlencoded",
-            "Accept": "application/json",
-            "cache-control": "no-cache",
-        }
-    except FileNotFoundError:
-        print("ccw_order_cred.json is missing...correct this problem")
-        return None
+    with open("ccw_order_cred.json", "r") as f:
+        password_creds = load(f)
+    cred_tuple = (
+        password_creds["client_id"],
+        password_creds["client_secret"],
+        username,
+        password,
+    )
+    url = "https://cloudsso.cisco.com/as/token.oauth2"
+    payload = (
+        "client_id=%s&client_secret=%s&grant_type=password&username=%s&password=%s"
+        % cred_tuple
+    )
+    headers = {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Accept": "application/json",
+        "cache-control": "no-cache"
+    }
 
     try:
         response = rq("POST", url, data=payload, headers=headers)
+        print(response.json())
         ccwo_access_token = response.json()["access_token"]
         if "profiles" not in os.listdir():
             os.mkdir("profiles")
@@ -327,7 +323,7 @@ def ccwr_search_request(username, searchType="serialNumbers", search_list=[]):
     if counter_dict['over']==False :
         response = rq("POST", url, data=payload, headers=headers)
         if response.status_code == 403:
-            ccwr_access_token = grab_oauth_ccwr()
+            ccwr_access_token = grab_oauth_ccwr(username)
             headers["Authorization"] = "Bearer %s" % ccwr_access_token
             response = rq("POST", url, data=payload, headers=headers)
         else:
@@ -604,13 +600,13 @@ def ccwo_search_request(username, so_list=[]):
     so_data_matrix = so_data_matrix_header + so_data_matrix
     return ccwo_sn_list, ccwo_error_so_list, so_data_matrix
 
-
+seckey = os.urandom(24)
 app = Flask(__name__)
-app.secret_key = "CHANGE_THIS_KEY_IF_RUNNING_PERSISTENTLY"
+app.secret_key = seckey
 app.permanent_session_lifetime = timedelta(minutes=10)
 ALLOWED_EXTENSIONS = {"csv"}
-#CONTEXT = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
-#CONTEXT.load_cert_chain("blt.cisco.com-60405.cer", "blt.key")
+CONTEXT = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
+CONTEXT.load_cert_chain("blt.cisco.com-60405.cer", "blt.key")
 
 @app.route("/login", methods=["POST"])
 def do_admin_login():
@@ -618,6 +614,7 @@ def do_admin_login():
     try:
         username = request.form["username"]
         password = request.form["password"]
+        password = urllib.parse.quote_plus(password)
         sadomain = request.form["SADomain"]
         session["username"] = username
         session["sadomain"] = sadomain
@@ -1172,6 +1169,6 @@ def teamsupport():
 
 if __name__ == "__main__":
     if sys.platform == "win32":
-        app.run(host="127.0.0.1", debug=True, ssl_context="adhoc")
+        app.run(host="127.0.0.1", debug=True)
     else:
-        app.run(host="0.0.0.0", debug=True, ssl_context="adhoc")
+        app.run(host="0.0.0.0", debug=True)
