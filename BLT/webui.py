@@ -29,7 +29,7 @@ from re import search, findall
 from requests import request as rq
 from requests import exceptions as ex
 from multiprocessing.dummy import Pool as ThreadPool
-from flask import Flask, render_template, request, redirect, session, send_file, flash
+from flask import Flask, render_template, request, redirect, session, send_file, flash, jsonify
 import cisco_info
 
 def grab_oauth_ccw_order(username, password):
@@ -600,6 +600,37 @@ def ccwo_search_request(username, so_list=[]):
     so_data_matrix = so_data_matrix_header + so_data_matrix
     return ccwo_sn_list, ccwo_error_so_list, so_data_matrix
 
+def grab_oauth_slapi(username, password):
+    """function for smart licensing api oauth"""
+
+    with open("slapi_client.json", "r") as f:
+        password_creds = load(f)
+
+    cred_tuple = (
+        password_creds["client_id"],
+        password_creds["client_secret"],
+        username,
+        password,
+
+    )
+    url = "https://cloudsso.cisco.com/as/token.oauth2"
+    payload = (
+        "client_id=%s&client_secret=%s&grant_type=password&username=%s&password=%s"
+        % cred_tuple
+    )
+    headers = {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Accept": "application/json",
+        "cache-control": "no-cache",
+    }
+    try:
+        response = rq("POST", url, data=payload, headers=headers)
+        slapi_access_token = response.json()["access_token"]
+    except Exception as E:
+        slapi_access_token=None
+
+    return slapi_access_token
+
 seckey = os.urandom(24)
 app = Flask(__name__)
 app.secret_key = seckey
@@ -1158,6 +1189,21 @@ def deletereport(filename):
     report_list=[i for i in files_list if 'spooled' not in i]
     report_list.sort()
     return render_template("Reports.html",report_list=report_list,spooledreport_list=spooledreport_list)
+
+@app.route("/lot-authenticator", methods=["POST"])
+def lot_authenticator():
+    if not request.json or not 'username' in request.json:
+        abort(400)
+    auth_cred={
+        'username':request.json['username'],
+        'password':request.json['password']
+        }
+    username=auth_cred['username']
+    password=auth_cred['password']
+    ccwr_access_token=grab_oauth_ccwr(username)
+    slapi_access_token=grab_oauth_slapi(username,password)
+    lot_access_tokens={'ccwr':ccwr_access_token,'slapi':slapi_access_token}
+    return jsonify(lot_access_tokens),201
 
 
 
