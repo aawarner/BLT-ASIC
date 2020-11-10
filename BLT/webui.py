@@ -637,7 +637,11 @@ app.secret_key = seckey
 app.permanent_session_lifetime = timedelta(minutes=10)
 ALLOWED_EXTENSIONS = {"csv"}
 CONTEXT = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
-CONTEXT.load_cert_chain("blt.cisco.com-60405.cer", "blt.key")
+try:
+    CONTEXT.load_cert_chain("blt.cisco.com-60405.cer", "blt.key")
+    certificate = "Present"
+except FileNotFoundError:
+    certificate = "None"
 
 @app.route("/login", methods=["POST"])
 def do_admin_login():
@@ -1215,6 +1219,12 @@ def teamsupport():
 
 if __name__ == "__main__":
     if sys.platform == "win32":
-        app.run(host="127.0.0.1", debug=True)
+        if certificate == "None":
+            app.run(host="127.0.0.1", debug=True, ssl_context="adhoc")
+        else:
+            app.run(host="127.0.0.1", debug=True)
     else:
-        app.run(host="0.0.0.0", debug=True)
+        if certificate == "None":
+            app.run(host="0.0.0.0", debug=True, ssl_context="adhoc")
+        else:
+            app.run(host="0.0.0.0", debug=True)
