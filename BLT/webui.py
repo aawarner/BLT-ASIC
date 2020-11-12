@@ -93,8 +93,13 @@ def grab_oauth_ccwr(username):
     response = rq("POST", url, data=payload, headers=headers)
     ccwr_access_token = response.json()["access_token"]
     print(ccwr_access_token)
-    with open("profiles//%s//ccwr_oauth.json" % username, "w") as f:
-        dump({"ts": int(time()), "access_token": ccwr_access_token}, f)
+    try:
+        with open("profiles//%s//ccwr_oauth.json" % username, "w") as f:
+            dump({"ts": int(time()), "access_token": ccwr_access_token}, f)
+    except Exception as E:
+        print('%s not logged in via the web interface, so no profile exists.'%username)
+        print('This is probably do to using external auth service. \nException: %s'%E)
+        pass
     return ccwr_access_token
 
 
