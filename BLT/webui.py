@@ -1201,6 +1201,7 @@ def deletereport(filename):
 
 @app.route("/lot-authenticator", methods=["POST"])
 def lot_authenticator():
+    '''This is an authenticator service for the LOT(License Organization Tool)'''
     if not request.json or not 'username' in request.json:
         abort(400)
     auth_cred={
