@@ -99,7 +99,6 @@ def grab_oauth_ccwr(username):
     except Exception as E:
         print('%s not logged in via the web interface, so no profile exists.'%username)
         print('This is probably do to using external auth service. \nException: %s'%E)
-        pass
     return ccwr_access_token
 
 
@@ -364,7 +363,7 @@ def ccwr_search_request(username, searchType="serialNumbers", search_list=[]):
     try:
         if int(ccwr_response["totalRecords"]) > 1000:
             additional_requests = int(int(ccwr_response["totalRecords"]) / 1000)
-            for i in range(additional_requests):
+            for _ in range(additional_requests):
                 offset += 1000
                 payload = dumps(
                     {
@@ -510,7 +509,6 @@ def ccwo_search_request(username, so_list=[]):
         ccwo_access_token = jl["access_token"]
     except FileNotFoundError as e:
         print(e)
-        pass
 
     url = "https://api.cisco.com/commerce/ORDER/sync/getSerialNumbers"
     headers = {
@@ -599,8 +597,7 @@ def ccwo_search_request(username, so_list=[]):
             continue
 
     print(str(len(ccwo_sn_list)) + " is the length of the ccwo sn list.")
-    # print(ccwo_sn_list)
-    ##logger.debug(ccwo_sn_list)
+
     so_data_matrix.sort()
     so_data_matrix = so_data_matrix_header + so_data_matrix
     return ccwo_sn_list, ccwo_error_so_list, so_data_matrix
@@ -632,6 +629,7 @@ def grab_oauth_slapi(username, password):
         response = rq("POST", url, data=payload, headers=headers)
         slapi_access_token = response.json()["access_token"]
     except Exception as E:
+        print(E)
         slapi_access_token=None
 
     return slapi_access_token
@@ -770,13 +768,9 @@ def webroot():
         scan_sn_list = []
     try:
         ccwo_sn_list_name = session["ccwo_sn_list_name"]
-        # print(ccwo_sn_list_name)
-        ##logger.debug(ccwo_sn_list_name, extra=username)
-        # ccwo_sn_list=session['ccwo_sn_list']
+
         with open(ccwo_sn_list_name, "r") as f:
             ccwo_sn_list = load(f)
-        # print(ccwo_sn_list)
-        ##logger.debug(ccwo_sn_list, extra=username)
 
         formatted_so_list = str(session["so_list"]).rstrip("]").lstrip("[")
         len_ccwo_sn_list = str(len(ccwo_sn_list))
@@ -886,8 +880,7 @@ def ccwrresults_get():
         report_output_file ="profiles/%s/reports/CAT3K_License_Report.%s.csv" % (username,reportstamp)
         output_file_list=[output_file,report_output_file]
         create_3K_lic_rpt(ccwr_full_list, output_file_list, sadomain)
-        # print(ccwr_full_list)
-        ##logger.debug(ccwr_full_list)
+
         if sadomain == "":
             body = (
                 "#### Attach either the CCWR Raw Data or Cat3K License Report to this email####"
@@ -1036,7 +1029,7 @@ def serialnumber():
                 print('Exception: %s'%E)
                 ##logger.debug('Exception: %s'%E)
                 csv_sn_file_name_list=[]
-                pass
+
             csv_sn_file_name_list.append(csv_sn_file_name)
             print('csv file name list is: %s'%csv_sn_file_name_list)
             session["csv_sn_file_name_list"] = csv_sn_file_name_list
@@ -1046,12 +1039,12 @@ def serialnumber():
         csv_sn_file_name_list=session["csv_sn_file_name_list"]
     except:
         csv_sn_file_name_list=[]
-        pass
+
     try:
         webform_sn_qty=session["webform_sn_qty"]
     except:
         webform_sn_qty=0
-        pass
+
     return render_template("serialnumber.html", csv_sn_file_name_list=csv_sn_file_name_list, webform_sn_qty=webform_sn_qty)
 
 
@@ -1067,13 +1060,11 @@ def salesorder():
         if request.method == "POST":
             username = session["username"]
             searchso = str(request.form["searchso"])
-            # print(searchso)
-            #logger.debug("searchso")
             so_list = searchso.split(",")
             session["so_list"] = so_list
             with open("profiles//%s//ccw_order_oauth.json" % username, "r") as f:
                 jl = load(f)
-            # print('ccw order oauth2 token age: '+str(int(time())-jl['ts'])+' seconds.')
+
             if (time() - jl["ts"]) > 3500:
                 session["logged_in"] = False
                 return redirect("/")
