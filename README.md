@@ -1,5 +1,7 @@
 [![published](https://static.production.devnetcloud.com/codeexchange/assets/images/devnet-published.svg)](https://developer.cisco.com/codeexchange/github/repo/aawarner/BLT-ASIC)
 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=aawarner_BLT&metric=alert_status)](https://sonarcloud.io/dashboard?id=aawarner_BLT)
+
 # Brownfield Licensing Tool
 
 Brownfield Licensing tool is a tool to assist with gathering entitlement information and licensing devices 
