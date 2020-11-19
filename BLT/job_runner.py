@@ -119,7 +119,7 @@ def ccwr_search_request(username, ccwr_access_token, searchType="serialNumbers",
     try:
         if int(ccwr_response["totalRecords"]) > 1000:
             additional_requests = int(int(ccwr_response["totalRecords"]) / 1000)
-            for i in range(additional_requests):
+            for _ in range(additional_requests):
                 offset += 1000
                 payload = dumps(
                     {

@@ -94,8 +94,7 @@ or implied.
                     </div>
 
                     <div class="panel panel--bordered">
-                       The quantity of webform input SNs to be analyzed is:
-                        <font color="green">{{webform_sn_qty}}</font>
+                       The quantity of webform input SNs to be analyzed is: <span style="color:green">{{webform_sn_qty}}</span>
                 </div>
 
                 <form action="/clearwebsn"></form>
@@ -123,9 +122,7 @@ or implied.
 
                   {% for i in csv_sn_file_name_list %}
                   <div class="panel panel--bordered">
-                    <font color="green">
-                      {{i}}
-                      </font>
+                      <p style="color:green">{{i}}</p>
                       </div>
                   {% endfor %}
 
@@ -142,7 +139,7 @@ or implied.
     </div>
     <br><br><br>
     <div>
-    <h4><font color="green">Upon input completion, add to composite search data.</font></h4>
+        <h4><p style="color:green">Upon input completion, add to composite search data.</p></h4>
     <form method="get" action="/">
         <button class="btn btn--primary">Add SNs to Search Data</button>
     </form>
